@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    command: uvicorn services.api.app.main:app --host 0.0.0.0 --port 8000
+    ports: ["8000:8000"]
+    environment:
+      REFERENCE_DATABASE_URL: postgresql://rockref:rockref@reference-db:5432/rockref
+      MODEL_VERSION: baseline-0
+      TAXONOMY_VERSION: mvp20-v0
+    depends_on: [reference-db]
+  reference-db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: rockref
+      POSTGRES_PASSWORD: rockref
+      POSTGRES_DB: rockref
+    volumes: [reference_data:/var/lib/postgresql/data]
+  challenge-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: rockchallenge
+      POSTGRES_PASSWORD: rockchallenge
+      POSTGRES_DB: rockchallenge
+    volumes: [challenge_data:/var/lib/postgresql/data]
+volumes:
+  reference_data:
+  challenge_data:
