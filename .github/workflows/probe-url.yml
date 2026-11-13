@@ -1,5 +1,6 @@
 name: probe-url
-# Fetches URLs from the runner (the agent shell cannot reach most sites) and prints status, type and the start of the body.
+# Fetches URLs from the runner (the agent shell cannot reach most sites) and prints status, type and the start of the body,
+# or, with a pattern, only the matching fragments (extended regex, 150 characters either side).
 on:
   workflow_dispatch:
     inputs:
@@ -9,15 +10,24 @@ on:
       bytes:
         description: "body bytes to print"
         default: "3000"
+      pattern:
+        description: "optional grep -oE pattern; prints matches with context instead of the body start"
+        default: ""
 jobs:
   probe:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      URLS: ${{ inputs.urls }}
+      BYTES: ${{ inputs.bytes }}
+      PATTERN: ${{ inputs.pattern }}
     steps:
       - run: |
-          for u in ${{ inputs.urls }}; do
+          set -f
+          for u in $URLS; do
             echo "=== $u"
             curl -sS -L -m 40 -A "RockID-probe/0.1 (https://github.com/marx1980/RockID)" -D /tmp/h -o /tmp/b "$u" || echo "curl failed"
-            head -n 12 /tmp/h; echo "--- body (${{ inputs.bytes }} bytes of $(wc -c </tmp/b))"
-            head -c ${{ inputs.bytes }} /tmp/b; echo
+            head -n 3 /tmp/h; echo "--- $(wc -c </tmp/b) bytes"
+            if [ -n "$PATTERN" ]; then grep -a -o -E ".{0,150}($PATTERN).{0,150}" /tmp/b | head -40; else head -c "$BYTES" /tmp/b; fi
+            echo
           done
