@@ -59,3 +59,12 @@ Main carries `reserve` for challenge photos (excluded from reference and from th
 
 ## 2026-11-13 Camera-first identify app
 `app/` opens on the rear camera (framing guide, shutter, Photos, Collection), falls back to Take photo / Upload. Result: best match, might also be, a follow-up check per confusion group, properties, features; collection on the device. With no model installed it says Not identified; a Demo switch in settings shows the layout with clearly marked fake results. Property and follow-up data live in `packages/taxonomy/properties.csv` and `followups.csv` (standard reference values, to be checked by the Domain Curator).
+
+## 2026-11-13 P3: DINOv2-small in the browser, specimen-balanced k-NN, no training
+Model `onnx-community/dinov2-small`, int8 (`q8`, ~24 MB, Apache-2.0 weights), run by transformers.js 3.8.1 both in the build job (Node) and on the phone, from the same `app/model/core.mjs`, so reference and query embeddings come from identical code. Embedding: L2(concat(L2(CLS), L2(mean patch tokens))), 768-d. Reference vectors (~2 MB) ship with the app; weights download from Hugging Face on first identify and are cached by the browser. Rejected for now: a server (no hosting yet), fine-tuning (too little data), SigLIP2 (larger, no measured gain yet).
+
+## 2026-11-13 P3: thresholds calibrated on reference only, challenge scored once
+`services/model/evaluate.py` sweeps decision thresholds on reference leave-one-specimen-out (target: 80% selective accuracy, maximise coverage; OOD floor = 5th percentile of correct-match similarity), then scores the challenge set once. Challenge images are embedded from a CSV holding only case ids and URLs; predictions are written before labels are read. JS and Python decision code are checked against each other in tests.
+
+## 2026-11-13 Branch deletion through a workflow
+This session cannot delete remote branches (API and git push --delete are refused), so `cleanup-branches` deletes temporary branches with the workflow token.

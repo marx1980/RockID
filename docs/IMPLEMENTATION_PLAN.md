@@ -36,11 +36,14 @@ Gate:
 - G-03: round trip candidates → decisions → manifest → DB with zero validator errors (automated, fixtures; repeated on real data after review).
 - H-02: Marko reviews at least one taxon end to end on the phone and the resulting manifest passes validation.
 
-## P3 Embeddings + pgvector index
-- Embed approved assets with DINOv2 and SigLIP2 (in Actions or a local machine), register encoder provenance, store vectors.
-- Postgres-backed `ReferenceIndex` matching the in-memory contract.
+## P3 Embeddings + in-app model
+- DINOv2-small (int8 ONNX) via transformers.js in the build job and on the phone, same code (`app/model/core.mjs`).
+- `build-model` workflow: embed reference set, calibrate thresholds on reference leave-one-specimen-out, embed challenge (ids + URLs only), score once, push `app/model/*` and `results/*` to a branch.
+- App loads the model on first identify and ranks taxa by specimen-balanced k-NN.
 
-Gate: G-04 same top-k from pgvector and in-memory index on a sample; leave-one-specimen-out sanity accuracy reported (not a benchmark).
+Tests: JS vs Python decisions on the same vectors; embedding maths; calibration and scoring on synthetic clusters; app flow in headless Chrome.
+
+Gate: G-04 build succeeds with < 5% images failing to embed; G-05 baseline report produced; H-03 Marko tries the app on real rocks.
 
 ## P4 Challenge set + evaluator service + first baseline
 - Challenge cases from sources and specimens disjoint from the reference set (`find_split_leakage` must be empty).
