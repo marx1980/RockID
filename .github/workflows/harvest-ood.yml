@@ -1,0 +1,31 @@
+name: harvest-ood
+on:
+  workflow_dispatch:
+    inputs:
+      per_category:
+        description: "max candidates per Commons category"
+        default: "60"
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m services.ingestion.ood_harvest --per-category ${{ inputs.per_category }} --out data_manifests/candidates/ood_candidates.csv 2>&1 | tee /tmp/ood.log
+      - run: cat /tmp/ood.log >> "$GITHUB_STEP_SUMMARY"
+      - name: Push to a review branch
+        run: |
+          git config user.name "rockid-harvester"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "harvest/run-${{ github.run_id }}"
+          git add data_manifests/candidates/ood_candidates.csv
+          git commit -m "Harvest OOD candidates (run ${{ github.run_id }})" || exit 0
+          git push origin "harvest/run-${{ github.run_id }}"
