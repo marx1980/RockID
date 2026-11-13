@@ -5,6 +5,10 @@ name: kg-embed
 # branch is deleted at the end.
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: batch tag (v1, v2, ...)
+        default: v1
 permissions:
   contents: write
 jobs:
@@ -23,7 +27,7 @@ jobs:
       - name: Decrypt
         run: |
           test -n "$KG_KEY" || { echo "repository secret KG_KEY is not set"; exit 1; }
-          git show origin/kg-enc:kg_keep.tar.enc > /tmp/kg.enc
+          git show origin/kg-enc:kg_keep_${{ inputs.tag }}.tar.enc > /tmp/kg.enc
           mkdir -p /tmp/kgwork
           openssl enc -d -aes-256-cbc -pbkdf2 -pass env:KG_KEY -in /tmp/kg.enc | tar -xz -C /tmp/kgwork
           ls /tmp/kgwork/kaggle/*/ | wc -l
@@ -32,14 +36,14 @@ jobs:
           npm install --prefix tools/embed --no-audit --no-fund
           mkdir -p data_manifests/private
           cd /tmp/kgwork
-          node "$GITHUB_WORKSPACE/tools/embed/embed.mjs" kaggle_keep_v1.csv id "$GITHUB_WORKSPACE/data_manifests/private/kg_v1"
+          node "$GITHUB_WORKSPACE/tools/embed/embed.mjs" kaggle_keep_${{ inputs.tag }}.csv id "$GITHUB_WORKSPACE/data_manifests/private/kg_${{ inputs.tag }}"
       - name: Push vectors only, delete the archive branch
         run: |
           rm -rf /tmp/kgwork /tmp/kg.enc
           git config user.name "rockid-private"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "private/kg-run-${{ github.run_id }}"
-          git add -f data_manifests/private/kg_v1.f32 data_manifests/private/kg_v1.json
-          git commit -m "Kaggle biotite and pyrite vectors (run ${{ github.run_id }}); no images"
+          git add -f data_manifests/private/kg_${{ inputs.tag }}.f32 data_manifests/private/kg_${{ inputs.tag }}.json
+          git commit -m "Kaggle vectors (${{ inputs.tag }}) (run ${{ github.run_id }}); no images"
           git push origin "private/kg-run-${{ github.run_id }}"
           git push origin --delete kg-enc || true
