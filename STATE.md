@@ -103,6 +103,12 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - As OOD: 78 other-mineral species, 468 photos split by species into calibration and test (234 each). v9 with shipped thresholds wrongly names 8.5% of calibration and 11% of test photos (26 of 234).
 - Kaggle 7-class mineral set (biotite, bornite, chrysocolla, malachite, muscovite, pyrite, quartz): not fetched; needs a Kaggle token or a zip from Marko.
 
+## Japanese Geological Survey specimen database (round 10e)
+- Records read from Cultural Japan IIIF manifests (`services/ingestion/gsj_inventory.py`, workflow gsj-inventory): 5,556 items, every manifest states CC BY 4.0; 1,786 rock, 545 mineral, 3,225 fossil/other
+- Rock items by name (open licence): granite 161, sandstone 145, basalt 87, shale 45, schist 23, gneiss 22, conglomerate 19, chert 16, limestone 13, slate 5, marble 1; plus tuff 565, rhyolite 316, andesite 207
+- Images live on gbank.gsj.jp, which returned errors and a maintenance page on 2026-11-13; nothing downloaded or reviewed yet. Image type (slab, plate, thin section) unknown until a file loads
+- Runner-side URL probe: workflow probe-url (agent shell cannot reach these sites)
+
 ## Labelling your own photos (round 10c)
 - App: result screen has Label (pick one of the 21 types, or Other with a name); labels and 1024 px photos are stored in the phone's IndexedDB; Settings > Export shares or downloads `rockid-labels-<date>.json`.
 - Import: `python -m services.curation.own_photos <export.json>` re-encodes the photos (no metadata), adds taxon-labelled ones to the reference set (source "Own photos (Marko)", licence "Own work", one specimen per taxon per day) and keeps "Other" photos as OOD cases in data_manifests/own_photos/ood.csv. Photos are committed to the repo, so they are public.
