@@ -181,3 +181,42 @@ def test_duplicates_inside_one_response_are_dropped(tmp_path):
     n = harvest(client, ["smithsonian"], ["min.azurite"], 10, tmp_path / "c.csv", si_api_key="k")
     ids = [c.candidate_id for c in read_candidates(tmp_path / "c.csv")]
     assert n == len(ids) == len(set(ids)) == 2
+
+
+def test_nhm_parsing_and_filters():
+    from services.ingestion.sources import nhm
+
+    nhm._cache.clear()
+    client, seen = _mock({nhm.API: json.loads((FIX / "nhm_records.json").read_text())})
+    marble = nhm.search(client, "rock.marble", ["marble"], limit=50)
+    assert "User-Agent" in seen[0].headers and "RockID" in seen[0].headers["User-Agent"]
+    assert marble and all(c.source_name == nhm.SOURCE and c.specimen_hint.startswith("nhm:") for c in marble)
+    assert all(c.license == "CC BY 4.0" and c.proposed_usage == "allowed_reference_only" for c in marble)
+    assert all("/full/!1024,1024/0/default.jpg" in c.media_url for c in marble)
+    assert len({c.candidate_id for c in marble}) == len(marble)
+    granite = nhm.search(client, "rock.granite", ["granite"], limit=50)
+    titles = " | ".join(c.title for c in granite)
+    assert "Wolframite" not in titles  # granite only as the host rock
+    assert "Quartz-porphyry" not in " | ".join(c.title for c in nhm.search(client, "min.quartz", ["quartz"], 50))
+    everything = [c for t in ("rock.marble", "rock.granite", "rock.limestone", "min.quartz", "rock.basalt") for c in nhm.search(client, t, [t.split(".")[1]], 50)]
+    assert not any("box" in c.title.lower() for c in everything)
+
+
+def test_nhm_limit_and_order_are_deterministic():
+    from services.ingestion.sources import nhm
+
+    nhm._cache.clear()
+    client, _ = _mock({nhm.API: json.loads((FIX / "nhm_records.json").read_text())})
+    a = nhm.search(client, "rock.granite", ["granite"], limit=2)
+    b = nhm.search(client, "rock.granite", ["granite"], limit=2)
+    assert [c.candidate_id for c in a] == [c.candidate_id for c in b] and len(a) <= 2
+
+
+def test_nhm_licence_labels():
+    from services.ingestion.sources import nhm
+
+    assert nhm.licence_label("http://creativecommons.org/licenses/by/4.0/") == "CC BY 4.0"
+    assert nhm.licence_label("http://creativecommons.org/licenses/by-nc/4.0/") == "CC BY-NC 4.0"
+    assert propose_usage(nhm.licence_label("http://creativecommons.org/licenses/by-nc/4.0/"))[0] == "rejected"
+    assert nhm.licence_label("http://creativecommons.org/publicdomain/zero/1.0/") == "CC0"
+    assert nhm.licence_label("") == ""

@@ -16,7 +16,7 @@ from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
 from dataclasses import replace
 
-from services.ingestion.sources import commons, other_taxa_named, smithsonian
+from services.ingestion.sources import commons, nhm, other_taxa_named, smithsonian
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 
@@ -55,6 +55,8 @@ def harvest(
                     found = []
                     for sub in q["smithsonian_query"].split("|"):
                         found += smithsonian.search(client, taxon_id, sub, terms, per_taxon, si_api_key)
+                elif source == "nhm":
+                    found = nhm.search(client, taxon_id, terms, per_taxon)
                 else:
                     raise ValueError(source)
             except httpx.HTTPStatusError as e:
@@ -99,7 +101,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm"])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")
