@@ -284,3 +284,31 @@ def test_wikipedia_article_images(tmp_path):
 def test_every_taxon_has_wikipedia_articles():
     from services.ingestion.harvest import load_articles, load_queries
     assert set(load_articles()) == set(load_queries())
+
+
+def test_commons_category_files(tmp_path):
+    from services.ingestion.sources import commons_categories as cc
+    page = {"pageid": 9, "title": "File:Granite sample.jpg", "imageinfo": [{
+        "mime": "image/jpeg", "descriptionurl": "https://commons.wikimedia.org/wiki/File:Granite_sample.jpg",
+        "thumburl": "https://upload.wikimedia.org/x/1024px-G.jpg",
+        "extmetadata": {"LicenseShortName": {"value": "CC BY 3.0"}, "Artist": {"value": "Bob"}}}]}
+
+    def handler(req):
+        q = dict(req.url.params)
+        if q.get("list") == "categorymembers":
+            return httpx.Response(200, json={"query": {"categorymembers": [
+                {"title": "Category:Granite samples from Spain"}, {"title": "Category:Granite quarries"}]}})
+        return httpx.Response(200, json={"query": {"pages": [page]}})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    assert cc.subcategories(client, "Category:Granite samples") == ["Category:Granite samples from Spain"]
+    found = cc.search(client, "rock.granite", ["Category:Granite samples+"], ["granite"])
+    assert {c.candidate_id for c in found} == {"commons:9"} and len(found) == 2
+    n = harvest(client, ["commons-categories"], ["rock.granite"], 10, tmp_path / "c.csv")
+    assert n == 1
+
+
+def test_every_category_row_names_a_taxon():
+    from services.ingestion.harvest import load_categories
+    from packages.taxonomy.loader import load_taxonomy
+    assert set(load_categories()) <= set(load_taxonomy())

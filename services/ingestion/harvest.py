@@ -16,11 +16,12 @@ from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
 from dataclasses import replace
 
-from services.ingestion.sources import commons, europeana, nhm, other_taxa_named, smithsonian, wikipedia
+from services.ingestion.sources import commons, commons_categories, europeana, nhm, other_taxa_named, smithsonian, wikipedia
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 LOCALITIES = TAXONOMY_DIR / "localities.csv"
 WIKI_ARTICLES = TAXONOMY_DIR / "wikipedia_articles.csv"
+COMMONS_CATEGORIES = TAXONOMY_DIR / "commons_categories.csv"
 PER_LOCALITY = 12
 FORM_SOURCES = {"commons-tumbled": "tumbled", "commons-polished": "polished"}
 
@@ -42,6 +43,11 @@ def load_localities() -> dict[str, list[str]]:
 def load_articles() -> dict[str, list[str]]:
     with WIKI_ARTICLES.open(newline="", encoding="utf-8") as fh:
         return {r["taxon_id"]: [x for x in r["articles"].split("|") if x] for r in csv.DictReader(fh)}
+
+
+def load_categories() -> dict[str, list[str]]:
+    with COMMONS_CATEGORIES.open(newline="", encoding="utf-8") as fh:
+        return {r["taxon_id"]: [x for x in r["categories"].split("|") if x] for r in csv.DictReader(fh)}
 
 
 def harvest(
@@ -71,6 +77,8 @@ def harvest(
                         found += commons.search(client, taxon_id, f"{place} {terms[0]}", terms, min(per_taxon, PER_LOCALITY))
                 elif source == "wikipedia":  # images used in the taxon's Wikipedia article(s)
                     found = wikipedia.search(client, taxon_id, load_articles().get(taxon_id, []), terms, limit=600)
+                elif source == "commons-categories":  # curated Commons categories such as "Granite samples"
+                    found = commons_categories.search(client, taxon_id, load_categories().get(taxon_id, []), terms)
                 elif source in FORM_SOURCES:  # Commons again, with "tumbled"/"polished" in the query
                     found = commons.search(client, taxon_id, f"{FORM_SOURCES[source]} {terms[0]}", terms, per_taxon)
                 elif source == "smithsonian":
@@ -129,7 +137,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", *FORM_SOURCES])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", "commons-categories", *FORM_SOURCES])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")
