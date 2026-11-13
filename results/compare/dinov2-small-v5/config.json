@@ -1,0 +1,20 @@
+{
+ "model": "onnx-community/dinov2-small",
+ "dtype": "q8",
+ "dim": 768,
+ "decision": {
+  "ood_similarity": 0.6500246495008468,
+  "accept_probability": 0.4,
+  "min_margin": 0.0,
+  "min_specimens": 1
+ },
+ "calibrated_on": "reference leave-one-specimen-out",
+ "target_selective_accuracy": 0.8,
+ "met_target": true,
+ "reference_photos": 1687,
+ "date": "2026-11-13",
+ "form": {
+  "min_form_p": 0.6,
+  "min_pool": 30
+ }
+}

@@ -81,3 +81,7 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - DINOv2-small stays live; dinov2-base and SigLIP2-base are worse on photos from new photographers
 - Collection shortcut confirmed: own-collection removal 0.53 → 0.35 top-1 (random control 0.53); realistic phone-photo expectation about 0.35-0.40 top-1, 0.78 top-3
 - Known gap: calibration on leave-one-specimen-out overstates confidence; challenge set is 74% Smithsonian
+
+## Round 5 (locality harvest)
+- commons-places harvest source and packages/taxonomy/localities.csv; 110 approved of 941 reviewed; reference set 1,687 photos (1,149 + 110 natural/polished mix, 60 tumbled)
+- v5 re-score neutral (results/BASELINE_v5.md); live app still on model v4
