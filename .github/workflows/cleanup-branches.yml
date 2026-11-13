@@ -1,0 +1,23 @@
+name: cleanup-branches
+on:
+  workflow_dispatch:
+    inputs:
+      pattern:
+        description: "extended regex of branch names to delete (main and vault are always kept)"
+        default: "^(curation/sheets-|harvest/run-|promote/run-|model/run-)"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - run: |
+          git ls-remote --heads origin | awk '{print $2}' | sed 's#refs/heads/##' \
+            | grep -E '${{ inputs.pattern }}' | grep -vE '^(main|vault)$' > /tmp/del.txt || true
+          cat /tmp/del.txt
+          while read -r b; do [ -n "$b" ] && git push origin --delete "$b"; done < /tmp/del.txt

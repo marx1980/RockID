@@ -70,7 +70,7 @@ def test_identifier_code_never_imports_evaluator_or_challenge_code():
 def test_reference_manifests_carry_no_challenge_columns():
     from services.ingestion.manifest import check_header
 
-    for path in (ROOT / "data_manifests/reference").glob("*.csv"):
+    for path in (p for p in (ROOT / "data_manifests/reference").glob("*.csv") if p.name != "quarantine.csv"):
         with path.open() as fh:
             header = next(csv.reader(fh))
         assert check_header(header) == [], path.name

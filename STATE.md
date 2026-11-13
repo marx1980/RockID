@@ -1,6 +1,6 @@
 # State
 
-Current phase: **P2 done, agent curation done; next P3 embeddings + in-app model** (see docs/IMPLEMENTATION_PLAN.md)
+Current phase: **P3 in-app model: code merged, first build and baseline running** (see docs/IMPLEMENTATION_PLAN.md)
 
 ## Built
 - Phase 0 scaffold: isolated Challenge Vault, manifest validator, leakage checks, metrics, blind harness, quality gate, k-NN aggregation, DB schemas, CI
@@ -10,6 +10,8 @@ Current phase: **P2 done, agent curation done; next P3 embeddings + in-app model
 
 - Agent curation: contact sheets, visual review of all candidates, reference/challenge split, vault branch
 - Identify app (app/): camera-first, quality gate, result/alternatives/check/properties, collection, demo switch
+
+- P3 code: shared JS core (embedding + k-NN + decisions), Node embedder, calibration/scoring, build-model workflow, app integration
 
 ## Stubbed / not run
 - DINOv2 / SigLIP2 adapters (no weights downloaded)

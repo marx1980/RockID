@@ -1,0 +1,55 @@
+name: build-model
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: vault
+          path: vault
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: npm install --prefix tools/embed --no-audit --no-fund
+      - name: Embed reference set
+        run: |
+          ln -s "$PWD/tools/embed/node_modules" node_modules
+          node tools/embed/embed.mjs data_manifests/reference/reference.csv asset_id app/model/reference
+      - name: Calibrate on reference (leave one specimen out)
+        run: python -m services.model.evaluate calibrate app/model/reference app/model/config.json results/loso.json
+      - name: Embed challenge images (ids and URLs only, no labels)
+        run: |
+          python - <<'PY'
+          import csv
+          with open("vault/challenge.csv", newline="") as f, open("/tmp/challenge_inputs.csv", "w", newline="") as o:
+              w = csv.writer(o); w.writerow(["case_id", "media_url"])
+              for r in csv.DictReader(f): w.writerow([r["case_id"], r["media_url"]])
+          PY
+          node tools/embed/embed.mjs /tmp/challenge_inputs.csv case_id /tmp/challenge
+      - name: Score challenge once
+        run: |
+          python -m services.model.evaluate score app/model/reference /tmp/challenge vault/challenge.csv \
+            app/model/config.json results/baseline.json results/BASELINE.md
+          cat results/BASELINE.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Push to a branch
+        run: |
+          rm -f node_modules
+          git config user.name "rockid-model"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "model/run-${{ github.run_id }}"
+          git add app/model results
+          git commit -m "Model data and baseline (run ${{ github.run_id }})"
+          git push origin "model/run-${{ github.run_id }}"

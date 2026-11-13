@@ -45,6 +45,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #scanImg{max-width:100%;max-height:100%;object-fit:contain}
 #scanLine{position:absolute;left:0;right:0;height:3px;background:var(--acc);box-shadow:0 0 18px 6px rgba(217,164,65,.55);animation:sweep 1.1s ease-in-out infinite alternate}
 @keyframes sweep{from{top:15%}to{top:85%}}
+#scanPct{position:absolute;left:0;right:0;bottom:calc(var(--sb) + 40px);text-align:center;font-size:15px;color:#fff;text-shadow:0 1px 3px #000}
 /* result */
 #res{overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}
 #res.on{display:block}
@@ -122,7 +123,7 @@ input[type=file]{display:none}
   <input type="file" accept="image/*" capture="environment" id="fileCam">
 </section>
 
-<section class="screen" id="scan"><img id="scanImg" alt=""><div id="scanLine"></div></section>
+<section class="screen" id="scan"><img id="scanImg" alt=""><div id="scanLine"></div><div id="scanPct"></div></section>
 
 <section class="screen" id="res">
   <div id="hero"><img id="heroImg" alt="">
@@ -213,7 +214,10 @@ function quality(src){
 /* ---------- identification ---------- */
 function hashCanvas(c){const x=c.getContext("2d").getImageData(0,0,Math.min(64,c.width),Math.min(64,c.height)).data;let h=2166136261;for(let i=0;i<x.length;i+=7){h^=x[i];h=Math.imul(h,16777619)}return h>>>0}
 async function identify(canvas){
-  if(window.RockIDModel)return window.RockIDModel.identify(canvas);
+  if(window.RockIDModel){
+    try{return await window.RockIDModel.identify(canvas,f=>{$("scanPct").textContent="Model "+Math.round(f*100)+"%"})}
+    catch(e){console.error(e);return{status:"error",candidates:[]}}
+  }
   if(!S.demo)return{status:"no_model",candidates:[]};
   const ids=Object.keys(S.data.taxa),h=hashCanvas(canvas),top=ids[h%ids.length],grp=S.data.taxa[top].group;
   const mates=ids.filter(t=>t!==top&&S.data.taxa[t].group===grp),others=ids.filter(t=>t!==top&&!mates.includes(t));
@@ -223,7 +227,7 @@ async function identify(canvas){
 }
 async function analyze(canvas){
   const url=canvas.toDataURL("image/jpeg",.9);
-  $("scanImg").src=url;show("scan");
+  $("scanImg").src=url;$("scanPct").textContent="";show("scan");
   const t0=performance.now();
   const q=quality(canvas);
   const r=q.issues.length?{status:"retake",candidates:[]}:await identify(canvas);
@@ -247,12 +251,19 @@ function renderResult(){
   if(R.status==="retake"){
     for(const i of R.issues)chips.appendChild(el("span","chip bad",ISSUE[i]||i));
     sh.appendChild(el("h1",null,"Retake"));
-  }else if(!R.candidates.length){
-    chips.appendChild(el("span","chip","No model"));
+  }else if(!R.candidates.length||(R.status==="unknown"&&!R.answer)){
+    chips.appendChild(el("span","chip",R.status==="error"?"Offline":R.status==="unknown"?"Unknown":"No model"));
     sh.appendChild(el("h1",null,"Not identified"));
+    if(R.candidates.length){
+      sh.appendChild(el("h2",null,"Closest"));
+      const alts=el("div","alts");
+      R.candidates.forEach(a=>{const b=el("button","alt");b.append(el("b",null,T[a.taxon].name),el("span",null,Math.round(a.p*100)+"%"));b.onclick=()=>{R.answer=null;R.status="uncertain";R.sel=R.candidates.indexOf(a);renderResult()};alts.appendChild(b)});
+      sh.appendChild(alts);
+    }
   }else{
     const c=R.candidates[R.sel],t=T[c.taxon];
     if(R.status==="demo")chips.appendChild(el("span","chip acc","Demo"));
+    if(R.status==="uncertain"&&!R.answer)chips.appendChild(el("span","chip acc","Uncertain"));
     chips.appendChild(el("span","chip",t.category));
     chips.appendChild(el("span","chip",t.class));
     if(R.answer)chips.appendChild(el("span","chip ok","Checked"));
@@ -320,6 +331,7 @@ $("demoSw").onclick=()=>{S.demo=!S.demo;store.set(K.demo,S.demo);$("demoSw").set
 (async()=>{
   try{S.data=await (await fetch("data.json")).json()}catch(e){toast("Data failed to load");return}
   $("taxVer").textContent=S.data.taxonomy_version;
+  try{const m=await import("./model/model.mjs");await m.install()}catch(e){}
   $("modelName").textContent=window.RockIDModel?window.RockIDModel.version:"None";
   updateBadge();startCam();
   document.addEventListener("visibilitychange",()=>{if(document.hidden)stopCam();else if($("cam").classList.contains("on"))startCam()});
