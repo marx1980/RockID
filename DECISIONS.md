@@ -26,3 +26,6 @@ Reason: specimen identity drives leakage checks and vote balancing. Commons hint
 
 ## 2026-11-13 P1: images stored by sha256 outside git
 Reason: repo size and per-image licence obligations. Storage backend decided in P2.
+
+## 2026-11-13 P1 gate summary
+G-01 PASS; G-02 PASS provisional (all 21 taxa ≥ 9 specimen hints before review); H-01 pending. Weakest classes before review: magnetite (9), chert (10), granite (10).
