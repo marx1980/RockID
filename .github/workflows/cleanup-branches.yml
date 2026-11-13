@@ -4,7 +4,7 @@ on:
     inputs:
       pattern:
         description: "extended regex of branch names to delete (main and vault are always kept)"
-        default: "^(curation/sheets-|harvest/run-|promote/run-|model/run-)"
+        default: "^(curation/sheets-|harvest/run-|promote/run-|model/run-|probe/run-)"
 
 permissions:
   contents: write
