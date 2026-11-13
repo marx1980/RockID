@@ -1,0 +1,22 @@
+{
+ "new collection": {
+  "cases": 19,
+  "top1": 0.263,
+  "top3": 0.789
+ },
+ "Wikimedia Commons": {
+  "cases": 48,
+  "top1": 0.312,
+  "top3": 0.729
+ },
+ "collection in reference set": {
+  "cases": 170,
+  "top1": 0.447,
+  "top3": 0.724
+ },
+ "Smithsonian NMNH Mineral Sciences": {
+  "cases": 141,
+  "top1": 0.468,
+  "top3": 0.73
+ }
+}

@@ -97,6 +97,12 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - v9 on OOD (results/compare/dinov2-small-v9-ood): with the shipped thresholds (floor 0.65, p 0.4, margin 0.1) 11% of calibration OOD photos are wrongly named (7% on the frozen test, 4 of 56), worst for man-made material and other rocks. The sweep (OOD_SWEEP.md) shows stricter settings (p 0.7) drop that to 2% but cut answered coverage on reference photos from 34% to 13%. Choice of setting waits for H-03.
 - Not done: P5 threshold choice, follow-up prompts, OOD photos from phone cameras.
 
+## Round 10b: new sources (USGS, MineralImage5k)
+- USGS Multimedia Gallery (public domain): `usgs` harvest source (services/ingestion/sources/usgs.py). 59 candidates, 46 flagged as generic renderings that look machine-generated; only 13 look like real photos and about 6 are rocks (granite, marble, sandstone, gneiss). Not reviewed or merged: too small to justify a round. Rejected for the same purpose: Pixabay (its terms bar ML training), Vecteezy and Freepik (attribution-only licences, stock cutouts and vectors), Flickr Commons (mostly historical drawings).
+- MineralImage5k (Fersman Museum photos, Hugging Face copy Nech-C/mineralimage5K-98, labelled MIT on the packaging only): private use. `private-source` workflow downloads it on the runner and commits only vectors and labels (data_manifests/private/, no images or URLs). 98 mineral classes, no biotite, no rocks. As reference (1,186 photos, 11 of our taxa, capped at 120 each) v9 gets worse: A top-1 0.471 to 0.429, B 0.437 to 0.407 (results/compare/dinov2-small-v9-mi5k); k-feldspar and gypsum improve, muscovite, chert, gneiss and limestone fall. Not used as reference.
+- As OOD: 78 other-mineral species, 468 photos split by species into calibration and test (234 each). v9 with shipped thresholds wrongly names 8.5% of calibration and 11% of test photos (26 of 234).
+- Kaggle 7-class mineral set (biotite, bornite, chrysocolla, malachite, muscovite, pyrite, quartz): not fetched; needs a Kaggle token or a zip from Marko.
+
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
 - services/model/shortcut.py: reference k-NN with own collection removed vs random control; challenge split by collection
