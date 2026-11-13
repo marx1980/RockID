@@ -14,6 +14,7 @@ import httpx
 from services.ingestion.candidates import Candidate
 from services.ingestion.licence import propose_usage
 from services.ingestion.sources import USER_AGENT, now_iso, other_taxa_named
+from services.ingestion.sources import licence_label as _licence_label
 
 API = "https://data.nhm.ac.uk/api/3/action/datastore_search"
 RESOURCE = "05ff2255-c38a-40c9-b657-4ccb55ab2feb"  # collection specimens (Darwin Core)
@@ -31,14 +32,7 @@ _COMPOUND = re.compile(r"\b(in|from|with|on|and|associated|together|bearing|cont
 _cache: dict[str, list[dict]] = {}
 
 
-def licence_label(url: str) -> str:
-    m = re.search(r"creativecommons\.org/(licenses|publicdomain)/([a-z\-]+)/([\d.]+)", url or "")
-    if not m:
-        return ""
-    kind, variant, version = m.groups()
-    if kind == "publicdomain":
-        return "CC0" if variant == "zero" else "Public domain"
-    return f"CC {variant.upper()} {version}"
+licence_label = _licence_label
 
 
 def fetch_imaged(client: httpx.Client) -> list[dict]:
