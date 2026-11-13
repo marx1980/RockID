@@ -86,3 +86,12 @@ Search API with the key in `EUROPEANA_API_KEY`; open-reuse images only, titles m
 
 ## 2026-11-13 Europeana re-score: AMBER, v1 model stays live
 Rebuilt with 1,142 reference photos and scored a third time on the unchanged challenge set (BASELINE_v3.md). Shortlist top-1 0.511 (v1 0.479, v2 0.474), top-3 0.821 (0.800, 0.784), but mineral vs rock fell to 0.900 (0.932) and ECE rose to 0.258 (0.204). Gains are 6 to 7 cases of 190, which is at the edge of noise. Most added photos come from one collection with a uniform backdrop, so a domain shortcut cannot be ruled out; no thresholds or model were changed, and the app stays on v1 until a larger-model comparison on this data.
+
+## 2026-11-13 Form flag for tumbled and polished stones
+Marko wants tumbled and polished stones identified too. Added a `form` value per reference photo (natural, tumbled, polished; blank means natural). The app votes the photo's form from all references (specimen-balanced, temperature 0.05); when the vote is at least 0.6 and that form has at least 30 references it ranks taxa among that form's references only, otherwise it uses all. The result shows the form as a chip. Rejected: a separate model per form (too little tumbled data), and a form selector in the UI (extra step, detection is 0.85 to 0.98).
+
+## 2026-11-13 Polished stone reinstated (policy change)
+The earlier rule that polished or cut stone is out is reversed for polished slabs, cabochons and spheres: reasons `polished_slab_scan` and `polished_or_cut` flipped to `polished` unless the photo shares a photographer, specimen or source page with a challenge case. Faceted gems stay rejected. Cap of 60 per taxon and source (sha1 order); the 252 capped-out photos (marble 89, granite 83, limestone 80, all NHM) became `form_holdout.csv` on the vault branch.
+
+## 2026-11-13 Round 4 and model v4 ship
+Round 4: 315 Commons "tumbled <name>" candidates, 75 approved. Rejected: outcrops, waterfalls, documents, assortments, jewellery, faceted gems, other minerals, and tumbled blue-black stones labelled limestone and unakite labelled granite (identity unclear). Chert approvals are mostly jasper-like tumbled stones from one collector. v4 is shipped to the app because the form feature needs the new references, despite the AMBER caveat on v3 (shortcut risk, mineral vs rock 0.900 to 0.895, ECE). Natural challenge accuracy is neutral to v1 (top-1 0.516 vs 0.479, top-3 0.805 vs 0.800). Revert by restoring app/model from main before this PR if real-rock tests (H-03) look worse.
