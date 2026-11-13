@@ -1,0 +1,38 @@
+name: promote-reference
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check decisions
+        run: python -m services.ingestion.decisions data_manifests/candidates/candidates.csv data_manifests/candidates/decisions.json
+      - name: Promote approved candidates
+        run: python -m services.ingestion.promote data_manifests/candidates/candidates.csv --manifest data_manifests/reference/reference.csv --decisions data_manifests/candidates/decisions.json | tee "$RUNNER_TEMP/promote.txt"
+      - name: Validate manifest
+        run: python -m services.ingestion.manifest data_manifests/reference/reference.csv
+      - name: Summary
+        run: |
+          {
+            echo '```'
+            cat "$RUNNER_TEMP/promote.txt"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Push to a branch
+        run: |
+          git config user.name "rockid-promote"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "promote/run-${{ github.run_id }}"
+          git add data_manifests/reference
+          git commit -m "Promote reviewed candidates (run ${{ github.run_id }})" || exit 0
+          git push origin "promote/run-${{ github.run_id }}"

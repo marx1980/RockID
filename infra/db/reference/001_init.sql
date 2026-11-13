@@ -24,6 +24,7 @@ CREATE TABLE assets (
     specimen_id    text NOT NULL REFERENCES specimens(specimen_id),
     source_name    text NOT NULL,
     source_url     text NOT NULL,
+    media_url      text NOT NULL,   -- where the image is re-fetched from; images are not stored (see DECISIONS.md)
     author         text,
     license        text NOT NULL,
     retrieval_date date NOT NULL,
@@ -31,6 +32,7 @@ CREATE TABLE assets (
     sha256         char(64) NOT NULL UNIQUE,
     phash          char(16) NOT NULL,
     quarantined    boolean NOT NULL DEFAULT false,
+    quarantine_reason text,
     created_at     timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX assets_phash_idx ON assets (phash);

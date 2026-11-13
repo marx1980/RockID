@@ -8,7 +8,7 @@ from packages.taxonomy.loader import load_taxonomy
 
 REFERENCE_COLUMNS = [
     "asset_id", "taxon_id", "specimen_id", "source_name", "source_url", "author",
-    "license", "retrieval_date", "usage_decision", "sha256", "phash",
+    "license", "retrieval_date", "usage_decision", "sha256", "phash", "media_url",
 ]
 USAGE_DECISIONS = {"allowed_train", "allowed_reference_only", "rejected", "pending"}
 INGESTIBLE = {"allowed_train", "allowed_reference_only"}
@@ -40,6 +40,7 @@ def validate_rows(rows: list[dict[str, str]], taxonomy_name: str = "mvp21") -> l
     errors: list[RowError] = []
     seen_assets: set[str] = set()
     seen_sha: set[str] = set()
+    specimen_taxon: dict[str, str] = {}
     for i, row in enumerate(rows, start=2):  # line 1 is the header
         aid = row.get("asset_id", "")
 
@@ -55,6 +56,10 @@ def validate_rows(rows: list[dict[str, str]], taxonomy_name: str = "mvp21") -> l
             err(f"unknown taxon_id {row.get('taxon_id')!r}")
         if not row.get("specimen_id"):
             err("empty specimen_id (needed for specimen-level leakage checks)")
+        else:
+            first = specimen_taxon.setdefault(row["specimen_id"], row.get("taxon_id", ""))
+            if first != row.get("taxon_id", ""):
+                err(f"specimen {row['specimen_id']} appears under two taxa ({first}, {row.get('taxon_id')})")
         decision = row.get("usage_decision")
         if decision not in USAGE_DECISIONS:
             err(f"invalid usage_decision {decision!r}")
@@ -64,6 +69,8 @@ def validate_rows(rows: list[dict[str, str]], taxonomy_name: str = "mvp21") -> l
             err("ingestible row has no license")
         if not row.get("source_url"):
             err("empty source_url")
+        if not str(row.get("media_url", "")).startswith("https://"):
+            err("media_url must be an https URL")
         if not _DATE.match(row.get("retrieval_date", "")):
             err("retrieval_date must be YYYY-MM-DD")
         sha = row.get("sha256", "")
