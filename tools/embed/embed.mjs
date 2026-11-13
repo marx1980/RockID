@@ -59,6 +59,7 @@ function parseCsv(text) {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let lastWiki = 0;
 async function fetchImage(url) {
+  if (!/^https?:/.test(url)) return RawImage.fromBlob(new Blob([fs.readFileSync(url)])); // local file (private sources)
   for (let attempt = 0; attempt < 6; attempt++) {
     if (url.includes("wikimedia.org")) {
       const wait = lastWiki + 350 - Date.now();
