@@ -24,3 +24,10 @@ def test_non_public_domain_page_is_dropped_and_generic_renderings_flagged():
 def test_listing_links_found():
     html = '<a href="/media/images/barre-granite">a</a><a href="https://www.usgs.gov/media/images/cockeysville-marble">b</a><a href="/media/images/barre-granite">c</a>'
     assert list(dict.fromkeys(usgs.ITEM.findall(html))) == ["/media/images/barre-granite", "/media/images/cockeysville-marble"]
+
+
+def test_image_found_without_media_images_folder():
+    html = ('<meta property="og:title" content="Barre Granite"><img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/masonry/public/thumbnails/image/IMG_1967.JPG?itok=1">'
+            '<img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/2025-01/IMG_1967.JPG?itok=2">Public Domain.')
+    c = usgs.parse_item(html, "/media/images/barre-granite", "rock.granite", ["granite"])
+    assert "/styles/full_width/public/2025-01/IMG_1967.JPG" in c.media_url
