@@ -21,8 +21,8 @@ def test_flags_near_duplicate_and_passes_distinct(tmp_path):
     ref_raw = _img(1)
     fp = fingerprint_bytes(ref_raw)
     with (tmp_path / "ref.csv").open("w", newline="") as fh:
-        w = csv.writer(fh); w.writerow(["asset_id", "specimen_id", "source_url", "sha256", "phash"])
-        w.writerow(["r1", "s-ref", "https://x/ref", fp.sha256, fp.phash])
+        w = csv.writer(fh); w.writerow(["asset_id", "specimen_id", "source_url", "sha256", "phash", "media_url"])
+        w.writerow(["r1", "s-ref", "https://x/ref", fp.sha256, fp.phash, "https://img/same.jpg"])
     with (tmp_path / "ch.csv").open("w", newline="") as fh:
         w = csv.writer(fh); w.writerow(["case_id", "specimen_id", "source_url", "media_url"])
         w.writerow(["c1", "s-a", "https://x/a", "https://img/same.jpg"])
