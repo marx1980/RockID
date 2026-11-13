@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: |
-          python -m services.review.build_site data_manifests/candidates/candidates.csv site
+          python -m services.review.build_site data_manifests/candidates/candidates.csv site data_manifests/candidates/decisions.json
           mkdir -p site/review && cp site/index.html site/candidates.json site/taxa.json site/review/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
