@@ -20,7 +20,7 @@ RESOURCE = "05ff2255-c38a-40c9-b657-4ccb55ab2feb"  # collection specimens (Darwi
 SOURCE = "Natural History Museum, London"
 PAGE = 500
 SPACING = 0.6  # seconds between calls; the portal asks for well under one call per second
-MEDIA = "https://data.nhm.ac.uk/media/{asset}/full/!1024,1024/0/default.jpg"  # IIIF, longest side 1024
+MEDIA = "https://data.nhm.ac.uk/media/{asset}"  # server-side resized JPEG; IIIF "!1024,1024" returns 400 for images smaller than that
 OBJECT = "https://data.nhm.ac.uk/object/{occurrence}"
 
 # Names that are containers or preparations, not specimens of the rock/mineral named.
