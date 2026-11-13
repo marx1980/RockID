@@ -246,3 +246,14 @@ def test_europeana_skipped_without_key(tmp_path):
     client, _ = _mock({})
     n = harvest(client, ["europeana"], ["min.magnetite"], 5, out, log=logs.append)
     assert n == 0 and any("EUROPEANA_API_KEY" in m for m in logs)
+
+
+def test_commons_places_queries_each_locality(tmp_path):
+    from services.ingestion.harvest import load_localities
+    places = load_localities()["rock.marble"]
+    client, seen = _mock({commons.API: json.loads((FIX / "commons_azurite.json").read_text())})
+    harvest(client, ["commons-places"], ["rock.marble"], 5, tmp_path / "c.csv")
+    queried = [r.url.params["gsrsearch"] for r in seen]
+    assert len(queried) >= len(places)
+    assert any(q.startswith("Carrara marble") for q in queried)
+    assert {c for c in load_localities()} <= set(__import__("services.ingestion.harvest", fromlist=["load_queries"]).load_queries())
