@@ -1,6 +1,9 @@
 name: probe-nhm
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      script:
+        default: "tools/probe/nhm_probe.py"
 permissions:
   contents: write
 jobs:
@@ -13,7 +16,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: mkdir -p probe-out && python tools/probe/nhm_probe.py probe-out/nhm.json
+      - run: mkdir -p probe-out && python ${{ inputs.script }} probe-out/nhm.json
       - name: Push the dump to a temporary branch
         run: |
           git config user.name "rockid-probe"
