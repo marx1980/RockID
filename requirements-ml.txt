@@ -1,0 +1,4 @@
+# Optional: real visual encoders (DINOv2, SigLIP2). Large download; not used by tests or the baseline image.
+-r requirements.txt
+torch>=2.4
+transformers>=4.50

@@ -6,22 +6,40 @@ services:
     environment:
       REFERENCE_DATABASE_URL: postgresql://rockref:rockref@reference-db:5432/rockref
       MODEL_VERSION: baseline-0
-      TAXONOMY_VERSION: mvp20-v0
+      TAXONOMY_VERSION: mvp21-v1
+    networks: [reference]
     depends_on: [reference-db]
+
   reference-db:
     image: pgvector/pgvector:pg16
     environment:
       POSTGRES_USER: rockref
       POSTGRES_PASSWORD: rockref
       POSTGRES_DB: rockref
-    volumes: [reference_data:/var/lib/postgresql/data]
+    volumes:
+      - reference_data:/var/lib/postgresql/data
+      - ./infra/db/reference:/docker-entrypoint-initdb.d:ro
+    networks: [reference]
+
   challenge-db:
     image: postgres:16
     environment:
       POSTGRES_USER: rockchallenge
       POSTGRES_PASSWORD: rockchallenge
       POSTGRES_DB: rockchallenge
-    volumes: [challenge_data:/var/lib/postgresql/data]
+    volumes:
+      - challenge_data:/var/lib/postgresql/data
+      - ./infra/db/challenge:/docker-entrypoint-initdb.d:ro
+    networks: [challenge]
+
+# The identifier (api) can never reach the Challenge Vault: it is not on the
+# challenge network. A future evaluator service joins both networks and talks
+# to the api only over HTTP, sending image bytes.
+networks:
+  reference: {}
+  challenge:
+    internal: true
+
 volumes:
   reference_data:
   challenge_data:
