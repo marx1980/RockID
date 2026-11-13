@@ -165,12 +165,6 @@ def rescore(predictions_json, challenge_csv, json_out, md_out, cfg=None, rmeta=N
     return r
 
 
-if __name__ == "__main__":
-    cmd, *args = sys.argv[1:]
-    fn = {"calibrate": calibrate, "score": score, "rescore": rescore, "score_forms": score_forms}[cmd]
-    print(json.dumps(fn(*args), indent=1)[:2000])
-
-
 def score_forms(ref_prefix, set_prefix, set_csv, config_path, json_out, md_out) -> dict:
     """Held-out polished/tumbled photos: new specimens, labelled with taxon and form. Reports taxon
     accuracy and form detection per form. Same-institution photos are possible here, so read it as
@@ -197,3 +191,9 @@ def score_forms(ref_prefix, set_prefix, set_csv, config_path, json_out, md_out) 
              *[f"| {f} | {v['cases']} | {v['form_accuracy']:.2f} | {v['top1']:.2f} | {v['top3']:.2f} |" for f, v in out.items()]]
     Path(md_out).write_text("\n".join(lines) + "\n")
     return out
+
+
+if __name__ == "__main__":
+    cmd, *args = sys.argv[1:]
+    fn = {"calibrate": calibrate, "score": score, "rescore": rescore, "score_forms": score_forms}[cmd]
+    print(json.dumps(fn(*args), indent=1)[:2000])
