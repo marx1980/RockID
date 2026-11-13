@@ -1,0 +1,51 @@
+{
+ "model": "onnx-community/dinov2-small",
+ "mask": 0,
+ "photos": 1113,
+ "specimen_out_top1": 0.532,
+ "collection_out_top1": 0.352,
+ "random_out_top1": 0.527,
+ "nn_same_collection": 0.642,
+ "nn_same_collection_chance": 0.158,
+ "by_collection": {
+  "Wikimedia Commons (any photographer)": {
+   "photos": 462,
+   "specimen_out_top1": 0.494,
+   "collection_out_top1": 0.372,
+   "nn_same_collection": 0.643
+  },
+  "Europeana: Department of Geology, TalTech": {
+   "photos": 215,
+   "specimen_out_top1": 0.563,
+   "collection_out_top1": 0.298,
+   "nn_same_collection": 0.66
+  },
+  "Smithsonian NMNH Mineral Sciences": {
+   "photos": 152,
+   "specimen_out_top1": 0.474,
+   "collection_out_top1": 0.316,
+   "nn_same_collection": 0.5
+  },
+  "Europeana: University of Tartu, Natural History Museum": {
+   "photos": 143,
+   "specimen_out_top1": 0.629,
+   "collection_out_top1": 0.455,
+   "nn_same_collection": 0.797
+  },
+  "Europeana: The Estonian Museum of Natural History": {
+   "photos": 92,
+   "specimen_out_top1": 0.522,
+   "collection_out_top1": 0.37,
+   "nn_same_collection": 0.511
+  },
+  "Natural History Museum, London": {
+   "photos": 49,
+   "specimen_out_top1": 0.673,
+   "collection_out_top1": 0.184,
+   "nn_same_collection": 0.776
+  }
+ },
+ "taxa_left_out": [
+  "rock.chert"
+ ]
+}

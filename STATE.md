@@ -74,3 +74,10 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - Polished hold-out (vault/form_holdout.csv, 252 capped-out NHM photos of marble, granite, limestone): form detected 0.98, top-1 0.67, top-3 0.97. Weak test: one collection, three taxa
 - Tumbled: only 60 references (36 chert from one collector, 23 malachite, 31 quartz overlap by taxon), no hold-out; LOSO form accuracy 0.85
 - Thresholds 0.6 and 30 are uncalibrated; challenge set is natural-only; commons-polished harvest not run; tumbled sources scarce
+
+## Model comparison and shortcut check (results/compare/COMPARISON.md)
+- compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
+- services/model/shortcut.py: reference k-NN with own collection removed vs random control; challenge split by collection
+- DINOv2-small stays live; dinov2-base and SigLIP2-base are worse on photos from new photographers
+- Collection shortcut confirmed: own-collection removal 0.53 → 0.35 top-1 (random control 0.53); realistic phone-photo expectation about 0.35-0.40 top-1, 0.78 top-3
+- Known gap: calibration on leave-one-specimen-out overstates confidence; challenge set is 74% Smithsonian
