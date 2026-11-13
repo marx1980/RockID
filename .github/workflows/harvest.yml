@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        description: "space-separated: smithsonian commons"
+        description: "space-separated: smithsonian commons nhm"
         default: "smithsonian commons"
       per_taxon:
         description: "max candidates per taxon per source"
