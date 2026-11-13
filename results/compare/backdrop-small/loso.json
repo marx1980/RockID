@@ -1,0 +1,420 @@
+{
+ "chosen": {
+  "ood_similarity": 0.7098777532577515,
+  "accept_probability": 0.4,
+  "min_margin": 0.2,
+  "min_specimens": 1,
+  "coverage": 0.18896639188332276,
+  "selective_accuracy": 0.8120805369127517,
+  "top1": 0.1534559289790742
+ },
+ "loso_top1_top3": {
+  "top1": 0.44831959416613826,
+  "top3": 0.6962587190868738
+ },
+ "by_form": {
+  "natural": {
+   "photos": 1149,
+   "form_accuracy": 0.9721496953872933,
+   "top1": 0.40034812880765885,
+   "top3": 0.6631853785900783
+  },
+  "polished": {
+   "photos": 368,
+   "form_accuracy": 0.8532608695652174,
+   "top1": 0.5842391304347826,
+   "top3": 0.8233695652173914
+  },
+  "tumbled": {
+   "photos": 60,
+   "form_accuracy": 0.55,
+   "top1": 0.5333333333333333,
+   "top3": 0.55
+  }
+ },
+ "per_class_recall": {
+  "min.azurite": 0.5454545454545454,
+  "min.biotite": 0.4074074074074074,
+  "min.calcite": 0.3626373626373626,
+  "min.fluorite": 0.37142857142857144,
+  "min.gypsum": 0.3225806451612903,
+  "min.hematite": 0.2727272727272727,
+  "min.k-feldspar": 0.5,
+  "min.magnetite": 0.11904761904761904,
+  "min.malachite": 0.5052631578947369,
+  "min.muscovite": 0.37209302325581395,
+  "min.pyrite": 0.2903225806451613,
+  "min.quartz": 0.35384615384615387,
+  "rock.basalt": 0.26153846153846155,
+  "rock.chert": 0.4520547945205479,
+  "rock.gneiss": 0.5614035087719298,
+  "rock.granite": 0.65625,
+  "rock.limestone": 0.5704697986577181,
+  "rock.marble": 0.4878048780487805,
+  "rock.quartzite": 0.47619047619047616,
+  "rock.sandstone": 0.5394736842105263,
+  "rock.slate": 0.16666666666666666
+ },
+ "sweep": [
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "coverage": 0.24223208623969564,
+   "selective_accuracy": 0.7408376963350786,
+   "top1": 0.1794546607482562
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "coverage": 0.24096385542168675,
+   "selective_accuracy": 0.7421052631578947,
+   "top1": 0.17882054533925174
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "coverage": 0.22257450856055802,
+   "selective_accuracy": 0.7692307692307693,
+   "top1": 0.17121116043119847
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "coverage": 0.22130627774254916,
+   "selective_accuracy": 0.7707736389684814,
+   "top1": 0.17057704502219403
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "coverage": 0.18896639188332276,
+   "selective_accuracy": 0.8120805369127517,
+   "top1": 0.1534559289790742
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "coverage": 0.1876981610653139,
+   "selective_accuracy": 0.8141891891891891,
+   "top1": 0.15282181357006974
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "coverage": 0.14965123652504755,
+   "selective_accuracy": 0.8601694915254238,
+   "top1": 0.12872542802790107
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "coverage": 0.1483830057070387,
+   "selective_accuracy": 0.8632478632478633,
+   "top1": 0.12809131261889664
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "coverage": 0.1534559289790742,
+   "selective_accuracy": 0.8099173553719008,
+   "top1": 0.12428662016487001
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "coverage": 0.1521876981610653,
+   "selective_accuracy": 0.8125,
+   "top1": 0.12365250475586556
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "coverage": 0.1534559289790742,
+   "selective_accuracy": 0.8099173553719008,
+   "top1": 0.12428662016487001
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "coverage": 0.1521876981610653,
+   "selective_accuracy": 0.8125,
+   "top1": 0.12365250475586556
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "coverage": 0.14648065948002537,
+   "selective_accuracy": 0.8181818181818182,
+   "top1": 0.11984781230183894
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "coverage": 0.14521242866201647,
+   "selective_accuracy": 0.8209606986899564,
+   "top1": 0.1192136968928345
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "coverage": 0.13253012048192772,
+   "selective_accuracy": 0.8564593301435407,
+   "top1": 0.11350665821179455
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "coverage": 0.13126188966391883,
+   "selective_accuracy": 0.8599033816425121,
+   "top1": 0.1128725428027901
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "coverage": 0.09258084971464807,
+   "selective_accuracy": 0.8493150684931506,
+   "top1": 0.07863031071655041
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "coverage": 0.09131261889663919,
+   "selective_accuracy": 0.8541666666666666,
+   "top1": 0.07799619530754598
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "coverage": 0.09258084971464807,
+   "selective_accuracy": 0.8493150684931506,
+   "top1": 0.07863031071655041
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "coverage": 0.09131261889663919,
+   "selective_accuracy": 0.8541666666666666,
+   "top1": 0.07799619530754598
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "coverage": 0.09258084971464807,
+   "selective_accuracy": 0.8493150684931506,
+   "top1": 0.07863031071655041
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "coverage": 0.09131261889663919,
+   "selective_accuracy": 0.8541666666666666,
+   "top1": 0.07799619530754598
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "coverage": 0.09258084971464807,
+   "selective_accuracy": 0.8493150684931506,
+   "top1": 0.07863031071655041
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "coverage": 0.09131261889663919,
+   "selective_accuracy": 0.8541666666666666,
+   "top1": 0.07799619530754598
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "coverage": 0.05326569435637286,
+   "selective_accuracy": 0.8928571428571429,
+   "top1": 0.04755865567533291
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "coverage": 0.05199746353836398,
+   "selective_accuracy": 0.9024390243902439,
+   "top1": 0.046924540266328474
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "coverage": 0.05326569435637286,
+   "selective_accuracy": 0.8928571428571429,
+   "top1": 0.04755865567533291
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "coverage": 0.05199746353836398,
+   "selective_accuracy": 0.9024390243902439,
+   "top1": 0.046924540266328474
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "coverage": 0.05326569435637286,
+   "selective_accuracy": 0.8928571428571429,
+   "top1": 0.04755865567533291
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "coverage": 0.05199746353836398,
+   "selective_accuracy": 0.9024390243902439,
+   "top1": 0.046924540266328474
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "coverage": 0.05326569435637286,
+   "selective_accuracy": 0.8928571428571429,
+   "top1": 0.04755865567533291
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "coverage": 0.05199746353836398,
+   "selective_accuracy": 0.9024390243902439,
+   "top1": 0.046924540266328474
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "coverage": 0.027901077996195307,
+   "selective_accuracy": 0.9545454545454546,
+   "top1": 0.02663284717818643
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "coverage": 0.02663284717818643,
+   "selective_accuracy": 0.9761904761904762,
+   "top1": 0.02599873176918199
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "coverage": 0.027901077996195307,
+   "selective_accuracy": 0.9545454545454546,
+   "top1": 0.02663284717818643
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "coverage": 0.02663284717818643,
+   "selective_accuracy": 0.9761904761904762,
+   "top1": 0.02599873176918199
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "coverage": 0.027901077996195307,
+   "selective_accuracy": 0.9545454545454546,
+   "top1": 0.02663284717818643
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "coverage": 0.02663284717818643,
+   "selective_accuracy": 0.9761904761904762,
+   "top1": 0.02599873176918199
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "coverage": 0.027901077996195307,
+   "selective_accuracy": 0.9545454545454546,
+   "top1": 0.02663284717818643
+  },
+  {
+   "ood_similarity": 0.7098777532577515,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "coverage": 0.02663284717818643,
+   "selective_accuracy": 0.9761904761904762,
+   "top1": 0.02599873176918199
+  }
+ ]
+}
