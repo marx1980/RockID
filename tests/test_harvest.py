@@ -257,3 +257,30 @@ def test_commons_places_queries_each_locality(tmp_path):
     assert len(queried) >= len(places)
     assert any(q.startswith("Carrara marble") for q in queried)
     assert {c for c in load_localities()} <= set(__import__("services.ingestion.harvest", fromlist=["load_queries"]).load_queries())
+
+
+def test_wikipedia_article_images(tmp_path):
+    from services.ingestion.sources import wikipedia
+    commons_page = {"pageid": 7, "title": "File:Glimmerite Namibia.jpg", "imageinfo": [{
+        "mime": "image/jpeg", "descriptionurl": "https://commons.wikimedia.org/wiki/File:Glimmerite_Namibia.jpg",
+        "thumburl": "https://upload.wikimedia.org/x/1024px-G.jpg",
+        "extmetadata": {"LicenseShortName": {"value": "CC BY-SA 4.0"}, "Artist": {"value": "Ann"}}}]}
+
+    def handler(req):
+        if str(req.url).startswith(wikipedia.WIKI_API):
+            return httpx.Response(200, json={"query": {"pages": [{"title": "Biotite", "images": [
+                {"title": "File:Glimmerite Namibia.jpg"}, {"title": "File:Structure.svg"}, {"title": "File:Local only.jpg"}]}]}})
+        return httpx.Response(200, json={"query": {"pages": [commons_page,
+            {"title": "File:Local only.jpg", "missing": True}, {"pageid": 8, "title": "File:Structure.svg", "imageinfo": [{"mime": "image/svg+xml"}]}]}})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    found = wikipedia.search(client, "min.biotite", ["Biotite"], ["biotite"])
+    assert [c.candidate_id for c in found] == ["commons:7"]
+    assert found[0].taxon_in_title and found[0].proposed_usage == "allowed_reference_only"
+    n = harvest(client, ["wikipedia"], ["min.biotite"], 10, tmp_path / "c.csv")
+    assert n == 1
+
+
+def test_every_taxon_has_wikipedia_articles():
+    from services.ingestion.harvest import load_articles, load_queries
+    assert set(load_articles()) == set(load_queries())

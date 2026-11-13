@@ -21,6 +21,41 @@ def specimen_hint(title: str) -> str:
     return "commons:" + re.sub(r"[\s_]+", "-", stem.strip().lower())
 
 
+def page_to_candidate(page: dict, taxon_id: str, title_terms: list[str], from_article: bool = False) -> Candidate | None:
+    """One Commons imageinfo page to a Candidate. from_article: the file illustrates a Wikipedia
+    article about the taxon, so it counts as named even when the file title does not say so."""
+    info = (page.get("imageinfo") or [{}])[0]
+    if info.get("mime") not in PHOTO_MIMES:
+        return None
+    meta = info.get("extmetadata") or {}
+    val = lambda k: strip_html((meta.get(k) or {}).get("value", ""))
+    licence = val("LicenseShortName")
+    usage, reason = propose_usage(licence)
+    title = page.get("title", "")
+    in_title = from_article or mentions(title + " " + val("ImageDescription"), title_terms)
+    if not in_title:
+        usage, reason = "rejected", "taxon not named in title/description"
+    return Candidate(
+        candidate_id=f"commons:{page.get('pageid')}",
+        taxon_id=taxon_id,
+        source_name=SOURCE,
+        source_record_id=str(page.get("pageid")),
+        title=title,
+        source_url=info.get("descriptionurl", ""),
+        media_url=info.get("thumburl") or info.get("url", ""),
+        author=val("Artist"),
+        license=licence,
+        license_url=val("LicenseUrl"),
+        specimen_hint=specimen_hint(title),
+        specimen_hint_confidence="low",
+        taxon_in_title=in_title,
+        other_taxa_in_title=other_taxa_named(title, taxon_id),
+        proposed_usage=usage,
+        policy_reason=reason,
+        retrieved_at=now_iso(),
+    )
+
+
 def search(client: httpx.Client, taxon_id: str, query: str, title_terms: list[str], limit: int = 50) -> list[Candidate]:
     out: list[Candidate] = []
     params = {
@@ -36,36 +71,9 @@ def search(client: httpx.Client, taxon_id: str, query: str, title_terms: list[st
         data = resp.json()
         pages = sorted((data.get("query") or {}).get("pages", {}).values(), key=lambda p: p.get("index", 0))
         for page in pages:
-            info = (page.get("imageinfo") or [{}])[0]
-            if info.get("mime") not in PHOTO_MIMES:
-                continue
-            meta = info.get("extmetadata") or {}
-            val = lambda k: strip_html((meta.get(k) or {}).get("value", ""))
-            licence = val("LicenseShortName")
-            usage, reason = propose_usage(licence)
-            title = page.get("title", "")
-            in_title = mentions(title + " " + val("ImageDescription"), title_terms)
-            if not in_title:
-                usage, reason = "rejected", "taxon not named in title/description"
-            out.append(Candidate(
-                candidate_id=f"commons:{page.get('pageid')}",
-                taxon_id=taxon_id,
-                source_name=SOURCE,
-                source_record_id=str(page.get("pageid")),
-                title=title,
-                source_url=info.get("descriptionurl", ""),
-                media_url=info.get("thumburl") or info.get("url", ""),
-                author=val("Artist"),
-                license=licence,
-                license_url=val("LicenseUrl"),
-                specimen_hint=specimen_hint(title),
-                specimen_hint_confidence="low",
-                taxon_in_title=in_title,
-                other_taxa_in_title=other_taxa_named(title, taxon_id),
-                proposed_usage=usage,
-                policy_reason=reason,
-                retrieved_at=now_iso(),
-            ))
+            cand = page_to_candidate(page, taxon_id, title_terms)
+            if cand:
+                out.append(cand)
             if len(out) >= limit:
                 break
         cont = data.get("continue") or {}

@@ -1,0 +1,22 @@
+taxon_id,articles
+min.azurite,Azurite
+min.biotite,Biotite
+min.calcite,Calcite
+min.fluorite,Fluorite
+min.gypsum,Gypsum
+min.hematite,Hematite
+min.k-feldspar,Orthoclase|Microcline|Potassium feldspar
+min.magnetite,Magnetite
+min.malachite,Malachite
+min.muscovite,Muscovite
+min.pyrite,Pyrite
+min.quartz,Quartz|Rose quartz|Smoky quartz
+rock.basalt,Basalt
+rock.chert,Chert|Flint
+rock.gneiss,Gneiss
+rock.granite,Granite
+rock.limestone,Limestone
+rock.marble,Marble
+rock.quartzite,Quartzite
+rock.sandstone,Sandstone
+rock.slate,Slate
