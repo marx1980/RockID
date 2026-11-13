@@ -16,7 +16,7 @@ from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
 from dataclasses import replace
 
-from services.ingestion.sources import commons, nhm, other_taxa_named, smithsonian
+from services.ingestion.sources import commons, europeana, nhm, other_taxa_named, smithsonian
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 
@@ -32,7 +32,7 @@ def load_queries() -> dict[str, dict[str, str]]:
 
 def harvest(
     client: httpx.Client, sources: list[str], taxa: list[str] | None, per_taxon: int,
-    out: str | Path, si_api_key: str = "DEMO_KEY", log=lambda *_: None,
+    out: str | Path, si_api_key: str = "DEMO_KEY", log=lambda *_: None, eu_api_key: str = "",
 ) -> int:
     queries = load_queries()
     existing = [
@@ -57,6 +57,12 @@ def harvest(
                         found += smithsonian.search(client, taxon_id, sub, terms, per_taxon, si_api_key)
                 elif source == "nhm":
                     found = nhm.search(client, taxon_id, terms, per_taxon)
+                elif source == "europeana":
+                    if not eu_api_key:
+                        log("europeana: EUROPEANA_API_KEY not set; skipped")
+                        exhausted.add(source)
+                        continue
+                    found = europeana.search(client, taxon_id, terms, per_taxon, eu_api_key)
                 else:
                     raise ValueError(source)
             except httpx.HTTPStatusError as e:
@@ -101,7 +107,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm"])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana"])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")
@@ -109,7 +115,8 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     with httpx.Client(follow_redirects=True) as client:
         n = harvest(client, a.sources, a.taxa, a.per_taxon, a.out,
-                    os.getenv("SI_API_KEY") or "DEMO_KEY", log=lambda m: print(m, file=sys.stderr))
+                    os.getenv("SI_API_KEY") or "DEMO_KEY", log=lambda m: print(m, file=sys.stderr),
+                    eu_api_key=os.getenv("EUROPEANA_API_KEY") or "")
     print(f"added {n} candidates", file=sys.stderr)
     if a.summary:
         Path(a.summary).write_text(summarise(a.out) + "\n")

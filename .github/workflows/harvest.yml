@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        description: "space-separated: smithsonian commons nhm"
+        description: "space-separated: smithsonian commons nhm europeana"
         default: "smithsonian commons"
       per_taxon:
         description: "max candidates per taxon per source"
@@ -28,6 +28,7 @@ jobs:
       - name: Harvest
         env:
           SI_API_KEY: ${{ secrets.SI_API_KEY }}
+          EUROPEANA_API_KEY: ${{ secrets.EUROPEANA_API_KEY }}
         run: |
           python -m services.ingestion.harvest \
             --sources ${{ inputs.sources }} \

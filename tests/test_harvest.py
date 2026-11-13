@@ -220,3 +220,29 @@ def test_nhm_licence_labels():
     assert propose_usage(nhm.licence_label("http://creativecommons.org/licenses/by-nc/4.0/"))[0] == "rejected"
     assert nhm.licence_label("http://creativecommons.org/publicdomain/zero/1.0/") == "CC0"
     assert nhm.licence_label("") == ""
+
+
+def test_europeana_parsing_and_filters():
+    from services.ingestion.sources import europeana
+
+    client, seen = _mock({europeana.API: json.loads((FIX / "europeana_items.json").read_text())})
+    mag = europeana.search(client, "min.magnetite", ["magnetite"], 50, "KEY")
+    assert seen[0].url.params["wskey"] == "KEY" and seen[0].url.params["reusability"] == "open"
+    assert "RockID" in seen[0].headers["User-Agent"]
+    assert mag and all(c.taxon_id == "min.magnetite" and c.source_name.startswith("Europeana: ") for c in mag)
+    assert all(c.proposed_usage == "allowed_reference_only" and c.license == "CC BY-SA 4.0" for c in mag if c.license == "CC BY-SA 4.0")
+    granite = europeana.search(client, "rock.granite", ["granite"], 50, "KEY")
+    assert granite and not any("quarry" in c.title.lower() for c in granite)  # views/quarries dropped
+    quartz = europeana.search(client, "min.quartz", ["quartz"], 50, "KEY")
+    assert not any("porphyry" in c.title.lower() for c in quartz)
+    marble = {c.candidate_id for c in europeana.search(client, "rock.marble", ["marble"], 50, "KEY")}
+    assert "eu:/9/neg3" not in marble and "eu:/9/neg4" not in marble  # rights reserved / NC are dropped
+    assert all(c.author == c.source_name or c.author for c in mag) and all(c.specimen_hint == f"eu:{c.source_record_id}" for c in mag)
+
+
+def test_europeana_skipped_without_key(tmp_path):
+    out = tmp_path / "c.csv"
+    logs = []
+    client, _ = _mock({})
+    n = harvest(client, ["europeana"], ["min.magnetite"], 5, out, log=logs.append)
+    assert n == 0 and any("EUROPEANA_API_KEY" in m for m in logs)

@@ -1,0 +1,1231 @@
+{
+ "success": true,
+ "itemsCount": 30,
+ "totalResults": 30,
+ "items": [
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "mineral"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "mineral"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Magnetite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "MineralSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/64900"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/6a/a5/6aa58daf-fa19-4658-bde2-744f3d9d26cd.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F6a%2Fa5%2F6aa58daf-fa19-4658-bde2-744f3d9d26cd.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X389?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X389",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG27X389.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 44.846066,
+   "timestamp": 1788015860909,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Magnetite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "mineral"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "mineral"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Magnetite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "MineralSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/64888"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/97/c0/97c091fd-24eb-4c66-b106-f1a1327fb32f.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F97%2Fc0%2F97c091fd-24eb-4c66-b106-f1a1327fb32f.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X394?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X394",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG27X394.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 44.846066,
+   "timestamp": 1788015861381,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Magnetite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "rock"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "rock"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Granite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "RockSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/92398"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/ea/1f/ea1fceb7-a5bd-4333-9669-e9ea81a1978a.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fea%2F1f%2Fea1fceb7-a5bd-4333-9669-e9ea81a1978a.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG15X20?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG15X20",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG15X20.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 37.678875,
+   "timestamp": 1788015851825,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Granite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "rock"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "rock"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Granite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "RockSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/92370"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/57/dc/57dce46b-5c57-4406-9136-cfa8278ebabe.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F57%2Fdc%2F57dce46b-5c57-4406-9136-cfa8278ebabe.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG15X22?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG15X22",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG15X22.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 37.678875,
+   "timestamp": 1788015851957,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Granite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "mineral"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "mineral"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Biotite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "MineralSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/65400"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/ce/18/ce188e22-1b4d-476c-a320-b7ffcc07c564.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fce%2F18%2Fce188e22-1b4d-476c-a320-b7ffcc07c564.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X754?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X754",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG27X754.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 47.515484,
+   "timestamp": 1788015856197,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Biotite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "completeness": 5,
+   "country": [
+    "Estonia"
+   ],
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "dcDescription": [
+    "mineral"
+   ],
+   "dcDescriptionLangAware": {
+    "def": [
+     "mineral"
+    ]
+   },
+   "dcTitleLangAware": {
+    "def": [
+     "Biotite"
+    ]
+   },
+   "dcTypeLangAware": {
+    "def": [
+     "MineralSpecimen"
+    ]
+   },
+   "edmDatasetName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "edmIsShownAt": [
+    "https://geocollections.info/file/91502"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/dc/66/dc66c28a-6c7e-44c3-bd03-43c789fc2445.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fdc%2F66%2Fdc66c28a-6c7e-44c3-bd03-43c789fc2445.jpg&type=IMAGE"
+   ],
+   "europeanaCollectionName": [
+    "11624_Ag_OpenUp_GIT"
+   ],
+   "europeanaCompleteness": 5,
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X331?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X331",
+   "index": 0,
+   "language": [
+    "en"
+   ],
+   "link": "https://api.europeana.eu/record/11624/TESTXGITXTAMGXGITXESTONIAXG27X331.json?wskey=ckmarongenex",
+   "organizations": [
+    "http://data.europeana.eu/organization/1913",
+    "http://data.europeana.eu/organization/1609"
+   ],
+   "previewNoDistribute": false,
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "score": 46.024834,
+   "timestamp": 1788015857082,
+   "timestamp_created": "2025-03-17T12:50:46.532Z",
+   "timestamp_created_epoch": 1742215846532,
+   "timestamp_update": "2025-03-17T12:50:46.532Z",
+   "timestamp_update_epoch": 1742215846532,
+   "title": [
+    "Biotite"
+   ],
+   "type": "IMAGE",
+   "ugc": [
+    false
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX98X35",
+   "title": [
+    "Granite",
+    "Granite (Perni\u00f6 granite)"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/86/5c/865c1b31-dc52-43ab-afe5-3aebca360cce.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F86%2F5c%2F865c1b31-dc52-43ab-afe5-3aebca360cce.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX98X35?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX98X35?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTALTECHXGITXESTONIAX515X2",
+   "title": [
+    "Granite",
+    "granite"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/7c/0d/7c0ded94-cc4d-4541-8e7e-4b656492f645.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F7c%2F0d%2F7c0ded94-cc4d-4541-8e7e-4b656492f645.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX515X2?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX515X2?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX98X62",
+   "title": [
+    "Graphic granite",
+    "Granite"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/9c/99/9c9990d4-44da-466f-81aa-f58e65bd75ff.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F9c%2F99%2F9c9990d4-44da-466f-81aa-f58e65bd75ff.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX98X62?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX98X62?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTALTECHXGITXESTONIAX757X2009",
+   "title": [
+    "Graphic granite",
+    "graphic granite"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/25/57/25570450-6766-411e-adac-c18fc56a6d7f.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F25%2F57%2F25570450-6766-411e-adac-c18fc56a6d7f.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX757X2009?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "mineral"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX757X2009?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1764X135",
+   "title": [
+    "marble",
+    "Marble"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/e8/03/e80392f7-311f-4af0-86e8-4ddd8b41d475.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fe8%2F03%2Fe80392f7-311f-4af0-86e8-4ddd8b41d475.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1764X135?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1764X135?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1782X100",
+   "title": [
+    "marble",
+    "Marble"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/c2/26/c226b205-ed57-4240-b566-c02f1c7dfd8a.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fc2%2F26%2Fc226b205-ed57-4240-b566-c02f1c7dfd8a.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X100?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X100?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1782X106",
+   "title": [
+    "marble",
+    "Marble"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/e6/9a/e69a1913-c8a0-4e37-87e4-ad0c66f30302.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fe6%2F9a%2Fe69a1913-c8a0-4e37-87e4-ad0c66f30302.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X106?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X106?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1782X113",
+   "title": [
+    "marble",
+    "Marble"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/d6/92/d6926802-38c9-4c6a-a8cf-08bda8b9cb41.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fd6%2F92%2Fd6926802-38c9-4c6a-a8cf-08bda8b9cb41.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X113?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1782X113?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/91619/SMVK_EM_objekt_1231166",
+   "title": [
+    "stone, slate, slate, stone",
+    "sten, skiffersten, slate, stone",
+    "sten, skiffersten, slate, stone"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Museum of Ethnography"
+   ],
+   "provider": [
+    "Swedish Open Cultural Heritage"
+   ],
+   "rights": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+   ],
+   "edmIsShownBy": [
+    "https://collections.smvk.se/carlotta-em/web/image/zoom/1233842/1954.01.2628.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Fcollections.smvk.se%2Fcarlotta-em%2Fweb%2Fimage%2Fzoom%2F1233842%2F1954.01.2628.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1231166?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "Republic of the Congo",
+    "1954.01.2628",
+    "Platt skiffersten, gulbeige.",
+    "Kongo",
+    "Platt skiffersten, gulbeige.",
+    "1954.01.2628",
+    "Republic of the Congo",
+    "Kongo"
+   ],
+   "country": [
+    "Sweden"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1231166?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/91619/SMVK_EM_objekt_1231169",
+   "title": [
+    "skiffersten, sten, nkisi, skiffer, slate, stone",
+    "slate, stone, nkisi, slate, stone",
+    "skiffersten, sten, nkisi, skiffer, slate, stone"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Museum of Ethnography"
+   ],
+   "provider": [
+    "Swedish Open Cultural Heritage"
+   ],
+   "rights": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+   ],
+   "edmIsShownBy": [
+    "https://collections.smvk.se/carlotta-em/web/image/zoom/1233806/1954.01.2626.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Fcollections.smvk.se%2Fcarlotta-em%2Fweb%2Fimage%2Fzoom%2F1233806%2F1954.01.2626.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1231169?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "1919.01.1504",
+    "Laman, K.E.: The Kongo, III, s. 100-102.",
+    "Laman, K.E.: The Konmgo, III, s.100-102.",
+    "Laman, Karl Edvard, 1962. The Kongo: III. Studia Ethnographica Upsaliensia, 12. Uppsala universitet.",
+    "Fristaten Kongo",
+    "Zaire",
+    "Kongofristaten",
+    "Demokratiska Republiken Kongo",
+    "Belgiska Kongo",
+    "Kongostaten",
+    "Democratic Republic of the Congo",
+    "Kongo",
+    "Tv\u00e5 platta skifferstenar i gr\u00e5-silverf\u00e4rg som \u00e4r ihopknutna med v\u00e4xtfiber. Vidh\u00e4ngd papperslapp p\u00e5 vilket n\u00e5got ol\u00e4sligt st\u00e5r. I generalkatalogen st\u00e5r f\u00f6ljande: Tv\u00e5 med fibrer hopbundna stenar L.1504 (809) Mbulungu ye Mbuma kwavandilanga yabasimbi. \nFr\u00e5n katalogkort: Tv\u00e5 med fibrer hopbundna stenar, som ing\u00e5r i nkisi-kulten. Katalogen (L 1504): Mbulungu, Mbuma kwa Vunda-zabisimbi (809). SMF-katalogen: Mbulungu ye Mbuma kwavindilanga yabasimbi. Mbulungu= b\u00e4ck, ravin (LKDF, 540), Mbuma= land med r\u00f6d jord; klump av jord etc. Vunda=vila sig. /KB",
+    "Samlingsbes\u00f6k. 2020-05-25. Konstn\u00e4r Michelle Eistrup",
+    "Laman, K.E.: The Kongo, III, s. 100-102.",
+    "Laman, K.E.: The Konmgo, III, s.100-102.",
+    "Laman, Karl Edvard, 1962. The Kongo: III. Studia Ethnographica Upsaliensia, 12. Uppsala universitet.",
+    "Fristaten Kongo",
+    "Zaire",
+    "Kongofristaten",
+    "Demokratiska Republiken Kongo",
+    "Belgiska Kongo",
+    "Kongostaten",
+    "Kongo",
+    "Democratic Republic of the Congo",
+    "1919.01.1504"
+   ],
+   "country": [
+    "Sweden"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1231169?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/91619/SMVK_EM_objekt_1230795",
+   "title": [
+    "skiffersten, sten, stone, slate",
+    "skiffersten, sten, stone, slate"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Museum of Ethnography"
+   ],
+   "provider": [
+    "Swedish Open Cultural Heritage"
+   ],
+   "rights": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+   ],
+   "edmIsShownBy": [
+    "https://collections.smvk.se/carlotta-em/web/image/zoom/1233887/1954.01.2592.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Fcollections.smvk.se%2Fcarlotta-em%2Fweb%2Fimage%2Fzoom%2F1233887%2F1954.01.2592.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1230795?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "1954.01.2592",
+    "Republic of the Congo",
+    "Slate with dikenga cross, which may have been used as a kind of sign and a symbol of the Mbenza ritual community. According to a Kongo evangelist named Lutete from Lolo, Mbenza was a cult that sought to \u201copen the womb to copious offspring\u201d \u2013 they wanted women to have many children. Only people who were parents could be initiated into the cult, after which they would be secluded in a house with the priest. There they communed with benevolent nature spirits (simbi), which had assumed material form in stones collected at particular natural sites, and which could bless them with many children.",
+    "En skifferstensplatta, avl\u00e5ng, helt platt. Gr\u00e5svart i f\u00e4rgen. P\u00e5 ena sidan ett inristat ornament i r\u00f6dbrunt i form av tv\u00e5 cirklar, den ena placerad inom den andra. Innanf\u00f6r den innersta ringen ett kors eller kryss. P\u00e5 katalogkortet st\u00e5r det: \"L. (751, Lolo, Mbenza, mbwetle ambungu, akunda (?)\" /KB",
+    "VKM:Korsv\u00e4gar 1 - V\u00e4gsk\u00e4l (plan 4)",
+    "VKM:Korsv\u00e4gar 1 - Zon D Dikenga",
+    "VKM:Korsv\u00e4gar 1 Zon D4",
+    "Skiffersten med dikenga-kors. Den kan ha anv\u00e4nts som en slags skylt och symbol f\u00f6r det rituella s\u00e4llskapet Mbenza.\nEnligt den kongolesiske evangelisten Lutete fr\u00e5n Lolo var Mbenza en kult som verkade f\u00f6r att \u201d\u00f6ppna livmodern f\u00f6r en riklig avkomma\u201d\u2014att kvinnor skulle f\u00f6da m\u00e5nga barn. Endast personer som var f\u00f6r\u00e4ldrar kunde invigas i kulten och fick d\u00e5 bo avskilda i ett hus tillsammans med pr\u00e4sten. D\u00e4r umgicks de med v\u00e4lvilliga naturandar (simbi), som f\u00e5tt materiell form i stenar h\u00e4mtade fr\u00e5n s\u00e4rskilda platser i naturen och som kunde v\u00e4lsigna dem med m\u00e5nga barn.",
+    "1954.01.2592",
+    "Republic of the Congo",
+    "Slate with dikenga cross, which may have been used as a kind of sign and a symbol of the Mbenza ritual community. According to a Kongo evangelist named Lutete from Lolo, Mbenza was a cult that sought to \u201copen the womb to copious offspring\u201d \u2013 they wanted women to have many children. Only people who were parents could be initiated into the cult, after which they would be secluded in a house with the priest. There they communed with benevolent nature spirits (simbi), which had assumed material form in stones collected at particular natural sites, and which could bless them with many children."
+   ],
+   "country": [
+    "Sweden"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/91619/SMVK_EM_objekt_1230795?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1764X149",
+   "title": [
+    "Schist",
+    "Slate"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/3a/a2/3aa2c484-6c48-4743-872f-7d06500cf6ec.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F3a%2Fa2%2F3aa2c484-6c48-4743-872f-7d06500cf6ec.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1764X149?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1764X149?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1842X116",
+   "title": [
+    "Chert"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/e4/62/e46253d0-b5b7-4ad6-87b9-af3d47e0eb5e.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fe4%2F62%2Fe46253d0-b5b7-4ad6-87b9-af3d47e0eb5e.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1842X116?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1842X116?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX135X188",
+   "title": [
+    "Chert"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/fa/72/fa720216-2872-4dba-93a6-be3df7753570.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Ffa%2F72%2Ffa720216-2872-4dba-93a6-be3df7753570.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX135X188?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX135X188?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1247X1",
+   "title": [
+    "Chert"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/a5/10/a510a5d0-846c-41ee-9ae5-a40348d500c0.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fa5%2F10%2Fa510a5d0-846c-41ee-9ae5-a40348d500c0.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1247X1?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1247X1?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTUGXGITXESTONIAX1247X2",
+   "title": [
+    "Chert"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "University of Tartu, Natural History Museum"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/28/8a/288a4714-a344-4830-b57f-f54ece92d78e.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F28%2F8a%2F288a4714-a344-4830-b57f-f54ece92d78e.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1247X2?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "rock"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTUGXGITXESTONIAX1247X2?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTALTECHXGITXESTONIAX757X1233",
+   "title": [
+    "Quartz",
+    "quartz"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/de/1b/de1b48a0-ed9f-48d5-a64f-148749b86c14.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fde%2F1b%2Fde1b48a0-ed9f-48d5-a64f-148749b86c14.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX757X1233?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "mineral"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX757X1233?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTALTECHXGITXESTONIAX518X410",
+   "title": [
+    "Quartz",
+    "quartz"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/fb/dd/fbddca29-8946-4f62-a2c5-a1b4ba387b54.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Ffb%2Fdd%2Ffbddca29-8946-4f62-a2c5-a1b4ba387b54.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX518X410?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "mineral"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTALTECHXGITXESTONIAX518X410?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X185",
+   "title": [
+    "Quartz",
+    "smoky quartz"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/09/9f/099fea00-aa42-477f-b2ee-a35f96e6faeb.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2F09%2F9f%2F099fea00-aa42-477f-b2ee-a35f96e6faeb.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X185?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "mineral"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X185?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/11624/TESTXGITXTAMGXGITXESTONIAXG27X188",
+   "title": [
+    "Quartz",
+    "smoky quartz"
+   ],
+   "dcCreator": null,
+   "dataProvider": [
+    "The Estonian Museum of Natural History"
+   ],
+   "provider": [
+    "OpenUp!"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://files.geocollections.info/medium/e0/b7/e0b7e8f4-2387-4a05-998e-a05354461cc4.jpg"
+   ],
+   "edmPreview": [
+    "https://api.europeana.eu/thumbnail/v2/url.json?uri=https%3A%2F%2Ffiles.geocollections.info%2Fmedium%2Fe0%2Fb7%2Fe0b7e8f4-2387-4a05-998e-a05354461cc4.jpg&type=IMAGE"
+   ],
+   "guid": "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X188?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex",
+   "type": "IMAGE",
+   "dcDescription": [
+    "mineral"
+   ],
+   "country": [
+    "Estonia"
+   ],
+   "edmIsShownAt": [
+    "https://www.europeana.eu/item/11624/TESTXGITXTAMGXGITXESTONIAXG27X188?utm_source=api&utm_medium=api&utm_campaign=ckmarongenex"
+   ]
+  },
+  {
+   "id": "/9/neg1",
+   "title": [
+    "Granite quarry, view"
+   ],
+   "dataProvider": [
+    "The Portable Antiquities Scheme"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://x/y.jpg"
+   ]
+  },
+  {
+   "id": "/9/neg2",
+   "title": [
+    "Quartz-porphyry"
+   ],
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://x/z.jpg"
+   ]
+  },
+  {
+   "id": "/9/neg3",
+   "title": [
+    "Marble"
+   ],
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "rights": [
+    "http://rightsstatements.org/vocab/InC/1.0/"
+   ],
+   "edmIsShownBy": [
+    "https://x/w.jpg"
+   ]
+  },
+  {
+   "id": "/9/neg4",
+   "title": [
+    "Marble"
+   ],
+   "dataProvider": [
+    "Department of Geology, TalTech"
+   ],
+   "rights": [
+    "http://creativecommons.org/licenses/by-nc/4.0/"
+   ],
+   "edmIsShownBy": [
+    "https://x/v.jpg"
+   ]
+  }
+ ]
+}

@@ -29,3 +29,14 @@ def other_taxa_named(text: str, own_taxon: str) -> str:
         if tid != own_taxon and re.search(rf"(?<![a-z]){re.escape(name)}(?![a-z])", low):
             hits.append(tid)
     return "|".join(sorted(hits))
+
+
+def licence_label(url: str) -> str:
+    """Creative Commons licence URL -> the short label our policy understands ('CC BY 4.0', 'CC0')."""
+    m = re.search(r"creativecommons\.org/(licenses|publicdomain)/([a-z\-]+)/([\d.]+)", url or "")
+    if not m:
+        return ""
+    kind, variant, version = m.groups()
+    if kind == "publicdomain":
+        return "CC0" if variant == "zero" else "Public domain"
+    return f"CC {variant.upper()} {version}"
