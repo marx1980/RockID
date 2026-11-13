@@ -4,7 +4,7 @@ import httpx
 
 from services.ingestion.candidates import Candidate
 from services.ingestion.licence import propose_usage
-from services.ingestion.sources import USER_AGENT, mentions, now_iso
+from services.ingestion.sources import other_taxa_named, USER_AGENT, mentions, now_iso
 
 API = "https://api.si.edu/openaccess/api/v1.0/search"
 SOURCE = "Smithsonian NMNH Mineral Sciences"
@@ -63,6 +63,7 @@ def search(
                     specimen_hint=f"si:{record_id}",
                     specimen_hint_confidence="high",
                     taxon_in_title=in_title,
+                    other_taxa_in_title=other_taxa_named(title, taxon_id),
                     proposed_usage=usage,
                     policy_reason=reason,
                     retrieved_at=now_iso(),

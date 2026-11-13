@@ -14,7 +14,9 @@ import httpx
 
 from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
-from services.ingestion.sources import commons, smithsonian
+from dataclasses import replace
+
+from services.ingestion.sources import commons, other_taxa_named, smithsonian
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 
@@ -33,20 +35,35 @@ def harvest(
     out: str | Path, si_api_key: str = "DEMO_KEY", log=lambda *_: None,
 ) -> int:
     queries = load_queries()
-    existing = read_candidates(out)
+    existing = [
+        c if c.other_taxa_in_title else replace(c, other_taxa_in_title=other_taxa_named(c.title, c.taxon_id))
+        for c in read_candidates(out)
+    ]
     seen = {c.candidate_id for c in existing} | {c.media_url for c in existing}
     added = []
+    exhausted: set[str] = set()
     for taxon_id in taxa or sorted(queries):
         q = queries[taxon_id]
         terms = q["title_terms"].split("|")
         for source in sources:
+            if source in exhausted:
+                continue
             try:
                 if source == "commons":
                     found = commons.search(client, taxon_id, q["commons_query"], terms, per_taxon)
                 elif source == "smithsonian":
-                    found = smithsonian.search(client, taxon_id, q["smithsonian_query"], terms, per_taxon, si_api_key)
+                    found = []
+                    for sub in q["smithsonian_query"].split("|"):
+                        found += smithsonian.search(client, taxon_id, sub, terms, per_taxon, si_api_key)
                 else:
                     raise ValueError(source)
+            except httpx.HTTPStatusError as e:
+                if e.response.status_code == 429:
+                    exhausted.add(source)
+                    log(f"{source}: rate limited at {taxon_id}; skipping it for the rest of this run")
+                else:
+                    log(f"{source} {taxon_id}: {e}")
+                continue
             except httpx.HTTPError as e:
                 log(f"{source} {taxon_id}: {e}")
                 continue
@@ -55,7 +72,7 @@ def harvest(
                 seen |= {c.candidate_id, c.media_url}
             added += new
             log(f"{source:12} {taxon_id:16} found {len(found):3} new {len(new):3}")
-    if added:
+    if added or existing:
         write_candidates(out, existing + added)
     return len(added)
 

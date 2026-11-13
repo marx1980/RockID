@@ -10,13 +10,13 @@ min.malachite,malachite mineral specimen -jewelry,malachite,malachite
 min.azurite,azurite mineral specimen,azurite,azurite
 min.muscovite,muscovite mineral specimen,muscovite,muscovite
 min.biotite,biotite mineral specimen,biotite,biotite
-min.k-feldspar,orthoclase OR microcline mineral specimen,orthoclase OR microcline,orthoclase|microcline|k-feldspar|potassium feldspar|amazonite
+min.k-feldspar,orthoclase OR microcline OR amazonite mineral specimen,orthoclase|microcline|amazonite,orthoclase|microcline|k-feldspar|potassium feldspar|amazonite
 rock.granite,granite rock sample -building -statue -countertop,granite,granite
 rock.basalt,basalt rock sample -columns,basalt,basalt
 rock.limestone,limestone rock sample -building,limestone,limestone
 rock.sandstone,sandstone rock sample -building,sandstone,sandstone
 rock.chert,chert rock sample flint,chert,chert|flint
-rock.marble,marble rock sample -statue -sculpture -floor,marble,marble
+rock.marble,marble metamorphic rock,marble,marble
 rock.slate,slate rock sample -roof,slate,slate
 rock.gneiss,gneiss rock sample,gneiss,gneiss
 rock.quartzite,quartzite rock sample,quartzite,quartzite

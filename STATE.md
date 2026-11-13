@@ -13,7 +13,8 @@ Current phase: **P1 Candidate harvesting** (see docs/IMPLEMENTATION_PLAN.md)
 
 ## Known gaps
 - Smithsonian query syntax (`unit_code:` / `online_media_type:` filters) and Commons search quality are verified only against hand-written fixtures until the first live run
-- Commons specimen hints are filename heuristics
+- Commons specimen hints are filename heuristics and over-group numbered Flickr series ("Granite 33 (4919…)" → one specimen); safe for leakage, undercounts specimens
+- Smithsonian runs need an api.data.gov key (secret SI_API_KEY); DEMO_KEY is rate-limited after ~9 queries
 - No review UI yet: review_decision is edited in the CSV
 
 ## Next
