@@ -64,3 +64,13 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - Reference set 1,142 photos; v3 re-score (results/BASELINE_v3.md): shortlist top-1 0.511, top-3 0.821, mineral vs rock 0.900; live app still on model v1
 - Now: marble 3, slate 11, biotite 25, magnetite 42 photos; most new photos come from one Estonian collection (black or white backdrop, scale bar)
 - Not started: GeoCASe, more Commons/Smithsonian queries for the weak classes, Europeana thumbnail fallback, pHash check of reference against challenge
+
+## Form flag (tumbled / polished)
+- `form` column in reference.csv (natural, tumbled, polished) and forms.json; polished covers sawn or polished slabs, cabochons, spheres; faceted gems stay out
+- Polished reinstated (359 from NHM/Europeana, 60 per taxon and source cap); round 4 reviewed 315 Commons "tumbled" candidates, 75 approved (60 tumbled, 8 polished, rest natural)
+- Reference set 1,577 photos: 1,149 natural, 368 polished, 60 tumbled
+- App votes the form of the photo from all references; if form_p >= 0.6 and the form has >= 30 references, it ranks taxa among that form only; result shows a Tumbled or Polished chip
+- Model v4 live (results/BASELINE_v4.md, FORMS_v4.md); natural challenge top-1 0.516, top-3 0.805, mineral vs rock 0.895
+- Polished hold-out (vault/form_holdout.csv, 252 capped-out NHM photos of marble, granite, limestone): form detected 0.98, top-1 0.67, top-3 0.97. Weak test: one collection, three taxa
+- Tumbled: only 60 references (36 chert from one collector, 23 malachite, 31 quartz overlap by taxon), no hold-out; LOSO form accuracy 0.85
+- Thresholds 0.6 and 30 are uncalibrated; challenge set is natural-only; commons-polished harvest not run; tumbled sources scarce

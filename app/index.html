@@ -235,7 +235,7 @@ async function analyze(canvas){
   const thumb=document.createElement("canvas"),s=Math.min(1,560/Math.max(canvas.width,canvas.height));
   thumb.width=Math.round(canvas.width*s);thumb.height=Math.round(canvas.height*s);thumb.getContext("2d").drawImage(canvas,0,0,thumb.width,thumb.height);
   S.current={id:Date.now().toString(36),at:new Date().toISOString(),photo:thumb.toDataURL("image/jpeg",.72),hero:url,
-    status:r.status,candidates:r.candidates,issues:q.issues,answer:null,sel:0};
+    status:r.status,form:r.form||"natural",candidates:r.candidates,issues:q.issues,answer:null,sel:0};
   S.fromCol=null;renderResult();
 }
 
@@ -248,6 +248,7 @@ function renderResult(){
   $("save").style.display=S.fromCol||!R.candidates.length?"none":"";
   const sh=$("sheet");sh.innerHTML="";
   const chips=el("div","chips");sh.appendChild(chips);
+  if(R.status!=="retake"&&(R.form==="tumbled"||R.form==="polished"))chips.appendChild(el("span","chip acc",R.form==="tumbled"?"Tumbled":"Polished"));
   if(R.status==="retake"){
     for(const i of R.issues)chips.appendChild(el("span","chip bad",ISSUE[i]||i));
     sh.appendChild(el("h1",null,"Retake"));
