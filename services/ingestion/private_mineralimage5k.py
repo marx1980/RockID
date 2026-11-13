@@ -31,6 +31,24 @@ TAXON = {
 AMBIGUOUS = {"chalcedony", "agate", "chrysoprase", "jasper", "chert", "flint", "opal", "marble", "limestone", "granite"}
 
 
+# Dataset spellings -> mineral names used as taxa when every species becomes a class (extract-all).
+RENAME = {"cancrinit": "cancrinite", "scheelit": "scheelite", "elbait": "elbaite", "vesuvian": "vesuvianite",
+          "labrador": "labradorite", "nephritis": "nephrite", "cobaltin": "cobaltite", "analcim": "analcime",
+          "antimonite": "stibnite", "fluorapatite": "apatite", "lapis lazuli": "lapis-lazuli"}
+SKIP_ALL = {"credit"}  # unresolved dataset label
+# Description words that mean jewellery or cut stones: left out (faceted gems stay rejected).
+BAD_DESC = re.compile(r"facet|\bring\b|necklace|bracelet|earring|pendant|\bbeads?\b|carv|figur|sculpt|statue|insect", re.I)
+
+
+def form_of(desc: str) -> str:
+    d = (desc or "").lower()
+    if "tumbled" in d:
+        return "tumbled"
+    if "polish" in d or "cabochon" in d or "sphere" in d or "slab" in d:
+        return "polished"
+    return "natural"
+
+
 def norm(name: str) -> str:
     return re.sub(r"[_\-]+", " ", str(name)).strip().lower()
 
@@ -99,6 +117,50 @@ def extract(out_dir: str, per_taxon: int = 120, per_other_class: int = 6) -> Non
     print(json.dumps(dict(sorted(taken.items())), indent=0))
 
 
+def extract_all(out_dir: str, per_class: int = 100) -> None:
+    """Every dataset species outside our 21 taxa becomes its own taxon (min.<name>), capped per class, with a
+    form read from the photo description. Writes manifest.csv (local paths) and labels.csv (no paths)."""
+    ds = load()
+    names = class_names(ds)
+    first = next(iter(ds.values()))
+    key = next(k for k in ("name", "classes", "label") if k in first.features and hasattr(first.features[k], "names"))
+    out = Path(out_dir)
+    (out / "img").mkdir(parents=True, exist_ok=True)
+    taken: dict[str, int] = defaultdict(int)
+    skipped: Counter = Counter()
+    rows = []
+    for split_name, split in ds.items():
+        for i, ex in enumerate(split):
+            cls = norm(names[ex[key]])
+            if cls in AMBIGUOUS or cls in TAXON or cls in SKIP_ALL:
+                continue
+            desc = ex.get("description") or ""
+            if BAD_DESC.search(desc):
+                skipped["jewellery_or_cut"] += 1
+                continue
+            cls = RENAME.get(cls, cls)
+            taxon = "min." + cls.replace(" ", "-")
+            if taken[taxon] >= per_class:
+                continue
+            taken[taxon] += 1
+            aid = f"mi5k:{split_name}:{i}"
+            fname = f"{split_name}_{i}.jpg"
+            ex["image"].convert("RGB").save(out / "img" / fname, quality=92)
+            rows.append({"asset_id": aid, "taxon_id": taxon, "specimen_id": aid, "form": form_of(desc),
+                         "source_name": SOURCE, "license": LICENSE, "media_url": str(out / "img" / fname)})
+    with (out / "all_inputs.csv").open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    with (out / "all_labels.csv").open("w", newline="", encoding="utf-8") as fh:
+        cols = [c for c in rows[0] if c != "media_url"]
+        w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+    print(json.dumps({"classes": len(taken), "photos": len(rows), "skipped": dict(skipped),
+                      "forms": dict(Counter(r["form"] for r in rows)), "per_class": dict(sorted(taken.items()))}))
+
+
 def split(out_dir: str) -> None:
     """From extract's manifest.csv: reference rows, and OOD rows split by whole class (species) into
     calibration and test halves, so no mineral species is on both sides. Writes ref_inputs.csv,
@@ -131,7 +193,7 @@ def split(out_dir: str) -> None:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["inspect", "extract", "split"])
+    ap.add_argument("cmd", choices=["inspect", "extract", "split", "extract-all"])
     ap.add_argument("out", nargs="?")
     ap.add_argument("--per-taxon", type=int, default=120)
     a = ap.parse_args()
@@ -139,5 +201,7 @@ if __name__ == "__main__":
         inspect()
     elif a.cmd == "extract":
         extract(a.out, a.per_taxon)
+    elif a.cmd == "extract-all":
+        extract_all(a.out, a.per_taxon)
     else:
         split(a.out)

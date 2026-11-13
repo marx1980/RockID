@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "inspect or embed"
+        description: "inspect, embed or all"
         default: "embed"
       per_taxon:
         description: "max photos per taxon"
@@ -31,6 +31,16 @@ jobs:
       - name: Inspect
         if: inputs.mode == 'inspect'
         run: python -m services.ingestion.private_mineralimage5k inspect
+      - name: Extract every species as a class and embed
+        if: inputs.mode == 'all'
+        run: |
+          python -m services.ingestion.private_mineralimage5k extract-all /tmp/priv --per-taxon ${{ inputs.per_taxon }}
+          npm install --prefix tools/embed --no-audit --no-fund
+          ln -s "$PWD/tools/embed/node_modules" node_modules
+          mkdir -p data_manifests/private
+          node tools/embed/embed.mjs /tmp/priv/all_inputs.csv asset_id data_manifests/private/mi5k_all
+          cp /tmp/priv/all_labels.csv data_manifests/private/mi5k_all_labels.csv
+          rm -f node_modules
       - name: Extract and split
         if: inputs.mode == 'embed'
         run: |
@@ -48,7 +58,7 @@ jobs:
           cp /tmp/priv/ref_labels.csv /tmp/priv/ood_cal.csv /tmp/priv/ood_test.csv data_manifests/private/
           rm -f node_modules
       - name: Push vectors and labels to a branch
-        if: inputs.mode == 'embed'
+        if: inputs.mode == 'embed' || inputs.mode == 'all'
         run: |
           git config user.name "rockid-private"
           git config user.email "actions@users.noreply.github.com"
