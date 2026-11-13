@@ -5,6 +5,7 @@ taxon are fetched for the image URL and description. Several items are generic "
 renderings of a "USGS mineral collection" that look machine-generated: they are flagged in the reviewer
 note and must be checked by eye before approval."""
 import re
+import sys
 import time
 
 import httpx
@@ -43,13 +44,16 @@ def item_paths(client: httpx.Client) -> list[str]:
         for page in range(MAX_PAGES):
             try:
                 html = _get(client, f"{BASE}{listing}?page={page}")
-            except httpx.HTTPError:
+            except httpx.HTTPError as e:
+                print(f"usgs listing {listing} page {page}: {e}", file=sys.stderr)
                 break
             new = [p for p in dict.fromkeys(ITEM.findall(html)) if p not in found]
             if not new:
+                print(f"usgs listing {listing} page {page}: no new items ({len(html)} bytes)", file=sys.stderr)
                 break
             found.update(dict.fromkeys(new))
     _items_cache["all"] = list(found)
+    print(f"usgs: {len(found)} item links", file=sys.stderr)
     return _items_cache["all"]
 
 
@@ -106,9 +110,13 @@ def search(client: httpx.Client, taxon_id: str, terms: list[str], limit: int = 1
         if not mentions(path.rsplit("/", 1)[-1].replace("-", " "), terms):
             continue
         try:
-            cand = parse_item(_get(client, f"{BASE}{path}"), path, taxon_id, terms)
-        except httpx.HTTPError:
+            html = _get(client, f"{BASE}{path}")
+        except httpx.HTTPError as e:
+            print(f"usgs item {path}: {e}", file=sys.stderr)
             continue
+        cand = parse_item(html, path, taxon_id, terms)
+        if not cand:
+            print(f"usgs item {path}: not parsed (public domain {'public domain' in strip_html(html).lower()}, images {len(IMG.findall(html))}, {len(html)} bytes)", file=sys.stderr)
         if cand:
             out.append(cand)
     return out
