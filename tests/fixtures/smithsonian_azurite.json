@@ -1,0 +1,67 @@
+{
+  "status": 200,
+  "responseCode": 1,
+  "response": {
+    "rowCount": 3,
+    "rows": [
+      {
+        "id": "ld1-1643399756728-1643399770000-0",
+        "title": "Azurite",
+        "unitCode": "NMNHMINSCI",
+        "type": "edanmdm",
+        "url": "edanmdm:nmnhmineralsciences_1234567",
+        "content": {
+          "descriptiveNonRepeating": {
+            "record_ID": "nmnhmineralsciences_1234567",
+            "unit_code": "NMNHMINSCI",
+            "title": {"label": "Title", "content": "Azurite"},
+            "record_link": "https://collections.si.edu/search/detail/edanmdm:nmnhmineralsciences_1234567",
+            "data_source": "NMNH - Mineral Sciences Dept.",
+            "metadata_usage": {"access": "CC0"},
+            "online_media": {
+              "mediaCount": 2,
+              "media": [
+                {"type": "Images", "idsId": "NMNH-1", "content": "https://ids.si.edu/ids/deliveryService?id=NMNH-1", "usage": {"access": "CC0"}},
+                {"type": "Images", "idsId": "NMNH-2", "content": "https://ids.si.edu/ids/deliveryService?id=NMNH-2", "usage": {"access": "CC0"}}
+              ]
+            }
+          },
+          "freetext": {
+            "identifier": [{"label": "USNM Number", "content": "R12345"}],
+            "name": [{"label": "Photographer", "content": "Chip Clark"}]
+          }
+        }
+      },
+      {
+        "id": "x2",
+        "title": "Azurite cut stone",
+        "unitCode": "NMNHMINSCI",
+        "content": {
+          "descriptiveNonRepeating": {
+            "record_ID": "nmnhmineralsciences_7654321",
+            "unit_code": "NMNHMINSCI",
+            "title": {"content": "Azurite"},
+            "online_media": {
+              "media": [
+                {"type": "Images", "idsId": "NMNH-3", "content": "https://ids.si.edu/ids/deliveryService?id=NMNH-3", "usage": {"access": "Usage conditions apply"}}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "x3",
+        "title": "Butterfly",
+        "unitCode": "NMNHENTO",
+        "content": {
+          "descriptiveNonRepeating": {
+            "record_ID": "nmnhento_1",
+            "unit_code": "NMNHENTO",
+            "title": {"content": "Butterfly"},
+            "online_media": {"media": [{"type": "Images", "idsId": "E-1", "content": "https://ids.si.edu/ids/deliveryService?id=E-1", "usage": {"access": "CC0"}}]}
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+pattern,proposed_usage,reason
+^cc0,allowed_train,public domain dedication
+^public domain$,allowed_train,public domain
+^pd(-|$),allowed_train,public domain
+^cc by(-| )sa,allowed_reference_only,share-alike; training use needs owner sign-off
+^cc by \d|^cc by$|^cc-by-\d,allowed_reference_only,attribution required; training use needs owner sign-off
+nc,rejected,non-commercial restriction
+nd,rejected,no-derivatives restriction
+.*,rejected,unknown or unrecognised licence
