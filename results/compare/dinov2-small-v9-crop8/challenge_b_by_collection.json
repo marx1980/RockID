@@ -1,0 +1,17 @@
+{
+ "collection in reference set": {
+  "cases": 83,
+  "top1": 0.373,
+  "top3": 0.639
+ },
+ "Wikimedia Commons": {
+  "cases": 135,
+  "top1": 0.452,
+  "top3": 0.696
+ },
+ "new collection": {
+  "cases": 52,
+  "top1": 0.577,
+  "top3": 0.788
+ }
+}
