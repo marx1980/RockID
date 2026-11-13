@@ -87,11 +87,19 @@ def render(title: str, tiles: list[tuple[int, Image.Image | None]]) -> Image.Ima
     return sheet
 
 
+def reviewed_ids(review_csv: str | Path) -> set[str]:
+    import csv
+    with Path(review_csv).open(newline="", encoding="utf-8") as fh:
+        return {r["candidate_id"] for r in csv.DictReader(fh)}
+
+
 def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client, workers: int = 6,
-          commons_delay: float = 0.25) -> dict:
+          commons_delay: float = 0.25, skip: set[str] | None = None, prefix: str = "") -> dict:
+    """`skip` = candidate ids already reviewed (a later review round only sees new candidates);
+    `prefix` keeps sheet names of different rounds apart."""
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected"]
+    cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected" and c.candidate_id not in (skip or set())]
     cands.sort(key=lambda c: (c.taxon_id, c.specimen_hint, c.candidate_id))
     by_taxon: dict[str, list[Candidate]] = {}
     for c in cands:
@@ -114,7 +122,7 @@ def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client,
     for taxon, items in by_taxon.items():
         for s in range(0, len(items), PER_SHEET):
             chunk = items[s:s + PER_SHEET]
-            name = f"{taxon}-{s // PER_SHEET + 1}"
+            name = f"{prefix}{taxon}-{s // PER_SHEET + 1}"
             tiles = [(s + k + 1, images[c.candidate_id]) for k, c in enumerate(chunk)]
             render(f"{taxon}  {s + 1}-{s + len(chunk)} of {len(items)}", tiles).save(out / f"{name}.jpg", quality=82)
             index[name] = {str(s + k + 1): c.candidate_id for k, c in enumerate(chunk)}
@@ -129,5 +137,13 @@ def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client,
 
 
 if __name__ == "__main__":
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("candidates")
+    ap.add_argument("out")
+    ap.add_argument("--skip-reviewed", help="agent_review.csv; its candidates are left out")
+    ap.add_argument("--prefix", default="")
+    a = ap.parse_args()
     with httpx.Client(follow_redirects=True) as client:
-        print(build(sys.argv[1], sys.argv[2], client))
+        print(build(a.candidates, a.out, client, skip=reviewed_ids(a.skip_reviewed) if a.skip_reviewed else None, prefix=a.prefix))
