@@ -16,7 +16,7 @@ from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
 from dataclasses import replace
 
-from services.ingestion.sources import commons, commons_categories, europeana, nhm, other_taxa_named, smithsonian, wikipedia
+from services.ingestion.sources import commons, commons_categories, europeana, nhm, other_taxa_named, smithsonian, usgs, wikipedia
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 LOCALITIES = TAXONOMY_DIR / "localities.csv"
@@ -85,6 +85,8 @@ def harvest(
                     found = []
                     for sub in q["smithsonian_query"].split("|"):
                         found += smithsonian.search(client, taxon_id, sub, terms, per_taxon, si_api_key)
+                elif source == "usgs":  # public-domain items of the USGS gallery whose title names the taxon
+                    found = usgs.search(client, taxon_id, terms, per_taxon)
                 elif source == "nhm":
                     found = nhm.search(client, taxon_id, terms, per_taxon)
                 elif source == "europeana":
@@ -137,7 +139,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", "commons-categories", *FORM_SOURCES])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", "commons-categories", "usgs", *FORM_SOURCES])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")
