@@ -49,6 +49,19 @@ jobs:
           python -m services.model.evaluate score app/model/reference /tmp/challenge vault/challenge.csv \
             app/model/config.json "results/baseline${SUF}.json" "results/BASELINE${SUF}.md"
           cat "results/BASELINE${SUF}.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Score form hold-out (polished, specimen-level)
+        run: |
+          python - <<'PY'
+          import csv
+          with open("vault/form_holdout.csv", newline="") as f, open("/tmp/holdout_inputs.csv", "w", newline="") as o:
+              w = csv.writer(o); w.writerow(["case_id", "media_url"])
+              for r in csv.DictReader(f): w.writerow([r["case_id"], r["media_url"]])
+          PY
+          node tools/embed/embed.mjs /tmp/holdout_inputs.csv case_id /tmp/holdout
+          SUF="${{ inputs.tag && format('_{0}', inputs.tag) || '' }}"
+          python -m services.model.evaluate score_forms app/model/reference /tmp/holdout vault/form_holdout.csv \
+            app/model/config.json "results/forms${SUF}.json" "results/FORMS${SUF}.md"
+          cat "results/FORMS${SUF}.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a branch
         run: |
           rm -f node_modules
