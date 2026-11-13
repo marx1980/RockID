@@ -5,6 +5,9 @@ on:
       round_prefix:
         description: "sheet name prefix for a later review round (blank = first round); already-reviewed candidates are skipped when set"
         default: ""
+      only_source:
+        description: "only candidates whose source name contains this text (e.g. Wikimedia)"
+        default: ""
 
 permissions:
   contents: write
@@ -22,7 +25,7 @@ jobs:
       - run: |
           if [ -n "${{ inputs.round_prefix }}" ]; then
             python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets \
-              --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}"
+              --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}" --only-source "${{ inputs.only_source }}"
           else
             python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets
           fi

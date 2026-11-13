@@ -17,6 +17,7 @@ class ReferenceItem:
     asset_id: str
     specimen_id: str
     taxon_id: str
+    form: str = "natural"  # natural | tumbled | polished
 
 
 @dataclass(frozen=True)
@@ -56,18 +57,24 @@ class ReferenceIndex:
         self.items = list(items)
         self.vectors = _normalize(vectors) if len(items) else np.zeros((0, 0), np.float32)
 
-    def search(self, query: np.ndarray, k: int = 50) -> list[Neighbor]:
+    def search(self, query: np.ndarray, k: int = 50, form: str | None = None) -> list[Neighbor]:
         if not self.items:
             return []
         sims = self.vectors @ _normalize(query)[0]
-        order = np.argsort(-sims)[:k]
+        if form is not None:
+            sims = np.where([it.form == form for it in self.items], sims, -np.inf)
+        order = [i for i in np.argsort(-sims)[:k] if np.isfinite(sims[i])]
         return [Neighbor(self.items[i], float(sims[i])) for i in order]
+
+    def count(self, form: str) -> int:
+        return sum(it.form == form for it in self.items)
 
 
 def aggregate(
     neighbors: list[Neighbor],
     temperature: float = 0.05,
     max_specimens_per_taxon: int = 3,
+    key=lambda item: item.taxon_id,
 ) -> list[TaxonScore]:
     best_per_specimen: dict[str, Neighbor] = {}
     for n in neighbors:
@@ -77,7 +84,7 @@ def aggregate(
 
     per_taxon: dict[str, list[Neighbor]] = {}
     for n in sorted(best_per_specimen.values(), key=lambda x: -x.similarity):
-        bucket = per_taxon.setdefault(n.item.taxon_id, [])
+        bucket = per_taxon.setdefault(key(n.item), [])
         if len(bucket) < max_specimens_per_taxon:
             bucket.append(n)
     if not per_taxon:
@@ -99,6 +106,22 @@ def aggregate(
         for t, v in raw.items()
     ]
     return sorted(scores, key=lambda s: -s.probability)
+
+
+FORM_DEFAULTS = {"min_form_p": 0.6, "min_pool": 30}
+
+
+def identify(index: ReferenceIndex, query: np.ndarray, k: int = 50, form_cfg: dict | None = None):
+    """Rank taxa for one photo. First vote on the form (natural, tumbled, polished) from all
+    references; when that vote is clear and the form has enough reference photos, rank taxa among
+    references of that form only. Returns (taxon scores, form, form probability, restricted)."""
+    cfg = {**FORM_DEFAULTS, **(form_cfg or {})}
+    neighbors = index.search(query, k)
+    votes = aggregate(neighbors, key=lambda item: item.form)
+    form, form_p = (votes[0].taxon_id, votes[0].probability) if votes else ("natural", 0.0)
+    if votes and form_p >= cfg["min_form_p"] and index.count(form) >= cfg["min_pool"]:
+        return aggregate(index.search(query, k, form=form)), form, form_p, True
+    return aggregate(neighbors), form, form_p, False
 
 
 def decide(

@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 
 from services.evaluator.metrics import CaseResult, report
-from services.identifier.knn import Neighbor, ReferenceIndex, ReferenceItem, aggregate, decide
+from services.identifier.knn import FORM_DEFAULTS, Neighbor, ReferenceIndex, ReferenceItem, aggregate, decide, identify
 
 GRID = {
     "accept_probability": [0.4, 0.5, 0.6, 0.7, 0.8],
@@ -33,7 +33,7 @@ def load(prefix: str | Path) -> tuple[np.ndarray, dict]:
 
 
 def _items(meta) -> list[ReferenceItem]:
-    return [ReferenceItem(it["id"], it["s"], it["t"]) for it in meta["items"]]
+    return [ReferenceItem(it["id"], it["s"], it["t"], it.get("f", "natural")) for it in meta["items"]]
 
 
 def _decide_rows(cands_list, truths, cfg) -> list[CaseResult]:
@@ -47,24 +47,34 @@ def _decide_rows(cands_list, truths, cfg) -> list[CaseResult]:
 
 
 def loso_candidates(vec: np.ndarray, meta: dict):
-    """For each reference photo, rank taxa using only *other* specimens."""
+    """For each reference photo, vote on its form and rank taxa using only *other* specimens,
+    exactly as the app does (form vote, then references of that form when the vote is clear)."""
     items = _items(meta)
     sims = vec @ vec.T
-    out, truths, best_correct = [], [], []
+    forms = np.array([it.form for it in items])
+    out, truths, best_correct, pred_forms = [], [], [], []
     for i, it in enumerate(items):
-        keep = [j for j, o in enumerate(items) if o.specimen_id != it.specimen_id]
-        order = sorted(keep, key=lambda j: -sims[i, j])[:50]
-        cands = aggregate([Neighbor(items[j], float(sims[i, j])) for j in order])
+        keep = np.array([o.specimen_id != it.specimen_id for o in items])
+        s_i = np.where(keep, sims[i], -np.inf)
+        top = lambda mask: [j for j in np.argsort(-np.where(mask, s_i, -np.inf))[:50] if np.isfinite(s_i[j]) and mask[j]]
+        neighbors = [Neighbor(items[j], float(s_i[j])) for j in top(np.ones(len(items), bool))]
+        votes = aggregate(neighbors, key=lambda x: x.form)
+        form, form_p = (votes[0].taxon_id, votes[0].probability) if votes else ("natural", 0.0)
+        pool = forms == form
+        if votes and form_p >= FORM_DEFAULTS["min_form_p"] and int((pool & keep).sum()) >= FORM_DEFAULTS["min_pool"]:
+            neighbors = [Neighbor(items[j], float(s_i[j])) for j in top(pool)]
+        cands = aggregate(neighbors)
         out.append(cands)
         truths.append(it.taxon_id)
+        pred_forms.append(form)
         if cands and cands[0].taxon_id == it.taxon_id:
             best_correct.append(cands[0].best_similarity)
-    return out, truths, best_correct
+    return out, truths, best_correct, pred_forms
 
 
 def calibrate(prefix, config_out, report_out=None) -> dict:
     vec, meta = load(prefix)
-    cands, truths, best_correct = loso_candidates(vec, meta)
+    cands, truths, best_correct, pred_forms = loso_candidates(vec, meta)
     # Out-of-distribution floor: below what 95% of correct matches reach.
     ood = float(np.percentile(best_correct, 5)) if best_correct else 0.35
     sweep, chosen = [], None
@@ -81,11 +91,20 @@ def calibrate(prefix, config_out, report_out=None) -> dict:
         "model": meta["model"], "dtype": meta["dtype"], "dim": meta["dim"], "decision": cfg,
         "calibrated_on": "reference leave-one-specimen-out", "target_selective_accuracy": TARGET_SELECTIVE_ACCURACY,
         "met_target": bool(ok), "reference_photos": len(meta["items"]), "date": date.today().isoformat(),
+        "form": dict(FORM_DEFAULTS),
     }
     Path(config_out).write_text(json.dumps(config, indent=1))
     if report_out:
         Path(report_out).parent.mkdir(parents=True, exist_ok=True)
+        true_forms = [it["f"] if "f" in it else "natural" for it in meta["items"]]
+        by_form = {}
+        for f in sorted(set(true_forms)):
+            idx = [i for i, t in enumerate(true_forms) if t == f]
+            sub = report(_decide_rows([cands[i] for i in idx], [truths[i] for i in idx], base))
+            by_form[f] = {"photos": len(idx), "form_accuracy": sum(pred_forms[i] == f for i in idx) / len(idx),
+                          "top1": sub["top1"], "top3": sub["top3"]}
         Path(report_out).write_text(json.dumps({"chosen": chosen, "loso_top1_top3": {"top1": loso_open["top1"], "top3": loso_open["top3"]},
+                                                "by_form": by_form,
                                                 "per_class_recall": loso_open["per_class_recall"], "sweep": sweep}, indent=1))
     return config
 
@@ -93,14 +112,17 @@ def calibrate(prefix, config_out, report_out=None) -> dict:
 def score(ref_prefix, ch_prefix, challenge_csv, config_path, json_out, md_out) -> dict:
     rvec, rmeta = load(ref_prefix)
     cvec, cmeta = load(ch_prefix)
-    cfg = json.loads(Path(config_path).read_text())["decision"]
+    config = json.loads(Path(config_path).read_text())
+    cfg, form_cfg = config["decision"], config.get("form")
     index = ReferenceIndex(_items(rmeta), rvec)
     # Predictions are computed and frozen before any label is read.
     preds = {}
     for it, v in zip(cmeta["items"], cvec):
-        d = decide(aggregate(index.search(v, k=50)), **cfg)
+        cands, form, form_p, restricted = identify(index, v, 50, form_cfg)
+        d = decide(cands, **cfg)
         preds[it["id"]] = {"status": d.status, "ranked": [c.taxon_id for c in d.candidates],
-                           "p": [round(c.probability, 4) for c in d.candidates]}
+                           "p": [round(c.probability, 4) for c in d.candidates],
+                           "form": form, "form_p": round(form_p, 4), "restricted": restricted}
     Path(json_out).parent.mkdir(parents=True, exist_ok=True)
     # baseline.json -> challenge_predictions.json; baseline_v2.json -> challenge_predictions_v2.json (earlier runs stay untouched)
     frozen = Path(json_out).with_name(Path(json_out).stem.replace("baseline", "challenge_predictions") + ".json")
@@ -118,6 +140,7 @@ def rescore(predictions_json, challenge_csv, json_out, md_out, cfg=None, rmeta=N
     r = report(rows)
     r["not_embedded"] = not_embedded
     r["status_counts"] = {s: sum(p["status"] == s for p in preds.values()) for s in ("identified", "uncertain", "unknown")}
+    r["form_counts"] = {f: sum(p.get("form", "natural") == f for p in preds.values()) for f in ("natural", "tumbled", "polished")}
     if cfg is not None:
         r["decision"] = cfg
     Path(json_out).parent.mkdir(parents=True, exist_ok=True)
@@ -144,5 +167,33 @@ def rescore(predictions_json, challenge_csv, json_out, md_out, cfg=None, rmeta=N
 
 if __name__ == "__main__":
     cmd, *args = sys.argv[1:]
-    fn = {"calibrate": calibrate, "score": score, "rescore": rescore}[cmd]
+    fn = {"calibrate": calibrate, "score": score, "rescore": rescore, "score_forms": score_forms}[cmd]
     print(json.dumps(fn(*args), indent=1)[:2000])
+
+
+def score_forms(ref_prefix, set_prefix, set_csv, config_path, json_out, md_out) -> dict:
+    """Held-out polished/tumbled photos: new specimens, labelled with taxon and form. Reports taxon
+    accuracy and form detection per form. Same-institution photos are possible here, so read it as
+    specimen-level hold-out only."""
+    rvec, rmeta = load(ref_prefix)
+    svec, smeta = load(set_prefix)
+    config = json.loads(Path(config_path).read_text())
+    index = ReferenceIndex(_items(rmeta), rvec)
+    with Path(set_csv).open(newline="", encoding="utf-8") as fh:
+        truth = {r["case_id"]: r for r in csv.DictReader(fh)}
+    by: dict[str, list] = {}
+    for it, v in zip(smeta["items"], svec):
+        t = truth[it["id"]]
+        cands, form, _p, restricted = identify(index, v, 50, config.get("form"))
+        by.setdefault(t["form"], []).append((t["ground_truth_id"], [c.taxon_id for c in cands[:3]], form, restricted))
+    out = {}
+    for f, rows in sorted(by.items()):
+        n = len(rows)
+        out[f] = {"cases": n, "top1": sum(r[1][:1] == [r[0]] for r in rows) / n, "top3": sum(r[0] in r[1] for r in rows) / n,
+                  "form_accuracy": sum(r[2] == f for r in rows) / n, "restricted": sum(r[3] for r in rows) / n}
+    Path(json_out).write_text(json.dumps(out, indent=1))
+    lines = ["# Polished and tumbled hold-out", "", "New specimens, not in the reference set; same institution and backdrop as some reference photos.", "",
+             "| form | cases | form detected | top-1 | top-3 |", "|---|---|---|---|---|",
+             *[f"| {f} | {v['cases']} | {v['form_accuracy']:.2f} | {v['top1']:.2f} | {v['top3']:.2f} |" for f, v in out.items()]]
+    Path(md_out).write_text("\n".join(lines) + "\n")
+    return out

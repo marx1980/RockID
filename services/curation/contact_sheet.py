@@ -94,12 +94,12 @@ def reviewed_ids(review_csv: str | Path) -> set[str]:
 
 
 def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client, workers: int = 6,
-          commons_delay: float = 0.25, skip: set[str] | None = None, prefix: str = "") -> dict:
+          commons_delay: float = 0.25, skip: set[str] | None = None, prefix: str = "", only_source: str = "") -> dict:
     """`skip` = candidate ids already reviewed (a later review round only sees new candidates);
     `prefix` keeps sheet names of different rounds apart."""
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected" and c.candidate_id not in (skip or set())]
+    cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected" and c.candidate_id not in (skip or set()) and only_source in c.source_name]
     cands.sort(key=lambda c: (c.taxon_id, c.specimen_hint, c.candidate_id))
     by_taxon: dict[str, list[Candidate]] = {}
     for c in cands:
@@ -144,6 +144,8 @@ if __name__ == "__main__":
     ap.add_argument("out")
     ap.add_argument("--skip-reviewed", help="agent_review.csv; its candidates are left out")
     ap.add_argument("--prefix", default="")
+    ap.add_argument("--only-source", default="", help="keep candidates whose source name contains this text")
     a = ap.parse_args()
     with httpx.Client(follow_redirects=True) as client:
-        print(build(a.candidates, a.out, client, skip=reviewed_ids(a.skip_reviewed) if a.skip_reviewed else None, prefix=a.prefix))
+        print(build(a.candidates, a.out, client, skip=reviewed_ids(a.skip_reviewed) if a.skip_reviewed else None, prefix=a.prefix,
+                    only_source=a.only_source))

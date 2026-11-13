@@ -58,6 +58,7 @@ for (const [i, r] of rows.entries()) {
     const it = { id: r[idCol] };
     if (r.specimen_id) it.s = r.specimen_id;
     if (r.taxon_id) it.t = r.taxon_id;
+    if (r.form && r.form !== "natural") it.f = r.form;
     items.push(it);
   } catch (e) {
     failed.push({ id: r[idCol], error: String(e.message || e) });
