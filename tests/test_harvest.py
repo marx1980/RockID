@@ -192,7 +192,7 @@ def test_nhm_parsing_and_filters():
     assert "User-Agent" in seen[0].headers and "RockID" in seen[0].headers["User-Agent"]
     assert marble and all(c.source_name == nhm.SOURCE and c.specimen_hint.startswith("nhm:") for c in marble)
     assert all(c.license == "CC BY 4.0" and c.proposed_usage == "allowed_reference_only" for c in marble)
-    assert all("/full/!1024,1024/0/default.jpg" in c.media_url for c in marble)
+    assert all(c.media_url.startswith("https://data.nhm.ac.uk/media/") and "/full/" not in c.media_url for c in marble)
     assert len({c.candidate_id for c in marble}) == len(marble)
     granite = nhm.search(client, "rock.granite", ["granite"], limit=50)
     titles = " | ".join(c.title for c in granite)
