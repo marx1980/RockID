@@ -193,7 +193,48 @@ def score_forms(ref_prefix, set_prefix, set_csv, config_path, json_out, md_out) 
     return out
 
 
+OOD_FLOORS = [0.0, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]
+
+
+def ood_sweep(ref_prefix, ood_prefix, ood_csv, config_path, json_out, md_out) -> dict:
+    """Trade-off table for the abstention thresholds: for each setting, how often OOD photos are wrongly
+    named (false accept) against how many reference photos still get an answer (coverage, leave-one-
+    specimen-out). Run it on the calibration OOD cases only; the frozen OOD test is scored once with
+    `score`, after a setting has been chosen."""
+    rvec, rmeta = load(ref_prefix)
+    ovec, ometa = load(ood_prefix)
+    config = json.loads(Path(config_path).read_text())
+    index = ReferenceIndex(_items(rmeta), rvec)
+    with Path(ood_csv).open(newline="", encoding="utf-8") as fh:
+        groups = {r["case_id"]: r.get("ood_group", "") for r in csv.DictReader(fh)}
+    ood = [identify(index, v, 50, config.get("form"))[0] for v in ovec]
+    ood_groups = [groups.get(it["id"], "") for it in ometa["items"]]
+    loso, truths, _best, _forms = loso_candidates(rvec, rmeta)
+    rows = []
+    shipped = config["decision"]
+    grid = [shipped] + [{"ood_similarity": f, "accept_probability": ap, "min_margin": mm, "min_specimens": ms}
+                        for f in OOD_FLOORS for ap, mm, ms in itertools.product(*GRID.values())]
+    for cfg in grid:
+        far = [decide(c, **cfg).status == "identified" for c in ood]
+        r = report(_decide_rows(loso, truths, cfg))
+        by_group = {g: sum(f for f, og in zip(far, ood_groups) if og == g) / max(1, sum(og == g for og in ood_groups))
+                    for g in sorted(set(ood_groups))}
+        rows.append({**cfg, "ood_false_accept": sum(far) / len(far), "by_group": by_group,
+                     "coverage": r["coverage"], "selective_accuracy": r["selective_accuracy"], "shipped": cfg is shipped})
+    out = {"ood_cases": len(ood), "rows": rows}
+    Path(json_out).write_text(json.dumps(out, indent=1))
+    best = sorted((r for r in rows if r["selective_accuracy"] >= TARGET_SELECTIVE_ACCURACY), key=lambda r: (r["ood_false_accept"], -r["coverage"]))[:8]
+    lines = ["# OOD false accepts vs coverage (calibration OOD cases)", "",
+             f"{len(ood)} OOD calibration photos. Truth is UNKNOWN: any committed answer is a false accept.", "",
+             "| setting | OOD false accept | coverage | selective accuracy |", "|---|---|---|---|"]
+    for r in [rows[0]] + best:
+        name = ("shipped " if r["shipped"] else "") + f"floor {r['ood_similarity']:.2f} · p {r['accept_probability']} · margin {r['min_margin']} · specimens {r['min_specimens']}"
+        lines.append(f"| {name} | {r['ood_false_accept']:.2f} | {r['coverage']:.2f} | {r['selective_accuracy']:.2f} |")
+    Path(md_out).write_text("\n".join(lines) + "\n")
+    return {"ood_cases": len(ood), "shipped": rows[0], "best": best[:3]}
+
+
 if __name__ == "__main__":
     cmd, *args = sys.argv[1:]
-    fn = {"calibrate": calibrate, "score": score, "rescore": rescore, "score_forms": score_forms}[cmd]
+    fn = {"calibrate": calibrate, "score": score, "rescore": rescore, "score_forms": score_forms, "ood_sweep": ood_sweep}[cmd]
     print(json.dumps(fn(*args), indent=1)[:2000])
