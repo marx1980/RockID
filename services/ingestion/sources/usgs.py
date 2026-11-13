@@ -65,12 +65,12 @@ def _meta(html: str, prop: str) -> str:
 
 def pick_image(urls: list[str]) -> str:
     """Best photo URL on an item page: the full-width rendition, else an original, else a larger style; never icons."""
-    urls = [u for u in dict.fromkeys(urls) if "/thumbnails/" not in u and "/styles/thumbnail/" not in u and "/styles/masonry/" not in u]
+    urls = [u for u in dict.fromkeys(urls) if "/styles/thumbnail/" not in u and "/styles/masonry/" not in u]
     for key in ("/styles/full_width/", "/styles/large/", "/styles/medium/", "/styles/teaser/"):
         hit = next((u for u in urls if key in u), None)
         if hit:
             return hit
-    return urls[0] if urls else ""
+    return next((u for u in urls if "/styles/" not in u), "")
 
 
 def parse_item(html: str, path: str, taxon_id: str, terms: list[str]) -> Candidate | None:
