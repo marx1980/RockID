@@ -75,6 +75,12 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - Tumbled: only 60 references (36 chert from one collector, 23 malachite, 31 quartz overlap by taxon), no hold-out; LOSO form accuracy 0.85
 - Thresholds 0.6 and 30 are uncalibrated; challenge set is natural-only; commons-polished harvest not run; tumbled sources scarce
 
+## Round 6: Wikipedia-article images
+- `wikipedia` harvest source (services/ingestion/sources/wikipedia.py, packages/taxonomy/wikipedia_articles.csv, 21 taxa): article image lists, licence from Commons
+- 734 candidates reviewed, 149 approved and promoted; reference set 1,834 photos
+- Score with same model (results/compare/dinov2-small-v6): challenge top-1 0.495, top-3 0.800; Commons 0.39 / 0.71; not shipped, v4 live
+- Rock articles yield little (outcrops, structures); weak rock classes still need specimen photos from other sources
+
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
 - services/model/shortcut.py: reference k-NN with own collection removed vs random control; challenge split by collection
