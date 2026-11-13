@@ -1,0 +1,3 @@
+{"date":"2026-11-13","phase":"P1","gate":"G-01","evidence":"52 tests pass locally and in CI","verdict":"PASS"}
+{"date":"2026-11-13","phase":"P1","gate":"G-02","evidence":"runs 43336431642 + 43337038583: 1376 candidates; 21/21 taxa have >=9 non-rejected specimen hints (min magnetite 9, chert 10, granite 10). Counts are pre-review and include reference-only proposals and noise (marble statues).","verdict":"PASS (provisional until review)"}
+{"date":"2026-11-13","phase":"P1","gate":"H-01","evidence":"licence policy sign-off and 20-candidate spot check","verdict":"PENDING (Marko)"}

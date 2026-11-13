@@ -17,5 +17,14 @@ Current phase: **P1 Candidate harvesting** (see docs/IMPLEMENTATION_PLAN.md)
 - Smithsonian runs need an api.data.gov key (secret SI_API_KEY); DEMO_KEY is rate-limited after ~9 queries
 - No review UI yet: review_decision is edited in the CSV
 
+## Data
+- `data_manifests/candidates/candidates.csv`: 1,376 candidates (Smithsonian 446, Commons 930), none reviewed
+- Smithsonian not yet queried for: basalt, chert, gneiss, granite, limestone, quartzite, sandstone, slate (rate limit)
+- 154 candidates name a second MVP taxon in the title (`other_taxa_in_title`)
+- Commons marble results include statues and buildings; review must reject them
+
+## Gates
+G-01 PASS, G-02 PASS (provisional), H-01 PENDING. Log: results/gate_log.jsonl
+
 ## Next
-Run `harvest-candidates`, check gate G-02, get H-01 sign-off, then P2.
+H-01 sign-off, SI_API_KEY secret, Smithsonian run for the 8 rock types, then P2 (review tool + DB ingest).
