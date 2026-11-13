@@ -172,3 +172,12 @@ def test_rate_limit_stops_source_but_not_others(tmp_path):
     client = httpx.Client(transport=httpx.MockTransport(handler))
     n = harvest(client, ["smithsonian", "commons"], ["min.azurite", "min.calcite"], 10, tmp_path / "c.csv")
     assert calls["si"] == 1 and n == 3
+
+
+def test_duplicates_inside_one_response_are_dropped(tmp_path):
+    data = json.loads((FIX / "smithsonian_azurite.json").read_text())
+    data["response"]["rows"].append(data["response"]["rows"][0])
+    client, _ = _mock({smithsonian.API: data})
+    n = harvest(client, ["smithsonian"], ["min.azurite"], 10, tmp_path / "c.csv", si_api_key="k")
+    ids = [c.candidate_id for c in read_candidates(tmp_path / "c.csv")]
+    assert n == len(ids) == len(set(ids)) == 2

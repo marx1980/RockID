@@ -67,9 +67,12 @@ def harvest(
             except httpx.HTTPError as e:
                 log(f"{source} {taxon_id}: {e}")
                 continue
-            new = [c for c in found if c.candidate_id not in seen and c.media_url not in seen]
-            for c in new:
+            new = []
+            for c in found:
+                if c.candidate_id in seen or c.media_url in seen:
+                    continue
                 seen |= {c.candidate_id, c.media_url}
+                new.append(c)
             added += new
             log(f"{source:12} {taxon_id:16} found {len(found):3} new {len(new):3}")
     if added or existing:

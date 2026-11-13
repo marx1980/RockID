@@ -9,6 +9,7 @@ Images are not stored by default (re-fetched from media_url, sha256 verified); -
 import argparse
 import csv
 import sys
+import time
 from dataclasses import dataclass
 from datetime import date
 from io import BytesIO
@@ -22,7 +23,7 @@ from services.ingestion.decisions import DECISION_TO_USAGE, apply_decisions, loa
 from services.ingestion.leakage import fingerprint_bytes, min_phash_distance, Fingerprint
 from services.ingestion.licence import permits
 from services.ingestion.manifest import REFERENCE_COLUMNS, validate_rows
-from services.ingestion.sources import USER_AGENT
+from services.ingestion.http import get_with_backoff
 
 # Stricter than the review threshold (leakage.DEFAULT_PHASH_THRESHOLD = 8): textured rock photos on
 # plain backgrounds are often alike, and an automatic drop must not remove genuinely different photos.
@@ -54,6 +55,7 @@ def _existing(manifest: Path) -> list[dict[str, str]]:
 def promote(
     client: httpx.Client, candidates_csv: str | Path, manifest: str | Path, images_dir: str | Path | None,
     retrieval_date: str | None = None, log=lambda *_: None, decisions_path: str | Path | None = None,
+    sleep=time.sleep,
 ) -> PromoteResult:
     """images_dir=None downloads only to fingerprint and verify; nothing is stored."""
     manifest = Path(manifest)
@@ -86,7 +88,9 @@ def promote(
             log(f"refused {c.candidate_id}: licence {c.license!r} does not permit {usage}")
             continue
         try:
-            resp = client.get(c.media_url, headers={"User-Agent": USER_AGENT}, timeout=60)
+            resp = get_with_backoff(client, c.media_url, sleep=sleep)
+            if resp is None:
+                raise RuntimeError("gave up after retries")
             resp.raise_for_status()
             raw = resp.content
             with Image.open(BytesIO(raw)) as im:

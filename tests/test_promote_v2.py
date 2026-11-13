@@ -92,3 +92,18 @@ def test_decisions_file_is_applied_by_promote(tmp_path):
     files = {"https://img/1.jpg": _jpg(_texture(5)), "https://img/2.jpg": _jpg(_texture(6))}
     res = promote(_client(files), cand, tmp_path / "ref.csv", None, retrieval_date="2026-11-13", decisions_path=dec)
     assert res.promoted == 1 and res.rejected_by_reviewer == 1
+
+
+def test_promote_retries_throttled_downloads(tmp_path):
+    cand = tmp_path / "c.csv"
+    write_candidates(cand, [_cand(1)])
+    calls = []
+    img = _jpg(_texture(8))
+
+    def handler(req):
+        calls.append(1)
+        return httpx.Response(429, headers={"retry-after": "0"}) if len(calls) < 3 else httpx.Response(200, content=img)
+
+    res = promote(httpx.Client(transport=httpx.MockTransport(handler)), cand, tmp_path / "r.csv", None,
+                  retrieval_date="2026-11-13", sleep=lambda s: None)
+    assert res.promoted == 1 and len(calls) == 3
