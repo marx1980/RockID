@@ -27,3 +27,4 @@ jobs:
       - run: pytest
       - run: python -m services.ingestion.manifest data_manifests/reference/*.csv
       - run: python -m services.ingestion.decisions data_manifests/candidates/candidates.csv data_manifests/candidates/decisions.json
+      - run: python -m services.app.build_data /tmp/data.json && cmp /tmp/data.json app/data.json

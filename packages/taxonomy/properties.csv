@@ -1,0 +1,22 @@
+taxon_id,formula_or_makeup,hardness,streak,luster,class,features
+min.quartz,SiO2,7,White,Vitreous,Silicate,Six-sided crystals|Conchoidal fracture|Scratches glass
+min.calcite,CaCO3,3,White,Vitreous,Carbonate,Rhombic cleavage|Fizzes in dilute acid|Double refraction
+min.pyrite,FeS2,6–6.5,Greenish black,Metallic,Sulfide,Brassy yellow|Cubic crystals|Striated faces
+min.fluorite,CaF2,4,White,Vitreous,Halide,Cubic crystals|Octahedral cleavage|Purple green or yellow
+min.gypsum,CaSO4·2H2O,2,White,Vitreous to pearly,Sulfate,Scratched by fingernail|Flexible flakes|Clear to white
+min.hematite,Fe2O3,5–6,Red-brown,Metallic to earthy,Oxide,Red-brown streak|Heavy|Steel grey or red
+min.magnetite,Fe3O4,5.5–6.5,Black,Metallic,Oxide,Magnetic|Black streak|Octahedral crystals
+min.malachite,Cu2CO3(OH)2,3.5–4,Pale green,Silky to vitreous,Carbonate,Green bands|Botryoidal masses|Fizzes in acid
+min.azurite,Cu3(CO3)2(OH)2,3.5–4,Light blue,Vitreous,Carbonate,Deep blue|Often with malachite|Fizzes in acid
+min.muscovite,KAl2(AlSi3O10)(OH)2,2–2.5,White,Pearly,Silicate,Silvery sheets|Flexible elastic flakes|Perfect cleavage
+min.biotite,K(Mg Fe)3AlSi3O10(OH)2,2.5–3,White to grey,Pearly to submetallic,Silicate,Black to brown sheets|Flexible flakes|Perfect cleavage
+min.k-feldspar,KAlSi3O8,6–6.5,White,Vitreous,Silicate,Pink to white|Two cleavages near 90°|Blocky crystals
+rock.granite,Quartz · K-feldspar · plagioclase · mica,6–7,—,—,Igneous (intrusive),Coarse interlocking grains|Speckled|No banding
+rock.basalt,Plagioclase · pyroxene · olivine,6,—,—,Igneous (extrusive),Dark and fine-grained|Gas holes (vesicles)|Heavy
+rock.limestone,Calcite,3,—,—,Sedimentary,Fizzes in acid|Fossils common|Fine to coarse grains
+rock.sandstone,Quartz sand grains,6–7,—,—,Sedimentary,Gritty surface|Visible sand grains|Layering
+rock.chert,Microcrystalline quartz,7,—,—,Sedimentary,Waxy smooth surface|Conchoidal fracture|Scratches glass
+rock.marble,Recrystallized calcite or dolomite,3–4,—,—,Metamorphic,Sugary interlocking crystals|Fizzes in acid|No fossils
+rock.slate,Clay minerals · mica · quartz,3–5,—,—,Metamorphic,Splits into flat sheets|Very fine-grained|Dull sheen
+rock.gneiss,Feldspar · quartz · mica,6–7,—,—,Metamorphic,Light and dark bands|Coarse grains|Foliated
+rock.quartzite,Recrystallized quartz,7,—,—,Metamorphic,Breaks through grains|Sugary glassy texture|Scratches glass
