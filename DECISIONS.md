@@ -68,3 +68,15 @@ Model `onnx-community/dinov2-small`, int8 (`q8`, ~24 MB, Apache-2.0 weights), ru
 
 ## 2026-11-13 Branch deletion through a workflow
 This session cannot delete remote branches (API and git push --delete are refused), so `cleanup-branches` deletes temporary branches with the workflow token.
+
+## 2026-11-13 NHM London source (P3b)
+Data Portal CKAN API, no key. Only ~4,800 mineralogy records have photos, nearly all CC BY 4.0 (reference-only under our policy) with reliable catalogue numbers as specimen IDs. The portal cannot filter by name substring, so the harvester fetches all imaged records once (10 polite calls) and matches by name locally, rejecting containers and host-rock mentions ("granite" only as the host of a wolframite vein, "quartz-porphyry"). Media URL is the plain `data.nhm.ac.uk/media/<asset>` (the IIIF `!1024,1024` form returns 400 for images smaller than 1024 px). Mineral coverage is negligible (a handful of quartz, calcite, pyrite); the volume is ornamental and building stone.
+
+## 2026-11-13 NHM review: polished slab scans rejected, sandstone capped
+Of 631 photos, 49 approved. 443 were flat-bed scans of sawn/polished ornamental slabs with a scale bar (all of marble, nearly all of granite and limestone), rejected under the standing rule that polished or cut stone is out (reason `polished_slab_scan`, so they can be flipped later if Marko includes polished stone). Sandstone is natural rock on one black lab backdrop with a colour checker in every photo; 30 kept, 120 rejected as `surplus_same_collection` so one backdrop cannot dominate the class. Kept: 30 sandstone, 8 limestone, 5 granite, 4 calcite, 1 basalt, 1 slate.
+
+## 2026-11-13 Later review rounds merge without re-splitting
+The challenge set is frozen once scored. `services/curation/merge_round.py` adds new approvals to the reference side only, and turns an approval into a reject if it shares a photographer, specimen or source page with a challenge case of the same taxon (none did). Contact sheets take a round prefix and skip already-reviewed candidates. Institution-level hold-out was not adopted: it would have removed NHM from the reference side of the classes it is meant to help. A second challenge set from a different institution stays an option for a later phase.
+
+## 2026-11-13 NHM re-score: neutral, v1 model stays live
+Rebuilt with 692 reference photos and scored on the same challenge set as a labelled second evaluation (BASELINE_v2.md; v1 files untouched). Shortlist top-1 0.474 (v1 0.479), top-3 0.784 (0.800), mineral vs rock 0.932 (0.926); committed coverage 0.163 at 0.742 (0.153 at 0.759). All differences are 1 to 3 cases of 190, i.e. noise. Granite committed recall stays 0.00 (5 cases). No model change was shipped on this evidence; the new data would be kept for the next comparison.
