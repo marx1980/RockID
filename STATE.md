@@ -38,7 +38,7 @@ G-01 PASS, G-02 PASS (provisional), H-01 PASS (licence policy approved). Log: re
 ## Data after curation
 - 839 approved, 597 rejected; 645 reference, 190 challenge (vault branch)
 - Thin classes: marble 2, biotite 4, slate 10 approved; chert has no challenge cases; magnetite 1 challenge case
-- pHash leakage between reference and challenge not yet checked (needs challenge fingerprints; P4)
+- pHash leakage between reference and challenge checked in round 10 (7 cases removed)
 
 ## Next (old)
 H-02: enable Pages, create the token, review at least one taxon on the phone. Then run promote-reference, ingest to the DB and start P3 (embeddings).
@@ -53,7 +53,7 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 ## Next
 1. H-03: Marko tries the app on real rocks.
 2. P3b: more and better reference data for weak classes (marble 2, biotite 3, granite 3 specimens; slate, magnetite thin); re-harvest with better queries; consider dinov2-base or SigLIP2 and compare on the same challenge set.
-3. P4: OOD set (non-rocks, other minerals), threshold calibration on a held-out calibration split, follow-up answers fed back into ranking.
+3. P5: choose thresholds on the OOD calibration set (after H-03), follow-up answers fed back into ranking. Leakage check and OOD sets are done (round 10).
 
 ## P3b so far
 - NHM London harvester (services/ingestion/sources/nhm.py), review rounds (contact sheets with prefix, merge_round), tagged re-score
@@ -78,7 +78,7 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 ## Round 6: Wikipedia-article images
 - `wikipedia` harvest source (services/ingestion/sources/wikipedia.py, packages/taxonomy/wikipedia_articles.csv, 21 taxa): article image lists, licence from Commons
 - 734 candidates reviewed, 149 approved and promoted; reference set 1,834 photos
-- Score with same model (results/compare/dinov2-small-v6): challenge top-1 0.495, top-3 0.800; Commons 0.39 / 0.71; not shipped, v4 live
+- Score with same model (results/compare/dinov2-small-v6): challenge top-1 0.495, top-3 0.800; Commons 0.39 / 0.71; shipped later as model v9 (see below)
 - Rock articles yield little (outcrops, structures); weak rock classes still need specimen photos from other sources
 - Round 7: ~150 subtype articles; 141 approved; 1,975 reference photos; challenge top-1 0.489, top-3 0.795, Commons 0.37 / 0.71 (results/compare/dinov2-small-v7); not shipped
 - Least natural coverage now: marble 11 photos, slate 22, granite 54 (28 specimens), chert 60 (28), magnetite 58 (22)
@@ -89,6 +89,13 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - Reference now 2,592 photos (marble 241, granite 238, limestone 244, chert 151, sandstone 146, basalt 138, gneiss 126, muscovite 97, magnetite 97, quartzite 95, biotite 61, slate 35)
 - v9 score (results/compare/dinov2-small-v9): A top-1 0.474 / top-3 0.774; B 0.454 / 0.674 (v7 reference on the same B cases 0.355 / 0.617); other-collections-only 0.355; not shipped, v4 live
 - Known gaps: slate (35 photos, no B cases), quartzite (2 B cases), challenge A still 74% Smithsonian; B is Commons only so it does not test museum-style photos
+
+## Round 10: v9 shipped, leakage check, OOD sets
+- v9 shipped (build-model run 43444506217, PR #73): 2,592 reference photos, live in the app.
+- Leakage check (services/curation/challenge_leakage.py, workflow leakage-check): pHash of both challenge sets against the reference set found 6 visual duplicates and 1 same-specimen case; 7 cases removed. Challenge A is now 189 cases, B 135. Scores on the cleaned sets: A top-1 0.471 / top-3 0.772 (v7 0.492 / 0.794); B 0.437 / 0.659 (v7 reference 0.333 / 0.600).
+- OOD sets (vault `ood_calibration.csv`, `ood_test.csv`, 56 + 56 cases, truth UNKNOWN): 440 Commons candidates from `packages/taxonomy/ood_categories.csv` reviewed by eye, 112 approved (other minerals 48, other rocks 20, man-made 25, other natural 19). Rejected: outcrops, scenes, diagrams, statues, displays with many specimens, and coal, meteorites and petrified wood (identity too close to rock). Split by whole photographer (services/curation/ood_set.py). Thresholds may be tuned on the calibration set only; the frozen test is scored once per chosen setting.
+- v9 on OOD (results/compare/dinov2-small-v9-ood): with the shipped thresholds (floor 0.65, p 0.4, margin 0.1) 11% of calibration OOD photos are wrongly named (7% on the frozen test, 4 of 56), worst for man-made material and other rocks. The sweep (OOD_SWEEP.md) shows stricter settings (p 0.7) drop that to 2% but cut answered coverage on reference photos from 34% to 13%. Choice of setting waits for H-03.
+- Not done: P5 threshold choice, follow-up prompts, OOD photos from phone cameras.
 
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
