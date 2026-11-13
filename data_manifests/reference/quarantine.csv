@@ -1,0 +1,8 @@
+asset_id,taxon_id,matched_asset_id,phash_distance,reason
+si:nmnhmineralsciences_1166497:ark:/65665/m3fbab8be3e1bd46158b3d5ffc9a9ef5b2,min.azurite,si:nmnhmineralsciences_1166497:ark:/65665/m3eb3ea207f80846f28f541b704bde3b9a,2,near_duplicate_image
+commons:10124771,min.gypsum,commons:10448204,2,near_duplicate_image
+commons:10174039,min.magnetite,commons:10477226,0,near_duplicate_image
+commons:60349900,rock.chert,commons:60349936,4,near_duplicate_image
+commons:84543577,rock.gneiss,commons:84543579,2,near_duplicate_image
+commons:35471458,rock.quartzite,commons:84625727,0,near_duplicate_image
+si:nmnhmineralsciences_1126521:ark:/65665/m3c1a4caf39028457ca0ce2b9ae8d2f220,min.k-feldspar,si:nmnhmineralsciences_1126521:ark:/65665/m3625550131c914f5ea089d60389510709,4,near_duplicate_image
