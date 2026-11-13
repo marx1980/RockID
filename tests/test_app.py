@@ -10,7 +10,7 @@ def test_app_data_is_current_and_valid():
     data = build()
     assert check(data) == []
     assert json.loads((ROOT / "app/data.json").read_text()) == data
-    assert len(data["taxa"]) == 21 and all(t["hardness"] for t in data["taxa"].values())
+    assert len(data["taxa"]) == 99 and all(t["hardness"] for t in data["taxa"].values())
 
 
 def test_every_multi_member_group_has_a_followup():

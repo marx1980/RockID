@@ -17,6 +17,12 @@ def build() -> dict:
             answers = [a.split("=", 1) for a in r["answers"].split("|")]
             groups[r["confusion_group"]] = {"q": r["test"], "a": [{"label": l, "taxon": t} for l, t in answers]}
     taxa = {}
+    with (TAXONOMY_DIR / "extra_minerals.csv").open(newline="", encoding="utf-8") as fh:
+        extra = list(csv.DictReader(fh))
+    for r in extra:
+        props[r["taxon_id"]] = r
+        tax = {**tax, r["taxon_id"]: type("T", (), {"canonical_name": r["canonical_name"], "category": r["category"],
+                                                    "confusion_group": r["confusion_group"]})()}
     for tid, t in tax.items():
         p = props[tid]
         taxa[tid] = {
@@ -24,7 +30,7 @@ def build() -> dict:
             "makeup": p["formula_or_makeup"], "hardness": p["hardness"], "streak": p["streak"],
             "luster": p["luster"], "class": p["class"], "features": p["features"].split("|"),
         }
-    return {"taxonomy_version": "mvp21-v1", "taxa": taxa, "followups": groups}
+    return {"taxonomy_version": "mvp21-v1+extra78", "taxa": taxa, "followups": groups}
 
 
 def check(data: dict) -> list[str]:
