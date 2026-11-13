@@ -83,6 +83,13 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - Round 7: ~150 subtype articles; 141 approved; 1,975 reference photos; challenge top-1 0.489, top-3 0.795, Commons 0.37 / 0.71 (results/compare/dinov2-small-v7); not shipped
 - Least natural coverage now: marble 11 photos, slate 22, granite 54 (28 specimens), chert 60 (28), magnetite 58 (22)
 
+## Rounds 8 and 9 and challenge set B
+- Round 8: Smithsonian re-harvest, 111 approved. Round 9: `commons-categories` source (packages/taxonomy/commons_categories.csv, services/ingestion/sources/commons_categories.py), 1,933 reviewed, 661 approved; sheet caps `--per-author 10 --per-taxon 200`
+- Challenge set B (vault branch `challenge_b.csv`, 141 cases): whole held-out photographers, weak classes (marble 22, chert 11, biotite 8, magnetite 8, muscovite 23, granite 19, gneiss 13, limestone 13, sandstone 13, basalt 9, quartzite 2, slate 0); built by services/curation/challenge_b.py
+- Reference now 2,592 photos (marble 241, granite 238, limestone 244, chert 151, sandstone 146, basalt 138, gneiss 126, muscovite 97, magnetite 97, quartzite 95, biotite 61, slate 35)
+- v9 score (results/compare/dinov2-small-v9): A top-1 0.474 / top-3 0.774; B 0.454 / 0.674 (v7 reference on the same B cases 0.355 / 0.617); other-collections-only 0.355; not shipped, v4 live
+- Known gaps: slate (35 photos, no B cases), quartzite (2 B cases), challenge A still 74% Smithsonian; B is Commons only so it does not test museum-style photos
+
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
 - services/model/shortcut.py: reference k-NN with own collection removed vs random control; challenge split by collection
