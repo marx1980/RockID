@@ -70,3 +70,29 @@ def test_later_round_skips_reviewed_and_prefixes_sheets(tmp_path):
     assert (tmp_path / "out" / "r2-rock.marble-1.jpg").exists()
     import json
     assert set(json.loads((tmp_path / "out" / "index.json").read_text())["r2-rock.marble-1"].values()) == {"x:2", "x:3"}
+
+
+def test_merge_round_keeps_challenge_frozen_and_blocks_overlap(tmp_path):
+    import csv, json
+    from services.curation.merge_round import merge_round
+    from services.ingestion.candidates import Candidate, write_candidates
+
+    def cand(i, author, spec):
+        return Candidate(f"x:{i}", "rock.granite", "Museum", str(i), "t", f"https://m/{i}", f"https://img/{i}.jpg", author, "CC BY 4.0", "", spec, "high", True, "", "allowed_reference_only", "", "")
+
+    write_candidates(tmp_path / "c.csv", [cand(1, "Ann", "sp1"), cand(2, "Bob", "sp2"), cand(3, "Museum", "sp3"), cand(4, "Cy", "sp4")])
+    with (tmp_path / "r.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["candidate_id", "taxon_id", "decision", "reason", "reviewer", "sheet", "tile"])
+        for i, d in ((1, "approve_reference"), (2, "approve_reference"), (3, "approve_reference"), (4, "reject")):
+            w.writerow([f"x:{i}", "rock.granite", d, "r", "a", "s", i])
+    (tmp_path / "d.json").write_text(json.dumps({"x:4": "approve_reference"}))  # already decided: untouched
+    with (tmp_path / "v.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["case_id", "candidate_id", "ground_truth_id", "specimen_id", "source_name", "source_url", "media_url", "author", "license"])
+        w.writerow(["c1", "y:1", "rock.granite", "spZ", "Museum", "https://other/1", "u", "Ann", "CC BY 4.0"])  # same photographer as x:1
+    res = merge_round(tmp_path / "c.csv", tmp_path / "r.csv", tmp_path / "d.json", tmp_path / "v.csv")
+    out = json.loads((tmp_path / "d.json").read_text())
+    assert out["x:1"] == "reject" and out["x:2"] == "approve_reference" and out["x:3"] == "approve_reference"
+    assert out["x:4"] == "approve_reference" and res["conflicts"][0][0] == "x:1"
+    assert "reserve" not in out.values()
