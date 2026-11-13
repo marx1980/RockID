@@ -1,6 +1,10 @@
 name: build-model
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "result file suffix for a re-score after the reference set changed (e.g. v2); blank overwrites the baseline files"
+        default: ""
 
 permissions:
   contents: write
@@ -41,9 +45,10 @@ jobs:
           node tools/embed/embed.mjs /tmp/challenge_inputs.csv case_id /tmp/challenge
       - name: Score challenge once
         run: |
+          SUF="${{ inputs.tag && format('_{0}', inputs.tag) || '' }}"
           python -m services.model.evaluate score app/model/reference /tmp/challenge vault/challenge.csv \
-            app/model/config.json results/baseline.json results/BASELINE.md
-          cat results/BASELINE.md >> "$GITHUB_STEP_SUMMARY"
+            app/model/config.json "results/baseline${SUF}.json" "results/BASELINE${SUF}.md"
+          cat "results/BASELINE${SUF}.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a branch
         run: |
           rm -f node_modules

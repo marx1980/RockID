@@ -102,7 +102,8 @@ def score(ref_prefix, ch_prefix, challenge_csv, config_path, json_out, md_out) -
         preds[it["id"]] = {"status": d.status, "ranked": [c.taxon_id for c in d.candidates],
                            "p": [round(c.probability, 4) for c in d.candidates]}
     Path(json_out).parent.mkdir(parents=True, exist_ok=True)
-    frozen = Path(json_out).with_name("challenge_predictions.json")
+    # baseline.json -> challenge_predictions.json; baseline_v2.json -> challenge_predictions_v2.json (earlier runs stay untouched)
+    frozen = Path(json_out).with_name(Path(json_out).stem.replace("baseline", "challenge_predictions") + ".json")
     frozen.write_text(json.dumps(preds, indent=0, sort_keys=True))
     return rescore(frozen, challenge_csv, json_out, md_out, cfg, rmeta, len(cmeta.get("failed", [])))
 
