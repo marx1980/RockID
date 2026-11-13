@@ -8,8 +8,11 @@ from packages.taxonomy.loader import load_taxonomy
 
 REFERENCE_COLUMNS = [
     "asset_id", "taxon_id", "specimen_id", "source_name", "source_url", "author",
-    "license", "retrieval_date", "usage_decision", "sha256", "phash", "media_url",
+    "license", "retrieval_date", "usage_decision", "sha256", "phash", "media_url", "form",
 ]
+# What the stone looks like in the photo: raw (natural), tumbled (rounded by machine or water) or
+# polished (polished or sawn slab, cabochon, sphere). Blank means natural.
+FORMS = ("natural", "tumbled", "polished")
 USAGE_DECISIONS = {"allowed_train", "allowed_reference_only", "rejected", "pending"}
 INGESTIBLE = {"allowed_train", "allowed_reference_only"}
 # Anything that smells like hidden challenge truth must never appear in a reference manifest.
@@ -81,6 +84,8 @@ def validate_rows(rows: list[dict[str, str]], taxonomy_name: str = "mvp21") -> l
         seen_sha.add(sha)
         if not _PHASH.match(row.get("phash", "")):
             err("phash must be 16 lowercase hex chars")
+        if (row.get("form") or "natural") not in FORMS:
+            err(f"invalid form {row.get('form')!r}")
     return errors
 
 

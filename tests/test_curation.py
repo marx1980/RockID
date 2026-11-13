@@ -96,3 +96,53 @@ def test_merge_round_keeps_challenge_frozen_and_blocks_overlap(tmp_path):
     assert out["x:1"] == "reject" and out["x:2"] == "approve_reference" and out["x:3"] == "approve_reference"
     assert out["x:4"] == "approve_reference" and res["conflicts"][0][0] == "x:1"
     assert "reserve" not in out.values()
+
+
+def test_reinstate_polished_sets_form_caps_and_respects_challenge(tmp_path):
+    import csv, json
+    from services.curation.forms import reinstate_polished
+    from services.ingestion.candidates import Candidate, write_candidates
+
+    def cand(i, author, usage="allowed_reference_only"):
+        return Candidate(f"x:{i}", "rock.marble", "Museum", str(i), "t", f"https://m/{i}", f"https://img/{i}.jpg", author, "CC BY 4.0", "", f"sp{i}", "high", True, "", usage, "", "")
+
+    ids = list(range(1, 8))
+    write_candidates(tmp_path / "c.csv", [cand(i, "Ann" if i == 1 else "Museum") for i in ids])
+    with (tmp_path / "r.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["candidate_id", "taxon_id", "decision", "reason", "reviewer", "sheet", "tile"])
+        for i in ids:
+            w.writerow([f"x:{i}", "rock.marble", "reject", "cut_gemstone" if i == 7 else "polished_slab_scan", "a", "s", i])
+    (tmp_path / "d.json").write_text(json.dumps({f"x:{i}": "reject" for i in ids}))
+    (tmp_path / "f.json").write_text("{}")
+    with (tmp_path / "v.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["case_id", "candidate_id", "ground_truth_id", "specimen_id", "source_name", "source_url", "media_url", "author", "license"])
+        w.writerow(["c1", "y:1", "rock.marble", "spZ", "Museum", "https://other/1", "u", "Ann", "CC BY 4.0"])
+    res = reinstate_polished(tmp_path / "c.csv", tmp_path / "r.csv", tmp_path / "d.json", tmp_path / "f.json", tmp_path / "v.csv", cap=3)
+    d, f = json.loads((tmp_path / "d.json").read_text()), json.loads((tmp_path / "f.json").read_text())
+    approved = [k for k, v in d.items() if v == "approve_reference"]
+    assert len(approved) == 3 and set(approved) == set(f) and set(f.values()) == {"polished"}
+    assert d["x:1"] == "reject" and d["x:7"] == "reject"  # challenge photographer, faceted gem
+    assert res == {"reinstated": 3, "left_out_by_cap": 2}
+
+
+def test_promote_writes_form_and_defaults_old_rows_to_natural(tmp_path):
+    import csv, json
+    from services.ingestion.candidates import write_candidates
+    from services.ingestion.manifest import validate_file
+    from services.ingestion.promote import promote
+    from tests.test_harvest import _jpeg
+
+    a, b = _cand(1), _cand(2)
+    write_candidates(tmp_path / "c.csv", [a, b])
+    (tmp_path / "f.json").write_text(json.dumps({"t:2": "tumbled"}))
+    m = tmp_path / "ref.csv"
+    promote(_client_files({a.media_url: _jpeg(1), b.media_url: _jpeg(2)}), tmp_path / "c.csv", m, None, retrieval_date="2026-11-13", forms_path=tmp_path / "f.json")
+    forms = {r["asset_id"]: r["form"] for r in csv.DictReader(m.open())}
+    assert forms == {"t:1": "natural", "t:2": "tumbled"} and validate_file(m) == []
+
+
+def _client_files(files):
+    from tests.test_promote_v2 import _client
+    return _client(files)

@@ -19,7 +19,7 @@ import httpx
 from PIL import Image
 
 from services.ingestion.candidates import read_candidates
-from services.ingestion.decisions import DECISION_TO_USAGE, apply_decisions, load_decisions
+from services.ingestion.decisions import DECISION_TO_USAGE, apply_decisions, load_decisions, load_forms
 from services.ingestion.leakage import fingerprint_bytes, min_phash_distance, Fingerprint
 from services.ingestion.licence import permits
 from services.ingestion.manifest import REFERENCE_COLUMNS, validate_rows
@@ -55,14 +55,15 @@ def _existing(manifest: Path) -> list[dict[str, str]]:
 def promote(
     client: httpx.Client, candidates_csv: str | Path, manifest: str | Path, images_dir: str | Path | None,
     retrieval_date: str | None = None, log=lambda *_: None, decisions_path: str | Path | None = None,
-    sleep=time.sleep,
+    sleep=time.sleep, forms_path: str | Path | None = None,
 ) -> PromoteResult:
     """images_dir=None downloads only to fingerprint and verify; nothing is stored."""
     manifest = Path(manifest)
     images_dir = Path(images_dir) if images_dir else None
     if images_dir:
         images_dir.mkdir(parents=True, exist_ok=True)
-    rows = _existing(manifest)
+    rows = [{**r, "form": r.get("form") or "natural"} for r in _existing(manifest)]
+    forms = load_forms(forms_path)
     fingerprints: dict[str, Fingerprint] = {}  # asset_id -> fingerprint, for assets promoted this run
     quarantine: list[dict[str, str]] = []
     known_assets = {r["asset_id"] for r in rows}
@@ -116,6 +117,7 @@ def promote(
             "source_name": c.source_name, "source_url": c.source_url or c.media_url, "author": c.author,
             "license": c.license, "retrieval_date": day, "usage_decision": usage,
             "sha256": fp.sha256, "phash": fp.phash, "media_url": c.media_url,
+            "form": forms.get(c.candidate_id, "natural"),
         }
         if validate_rows([row]):
             res.invalid += 1
@@ -154,10 +156,11 @@ def main(argv=None) -> int:
     ap.add_argument("--manifest", default="data_manifests/reference/reference.csv")
     ap.add_argument("--images", default=None, help="store downloaded images here (default: do not store)")
     ap.add_argument("--decisions", default="data_manifests/candidates/decisions.json")
+    ap.add_argument("--forms", default="data_manifests/candidates/forms.json")
     a = ap.parse_args(argv)
     with httpx.Client(follow_redirects=True) as client:
         res = promote(client, a.candidates, a.manifest, a.images, log=lambda m: print(m, file=sys.stderr),
-                      decisions_path=a.decisions)
+                      decisions_path=a.decisions, forms_path=a.forms)
     print(res)
     return 0
 

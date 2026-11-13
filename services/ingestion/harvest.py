@@ -19,6 +19,7 @@ from dataclasses import replace
 from services.ingestion.sources import commons, europeana, nhm, other_taxa_named, smithsonian
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
+FORM_SOURCES = {"commons-tumbled": "tumbled", "commons-polished": "polished"}
 
 
 def load_queries() -> dict[str, dict[str, str]]:
@@ -51,6 +52,8 @@ def harvest(
             try:
                 if source == "commons":
                     found = commons.search(client, taxon_id, q["commons_query"], terms, per_taxon)
+                elif source in FORM_SOURCES:  # Commons again, with "tumbled"/"polished" in the query
+                    found = commons.search(client, taxon_id, f"{FORM_SOURCES[source]} {terms[0]}", terms, per_taxon)
                 elif source == "smithsonian":
                     found = []
                     for sub in q["smithsonian_query"].split("|"):
@@ -107,7 +110,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana"])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", *FORM_SOURCES])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")
