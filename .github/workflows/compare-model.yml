@@ -14,6 +14,9 @@ on:
       dtype:
         description: "fp32, fp16, q8, ..."
         default: "q8"
+      private:
+        description: "true: add the private MineralImage5k vectors (app model only)"
+        default: "false"
       mask:
         description: "centre fraction painted grey (0 = off; 0.6 = backdrop-only probe)"
         default: "0"
@@ -66,14 +69,24 @@ jobs:
           node tools/embed/embed.mjs /tmp/holdout_inputs.csv case_id emb/holdout
           node tools/embed/embed.mjs /tmp/ood_cal_inputs.csv case_id emb/ood_cal
           node tools/embed/embed.mjs /tmp/ood_test_inputs.csv case_id emb/ood_test
+      - name: Add private vectors
+        if: inputs.private == 'true'
+        run: |
+          cp emb/reference.f32 emb/reference_private.f32 && cp emb/reference.json emb/reference_private.json
+          python -m services.model.private emb/reference_private data_manifests/private/mi5k_ref
       - name: Calibrate and score
         run: |
-          python -m services.model.evaluate calibrate emb/reference "$OUT/config.json" "$OUT/loso.json"
-          python -m services.model.evaluate score emb/reference emb/challenge vault/challenge.csv "$OUT/config.json" "$OUT/baseline.json" "$OUT/BASELINE.md"
-          python -m services.model.evaluate score emb/reference emb/challenge_b vault/challenge_b.csv "$OUT/config.json" "$OUT/baseline_b.json" "$OUT/BASELINE_B.md"
-          python -m services.model.evaluate score_forms emb/reference emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
-          python -m services.model.evaluate ood_sweep emb/reference emb/ood_cal vault/ood_calibration.csv "$OUT/config.json" "$OUT/ood_sweep.json" "$OUT/OOD_SWEEP.md"
-          python -m services.model.evaluate score emb/reference emb/ood_test vault/ood_test.csv "$OUT/config.json" "$OUT/baseline_ood.json" "$OUT/BASELINE_OOD.md"
+          REF=emb/reference; [ "${{ inputs.private }}" = "true" ] && REF=emb/reference_private; echo "REF=$REF" >> "$GITHUB_ENV"
+          python -m services.model.evaluate calibrate $REF "$OUT/config.json" "$OUT/loso.json"
+          python -m services.model.evaluate score $REF emb/challenge vault/challenge.csv "$OUT/config.json" "$OUT/baseline.json" "$OUT/BASELINE.md"
+          python -m services.model.evaluate score $REF emb/challenge_b vault/challenge_b.csv "$OUT/config.json" "$OUT/baseline_b.json" "$OUT/BASELINE_B.md"
+          python -m services.model.evaluate score_forms $REF emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
+          python -m services.model.evaluate ood_sweep $REF emb/ood_cal vault/ood_calibration.csv "$OUT/config.json" "$OUT/ood_sweep.json" "$OUT/OOD_SWEEP.md"
+          python -m services.model.evaluate score $REF emb/ood_test vault/ood_test.csv "$OUT/config.json" "$OUT/baseline_ood.json" "$OUT/BASELINE_OOD.md"
+          if [ "${{ inputs.private }}" = "true" ]; then
+            python -m services.model.evaluate ood_sweep $REF data_manifests/private/mi5k_ood_cal data_manifests/private/ood_cal.csv "$OUT/config.json" "$OUT/ood_sweep_mi5k.json" "$OUT/OOD_SWEEP_MI5K.md"
+            python -m services.model.evaluate score $REF data_manifests/private/mi5k_ood_test data_manifests/private/ood_test.csv "$OUT/config.json" "$OUT/baseline_ood_mi5k.json" "$OUT/BASELINE_OOD_MI5K.md"
+          fi
           python -m services.model.shortcut emb/reference data_manifests/reference/reference.csv "$OUT/shortcut.json" "$OUT/SHORTCUT.md"
           python -m services.model.shortcut challenge "$OUT/challenge_predictions.json" vault/challenge.csv data_manifests/reference/reference.csv > "$OUT/challenge_by_collection.json"
           python -m services.model.shortcut challenge "$OUT/challenge_predictions_b.json" vault/challenge_b.csv data_manifests/reference/reference.csv > "$OUT/challenge_b_by_collection.json"

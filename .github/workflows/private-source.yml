@@ -1,25 +1,58 @@
 name: private-source
-# MineralImage5k photos are museum photos kept private: this workflow downloads them, never commits them.
+# MineralImage5k photos are museum photos kept private: this workflow downloads them to the runner,
+# embeds them with the app's model and commits only vectors and label files (no images, no URLs, no paths).
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "inspect"
-        default: "inspect"
+        description: "inspect or embed"
+        default: "embed"
+      per_taxon:
+        description: "max photos per taxon"
+        default: "120"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt datasets
       - name: Inspect
+        if: inputs.mode == 'inspect'
         run: python -m services.ingestion.private_mineralimage5k inspect
+      - name: Extract and split
+        if: inputs.mode == 'embed'
+        run: |
+          python -m services.ingestion.private_mineralimage5k extract /tmp/priv --per-taxon ${{ inputs.per_taxon }}
+          python -m services.ingestion.private_mineralimage5k split /tmp/priv
+      - name: Embed with the app model
+        if: inputs.mode == 'embed'
+        run: |
+          npm install --prefix tools/embed --no-audit --no-fund
+          ln -s "$PWD/tools/embed/node_modules" node_modules
+          mkdir -p data_manifests/private
+          node tools/embed/embed.mjs /tmp/priv/ref_inputs.csv asset_id data_manifests/private/mi5k_ref
+          node tools/embed/embed.mjs /tmp/priv/ood_cal_inputs.csv case_id data_manifests/private/mi5k_ood_cal
+          node tools/embed/embed.mjs /tmp/priv/ood_test_inputs.csv case_id data_manifests/private/mi5k_ood_test
+          cp /tmp/priv/ref_labels.csv /tmp/priv/ood_cal.csv /tmp/priv/ood_test.csv data_manifests/private/
+          rm -f node_modules
+      - name: Push vectors and labels to a branch
+        if: inputs.mode == 'embed'
+        run: |
+          git config user.name "rockid-private"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "private/run-${{ github.run_id }}"
+          git add -f data_manifests/private
+          git commit -m "MineralImage5k vectors and labels (run ${{ github.run_id }}); no images"
+          git push origin "private/run-${{ github.run_id }}"

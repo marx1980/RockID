@@ -99,10 +99,45 @@ def extract(out_dir: str, per_taxon: int = 120, per_other_class: int = 6) -> Non
     print(json.dumps(dict(sorted(taken.items())), indent=0))
 
 
+def split(out_dir: str) -> None:
+    """From extract's manifest.csv: reference rows, and OOD rows split by whole class (species) into
+    calibration and test halves, so no mineral species is on both sides. Writes ref_inputs.csv,
+    ood_cal_inputs.csv, ood_test_inputs.csv (with local file paths, for embedding) and the label files
+    ref_labels.csv, ood_cal.csv, ood_test.csv (no paths) that are safe to commit."""
+    out = Path(out_dir)
+    rows = list(csv.DictReader((out / "manifest.csv").open(newline="", encoding="utf-8")))
+    ref = [r for r in rows if not r["taxon_id"].startswith("ood.")]
+    ood = [r for r in rows if r["taxon_id"].startswith("ood.")]
+    classes = sorted({r["dataset_class"] for r in ood})
+    side = {c: ("cal" if i % 2 == 0 else "test") for i, c in enumerate(classes)}
+
+    def write(name, items, cols):
+        with (out / name).open("w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+            w.writeheader()
+            w.writerows(items)
+
+    ref_cols = ["asset_id", "taxon_id", "specimen_id", "form", "source_name", "license"]
+    write("ref_inputs.csv", ref, ref_cols + ["media_url"])
+    write("ref_labels.csv", ref, ref_cols)
+    for tag in ("cal", "test"):
+        items = [{**r, "case_id": r["asset_id"], "ground_truth_id": "UNKNOWN", "ood_group": "ood.other_mineral"}
+                 for r in ood if side[r["dataset_class"]] == tag]
+        write(f"ood_{tag}_inputs.csv", items, ["case_id", "media_url"])
+        write(f"ood_{tag}.csv", items, ["case_id", "ground_truth_id", "ood_group", "dataset_class", "source_name", "license"])
+    print(json.dumps({"reference": len(ref), "ood_cal": sum(side[r["dataset_class"]] == "cal" for r in ood),
+                      "ood_test": sum(side[r["dataset_class"]] == "test" for r in ood), "ood_classes": len(classes)}))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["inspect", "extract"])
+    ap.add_argument("cmd", choices=["inspect", "extract", "split"])
     ap.add_argument("out", nargs="?")
     ap.add_argument("--per-taxon", type=int, default=120)
     a = ap.parse_args()
-    inspect() if a.cmd == "inspect" else extract(a.out, a.per_taxon)
+    if a.cmd == "inspect":
+        inspect()
+    elif a.cmd == "extract":
+        extract(a.out, a.per_taxon)
+    else:
+        split(a.out)
