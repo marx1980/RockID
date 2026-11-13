@@ -1,6 +1,10 @@
 name: contact-sheets
 on:
   workflow_dispatch:
+    inputs:
+      round_prefix:
+        description: "sheet name prefix for a later review round (blank = first round); already-reviewed candidates are skipped when set"
+        default: ""
 
 permissions:
   contents: write
@@ -15,7 +19,13 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets
+      - run: |
+          if [ -n "${{ inputs.round_prefix }}" ]; then
+            python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets \
+              --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}"
+          else
+            python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets
+          fi
       - name: Push to a temporary review branch (delete after review)
         run: |
           git config user.name "rockid-curation"

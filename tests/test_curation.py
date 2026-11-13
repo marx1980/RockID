@@ -48,3 +48,25 @@ def test_fetch_retries_on_429():
 
     im = fetch(httpx.Client(transport=httpx.MockTransport(handler)), _cand(1, review=""), sleep=lambda s: None)
     assert im is not None and len(calls) == 3
+
+
+def test_later_round_skips_reviewed_and_prefixes_sheets(tmp_path):
+    from services.curation.contact_sheet import build, reviewed_ids
+    from services.ingestion.candidates import write_candidates
+    import csv, httpx
+    from io import BytesIO
+    from PIL import Image
+
+    def cand(i):
+        from services.ingestion.candidates import Candidate
+        return Candidate(f"x:{i}", "rock.marble", "S", str(i), "t", "u", f"https://img.test/{i}.jpg", "a", "CC BY 4.0", "", f"x:{i}", "high", True, "", "allowed_reference_only", "", "")
+
+    buf = BytesIO(); Image.new("RGB", (40, 40), (120, 120, 120)).save(buf, "JPEG")
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=buf.getvalue())))
+    write_candidates(tmp_path / "c.csv", [cand(1), cand(2), cand(3)])
+    (tmp_path / "r.csv").write_text("candidate_id,taxon_id,decision,reason,reviewer,sheet,tile\nx:1,rock.marble,approve_reference,ok,a,s,1\n")
+    res = build(tmp_path / "c.csv", tmp_path / "out", client, skip=reviewed_ids(tmp_path / "r.csv"), prefix="r2-")
+    assert res["candidates"] == 2
+    assert (tmp_path / "out" / "r2-rock.marble-1.jpg").exists()
+    import json
+    assert set(json.loads((tmp_path / "out" / "index.json").read_text())["r2-rock.marble-1"].values()) == {"x:2", "x:3"}
