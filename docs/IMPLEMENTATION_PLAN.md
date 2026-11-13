@@ -25,11 +25,16 @@ Gate:
 - H-01: Marko signs off the licence policy (in particular CC BY / CC BY-SA = reference-only) and spot-checks 20 candidates.
 
 ## P2 Review tool + reference DB ingest
-- Phone-friendly review page over the candidates CSV: thumbnail grid per taxon, approve train / approve reference / reject, export CSV.
-- `promote` into the reference DB (taxa, specimens, assets) with near-duplicate quarantine.
-- Storage decision for images (local volume vs object store).
+- Phone-first review page on GitHub Pages (`apps/review`, built by `services/review/build_site.py`): one photo at a time with Reject / Reference / Train, grid view, undo, per-taxon progress. Policy-rejected candidates are never shown; Train is disabled unless the licence policy allows it.
+- Decisions live in `data_manifests/candidates/decisions.json`, separate from the harvested candidates so a harvest re-run cannot overwrite them. The page saves locally first and commits to the repo with a fine-grained token (optional).
+- `promote` applies decisions, re-checks the licence, downloads to fingerprint and verify (images are not stored), quarantines near-duplicate photos (pHash distance ≤ 4, rotation/mirror invariant) into `quarantine.csv`, and writes `reference.csv` including `media_url`.
+- `ingest_db` loads the manifest into the reference Postgres (taxa, specimens, assets), idempotently; an invalid manifest changes nothing.
 
-Gate: G-03 round-trip candidates → review → manifest → DB with zero validator errors; H-02 Marko reviews ≥ 1 taxon end to end on the phone.
+Tests: decisions overlay and validation; site build; promote with decisions, quarantine, optional image storage, `media_url`; one specimen cannot span two taxa; Postgres round trip, idempotence, invalid manifest rejected; review page driven in headless Chrome at phone size.
+
+Gate:
+- G-03: round trip candidates → decisions → manifest → DB with zero validator errors (automated, fixtures; repeated on real data after review).
+- H-02: Marko reviews at least one taxon end to end on the phone and the resulting manifest passes validation.
 
 ## P3 Embeddings + pgvector index
 - Embed approved assets with DINOv2 and SigLIP2 (in Actions or a local machine), register encoder provenance, store vectors.

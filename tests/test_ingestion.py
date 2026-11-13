@@ -53,7 +53,7 @@ GOOD = {
     "asset_id": "a1", "taxon_id": "min.quartz", "specimen_id": "s1", "source_name": "Example Museum",
     "source_url": "https://museum.example/1", "author": "J. Doe", "license": "CC0-1.0",
     "retrieval_date": "2026-11-13", "usage_decision": "allowed_train",
-    "sha256": "a" * 64, "phash": "f" * 16,
+    "sha256": "a" * 64, "phash": "f" * 16, "media_url": "https://museum.example/1.jpg",
 }
 
 

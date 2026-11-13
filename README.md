@@ -10,7 +10,7 @@ API: http://localhost:8000/docs
 ## Test
 ```bash
 python -m pip install -r requirements-dev.txt
-pytest
+pytest   # set TEST_DATABASE_URL to also run the Postgres tests
 python -m services.ingestion.manifest data_manifests/reference/*.csv
 ```
 Real encoders (DINOv2, SigLIP2) need `requirements-ml.txt`.
@@ -23,7 +23,8 @@ The identifier has no Challenge Vault credentials, network route or code path. C
 |---|---|
 | `services/api` | `/v1/identify`: upload validation, quality gate, identifier call |
 | `services/identifier` | quality gate, encoder adapters, k-NN search, specimen-balanced aggregation, abstention |
-| `services/ingestion` | reference manifest validation, duplicate and split-leakage detection |
+| `services/ingestion` | candidate harvesting, review decisions, promote to reference manifest, DB ingest, duplicate and split-leakage detection |
+| `services/review`, `apps/review` | phone review page (GitHub Pages) and its site builder |
 | `services/evaluator` | blind run harness (freeze then reveal), metrics |
 | `packages/taxonomy` | MVP21 taxonomy with stable IDs and confusion groups |
 | `infra/db/reference` | pgvector schema (reference domain) |

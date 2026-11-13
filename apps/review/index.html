@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>RockID Review</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--bg:#0e0f12;--panel:#171a1f;--line:#262b33;--text:#e9edf2;--dim:#8b95a3;--train:#2fbf71;--ref:#e0a82e;--rej:#e5534b;--accent:#6aa7ff;--r:12px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font:15px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{display:flex;flex-direction:column;height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow:hidden}
+button,select,input{font:inherit;color:inherit}
+header{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--panel)}
+select{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:0 10px;height:44px;min-width:0}
+#taxon{flex:1}
+.icon{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;font-size:20px;cursor:pointer}
+.icon[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+#status{font-size:12px;color:var(--dim);padding:0 4px;white-space:nowrap;background:none;border:0;cursor:pointer}
+#status.bad{color:var(--rej)}
+main{flex:1;min-height:0;display:flex;flex-direction:column}
+#imgbox{position:relative;flex:1;min-height:0;background:#000;display:flex}
+#img{width:100%;height:100%;object-fit:contain}
+#imgbox .chips{position:absolute;left:8px;top:8px;display:flex;gap:6px;flex-wrap:wrap;pointer-events:none}
+.chip{background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:2px 9px;font-size:12px}
+.chip.train{border-color:var(--train);color:var(--train)}.chip.ref{border-color:var(--ref);color:var(--ref)}.chip.rej{border-color:var(--rej);color:var(--rej)}
+#open{position:absolute;right:8px;top:8px;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;text-decoration:none;color:var(--text);font-size:20px}
+#nav{position:absolute;bottom:8px;display:flex;justify-content:space-between;left:8px;right:8px;pointer-events:none}
+#nav button{pointer-events:auto;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);font-size:20px;cursor:pointer}
+#meta{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:8px 12px;background:var(--panel);border-top:1px solid var(--line);font-size:13px}
+#meta dt{color:var(--dim)}#meta dd{margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#meta dd.warn{color:var(--ref)}
+#bar{display:grid;grid-template-columns:56px 1fr 1fr 1fr;gap:8px;padding:8px 10px;background:var(--panel);border-top:1px solid var(--line)}
+#bar button{height:56px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg);font-weight:600;cursor:pointer}
+#bar button:disabled{opacity:.28;cursor:default}
+#bar .rej{border-color:var(--rej);color:var(--rej)}#bar .ref{border-color:var(--ref);color:var(--ref)}#bar .train{border-color:var(--train);color:var(--train)}
+#bar button.on{color:#000}#bar .rej.on{background:var(--rej)}#bar .ref.on{background:var(--ref)}#bar .train.on{background:var(--train)}
+#gridbar{padding:6px 8px;background:var(--panel);border-bottom:1px solid var(--line)}#gridbar select{width:100%}
+#grid{flex:1;min-height:0;overflow:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px;align-content:start}
+@media(min-width:700px){#grid{grid-template-columns:repeat(6,1fr)}}
+.cell{position:relative;width:100%;background:#000;border:3px solid transparent;border-radius:6px;padding:0;cursor:pointer}
+.cell::before{content:"";display:block;padding-top:100%}
+.cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:3px}
+.cell.train{border-color:var(--train)}.cell.ref{border-color:var(--ref)}.cell.rej{border-color:var(--rej)}.cell.rej img{opacity:.35}
+.cell .l{position:absolute;left:3px;bottom:3px;font-size:10px;background:rgba(0,0,0,.7);padding:0 5px;border-radius:6px}
+#empty{flex:1;display:none;flex-direction:column;gap:14px;align-items:center;justify-content:center}
+#empty .big{font-size:22px}
+#empty button,#sheet button{height:48px;padding:0 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);cursor:pointer}
+#sheet{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:flex-end;z-index:5}
+#sheet.open{display:flex}
+#sheet .card{width:100%;background:var(--panel);border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:10px}
+#sheet label{color:var(--dim);font-size:13px}
+#sheet input{height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);padding:0 10px;width:100%}
+#sheet .row{display:flex;gap:8px;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#000c;border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-size:13px;display:none;z-index:6}
+</style>
+</head>
+<body>
+<header>
+  <select id="taxon" aria-label="Taxon"></select>
+  <button class="icon" id="view" aria-label="Grid" aria-pressed="false">▦</button>
+  <button class="icon" id="gear" aria-label="Settings">⚙</button>
+</header>
+<main>
+  <section id="stage" style="display:flex;flex-direction:column;flex:1;min-height:0">
+    <div id="imgbox">
+      <img id="img" alt="">
+      <div class="chips" id="chips"></div>
+      <a id="open" target="_blank" rel="noopener" aria-label="Source">↗</a>
+      <div id="nav"><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
+    </div>
+    <dl id="meta"></dl>
+    <div id="bar">
+      <button id="undo" aria-label="Undo">↶</button>
+      <button class="rej" id="d-rej">Reject</button>
+      <button class="ref" id="d-ref">Reference</button>
+      <button class="train" id="d-train">Train</button>
+    </div>
+  </section>
+  <section id="gridwrap" style="display:none;flex:1;min-height:0;flex-direction:column">
+    <div id="gridbar"><select id="filter" aria-label="Filter">
+      <option value="pending">Pending</option><option value="train">Train</option><option value="ref">Reference</option><option value="rej">Rejected</option><option value="all">All</option>
+    </select></div>
+    <div id="grid"></div>
+  </section>
+  <section id="empty"><div class="big" id="doneLabel">Done</div><div id="doneCounts" style="color:var(--dim)"></div><button id="nextTaxon">Next taxon</button></section>
+</main>
+<div id="sheet"><div class="card">
+  <label for="token">Token</label><input id="token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div class="row"><button id="saveTok">Save</button><button id="syncNow">Sync</button><button id="copyAll">Copy</button><button id="clearTok">Clear token</button><button id="closeSheet">Close</button></div>
+</div></div>
+<div id="toast"></div>
+<script>
+"use strict";
+const REPO="marx1980/RockID", PATH="data_manifests/candidates/decisions.json", BRANCH="main";
+const K={d:"rockid.d.v1",y:"rockid.y.v1",tok:"rockid.token.v1",t:"rockid.taxon.v1"};
+const $=id=>document.getElementById(id);
+const store={get(k,f){try{const v=localStorage.getItem(k);return v==null?f:JSON.parse(v)}catch(e){return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const S={cands:[],taxa:{},by:{},d:store.get(K.d,{}),dirty:new Set(store.get(K.y,[])),taxon:null,i:0,empty:false,view:"review",undo:[],token:store.get(K.tok,""),sync:"idle",timer:null};
+const LABEL={approve_train:"train",approve_reference:"ref",reject:"rej"};
+const CODE={train:"approve_train",ref:"approve_reference",rej:"reject"};
+const NAME={train:"Train",ref:"Reference",rej:"Rejected"};
+
+function persist(){store.set(K.d,S.d);store.set(K.y,[...S.dirty])}
+function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1400)}
+function state(c){return LABEL[S.d[c.id]]||"pending"}
+function thumb(u,w){
+  if(u.includes("ids.si.edu"))return u.replace(/max=\d+/,"max="+w);
+  if(u.includes("upload.wikimedia.org")){
+    const s=w<=330?330:960,p=u.split("?")[0];
+    if(/\/\d+px-/.test(p))return p.replace(/\/\d+px-/,"/"+s+"px-");
+    const m=p.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons)\/([0-9a-f]\/[0-9a-f]{2})\/([^/]+)$/);
+    if(m)return m[1]+"/thumb/"+m[2]+"/"+m[3]+"/"+s+"px-"+m[3]}
+  return u}
+function lic(l){return /^public domain/i.test(l)?"PD":l.replace(/^CC[ -](?=BY)/i,"")}
+function src(c){return c.id.startsWith("si:")?"Smithsonian":c.id.startsWith("commons:")?"Commons":"Other"}
+function tname(t){return S.taxa[t]?S.taxa[t].n:t}
+function counts(t){const l=S.by[t]||[];let n=0;for(const c of l)if(S.d[c.id])n++;return[n,l.length]}
+
+/* ---------- sync ---------- */
+const b64=s=>btoa(unescape(encodeURIComponent(s)));
+const api=(path,opt={})=>fetch("https://api.github.com/repos/"+REPO+"/contents/"+path+(opt.method==="PUT"?"":"?ref="+BRANCH),{...opt,headers:{Accept:"application/vnd.github+json",...(S.token?{Authorization:"Bearer "+S.token}:{}),...(opt.headers||{})}});
+async function remote(){
+  const r=await api(PATH);
+  if(r.status===404)return{data:{},sha:null};
+  if(!r.ok)throw new Error("HTTP "+r.status);
+  const j=await r.json();
+  return{data:JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,""))))||"{}"),sha:j.sha}}
+function setStatus(){
+  const b=$("status"),n=S.dirty.size;
+  b.className=S.sync==="fail"?"bad":"";
+  b.textContent=S.sync==="busy"?"Syncing…":S.sync==="fail"?"Sync failed":!S.token?(n?n+" local":"Local"):n?n+" unsynced":"Synced"}
+async function syncNow(retry){
+  if(!S.token){openSheet();return}
+  if(S.sync==="busy")return;
+  S.sync="busy";setStatus();
+  try{
+    const snap={};for(const id of S.dirty)snap[id]=S.d[id]??null;
+    const {data,sha}=await remote();
+    for(const id in snap){if(snap[id]===null)delete data[id];else data[id]=snap[id]}
+    if(Object.keys(snap).length){
+      const body={message:"Review decisions ("+Object.keys(snap).length+" changed)",content:b64(JSON.stringify(Object.fromEntries(Object.entries(data).sort()),null,0)+"\n"),branch:BRANCH};
+      if(sha)body.sha=sha;
+      const r=await api(PATH,{method:"PUT",body:JSON.stringify(body)});
+      if((r.status===409||r.status===422)&&!retry){S.sync="idle";return syncNow(true)}
+      if(!r.ok)throw new Error("HTTP "+r.status);
+    }
+    for(const id in snap)if((S.d[id]??null)===snap[id])S.dirty.delete(id);
+    persist();S.sync="idle";
+  }catch(e){S.sync="fail";console.error(e)}
+  setStatus()}
+function queueSync(){if(!S.token)return;clearTimeout(S.timer);S.timer=setTimeout(()=>syncNow(),4000)}
+async function pull(){
+  try{const {data}=await remote();
+    for(const id in data)if(!S.dirty.has(id))S.d[id]=data[id];
+    persist()}catch(e){}}
+
+/* ---------- model ---------- */
+function items(){return S.by[S.taxon]||[]}
+function nextPending(from){
+  const l=items();
+  for(let k=1;k<=l.length;k++){const j=(from+k)%l.length;if(!S.d[l[j].id])return j}
+  return -1}
+function decide(code){
+  const c=items()[S.i];if(!c)return;
+  if(code==="approve_train"&&c.pu!=="allowed_train")return;
+  const prev=S.d[c.id]??null;
+  if(prev===code)return;
+  S.undo.push({id:c.id,prev});if(S.undo.length>60)S.undo.shift();
+  S.d[c.id]=code;S.dirty.add(c.id);persist();queueSync();setStatus();
+  const j=nextPending(S.i);
+  if(j<0)S.empty=true;else S.i=j;
+  renderTaxaOptions();show()
+}
+function undo(){
+  const u=S.undo.pop();if(!u){toast("Nothing to undo");return}
+  if(u.prev===null)delete S.d[u.id];else S.d[u.id]=u.prev;
+  S.dirty.add(u.id);persist();queueSync();setStatus();
+  const c=S.cands.find(x=>x.id===u.id);
+  if(c.t!==S.taxon){S.taxon=c.t;$("taxon").value=c.t}
+  S.i=items().findIndex(x=>x.id===u.id);S.empty=false;S.view="review";renderTaxaOptions();show()}
+
+/* ---------- render ---------- */
+function renderTaxaOptions(){
+  const sel=$("taxon"),cur=S.taxon;sel.innerHTML="";
+  const ids=Object.keys(S.taxa).filter(t=>S.by[t]).sort((a,b)=>S.taxa[a].c.localeCompare(S.taxa[b].c)||S.taxa[a].n.localeCompare(S.taxa[b].n));
+  for(const t of ids){const [n,m]=counts(t);const o=document.createElement("option");o.value=t;o.textContent=S.taxa[t].n+" "+n+"/"+m;sel.appendChild(o)}
+  sel.value=cur}
+function show(){
+  const grid=S.view==="grid";
+  $("view").setAttribute("aria-pressed",grid);
+  $("stage").style.display="none";$("gridwrap").style.display="none";$("empty").style.display="none";
+  if(grid)return renderGrid();
+  const c=items()[S.i];
+  if(S.empty||!c)return showEmpty();
+  $("stage").style.display="flex";
+  const img=$("img");img.onerror=()=>{img.onerror=null;img.src=c.m};
+  img.src=thumb(c.m,960);img.alt=c.ti;
+  $("open").href=c.u||c.m;
+  const st=state(c),chips=$("chips");chips.innerHTML="";
+  const add=(t,cls="")=>{const e=document.createElement("span");e.className="chip "+cls;e.textContent=t;chips.appendChild(e)};
+  add(lic(c.l));add(src(c));if(st!=="pending")add(NAME[st],st);
+  const l=items(),same=l.filter(x=>x.sp===c.sp).length;
+  const rows=[["Title",c.ti.replace(/^File:/,"")],["Author",c.a||"—"],["Specimen",c.sp+(c.sc==="low"?" ?":"")+(same>1?" ×"+same:"")]];
+  if(c.ot)rows.push(["Also",c.ot.split("|").map(tname).join(", "),true]);
+  const meta=$("meta");meta.innerHTML="";
+  for(const [k,v,w] of rows){const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=k;dd.textContent=v;dd.title=v;if(w)dd.className="warn";meta.append(dt,dd)}
+  const cur=S.d[c.id];
+  $("d-train").disabled=c.pu!=="allowed_train";
+  for(const [id,code] of [["d-train","approve_train"],["d-ref","approve_reference"],["d-rej","reject"]])$(id).classList.toggle("on",cur===code);
+  $("undo").disabled=!S.undo.length;
+  for(const k of [1,2]){const j=(S.i+k)%l.length;if(l[j])new Image().src=thumb(l[j].m,960)}
+}
+function showEmpty(){
+  $("empty").style.display="flex";
+  const [n,m]=counts(S.taxon);
+  $("doneLabel").textContent=tname(S.taxon);
+  const by={train:0,ref:0,rej:0};for(const c of items()){const s=state(c);if(by[s]!=null)by[s]++}
+  $("doneCounts").textContent="Train "+by.train+" · Reference "+by.ref+" · Rejected "+by.rej+" · "+n+"/"+m}
+function renderGrid(){
+  $("gridwrap").style.display="flex";const g=$("grid");g.innerHTML="";
+  const f=$("filter").value,frag=document.createDocumentFragment();
+  items().forEach((c,idx)=>{
+    const s=state(c);if(f!=="all"&&s!==f)return;
+    const b=document.createElement("div");b.setAttribute("role","button");b.tabIndex=0;b.className="cell "+(s==="pending"?"":s);
+    const im=document.createElement("img");im.loading="lazy";im.alt="";im.onerror=()=>{im.onerror=null;im.src=c.m};im.src=thumb(c.m,330);
+    const l=document.createElement("span");l.className="l";l.textContent=lic(c.l);
+    b.append(im,l);b.onkeydown=e=>{if(e.key==="Enter"||e.key===" ")b.click()};b.onclick=()=>{S.i=idx;S.empty=false;S.view="review";show()};frag.appendChild(b)});
+  g.appendChild(frag)}
+function setTaxon(t){S.taxon=t;store.set(K.t,t);$("taxon").value=t;const j=nextPending(-1);S.i=j<0?0:j;S.empty=j<0;show()}
+
+/* ---------- events ---------- */
+$("taxon").onchange=e=>setTaxon(e.target.value);
+$("filter").onchange=()=>{if(S.view!=="grid"){S.view="grid"}show()};
+$("view").onclick=()=>{S.view=S.view==="grid"?"review":"grid";if(S.view==="review")S.empty=nextPending(-1)<0&&!items()[S.i];show()};
+$("d-train").onclick=()=>decide("approve_train");
+$("d-ref").onclick=()=>decide("approve_reference");
+$("d-rej").onclick=()=>decide("reject");
+$("undo").onclick=undo;
+$("next").onclick=()=>{const l=items();S.i=(S.i+1)%l.length;S.empty=false;show()};
+$("prev").onclick=()=>{const l=items();S.i=(S.i-1+l.length)%l.length;S.empty=false;show()};
+$("nextTaxon").onclick=()=>{const o=[...$("taxon").options].map(x=>x.value),k=o.indexOf(S.taxon);for(let j=1;j<=o.length;j++){const t=o[(k+j)%o.length];if((S.by[t]||[]).some(c=>!S.d[c.id])){setTaxon(t);return}}toast("All reviewed")};
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT")return;
+  const k=e.key.toLowerCase();
+  if(k==="1")decide("reject");else if(k==="2")decide("approve_reference");else if(k==="3")decide("approve_train");
+  else if(k==="z")undo();else if(k==="arrowright")$("next").click();else if(k==="arrowleft")$("prev").click()});
+let tx=null;
+$("imgbox").addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
+$("imgbox").addEventListener("touchend",e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>70)$(dx<0?"next":"prev").click()},{passive:true});
+function openSheet(){$("token").value=S.token;$("sheet").classList.add("open")}
+$("gear").onclick=openSheet;$("closeSheet").onclick=()=>$("sheet").classList.remove("open");
+$("saveTok").onclick=()=>{S.token=$("token").value.trim();store.set(K.tok,S.token);$("sheet").classList.remove("open");setStatus();if(S.token)syncNow()};
+$("clearTok").onclick=()=>{S.token="";store.set(K.tok,"");$("token").value="";setStatus()};
+$("syncNow").onclick=()=>{$("sheet").classList.remove("open");syncNow()};
+$("copyAll").onclick=async()=>{try{await navigator.clipboard.writeText(JSON.stringify(S.d));toast("Copied")}catch(e){toast("Copy failed")}};
+
+/* ---------- boot ---------- */
+(async function(){
+  const hdr=document.querySelector("header"),st=document.createElement("button");st.id="status";st.onclick=()=>syncNow();hdr.insertBefore(st,$("view"));
+  setStatus();
+  try{
+    const [c,t]=await Promise.all([fetch("candidates.json").then(r=>r.json()),fetch("taxa.json").then(r=>r.json())]);
+    S.cands=c;S.taxa=t;for(const x of c)(S.by[x.t]=S.by[x.t]||[]).push(x);
+  }catch(e){$("stage").style.display="none";$("empty").style.display="flex";$("doneLabel").textContent="Load failed";$("doneCounts").textContent="";$("nextTaxon").textContent="Retry";$("nextTaxon").onclick=()=>location.reload();return}
+  await pull();
+  const saved=store.get(K.t,null);
+  renderTaxaOptions();
+  setTaxon(saved&&S.by[saved]?saved:$("taxon").options[0].value);
+  setStatus();
+})();
+</script>
+</body>
+</html>

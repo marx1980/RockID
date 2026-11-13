@@ -29,3 +29,18 @@ Reason: repo size and per-image licence obligations. Storage backend decided in 
 
 ## 2026-11-13 P1 gate summary
 G-01 PASS; G-02 PASS provisional (all 21 taxa ≥ 9 specimen hints before review); H-01 pending. Weakest classes before review: magnetite (9), chert (10), granite (10).
+
+## 2026-11-13 P2: review page on GitHub Pages, not a claude.ai artifact
+Reason: artifact pages cannot load remote images, and the photos live on Smithsonian and Wikimedia hosts. Pages (repo is public) has no such limit. Rejected: embedding 1,500 thumbnails as data URIs (size limit, needs a download step), a local review app (phone-first).
+
+## 2026-11-13 P2: decisions in their own file, saved by the page through the GitHub contents API
+Reason: no backend; a harvest re-run must never overwrite review work; decisions.json merges cleanly (sorted keys, one line each). The token is a fine-grained PAT limited to this repo (Contents read/write), kept in the browser's localStorage. Without a token decisions stay in the browser and can be copied out.
+
+## 2026-11-13 P2: images are not stored; the manifest keeps media_url and sha256
+Reason: CC BY / CC BY-SA photos should not be redistributed by us (release assets and workflow artifacts are public for a public repo), and the corpus is small enough to re-fetch. P3 re-downloads from media_url and must verify sha256; a mismatch flags the asset. Risk: a source changes or removes an image. Rejected: GitHub Release assets, workflow artifacts, a private bucket (cost and setup for no current need).
+
+## 2026-11-13 P2: near-duplicate auto-quarantine at pHash distance 4 (uncalibrated)
+Reason: the review threshold of 8 would drop genuinely different photos of similar-looking specimens on plain backgrounds. Quarantined rows go to quarantine.csv with the matched asset for later manual review. To be calibrated on the real corpus in P4.
+
+## 2026-11-13 P2: manifest schema change (media_url added)
+Manifest columns and the reference `assets` table gained `media_url`; `assets` gained `quarantine_reason`. No deployed database exists yet, so 001_init.sql was edited in place.
