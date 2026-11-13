@@ -1,0 +1,80 @@
+name: compare-model
+# Embeds the reference set, challenge set and polished hold-out with another model (or a
+# backdrop-only probe) and scores it exactly like build-model. Writes results/compare/<tag>/ only;
+# the app's model files are not touched. Embeddings go to the same temporary branch under emb/.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "result folder name, e.g. dinov2-base"
+        required: true
+      model:
+        description: "Hugging Face ONNX model id"
+        default: "onnx-community/dinov2-small"
+      dtype:
+        description: "fp32, fp16, q8, ..."
+        default: "q8"
+      mask:
+        description: "centre fraction painted grey (0 = off; 0.6 = backdrop-only probe)"
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      EMBED_MODEL: ${{ inputs.model }}
+      EMBED_DTYPE: ${{ inputs.dtype }}
+      EMBED_MASK: ${{ inputs.mask }}
+      OUT: results/compare/${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: vault
+          path: vault
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: npm install --prefix tools/embed --no-audit --no-fund
+      - name: Model files on the hub
+        run: curl -sS "https://huggingface.co/api/models/${EMBED_MODEL}" | python -c "import json,sys; d=json.load(sys.stdin); print([s['rfilename'] for s in d.get('siblings',[]) if s['rfilename'].startswith('onnx/')] or d)"
+      - name: Inputs without labels
+        run: |
+          python - <<'PY'
+          import csv
+          for src, dst in (("vault/challenge.csv", "/tmp/challenge_inputs.csv"), ("vault/form_holdout.csv", "/tmp/holdout_inputs.csv")):
+              with open(src, newline="") as f, open(dst, "w", newline="") as o:
+                  w = csv.writer(o); w.writerow(["case_id", "media_url"])
+                  for r in csv.DictReader(f): w.writerow([r["case_id"], r["media_url"]])
+          PY
+      - name: Embed
+        run: |
+          ln -s "$PWD/tools/embed/node_modules" node_modules
+          mkdir -p emb "$OUT"
+          node tools/embed/embed.mjs data_manifests/reference/reference.csv asset_id emb/reference
+          node tools/embed/embed.mjs /tmp/challenge_inputs.csv case_id emb/challenge
+          node tools/embed/embed.mjs /tmp/holdout_inputs.csv case_id emb/holdout
+      - name: Calibrate and score
+        run: |
+          python -m services.model.evaluate calibrate emb/reference "$OUT/config.json" "$OUT/loso.json"
+          python -m services.model.evaluate score emb/reference emb/challenge vault/challenge.csv "$OUT/config.json" "$OUT/baseline.json" "$OUT/BASELINE.md"
+          python -m services.model.evaluate score_forms emb/reference emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
+          cat "$OUT/BASELINE.md" "$OUT/FORMS.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Push to a branch
+        run: |
+          rm -f node_modules
+          git config user.name "rockid-model"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "compare/${{ inputs.tag }}-${{ github.run_id }}"
+          git add -f results/compare emb
+          git commit -m "Model comparison ${{ inputs.tag }} (run ${{ github.run_id }})"
+          git push origin "compare/${{ inputs.tag }}-${{ github.run_id }}"

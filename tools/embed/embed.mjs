@@ -3,8 +3,39 @@
 // Writes <out>.f32 (row-major float32) and <out>.json (ids in order + metadata). Reads only
 // id, media_url, and (if present) specimen_id / taxon_id: never a ground-truth column.
 import fs from "node:fs";
-import { AutoModel, AutoProcessor, RawImage, env } from "@huggingface/transformers";
-import { MODEL_ID, DTYPE, embed } from "../../app/model/core.mjs";
+import { AutoModel, AutoProcessor, RawImage, SiglipVisionModel, env } from "@huggingface/transformers";
+import { MODEL_ID as APP_MODEL, DTYPE as APP_DTYPE, embed as dinoEmbed } from "../../app/model/core.mjs";
+
+// Overrides for model comparison runs; the app's model is the default.
+//   EMBED_MODEL, EMBED_DTYPE: another Hugging Face ONNX model (DINOv2 or SigLIP family)
+//   EMBED_MASK: fraction of width and height in the centre painted grey (backdrop-only probe)
+const MODEL_ID = process.env.EMBED_MODEL || APP_MODEL;
+const DTYPE = process.env.EMBED_DTYPE || APP_DTYPE;
+const MASK = Number(process.env.EMBED_MASK || 0);
+const SIGLIP = /siglip/i.test(MODEL_ID);
+
+function l2(v) {
+  let n = 0;
+  for (let i = 0; i < v.length; i++) n += v[i] * v[i];
+  n = Math.sqrt(n) || 1;
+  const o = new Float32Array(v.length);
+  for (let i = 0; i < v.length; i++) o[i] = v[i] / n;
+  return o;
+}
+
+function maskCentre(img, frac) {
+  const { width: W, height: H, channels: C, data } = img;
+  const x0 = Math.round(W * (1 - frac) / 2), x1 = W - x0, y0 = Math.round(H * (1 - frac) / 2), y1 = H - y0;
+  for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) for (let c = 0; c < Math.min(C, 3); c++) data[(y * W + x) * C + c] = 128;
+  return img;
+}
+
+async function embed(model, processor, image) {
+  if (MASK > 0) image = maskCentre(image, MASK);
+  if (!SIGLIP) return dinoEmbed(model, processor, image);
+  const out = await model(await processor(image));
+  return l2(out.pooler_output.data);
+}
 
 const [csvPath, idCol, outPrefix] = process.argv.slice(2);
 const UA = "RockID-embed/0.1 (https://github.com/marx1980/RockID)";
@@ -47,7 +78,7 @@ async function fetchImage(url) {
 }
 
 const rows = parseCsv(fs.readFileSync(csvPath, "utf8"));
-const model = await AutoModel.from_pretrained(MODEL_ID, { dtype: DTYPE });
+const model = await (SIGLIP ? SiglipVisionModel : AutoModel).from_pretrained(MODEL_ID, { dtype: DTYPE });
 const processor = await AutoProcessor.from_pretrained(MODEL_ID);
 const items = [], failed = [], chunks = [];
 let dim = 0;
@@ -68,5 +99,5 @@ for (const [i, r] of rows.entries()) {
 const all = new Float32Array(items.length * dim);
 chunks.forEach((v, i) => all.set(v, i * dim));
 fs.writeFileSync(`${outPrefix}.f32`, Buffer.from(all.buffer));
-fs.writeFileSync(`${outPrefix}.json`, JSON.stringify({ model: MODEL_ID, dtype: DTYPE, dim, items, failed }));
+fs.writeFileSync(`${outPrefix}.json`, JSON.stringify({ model: MODEL_ID, dtype: DTYPE, mask: MASK, dim, items, failed }));
 console.error(`embedded ${items.length}, failed ${failed.length}`);
