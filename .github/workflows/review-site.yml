@@ -30,7 +30,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python -m services.review.build_site data_manifests/candidates/candidates.csv site
+      - run: |
+          python -m services.review.build_site data_manifests/candidates/candidates.csv site
+          mkdir -p site/review && cp site/index.html site/candidates.json site/taxa.json site/review/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
