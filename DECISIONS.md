@@ -15,7 +15,7 @@ Reason: the dev workspace blocks outbound hosts other than package registries an
 ## 2026-11-13 P1: first sources are Smithsonian NMNH Mineral Sciences and Wikimedia Commons
 Reason: Smithsonian media flagged CC0 come with catalogue records (reliable specimen IDs); Commons adds field/collector-style photos. Rejected for now: Mindat (photographer copyright, no general reuse licence), Flickr (mixed licences, noisy), iNaturalist (geology coverage thin).
 
-## 2026-11-13 P1: licence policy (PROPOSED, needs Marko sign-off, gate H-01)
+## 2026-11-13 P1: licence policy (APPROVED by Marko 2026-11-13)
 - CC0 / public domain → allowed_train
 - CC BY, CC BY-SA → allowed_reference_only (used for nearest-neighbour matching with attribution, not for training weights)
 - NC, ND, unknown → rejected
