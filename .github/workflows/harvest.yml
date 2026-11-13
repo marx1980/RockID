@@ -1,0 +1,46 @@
+name: harvest-candidates
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "space-separated: smithsonian commons"
+        default: "smithsonian commons"
+      per_taxon:
+        description: "max candidates per taxon per source"
+        default: "40"
+      taxa:
+        description: "space-separated taxon_ids (blank = all)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Harvest
+        env:
+          SI_API_KEY: ${{ secrets.SI_API_KEY }}
+        run: |
+          python -m services.ingestion.harvest \
+            --sources ${{ inputs.sources }} \
+            --per-taxon ${{ inputs.per_taxon }} \
+            ${{ inputs.taxa && format('--taxa {0}', inputs.taxa) || '' }} \
+            --out data_manifests/candidates/candidates.csv \
+            --summary data_manifests/candidates/SUMMARY.md
+          cat data_manifests/candidates/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Push to a review branch
+        run: |
+          git config user.name "rockid-harvester"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "harvest/run-${{ github.run_id }}"
+          git add data_manifests/candidates
+          git commit -m "Harvest candidates (run ${{ github.run_id }})" || exit 0
+          git push origin "harvest/run-${{ github.run_id }}"

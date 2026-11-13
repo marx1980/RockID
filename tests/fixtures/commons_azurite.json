@@ -1,0 +1,70 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "101": {
+        "pageid": 101,
+        "ns": 6,
+        "title": "File:Azurite-Malachite-Bisbee-12.jpg",
+        "index": 1,
+        "imageinfo": [{
+          "size": 2400000, "width": 3000, "height": 2000,
+          "thumburl": "https://upload.wikimedia.org/thumb/azurite-12-1024px.jpg",
+          "url": "https://upload.wikimedia.org/azurite-12.jpg",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Azurite-Malachite-Bisbee-12.jpg",
+          "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": {"value": "CC BY-SA 4.0"},
+            "LicenseUrl": {"value": "https://creativecommons.org/licenses/by-sa/4.0"},
+            "Artist": {"value": "<a href=\"//commons.wikimedia.org/wiki/User:Example\">Example Photographer</a>"},
+            "ImageDescription": {"value": "Azurite with malachite, Bisbee, Arizona"}
+          }
+        }]
+      },
+      "102": {
+        "pageid": 102,
+        "ns": 6,
+        "title": "File:Azurite-Malachite-Bisbee-13.jpg",
+        "index": 2,
+        "imageinfo": [{
+          "thumburl": "https://upload.wikimedia.org/thumb/azurite-13-1024px.jpg",
+          "url": "https://upload.wikimedia.org/azurite-13.jpg",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Azurite-Malachite-Bisbee-13.jpg",
+          "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": {"value": "CC BY-SA 4.0"},
+            "Artist": {"value": "Example Photographer"}
+          }
+        }]
+      },
+      "103": {
+        "pageid": 103,
+        "ns": 6,
+        "title": "File:Blue pendant necklace.jpg",
+        "index": 3,
+        "imageinfo": [{
+          "thumburl": "https://upload.wikimedia.org/thumb/pendant-1024px.jpg",
+          "url": "https://upload.wikimedia.org/pendant.jpg",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Blue_pendant_necklace.jpg",
+          "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": {"value": "CC BY-NC 2.0"},
+            "Artist": {"value": "Someone"}
+          }
+        }]
+      },
+      "104": {
+        "pageid": 104,
+        "ns": 6,
+        "title": "File:Azurite diagram.svg",
+        "index": 4,
+        "imageinfo": [{
+          "url": "https://upload.wikimedia.org/azurite.svg",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Azurite_diagram.svg",
+          "mime": "image/svg+xml",
+          "extmetadata": {"LicenseShortName": {"value": "Public domain"}}
+        }]
+      }
+    }
+  }
+}
