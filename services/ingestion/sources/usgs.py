@@ -24,7 +24,7 @@ LISTINGS = [
 MAX_PAGES = 60
 DELAY = 0.3
 ITEM = re.compile(r'href="(?:https://www\.usgs\.gov)?(/media/images/[a-z0-9][a-z0-9\-]*)"')
-IMG = re.compile(r'https://d9-wret\.s3[^"\'\s<>]+?/s3fs-public/(?:styles/full_width/public/)?media/images/[^"\'\s<>]+?\.(?:jpe?g|png)(?:\?[^"\'\s<>]*)?', re.I)
+IMG = re.compile(r'https://d9-wret\.s3[^"\'\s<>]+?\.(?:jpe?g|png)(?:\?[^"\'\s<>]*)?', re.I)
 GENERIC = "high-definition image"
 _items_cache: dict[str, list[str]] = {}
 
@@ -63,14 +63,24 @@ def _meta(html: str, prop: str) -> str:
     return strip_html(m.group(1)) if m else ""
 
 
+def pick_image(urls: list[str]) -> str:
+    """Best photo URL on an item page: the full-width rendition, else an original, else a larger style; never icons."""
+    urls = [u for u in dict.fromkeys(urls) if "/thumbnails/" not in u and "/styles/thumbnail/" not in u and "/styles/masonry/" not in u]
+    for key in ("/styles/full_width/", "/styles/large/", "/styles/medium/", "/styles/teaser/"):
+        hit = next((u for u in urls if key in u), None)
+        if hit:
+            return hit
+    return urls[0] if urls else ""
+
+
 def parse_item(html: str, path: str, taxon_id: str, terms: list[str]) -> Candidate | None:
     text = strip_html(html)
     if "public domain" not in text.lower():
         return None
     imgs = IMG.findall(html)
-    if not imgs:
+    if not imgs or not pick_image(imgs):
         return None
-    media = next((u for u in imgs if "/styles/full_width/" in u), imgs[0])
+    media = pick_image(imgs)
     title = _meta(html, "og:title") or (re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S | re.I) or [None, ""])[1]
     title = strip_html(title).replace(" | U.S. Geological Survey", "").strip()
     desc = _meta(html, "og:description") or _meta(html, "description")
