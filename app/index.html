@@ -97,6 +97,16 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)
 .switch{width:52px;height:32px;border-radius:16px;background:var(--line);position:relative;transition:background .2s}
 .switch::after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .2s}
 .switch[aria-checked=true]{background:var(--acc)}.switch[aria-checked=true]::after{left:23px}
+#pick{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;z-index:9}
+#pick.on{display:flex}
+#pick .panel{width:100%;max-height:82vh;overflow-y:auto;background:var(--card);border-radius:22px 22px 0 0;padding:18px 16px calc(var(--sb) + 18px)}
+#pick h3{margin:0 0 12px}
+#pickList{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#pickList button{padding:12px;border-radius:12px;background:var(--bg);border:1px solid var(--line);text-align:left;font-size:15px}
+#pickList button.sel{border-color:var(--acc)}
+#otherRow{display:flex;gap:8px;margin-top:10px}
+#otherName{flex:1;height:48px;border-radius:12px;background:var(--bg);border:1px solid var(--line);color:inherit;padding:0 12px;font-size:16px}
+#otherOk{height:48px;padding:0 18px;border-radius:12px;font-weight:600}
 #toast{position:fixed;left:50%;bottom:calc(var(--sb) + 100px);transform:translateX(-50%);background:rgba(20,20,22,.95);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:14px;display:none;z-index:10}
 input[type=file]{display:none}
 </style>
@@ -133,7 +143,7 @@ input[type=file]{display:none}
     </div>
   </div>
   <div id="sheet"></div>
-  <div id="actions"><button class="secondary" id="retake">Retake</button><button class="primary" id="save">Save</button></div>
+  <div id="actions"><button class="secondary" id="retake">Retake</button><button class="secondary" id="label">Label</button><button class="primary" id="save">Save</button></div>
 </section>
 
 <section class="screen" id="col">
@@ -143,9 +153,12 @@ input[type=file]{display:none}
 
 <div id="settings"><div class="panel">
   <div class="row"><span>Demo results</span><button class="switch" id="demoSw" role="switch" aria-checked="false" aria-label="Demo results"></button></div>
+  <div class="row"><span>Labelled</span><span id="labCount" style="color:var(--dim)"></span></div>
+  <div class="row"><button class="secondary" id="exportLab" style="width:100%;height:48px;border-radius:14px">Export</button></div>
   <div class="row"><span>Model</span><span id="modelName" style="color:var(--dim)"></span></div>
   <div class="row"><span>Taxonomy</span><span id="taxVer" style="color:var(--dim)"></span></div>
 </div></div>
+<div id="pick"><div class="panel"><h3>Label</h3><div id="pickList"></div><div id="otherRow"><input id="otherName" placeholder="Other" autocapitalize="none" autocomplete="off"><button class="primary" id="otherOk">OK</button></div></div></div>
 <div id="toast"></div>
 
 <script>
@@ -234,7 +247,9 @@ async function analyze(canvas){
   const wait=900-(performance.now()-t0);if(wait>0)await new Promise(r=>setTimeout(r,wait));
   const thumb=document.createElement("canvas"),s=Math.min(1,560/Math.max(canvas.width,canvas.height));
   thumb.width=Math.round(canvas.width*s);thumb.height=Math.round(canvas.height*s);thumb.getContext("2d").drawImage(canvas,0,0,thumb.width,thumb.height);
-  S.current={id:Date.now().toString(36),at:new Date().toISOString(),photo:thumb.toDataURL("image/jpeg",.72),hero:url,
+  const big=document.createElement("canvas"),sb=Math.min(1,1024/Math.max(canvas.width,canvas.height));
+  big.width=Math.round(canvas.width*sb);big.height=Math.round(canvas.height*sb);big.getContext("2d").drawImage(canvas,0,0,big.width,big.height);
+  S.current={id:Date.now().toString(36),at:new Date().toISOString(),photo:thumb.toDataURL("image/jpeg",.72),hero:url,big:big.toDataURL("image/jpeg",.88),
     status:r.status,form:r.form||"natural",candidates:r.candidates,issues:q.issues,answer:null,sel:0};
   S.fromCol=null;renderResult();
 }
@@ -248,6 +263,7 @@ function renderResult(){
   $("save").style.display=S.fromCol||!R.candidates.length?"none":"";
   const sh=$("sheet");sh.innerHTML="";
   const chips=el("div","chips");sh.appendChild(chips);
+  if(R.truth)chips.appendChild(el("span","chip ok","Labelled: "+(S.data.taxa[R.truth]?S.data.taxa[R.truth].name:R.other)));
   if(R.status!=="retake"&&(R.form==="tumbled"||R.form==="polished"))chips.appendChild(el("span","chip acc",R.form==="tumbled"?"Tumbled":"Polished"));
   if(R.status==="retake"){
     for(const i of R.issues)chips.appendChild(el("span","chip bad",ISSUE[i]||i));
@@ -300,13 +316,44 @@ function renderResult(){
 $("closeRes").onclick=()=>{if(S.fromCol){openCollection()}else show("cam")};
 $("retake").onclick=()=>show("cam");
 $("save").onclick=()=>{
-  const items=store.get(K.col,[]),R=S.current,rec={...R};delete rec.hero;
+  const items=store.get(K.col,[]),R=S.current,rec={...R};delete rec.hero;delete rec.big;
   items.unshift(rec);
   if(!store.set(K.col,items.slice(0,200))){toast("Storage full");return}
   updateBadge();toast("Saved");show("cam");
 };
-function persistCurrent(){const items=store.get(K.col,[]),i=items.findIndex(x=>x.id===S.current.id);if(i>=0){const rec={...S.current};delete rec.hero;items[i]=rec;store.set(K.col,items)}}
+function persistCurrent(){const items=store.get(K.col,[]),i=items.findIndex(x=>x.id===S.current.id);if(i>=0){const rec={...S.current};delete rec.hero;delete rec.big;items[i]=rec;store.set(K.col,items)}}
 $("delItem").onclick=()=>{const items=store.get(K.col,[]).filter(x=>x.id!==S.current.id);store.set(K.col,items);updateBadge();openCollection()};
+
+/* ---------- labels (your own photos, kept on this phone until exported) ---------- */
+const LAB={db:null,open(){return this.db||(this.db=new Promise((ok,no)=>{const r=indexedDB.open("rockid",1);r.onupgradeneeded=()=>r.result.createObjectStore("labels",{keyPath:"id"});r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))},
+  async tx(mode,fn){const d=await this.open();return new Promise((ok,no)=>{const t=d.transaction("labels",mode),q=fn(t.objectStore("labels"));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)})},
+  put(rec){return this.tx("readwrite",s=>s.put(rec))},all(){return this.tx("readonly",s=>s.getAll())},count(){return this.tx("readonly",s=>s.count())}};
+function openPick(){
+  const R=S.current,list=$("pickList");list.innerHTML="";$("otherName").value="";
+  const guess=R.candidates&&R.candidates[R.sel]?R.candidates[R.sel].taxon:null;
+  Object.entries(S.data.taxa).sort((a,b)=>a[1].category.localeCompare(b[1].category)||a[1].name.localeCompare(b[1].name)).forEach(([id,t])=>{
+    const b=el("button",id===(R.truth||guess)?"sel":"",t.name);b.onclick=()=>saveLabel(id,"");list.appendChild(b)});
+  $("pick").classList.add("on");
+}
+async function saveLabel(truth,other){
+  const R=S.current;
+  try{await LAB.put({id:R.id,at:R.at,truth:truth||"other",other:other||"",form:R.form||"natural",
+    predicted:{status:R.status,top:(R.candidates||[]).slice(0,3).map(c=>({taxon:c.taxon,p:Math.round(c.p*1000)/1000}))},
+    photo:R.big||R.hero||R.photo})}catch(e){toast("Storage failed");return}
+  R.truth=truth||"other";R.other=other||"";$("pick").classList.remove("on");
+  if(S.fromCol)persistCurrent();renderResult();toast("Labelled");
+}
+$("label").onclick=openPick;
+$("pick").onclick=e=>{if(e.target.id==="pick")$("pick").classList.remove("on")};
+$("otherOk").onclick=()=>{const n=$("otherName").value.trim();if(n)saveLabel("other",n)};
+$("exportLab").onclick=async()=>{
+  const items=await LAB.all();if(!items.length){toast("Nothing yet");return}
+  const body=JSON.stringify({app:"rockid-labels",v:1,model:window.RockIDModel?window.RockIDModel.version:"",items});
+  const file=new File([body],"rockid-labels-"+new Date().toISOString().slice(0,10)+".json",{type:"application/json"});
+  try{if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file]});return}}catch(e){if(e&&e.name==="AbortError")return}
+  const a=document.createElement("a");a.href=URL.createObjectURL(file);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+};
+async function refreshLabCount(){try{$("labCount").textContent=await LAB.count()}catch(e){$("labCount").textContent="0"}}
 
 /* ---------- collection ---------- */
 function updateBadge(){const n=store.get(K.col,[]).length,b=$("badge");b.textContent=n;b.style.display=n?"grid":"none"}
@@ -324,7 +371,7 @@ function openCollection(){
 $("openCol").onclick=openCollection;$("closeCol").onclick=()=>show("cam");
 
 /* ---------- settings ---------- */
-$("openSettings").onclick=()=>{$("demoSw").setAttribute("aria-checked",S.demo);$("settings").classList.add("on")};
+$("openSettings").onclick=()=>{refreshLabCount();$("demoSw").setAttribute("aria-checked",S.demo);$("settings").classList.add("on")};
 $("settings").onclick=e=>{if(e.target.id==="settings")$("settings").classList.remove("on")};
 $("demoSw").onclick=()=>{S.demo=!S.demo;store.set(K.demo,S.demo);$("demoSw").setAttribute("aria-checked",S.demo)};
 

@@ -103,6 +103,11 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - As OOD: 78 other-mineral species, 468 photos split by species into calibration and test (234 each). v9 with shipped thresholds wrongly names 8.5% of calibration and 11% of test photos (26 of 234).
 - Kaggle 7-class mineral set (biotite, bornite, chrysocolla, malachite, muscovite, pyrite, quartz): not fetched; needs a Kaggle token or a zip from Marko.
 
+## Labelling your own photos (round 10c)
+- App: result screen has Label (pick one of the 21 types, or Other with a name); labels and 1024 px photos are stored in the phone's IndexedDB; Settings > Export shares or downloads `rockid-labels-<date>.json`.
+- Import: `python -m services.curation.own_photos <export.json>` re-encodes the photos (no metadata), adds taxon-labelled ones to the reference set (source "Own photos (Marko)", licence "Own work", one specimen per taxon per day) and keeps "Other" photos as OOD cases in data_manifests/own_photos/ood.csv. Photos are committed to the repo, so they are public.
+- Own photos are never in the frozen challenge or OOD test sets.
+
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
 - services/model/shortcut.py: reference k-NN with own collection removed vs random control; challenge split by collection
