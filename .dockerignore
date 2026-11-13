@@ -1,0 +1,10 @@
+.git
+.github
+.env
+.env.*
+**/__pycache__
+.pytest_cache
+tests
+data_manifests/challenge
+infra/db/challenge
+*.md
