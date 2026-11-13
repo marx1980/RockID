@@ -68,7 +68,9 @@ jobs:
           python -m services.model.evaluate calibrate emb/reference "$OUT/config.json" "$OUT/loso.json"
           python -m services.model.evaluate score emb/reference emb/challenge vault/challenge.csv "$OUT/config.json" "$OUT/baseline.json" "$OUT/BASELINE.md"
           python -m services.model.evaluate score_forms emb/reference emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
-          cat "$OUT/BASELINE.md" "$OUT/FORMS.md" >> "$GITHUB_STEP_SUMMARY"
+          python -m services.model.shortcut emb/reference data_manifests/reference/reference.csv "$OUT/shortcut.json" "$OUT/SHORTCUT.md"
+          python -m services.model.shortcut challenge "$OUT/challenge_predictions.json" vault/challenge.csv data_manifests/reference/reference.csv > "$OUT/challenge_by_collection.json"
+          cat "$OUT/BASELINE.md" "$OUT/FORMS.md" "$OUT/SHORTCUT.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a branch
         run: |
           rm -f node_modules
