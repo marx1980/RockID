@@ -1,0 +1,45 @@
+{
+ "cases": 135,
+ "ood_cases": 0,
+ "top1": 0.2,
+ "top3": 0.24444444444444444,
+ "ranked_top1": 0.4148148148148148,
+ "ranked_top3": 0.7407407407407407,
+ "category_accuracy": 0.837037037037037,
+ "macro_f1": 0.20327517153461605,
+ "per_class_recall": {
+  "min.biotite": 0.0,
+  "min.magnetite": 0.125,
+  "min.muscovite": 0.1111111111111111,
+  "rock.basalt": 0.0,
+  "rock.chert": 0.18181818181818182,
+  "rock.gneiss": 0.07692307692307693,
+  "rock.granite": 0.5789473684210527,
+  "rock.limestone": 0.07692307692307693,
+  "rock.marble": 0.42857142857142855,
+  "rock.quartzite": 0.0,
+  "rock.sandstone": 0.0
+ },
+ "coverage": 0.2740740740740741,
+ "selective_accuracy": 0.7297297297297297,
+ "confident_error_rate": 0.2702702702702703,
+ "unknown_false_accept_rate": 0.0,
+ "ece": 0.1709675675675676,
+ "not_embedded": 0,
+ "status_counts": {
+  "identified": 37,
+  "uncertain": 91,
+  "unknown": 7
+ },
+ "form_counts": {
+  "natural": 92,
+  "tumbled": 1,
+  "polished": 42
+ },
+ "decision": {
+  "ood_similarity": 0.6882444858551026,
+  "accept_probability": 0.4,
+  "min_margin": 0.0,
+  "min_specimens": 1
+ }
+}
