@@ -8,7 +8,8 @@ import { MODEL_ID as APP_MODEL, DTYPE as APP_DTYPE, embed as dinoEmbed } from ".
 
 // Overrides for model comparison runs; the app's model is the default.
 //   EMBED_MODEL, EMBED_DTYPE: another Hugging Face ONNX model (DINOv2 or SigLIP family)
-//   EMBED_MASK: fraction of width and height in the centre painted grey (backdrop-only probe)
+//   EMBED_MASK: fraction of width and height in the centre painted grey (backdrop-only probe);
+//               negative value: keep that centre fraction and paint the edges grey (specimen-only probe)
 const MODEL_ID = process.env.EMBED_MODEL || APP_MODEL;
 const DTYPE = process.env.EMBED_DTYPE || APP_DTYPE;
 const MASK = Number(process.env.EMBED_MASK || 0);
@@ -30,8 +31,19 @@ function maskCentre(img, frac) {
   return img;
 }
 
+function maskEdges(img, frac) {
+  const { width: W, height: H, channels: C, data } = img;
+  const x0 = Math.round(W * (1 - frac) / 2), x1 = W - x0, y0 = Math.round(H * (1 - frac) / 2), y1 = H - y0;
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    if (x >= x0 && x < x1 && y >= y0 && y < y1) continue;
+    for (let c = 0; c < Math.min(C, 3); c++) data[(y * W + x) * C + c] = 128;
+  }
+  return img;
+}
+
 async function embed(model, processor, image) {
   if (MASK > 0) image = maskCentre(image, MASK);
+  if (MASK < 0) image = maskEdges(image, -MASK);
   if (!SIGLIP) return dinoEmbed(model, processor, image);
   const out = await model(await processor(image));
   return l2(out.pooler_output.data);
