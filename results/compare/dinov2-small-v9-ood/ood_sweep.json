@@ -1,0 +1,4501 @@
+{
+ "ood_cases": 56,
+ "rows": [
+  {
+   "ood_similarity": 0.654056441783905,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.10714285714285714,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.33834876543209874,
+   "selective_accuracy": 0.8084378563283923,
+   "shipped": true
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3773148148148148,
+   "selective_accuracy": 0.7791411042944786,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3765432098765432,
+   "selective_accuracy": 0.7786885245901639,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3599537037037037,
+   "selective_accuracy": 0.797427652733119,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3591820987654321,
+   "selective_accuracy": 0.7969924812030075,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3221450617283951,
+   "selective_accuracy": 0.8179640718562874,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32137345679012347,
+   "selective_accuracy": 0.8175270108043218,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2673611111111111,
+   "selective_accuracy": 0.8427128427128427,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2665895061728395,
+   "selective_accuracy": 0.8422575976845152,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27546296296296297,
+   "selective_accuracy": 0.8249299719887955,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27469135802469136,
+   "selective_accuracy": 0.824438202247191,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27199074074074076,
+   "selective_accuracy": 0.8326241134751773,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27121913580246915,
+   "selective_accuracy": 0.8321479374110953,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2619598765432099,
+   "selective_accuracy": 0.8379970544918999,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2611882716049383,
+   "selective_accuracy": 0.8375184638109305,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2496141975308642,
+   "selective_accuracy": 0.8438948995363215,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2488425925925926,
+   "selective_accuracy": 0.8434108527131783,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.0,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3773148148148148,
+   "selective_accuracy": 0.7791411042944786,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3765432098765432,
+   "selective_accuracy": 0.7786885245901639,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3599537037037037,
+   "selective_accuracy": 0.797427652733119,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3591820987654321,
+   "selective_accuracy": 0.7969924812030075,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3221450617283951,
+   "selective_accuracy": 0.8179640718562874,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32137345679012347,
+   "selective_accuracy": 0.8175270108043218,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2673611111111111,
+   "selective_accuracy": 0.8427128427128427,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2665895061728395,
+   "selective_accuracy": 0.8422575976845152,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27546296296296297,
+   "selective_accuracy": 0.8249299719887955,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27469135802469136,
+   "selective_accuracy": 0.824438202247191,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27199074074074076,
+   "selective_accuracy": 0.8326241134751773,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27121913580246915,
+   "selective_accuracy": 0.8321479374110953,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2619598765432099,
+   "selective_accuracy": 0.8379970544918999,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2611882716049383,
+   "selective_accuracy": 0.8375184638109305,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2496141975308642,
+   "selective_accuracy": 0.8438948995363215,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2488425925925926,
+   "selective_accuracy": 0.8434108527131783,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.35,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3773148148148148,
+   "selective_accuracy": 0.7791411042944786,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3765432098765432,
+   "selective_accuracy": 0.7786885245901639,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3599537037037037,
+   "selective_accuracy": 0.797427652733119,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3591820987654321,
+   "selective_accuracy": 0.7969924812030075,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3221450617283951,
+   "selective_accuracy": 0.8179640718562874,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32137345679012347,
+   "selective_accuracy": 0.8175270108043218,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2673611111111111,
+   "selective_accuracy": 0.8427128427128427,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2665895061728395,
+   "selective_accuracy": 0.8422575976845152,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27546296296296297,
+   "selective_accuracy": 0.8249299719887955,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27469135802469136,
+   "selective_accuracy": 0.824438202247191,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27199074074074076,
+   "selective_accuracy": 0.8326241134751773,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27121913580246915,
+   "selective_accuracy": 0.8321479374110953,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2619598765432099,
+   "selective_accuracy": 0.8379970544918999,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2611882716049383,
+   "selective_accuracy": 0.8375184638109305,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2496141975308642,
+   "selective_accuracy": 0.8438948995363215,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2488425925925926,
+   "selective_accuracy": 0.8434108527131783,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.4,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3773148148148148,
+   "selective_accuracy": 0.7791411042944786,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3765432098765432,
+   "selective_accuracy": 0.7786885245901639,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3599537037037037,
+   "selective_accuracy": 0.797427652733119,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3591820987654321,
+   "selective_accuracy": 0.7969924812030075,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3221450617283951,
+   "selective_accuracy": 0.8179640718562874,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.26785714285714285,
+   "by_group": {
+    "ood.man_made": 0.375,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32137345679012347,
+   "selective_accuracy": 0.8175270108043218,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2673611111111111,
+   "selective_accuracy": 0.8427128427128427,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2665895061728395,
+   "selective_accuracy": 0.8422575976845152,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27546296296296297,
+   "selective_accuracy": 0.8249299719887955,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27469135802469136,
+   "selective_accuracy": 0.824438202247191,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27199074074074076,
+   "selective_accuracy": 0.8326241134751773,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27121913580246915,
+   "selective_accuracy": 0.8321479374110953,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2619598765432099,
+   "selective_accuracy": 0.8379970544918999,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2611882716049383,
+   "selective_accuracy": 0.8375184638109305,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2496141975308642,
+   "selective_accuracy": 0.8438948995363215,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2488425925925926,
+   "selective_accuracy": 0.8434108527131783,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.45,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3773148148148148,
+   "selective_accuracy": 0.7791411042944786,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3765432098765432,
+   "selective_accuracy": 0.7786885245901639,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3599537037037037,
+   "selective_accuracy": 0.797427652733119,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3591820987654321,
+   "selective_accuracy": 0.7969924812030075,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3221450617283951,
+   "selective_accuracy": 0.8179640718562874,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.25,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.4,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32137345679012347,
+   "selective_accuracy": 0.8175270108043218,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2673611111111111,
+   "selective_accuracy": 0.8427128427128427,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.17857142857142858,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.3,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2665895061728395,
+   "selective_accuracy": 0.8422575976845152,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27546296296296297,
+   "selective_accuracy": 0.8249299719887955,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27469135802469136,
+   "selective_accuracy": 0.824438202247191,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27199074074074076,
+   "selective_accuracy": 0.8326241134751773,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27121913580246915,
+   "selective_accuracy": 0.8321479374110953,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2619598765432099,
+   "selective_accuracy": 0.8379970544918999,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2611882716049383,
+   "selective_accuracy": 0.8375184638109305,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2496141975308642,
+   "selective_accuracy": 0.8438948995363215,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.14285714285714285,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.2,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2488425925925926,
+   "selective_accuracy": 0.8434108527131783,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.5,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3753858024691358,
+   "selective_accuracy": 0.7800616649537513,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3746141975308642,
+   "selective_accuracy": 0.7796086508753862,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.35802469135802467,
+   "selective_accuracy": 0.7984913793103449,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.35725308641975306,
+   "selective_accuracy": 0.7980561555075594,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.32021604938271603,
+   "selective_accuracy": 0.8192771084337349,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.19642857142857142,
+   "by_group": {
+    "ood.man_made": 0.3125,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.1,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3194444444444444,
+   "selective_accuracy": 0.8188405797101449,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2658179012345679,
+   "selective_accuracy": 0.8432510885341074,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2650462962962963,
+   "selective_accuracy": 0.8427947598253275,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27391975308641975,
+   "selective_accuracy": 0.8253521126760563,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27314814814814814,
+   "selective_accuracy": 0.8248587570621468,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27044753086419754,
+   "selective_accuracy": 0.833095577746077,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.26967592592592593,
+   "selective_accuracy": 0.8326180257510729,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2604166666666667,
+   "selective_accuracy": 0.8385185185185186,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2596450617283951,
+   "selective_accuracy": 0.8380386329866271,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.10714285714285714,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.24807098765432098,
+   "selective_accuracy": 0.8444790046656299,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.10714285714285714,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.24729938271604937,
+   "selective_accuracy": 0.84399375975039,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19444444444444445,
+   "selective_accuracy": 0.8591269841269841,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8585657370517928,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19367283950617284,
+   "selective_accuracy": 0.8605577689243028,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19290123456790123,
+   "selective_accuracy": 0.86,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13155864197530864,
+   "selective_accuracy": 0.8914956011730205,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13078703703703703,
+   "selective_accuracy": 0.8908554572271387,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07716049382716049,
+   "selective_accuracy": 0.915,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.55,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.0763888888888889,
+   "selective_accuracy": 0.9141414141414141,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3734567901234568,
+   "selective_accuracy": 0.78099173553719,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3726851851851852,
+   "selective_accuracy": 0.7805383022774327,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.35648148148148145,
+   "selective_accuracy": 0.7997835497835498,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.3557098765432099,
+   "selective_accuracy": 0.7993492407809111,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.31867283950617287,
+   "selective_accuracy": 0.8208232445520581,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.16071428571428573,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.2727272727272727
+   },
+   "coverage": 0.31790123456790126,
+   "selective_accuracy": 0.8203883495145631,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2650462962962963,
+   "selective_accuracy": 0.8457059679767104,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.4,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.10526315789473684,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.26427469135802467,
+   "selective_accuracy": 0.8452554744525548,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27314814814814814,
+   "selective_accuracy": 0.827683615819209,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.27237654320987653,
+   "selective_accuracy": 0.8271954674220963,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.26967592592592593,
+   "selective_accuracy": 0.8354792560801144,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2689043209876543,
+   "selective_accuracy": 0.8350071736011477,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2596450617283951,
+   "selective_accuracy": 0.8410104011887073,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.125,
+   "by_group": {
+    "ood.man_made": 0.25,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.25887345679012347,
+   "selective_accuracy": 0.8405365126676602,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.10714285714285714,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.24729938271604937,
+   "selective_accuracy": 0.8471138845553822,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.5,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.10714285714285714,
+   "by_group": {
+    "ood.man_made": 0.1875,
+    "ood.other_mineral": 0.05263157894736842,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.18181818181818182
+   },
+   "coverage": 0.2465277777777778,
+   "selective_accuracy": 0.8466353677621283,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19405864197530864,
+   "selective_accuracy": 0.8608349900596421,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19328703703703703,
+   "selective_accuracy": 0.8602794411177644,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19405864197530864,
+   "selective_accuracy": 0.8608349900596421,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19328703703703703,
+   "selective_accuracy": 0.8602794411177644,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19405864197530864,
+   "selective_accuracy": 0.8608349900596421,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19328703703703703,
+   "selective_accuracy": 0.8602794411177644,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19328703703703703,
+   "selective_accuracy": 0.8622754491017964,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.6,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.05357142857142857,
+   "by_group": {
+    "ood.man_made": 0.125,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.09090909090909091
+   },
+   "coverage": 0.19251543209876543,
+   "selective_accuracy": 0.8617234468937875,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13117283950617284,
+   "selective_accuracy": 0.8941176470588236,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13040123456790123,
+   "selective_accuracy": 0.893491124260355,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13117283950617284,
+   "selective_accuracy": 0.8941176470588236,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13040123456790123,
+   "selective_accuracy": 0.893491124260355,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13117283950617284,
+   "selective_accuracy": 0.8941176470588236,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13040123456790123,
+   "selective_accuracy": 0.893491124260355,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13117283950617284,
+   "selective_accuracy": 0.8941176470588236,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.7,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.13040123456790123,
+   "selective_accuracy": 0.893491124260355,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07677469135802469,
+   "selective_accuracy": 0.9195979899497487,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.0,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07600308641975309,
+   "selective_accuracy": 0.9187817258883249,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07677469135802469,
+   "selective_accuracy": 0.9195979899497487,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.1,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07600308641975309,
+   "selective_accuracy": 0.9187817258883249,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07677469135802469,
+   "selective_accuracy": 0.9195979899497487,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.2,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07600308641975309,
+   "selective_accuracy": 0.9187817258883249,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 1,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07677469135802469,
+   "selective_accuracy": 0.9195979899497487,
+   "shipped": false
+  },
+  {
+   "ood_similarity": 0.6,
+   "accept_probability": 0.8,
+   "min_margin": 0.3,
+   "min_specimens": 2,
+   "ood_false_accept": 0.017857142857142856,
+   "by_group": {
+    "ood.man_made": 0.0625,
+    "ood.other_mineral": 0.0,
+    "ood.other_natural": 0.0,
+    "ood.other_rock": 0.0
+   },
+   "coverage": 0.07600308641975309,
+   "selective_accuracy": 0.9187817258883249,
+   "shipped": false
+  }
+ ]
+}
