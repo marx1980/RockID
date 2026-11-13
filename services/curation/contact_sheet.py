@@ -7,6 +7,7 @@ and sheets/ATTRIBUTION.md. Thumbnails are small, low-quality review copies only.
 """
 import json
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from pathlib import Path
@@ -46,16 +47,29 @@ def _font(size: int):
     return ImageFont.load_default()
 
 
-def fetch(client: httpx.Client, c: Candidate) -> Image.Image | None:
+STATUS: dict[str, int] = {}
+
+
+def fetch(client: httpx.Client, c: Candidate, sleep=time.sleep) -> Image.Image | None:
     for url in (thumb_url(c.media_url), c.media_url):
-        try:
-            r = client.get(url, headers={"User-Agent": USER_AGENT}, timeout=40)
-            r.raise_for_status()
-            im = Image.open(BytesIO(r.content))
-            im.load()
-            return im.convert("RGB")
-        except Exception:
-            continue
+        for attempt in range(5):
+            try:
+                r = client.get(url, headers={"User-Agent": USER_AGENT}, timeout=40)
+            except httpx.HTTPError:
+                sleep(2 ** attempt)
+                continue
+            STATUS[str(r.status_code)] = STATUS.get(str(r.status_code), 0) + 1
+            if r.status_code in (429, 503):
+                sleep(float(r.headers.get("retry-after") or 2 ** attempt))
+                continue
+            if r.status_code != 200:
+                break
+            try:
+                im = Image.open(BytesIO(r.content))
+                im.load()
+                return im.convert("RGB")
+            except Exception:
+                break
     return None
 
 
@@ -79,7 +93,8 @@ def render(title: str, tiles: list[tuple[int, Image.Image | None]]) -> Image.Ima
     return sheet
 
 
-def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client, workers: int = 6) -> dict:
+def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client, workers: int = 6,
+          commons_delay: float = 0.25) -> dict:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected"]
@@ -88,8 +103,15 @@ def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client,
     for c in cands:
         by_taxon.setdefault(c.taxon_id, []).append(c)
 
+    # Wikimedia throttles parallel thumbnail requests: fetch Commons one at a time, others in parallel.
+    commons = [c for c in cands if "wikimedia.org" in c.media_url]
+    others = [c for c in cands if "wikimedia.org" not in c.media_url]
+    images: dict[str, Image.Image | None] = {}
     with ThreadPoolExecutor(workers) as pool:
-        images = dict(zip((c.candidate_id for c in cands), pool.map(lambda c: fetch(client, c), cands)))
+        images.update(zip((c.candidate_id for c in others), pool.map(lambda c: fetch(client, c), others)))
+    for c in commons:
+        images[c.candidate_id] = fetch(client, c)
+        time.sleep(commons_delay)
 
     index: dict[str, dict[str, str]] = {}
     attribution = ["# Review thumbnails: attribution", "",
@@ -108,6 +130,7 @@ def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client,
     (out / "ATTRIBUTION.md").write_text("\n".join(attribution) + "\n")
     missing = sorted(cid for cid, im in images.items() if im is None)
     (out / "missing.json").write_text(json.dumps(missing))
+    (out / "http_status.json").write_text(json.dumps(STATUS))
     return {"sheets": len(index), "candidates": len(cands), "missing": len(missing)}
 
 
