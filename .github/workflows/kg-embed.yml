@@ -1,0 +1,45 @@
+name: kg-embed
+# Embeds the hand-cleaned Kaggle photos (biotite, pyrite) that Marko supplied. The photos are not committed:
+# they sit in an AES-256 encrypted archive on branch kg-enc, decrypted here with the repository secret KG_KEY,
+# embedded with the app model, and only vectors and ids are pushed (branch private/kg-run-<id>). The archive
+# branch is deleted at the end.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      KG_KEY: ${{ secrets.KG_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Decrypt
+        run: |
+          test -n "$KG_KEY" || { echo "repository secret KG_KEY is not set"; exit 1; }
+          git show origin/kg-enc:kg_keep.tar.enc > /tmp/kg.enc
+          mkdir -p /tmp/kgwork
+          openssl enc -d -aes-256-cbc -pbkdf2 -pass env:KG_KEY -in /tmp/kg.enc | tar -xz -C /tmp/kgwork
+          ls /tmp/kgwork/kaggle/*/ | wc -l
+      - name: Embed with the app model
+        run: |
+          npm install --prefix tools/embed --no-audit --no-fund
+          mkdir -p data_manifests/private
+          cd /tmp/kgwork
+          node "$GITHUB_WORKSPACE/tools/embed/embed.mjs" kaggle_keep_v1.csv id "$GITHUB_WORKSPACE/data_manifests/private/kg_v1"
+      - name: Push vectors only, delete the archive branch
+        run: |
+          rm -rf /tmp/kgwork /tmp/kg.enc
+          git config user.name "rockid-private"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "private/kg-run-${{ github.run_id }}"
+          git add -f data_manifests/private/kg_v1.f32 data_manifests/private/kg_v1.json
+          git commit -m "Kaggle biotite and pyrite vectors (run ${{ github.run_id }}); no images"
+          git push origin "private/kg-run-${{ github.run_id }}"
+          git push origin --delete kg-enc || true
