@@ -72,3 +72,11 @@ def test_build_site_outputs(tmp_path):
     assert specs == sorted(specs)  # same-specimen photos adjacent
     assert len(json.loads((out / "taxa.json").read_text())) == 21
     assert (out / "index.html").exists()
+
+
+def test_committed_review_folder_is_current(tmp_path):
+    """/review/ is served by GitHub Pages in branch mode; it must match a fresh build."""
+    root = Path(__file__).resolve().parents[1]
+    build_site(root / "data_manifests/candidates/candidates.csv", tmp_path)
+    for name in ("index.html", "candidates.json", "taxa.json"):
+        assert (root / "review" / name).read_bytes() == (tmp_path / name).read_bytes(), name

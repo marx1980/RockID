@@ -35,12 +35,13 @@ jobs:
             ${{ inputs.taxa && format('--taxa {0}', inputs.taxa) || '' }} \
             --out data_manifests/candidates/candidates.csv \
             --summary data_manifests/candidates/SUMMARY.md
+          python -m services.review.build_site data_manifests/candidates/candidates.csv review
           cat data_manifests/candidates/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a review branch
         run: |
           git config user.name "rockid-harvester"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "harvest/run-${{ github.run_id }}"
-          git add data_manifests/candidates
+          git add data_manifests/candidates review
           git commit -m "Harvest candidates (run ${{ github.run_id }})" || exit 0
           git push origin "harvest/run-${{ github.run_id }}"
