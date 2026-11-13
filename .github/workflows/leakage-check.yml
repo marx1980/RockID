@@ -30,6 +30,6 @@ jobs:
           git config user.name "rockid-check"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "check/leakage-${{ github.run_id }}"
-          git add -f results/leakage_check.json
+          git add -f results/leakage_check.json results/leakage_pairs
           git commit -m "Leakage check (run ${{ github.run_id }})"
           git push origin "check/leakage-${{ github.run_id }}"
