@@ -80,3 +80,9 @@ The challenge set is frozen once scored. `services/curation/merge_round.py` adds
 
 ## 2026-11-13 NHM re-score: neutral, v1 model stays live
 Rebuilt with 692 reference photos and scored on the same challenge set as a labelled second evaluation (BASELINE_v2.md; v1 files untouched). Shortlist top-1 0.474 (v1 0.479), top-3 0.784 (0.800), mineral vs rock 0.932 (0.926); committed coverage 0.163 at 0.742 (0.153 at 0.759). All differences are 1 to 3 cases of 190, i.e. noise. Granite committed recall stays 0.00 (5 cases). No model change was shipped on this evidence; the new data would be kept for the next comparison.
+
+## 2026-11-13 Europeana source and review (P3b)
+Search API with the key in `EUROPEANA_API_KEY`; open-reuse images only, titles must name the taxon and not a place, building or host rock, and non-natural-history providers are dropped by name. Rights URIs map to the same licence policy; the record id is a low-confidence specimen hint. Of 1,331 photos reviewed visually, 450 were approved: natural hand specimens with the taxon visible. Rejected with reason codes: thin sections (all of the limestone and sandstone microscope scans), polished or cut slabs, label cards and non-rock photos, other minerals dominating, taxon not visible. Marble stayed at 1 approval because the Estonian marble is polished tiles.
+
+## 2026-11-13 Europeana re-score: AMBER, v1 model stays live
+Rebuilt with 1,142 reference photos and scored a third time on the unchanged challenge set (BASELINE_v3.md). Shortlist top-1 0.511 (v1 0.479, v2 0.474), top-3 0.821 (0.800, 0.784), but mineral vs rock fell to 0.900 (0.932) and ECE rose to 0.258 (0.204). Gains are 6 to 7 cases of 190, which is at the edge of noise. Most added photos come from one collection with a uniform backdrop, so a domain shortcut cannot be ruled out; no thresholds or model were changed, and the app stays on v1 until a larger-model comparison on this data.
