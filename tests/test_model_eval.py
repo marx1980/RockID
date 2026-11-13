@@ -100,3 +100,79 @@ console.log(JSON.stringify(Array.from(vectorFromHidden(data, [1, T, D]))));
     cls = np.array([0.6, 0.8]); mean = np.array([0.5, 0.5]) / np.linalg.norm([0.5, 0.5])
     expect = np.concatenate([cls, mean]); expect /= np.linalg.norm(expect)
     assert np.allclose(v, expect, atol=1e-6)
+
+
+def _formed(rng, dim=16, noise=0.1):
+    """Two taxa x natural/polished; form is a shift shared across taxa so it can be voted on."""
+    taxa = rng.normal(size=(2, dim)); form_dir = {"natural": np.zeros(dim), "polished": 2.5 * rng.normal(size=dim)}
+    vec, items = [], []
+    for t in range(2):
+        for f, shift in form_dir.items():
+            for s in range(40):
+                v = taxa[t] + shift + rng.normal(scale=noise, size=dim)
+                vec.append(v / np.linalg.norm(v))
+                items.append({"id": f"{t}{f}{s}", "s": f"s{t}{f}{s}", "t": f"t{t}", **({"f": f} if f != "natural" else {})})
+    return np.array(vec), items, taxa, form_dir
+
+
+def test_identify_votes_form_and_restricts_to_it():
+    from services.identifier.knn import ReferenceIndex, identify
+    rng = np.random.default_rng(3)
+    vec, items, taxa, form_dir = _formed(rng)
+    index = ReferenceIndex([ReferenceItem(i["id"], i["s"], i["t"], i.get("f", "natural")) for i in items], vec)
+    q = taxa[1] + form_dir["polished"] + rng.normal(scale=0.1, size=16)
+    cands, form, form_p, restricted = identify(index, q)
+    assert form == "polished" and restricted and form_p > 0.6 and cands[0].taxon_id == "t1"
+    assert all(index.items[i].form == "polished" for i in range(len(index.items)) if index.items[i].asset_id in
+               {n.item.asset_id for n in index.search(q, 50, form="polished")})
+    # too few photos of a form: fall back to all references
+    small = ReferenceIndex([it for it in index.items if it.form == "natural"] + [it for it in index.items if it.form == "polished"][:5],
+                           np.vstack([vec[[i for i, it in enumerate(index.items) if it.form == "natural"]],
+                                      vec[[i for i, it in enumerate(index.items) if it.form == "polished"][:5]]]))
+    assert identify(small, q)[3] is False
+
+
+@pytest.mark.skipif(not shutil.which("node"), reason="node not installed")
+def test_js_identify_matches_python(tmp_path):
+    from services.identifier.knn import ReferenceIndex, identify
+    rng = np.random.default_rng(4)
+    vec, items, taxa, form_dir = _formed(rng, noise=0.3)
+    index = ReferenceIndex([ReferenceItem(i["id"], i["s"], i["t"], i.get("f", "natural")) for i in items], vec)
+    queries = np.array([taxa[rng.integers(0, 2)] + form_dir[["natural", "polished"][rng.integers(0, 2)]] + rng.normal(scale=0.4, size=16) for _ in range(20)])
+    queries /= np.linalg.norm(queries, axis=1, keepdims=True)
+    expected = []
+    for q in queries:
+        cands, form, form_p, restricted = identify(index, q)
+        expected.append({"form": form, "restricted": restricted, "ranked": [c.taxon_id for c in cands[:3]], "p": [round(c.probability, 5) for c in cands[:3]]})
+    (tmp_path / "f.json").write_text(json.dumps({"dim": 16, "vectors": vec.astype(np.float32).ravel().tolist(), "items": items,
+                                                  "queries": queries.astype(np.float32).tolist()}))
+    (tmp_path / "run.mjs").write_text(f"""
+import {{ ReferenceIndex, identify }} from "{(ROOT / 'app/model/core.mjs').as_uri()}";
+import fs from "node:fs";
+const f = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+const idx = new ReferenceIndex(Float32Array.from(f.vectors), f.items, f.dim);
+console.log(JSON.stringify(f.queries.map(q => {{ const r = identify(idx, Float32Array.from(q)); return {{ form: r.form, restricted: r.restricted,
+  ranked: r.cands.slice(0, 3).map(c => c.taxon), p: r.cands.slice(0, 3).map(c => Math.round(c.p * 1e5) / 1e5) }}; }})));
+""")
+    got = json.loads(subprocess.run(["node", str(tmp_path / "run.mjs"), str(tmp_path / "f.json")], capture_output=True, text=True, check=True).stdout)
+    for e, g in zip(expected, got):
+        assert e["form"] == g["form"] and e["restricted"] == g["restricted"] and e["ranked"] == g["ranked"]
+        assert np.allclose(e["p"], g["p"], atol=2e-4)
+
+
+def test_calibrate_reports_by_form_and_score_forms(tmp_path):
+    from services.model.evaluate import score_forms
+    rng = np.random.default_rng(5)
+    vec, items, taxa, form_dir = _formed(rng)
+    _write(tmp_path / "ref", vec, items)
+    cfg = calibrate(tmp_path / "ref", tmp_path / "config.json", tmp_path / "loso.json")
+    assert cfg["form"]["min_pool"] == 30
+    by_form = json.loads((tmp_path / "loso.json").read_text())["by_form"]
+    assert set(by_form) == {"natural", "polished"} and by_form["polished"]["form_accuracy"] > 0.9
+    hold = [(f"h{i}", i % 2, "polished") for i in range(10)]
+    hv = np.array([taxa[t] + form_dir[f] + rng.normal(scale=0.1, size=16) for _, t, f in hold])
+    _write(tmp_path / "hold", hv, [{"id": c} for c, _, _ in hold])
+    with (tmp_path / "hold.csv").open("w", newline="") as fh:
+        w = csv.writer(fh); w.writerow(["case_id", "ground_truth_id", "form"]); w.writerows([(c, f"t{t}", f) for c, t, f in hold])
+    r = score_forms(tmp_path / "ref", tmp_path / "hold", tmp_path / "hold.csv", tmp_path / "config.json", tmp_path / "o.json", tmp_path / "o.md")
+    assert r["polished"]["top1"] > 0.9 and r["polished"]["form_accuracy"] > 0.9

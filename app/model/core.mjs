@@ -35,19 +35,22 @@ export class ReferenceIndex {
   constructor(vectors, items, dim) {
     this.v = vectors; this.items = items; this.dim = dim;
   }
-  search(q, k = 50) {
+  search(q, k = 50, form = null) {
     const n = this.items.length, D = this.dim, sims = new Float32Array(n);
     for (let i = 0; i < n; i++) {
       let s = 0;
       for (let d = 0; d < D; d++) s += this.v[i * D + d] * q[d];
       sims[i] = s;
     }
-    const order = Array.from(sims.keys()).sort((a, b) => sims[b] - sims[a]).slice(0, k);
+    let ids = Array.from(sims.keys());
+    if (form !== null) ids = ids.filter(i => (this.items[i].f || "natural") === form);
+    const order = ids.sort((a, b) => sims[b] - sims[a]).slice(0, k);
     return order.map(i => ({ item: this.items[i], similarity: sims[i] }));
   }
+  count(form) { return this.items.filter(it => (it.f || "natural") === form).length; }
 }
 
-export function aggregate(neighbors, temperature = 0.05, maxSpecimensPerTaxon = 3) {
+export function aggregate(neighbors, temperature = 0.05, maxSpecimensPerTaxon = 3, key = item => item.t) {
   const best = new Map();
   for (const n of neighbors) {
     const cur = best.get(n.item.s);
@@ -55,9 +58,9 @@ export function aggregate(neighbors, temperature = 0.05, maxSpecimensPerTaxon = 
   }
   const perTaxon = new Map();
   for (const n of [...best.values()].sort((a, b) => b.similarity - a.similarity)) {
-    const b = perTaxon.get(n.item.t) || [];
+    const b = perTaxon.get(key(n.item)) || [];
     if (b.length < maxSpecimensPerTaxon) b.push(n);
-    perTaxon.set(n.item.t, b);
+    perTaxon.set(key(n.item), b);
   }
   if (!perTaxon.size) return [];
   let top = -Infinity;
@@ -72,6 +75,20 @@ export function aggregate(neighbors, temperature = 0.05, maxSpecimensPerTaxon = 
   return raw.map(([t, v, ns]) => ({
     taxon: t, p: v / total, bestSimilarity: ns[0].similarity, specimens: ns.map(n => n.item.s),
   })).sort((a, b) => b.p - a.p);
+}
+
+export const FORM_DEFAULTS = { min_form_p: 0.6, min_pool: 30 };
+
+// Vote on the form (natural, tumbled, polished) from all references; when the vote is clear and the
+// form has enough photos, rank taxa among references of that form only. Mirrors knn.identify.
+export function identify(index, q, k = 50, formCfg = {}) {
+  const cfg = { ...FORM_DEFAULTS, ...formCfg };
+  const neighbors = index.search(q, k);
+  const votes = aggregate(neighbors, 0.05, 3, item => item.f || "natural");
+  const form = votes.length ? votes[0].taxon : "natural", formP = votes.length ? votes[0].p : 0;
+  if (votes.length && formP >= cfg.min_form_p && index.count(form) >= cfg.min_pool)
+    return { cands: aggregate(index.search(q, k, form)), form, formP, restricted: true };
+  return { cands: aggregate(neighbors), form, formP, restricted: false };
 }
 
 export function decide(cands, cfg = {}) {

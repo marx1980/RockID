@@ -1,6 +1,6 @@
 // In-browser identifier: DINOv2-small (transformers.js, ONNX) + specimen-balanced k-NN over the
 // reference vectors built by the build-model workflow. Weights are fetched on first use and cached.
-import { MODEL_ID, DTYPE, embed, ReferenceIndex, aggregate, decide } from "./core.mjs";
+import { MODEL_ID, DTYPE, embed, ReferenceIndex, identify, decide } from "./core.mjs";
 
 const TJS = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
 const here = p => new URL(p, import.meta.url).href;
@@ -27,7 +27,7 @@ async function load(onProgress) {
     lib.AutoModel.from_pretrained(MODEL_ID, { dtype: DTYPE, progress_callback }),
     lib.AutoProcessor.from_pretrained(MODEL_ID, { progress_callback }),
   ]);
-  const items = meta.items.map(it => ({ a: it.id, s: it.s, t: it.t }));
+  const items = meta.items.map(it => ({ a: it.id, s: it.s, t: it.t, f: it.f || "natural" }));
   return { lib, cfg, model, processor, index: new ReferenceIndex(new Float32Array(buf), items, meta.dim) };
 }
 
@@ -43,8 +43,9 @@ export async function install() {
       const blob = await new Promise(res => canvas.toBlob(res, "image/jpeg", 0.92));
       const image = await m.lib.RawImage.fromBlob(blob);
       const v = await embed(m.model, m.processor, image);
-      const d = decide(aggregate(m.index.search(v, 50)), m.cfg.decision);
-      return { status: d.status, candidates: d.candidates.map(c => ({ taxon: c.taxon, p: c.p })) };
+      const r = identify(m.index, v, 50, m.cfg.form);
+      const d = decide(r.cands, m.cfg.decision);
+      return { status: d.status, form: r.form, candidates: d.candidates.map(c => ({ taxon: c.taxon, p: c.p })) };
     },
   };
   return true;
