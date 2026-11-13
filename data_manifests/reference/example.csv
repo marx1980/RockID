@@ -1,1 +1,1 @@
-asset_id,taxon_id,specimen_id,source_name,source_url,author,license,retrieval_date,usage_decision,sha256,phash,media_url
+asset_id,taxon_id,specimen_id,source_name,source_url,author,license,retrieval_date,usage_decision,sha256,phash,media_url,form

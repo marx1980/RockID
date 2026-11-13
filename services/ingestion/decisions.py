@@ -17,6 +17,17 @@ def load_decisions(path: str | Path | None) -> dict[str, str]:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def load_forms(path: str | Path | None) -> dict[str, str]:
+    """Form of each non-natural candidate: {"<candidate_id>": "tumbled" | "polished"}. Absent means natural."""
+    if not path or not Path(path).exists():
+        return {}
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def save_forms(path: str | Path, forms: dict[str, str]) -> None:
+    Path(path).write_text(json.dumps(dict(sorted(forms.items())), indent=0, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def save_decisions(path: str | Path, decisions: dict[str, str]) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(dict(sorted(decisions.items())), indent=0, ensure_ascii=False) + "\n", encoding="utf-8")
