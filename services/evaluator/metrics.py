@@ -42,6 +42,18 @@ def top_k_accuracy(rows: list[CaseResult], k: int) -> float:
     return sum(r.hit_at(k) for r in rows) / len(rows) if rows else 0.0
 
 
+def ranked_accuracy(rows: list[CaseResult], k: int) -> float:
+    """Top-k of the ranked list, ignoring abstention: is the right answer on the shortlist?"""
+    rows = _in_taxonomy(rows)
+    return sum(bool(r.correct_labels() & set(r.ranked[:k])) for r in rows) / len(rows) if rows else 0.0
+
+
+def category_accuracy(rows: list[CaseResult]) -> float:
+    """Mineral vs rock (taxon_id prefix) of the first-ranked answer."""
+    rows = [r for r in _in_taxonomy(rows) if r.ranked]
+    return sum(r.ranked[0].split(".")[0] == r.truth.split(".")[0] for r in rows) / len(rows) if rows else 0.0
+
+
 def coverage(rows: list[CaseResult]) -> float:
     rows = _in_taxonomy(rows)
     return sum(not r.abstained for r in rows) / len(rows) if rows else 0.0
@@ -112,6 +124,9 @@ def report(rows: list[CaseResult]) -> dict:
         "ood_cases": sum(r.is_ood for r in rows),
         "top1": top_k_accuracy(rows, 1),
         "top3": top_k_accuracy(rows, 3),
+        "ranked_top1": ranked_accuracy(rows, 1),
+        "ranked_top3": ranked_accuracy(rows, 3),
+        "category_accuracy": category_accuracy(rows),
         "macro_f1": macro_f1(rows),
         "per_class_recall": per_class_recall(rows),
         "coverage": coverage(rows),

@@ -1,6 +1,6 @@
 # State
 
-Current phase: **P3 in-app model: code merged, first build and baseline running** (see docs/IMPLEMENTATION_PLAN.md)
+Current phase: **P3 in-app model live; next: improve data and accuracy (P3b) before P4 calibration/OOD** (see docs/IMPLEMENTATION_PLAN.md)
 
 ## Built
 - Phase 0 scaffold: isolated Challenge Vault, manifest validator, leakage checks, metrics, blind harness, quality gate, k-NN aggregation, DB schemas, CI
@@ -43,7 +43,14 @@ G-01 PASS, G-02 PASS (provisional), H-01 PASS (licence policy approved). Log: re
 ## Next (old)
 H-02: enable Pages, create the token, review at least one taxon on the phone. Then run promote-reference, ingest to the DB and start P3 (embeddings).
 
+
+## Baseline (results/BASELINE.md)
+- Shortlist: right answer first 48%, in top 3 80%; mineral vs rock 93% (independent photographers and specimens)
+- Committed answers: only 15% of photos, 76% correct (reference calibration promised 81%)
+- Top confusions: quartz/calcite, malachite/azurite, gypsum/calcite/quartz, K-feldspar/quartzite
+- Unverified: real phone camera photos (the benchmark is museum and collector photos)
+
 ## Next
-1. Run promote-reference; merge reference.csv.
-2. P3: embed the reference set with DINOv2-small in Actions, ship vectors + an in-browser encoder so the app identifies for real.
-3. Re-harvest marble, biotite and slate with better queries.
+1. H-03: Marko tries the app on real rocks.
+2. P3b: more and better reference data for weak classes (marble 2, biotite 3, granite 3 specimens; slate, magnetite thin); re-harvest with better queries; consider dinov2-base or SigLIP2 and compare on the same challenge set.
+3. P4: OOD set (non-rocks, other minerals), threshold calibration on a held-out calibration split, follow-up answers fed back into ranking.
