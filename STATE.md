@@ -60,4 +60,7 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - 634 NHM candidates reviewed visually: 49 approved and promoted, 582 rejected (443 polished slab scans, 120 surplus sandstone)
 - Reference set 692 photos; v2 re-score neutral (results/BASELINE_v2.md); live app still on model v1
 - Still thin: marble 2, biotite 3, granite 8 photos (NHM granite and marble are almost all polished slab scans), slate 8, magnetite
-- Not started: Europeana (needs EUROPEANA_API_KEY), GeoCASe, more Commons/Smithsonian queries for the weak classes
+- Europeana source built and run (1,974 candidates; 294 auto-rejected by provider and title rules; 1,331 reviewed visually in round 3, 450 approved and promoted; Vienna, Paris and Naturalis thumbnails unreachable, 350 left unreviewed)
+- Reference set 1,142 photos; v3 re-score (results/BASELINE_v3.md): shortlist top-1 0.511, top-3 0.821, mineral vs rock 0.900; live app still on model v1
+- Now: marble 3, slate 11, biotite 25, magnetite 42 photos; most new photos come from one Estonian collection (black or white backdrop, scale bar)
+- Not started: GeoCASe, more Commons/Smithsonian queries for the weak classes, Europeana thumbnail fallback, pHash check of reference against challenge
