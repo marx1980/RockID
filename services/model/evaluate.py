@@ -104,23 +104,37 @@ def score(ref_prefix, ch_prefix, challenge_csv, config_path, json_out, md_out) -
     Path(json_out).parent.mkdir(parents=True, exist_ok=True)
     frozen = Path(json_out).with_name("challenge_predictions.json")
     frozen.write_text(json.dumps(preds, indent=0, sort_keys=True))
+    return rescore(frozen, challenge_csv, json_out, md_out, cfg, rmeta, len(cmeta.get("failed", [])))
+
+
+def rescore(predictions_json, challenge_csv, json_out, md_out, cfg=None, rmeta=None, not_embedded=0) -> dict:
+    """Score frozen predictions against the challenge labels (labels are read only here)."""
+    preds = json.loads(Path(predictions_json).read_text())
     with Path(challenge_csv).open(newline="", encoding="utf-8") as fh:
         truth = {r["case_id"]: r["ground_truth_id"] for r in csv.DictReader(fh)}
     rows = [CaseResult(truth=truth[cid], ranked=p["ranked"], abstained=p["status"] != "identified",
                        confidence=p["p"][0] if p["p"] else None) for cid, p in sorted(preds.items())]
     r = report(rows)
-    r["not_embedded"] = len(cmeta.get("failed", []))
-    r["decision"] = cfg
+    r["not_embedded"] = not_embedded
+    r["status_counts"] = {s: sum(p["status"] == s for p in preds.values()) for s in ("identified", "uncertain", "unknown")}
+    if cfg is not None:
+        r["decision"] = cfg
+    Path(json_out).parent.mkdir(parents=True, exist_ok=True)
     Path(json_out).write_text(json.dumps(r, indent=1))
+    model = f"{rmeta['model']} ({rmeta['dtype']})" if rmeta else "see app/model/config.json"
+    refs = len(rmeta["items"]) if rmeta else "?"
     lines = [
-        f"# Baseline: {rmeta['model']} ({rmeta['dtype']}), specimen-balanced k-NN", "",
-        f"Date {date.today().isoformat()} · reference photos {len(rmeta['items'])} · challenge cases {len(rows)}"
-        f" (not embedded: {r['not_embedded']})", "",
+        f"# Baseline: {model}, specimen-balanced k-NN", "",
+        f"Date {date.today().isoformat()} · reference photos {refs} · challenge cases {len(rows)} (not embedded: {not_embedded})", "",
+        "Challenge photos come from photographers, specimens and source pages absent from the reference set.", "",
+        "## Shortlist (ignores the app's confidence verdict)", "",
         "| metric | value |", "|---|---|",
-        *[f"| {k} | {r[k]:.3f} |" for k in ("top1", "top3", "macro_f1", "coverage", "selective_accuracy",
-                                           "confident_error_rate", "ece")],
-        "", "Thresholds calibrated on reference leave-one-specimen-out; challenge scored once.", "",
-        "| class | recall@1 |", "|---|---|",
+        *[f"| {k} | {r[k]:.3f} |" for k in ("ranked_top1", "ranked_top3", "category_accuracy")],
+        "", "## Committed answers (verdict = identified)", "",
+        "| metric | value |", "|---|---|",
+        *[f"| {k} | {r[k]:.3f} |" for k in ("coverage", "selective_accuracy", "confident_error_rate", "top1", "top3", "macro_f1", "ece")],
+        "", f"Verdicts: {r['status_counts']}. Thresholds calibrated on reference leave-one-specimen-out; challenge scored once.", "",
+        "| class | recall@1 (committed) |", "|---|---|",
         *[f"| {k} | {v:.2f} |" for k, v in r["per_class_recall"].items()],
     ]
     Path(md_out).write_text("\n".join(lines) + "\n")
@@ -129,4 +143,5 @@ def score(ref_prefix, ch_prefix, challenge_csv, config_path, json_out, md_out) -
 
 if __name__ == "__main__":
     cmd, *args = sys.argv[1:]
-    print(json.dumps(calibrate(*args) if cmd == "calibrate" else score(*args), indent=1)[:2000])
+    fn = {"calibrate": calibrate, "score": score, "rescore": rescore}[cmd]
+    print(json.dumps(fn(*args), indent=1)[:2000])

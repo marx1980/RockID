@@ -62,3 +62,11 @@ def test_ece():
 
 def test_report_keys():
     assert set(report([CaseResult("a", ["a"])])) >= {"top1", "top3", "macro_f1", "ece", "coverage"}
+
+
+def test_ranked_accuracy_ignores_abstention():
+    from services.evaluator.metrics import category_accuracy, ranked_accuracy
+    rows = [CaseResult("min.a", ["min.a", "min.b"], abstained=True), CaseResult("min.b", ["rock.c", "min.b"])]
+    assert ranked_accuracy(rows, 1) == 0.5 and ranked_accuracy(rows, 2) == 1.0
+    assert top_k_accuracy(rows, 1) == 0.0
+    assert category_accuracy(rows) == 0.5
