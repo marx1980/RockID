@@ -14,6 +14,9 @@ on:
       per_taxon:
         description: "max candidates per taxon, round-robin across authors (0 = no cap)"
         default: "0"
+      candidates:
+        description: "candidates file"
+        default: "data_manifests/candidates/candidates.csv"
       skip_authors:
         description: "comma list of author substrings to leave out"
         default: ""
@@ -33,11 +36,11 @@ jobs:
       - run: pip install -r requirements.txt
       - run: |
           if [ -n "${{ inputs.round_prefix }}" ]; then
-            python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets \
+            python -m services.curation.contact_sheet ${{ inputs.candidates }} sheets \
               --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}" --only-source "${{ inputs.only_source }}" \
               --per-author "${{ inputs.per_author }}" --per-taxon "${{ inputs.per_taxon }}" --skip-authors "${{ inputs.skip_authors }}"
           else
-            python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets
+            python -m services.curation.contact_sheet ${{ inputs.candidates }} sheets
           fi
       - name: Push to a temporary review branch (delete after review)
         run: |
