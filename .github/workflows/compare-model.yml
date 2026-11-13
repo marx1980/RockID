@@ -15,8 +15,11 @@ on:
         description: "fp32, fp16, q8, ..."
         default: "q8"
       private:
-        description: "true: add the private MineralImage5k vectors (app model only)"
+        description: "true: add the private vector sets named in private_sets (app model only)"
         default: "false"
+      private_sets:
+        description: "space-separated prefixes under data_manifests/private to add as reference (mi5k_ref, kg_v1)"
+        default: "mi5k_ref"
       mask:
         description: "centre fraction painted grey (0 = off; 0.6 = backdrop-only probe; -0.6 = keep centre 60%, grey the edges)"
         default: "0"
@@ -73,7 +76,7 @@ jobs:
         if: inputs.private == 'true'
         run: |
           cp emb/reference.f32 emb/reference_private.f32 && cp emb/reference.json emb/reference_private.json
-          python -m services.model.private emb/reference_private data_manifests/private/mi5k_ref
+          python -m services.model.private emb/reference_private $(for s in ${{ inputs.private_sets }}; do echo data_manifests/private/$s; done)
       - name: Calibrate and score
         run: |
           REF=emb/reference; [ "${{ inputs.private }}" = "true" ] && REF=emb/reference_private; echo "REF=$REF" >> "$GITHUB_ENV"
@@ -83,7 +86,7 @@ jobs:
           python -m services.model.evaluate score_forms $REF emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
           python -m services.model.evaluate ood_sweep $REF emb/ood_cal vault/ood_calibration.csv "$OUT/config.json" "$OUT/ood_sweep.json" "$OUT/OOD_SWEEP.md"
           python -m services.model.evaluate score $REF emb/ood_test vault/ood_test.csv "$OUT/config.json" "$OUT/baseline_ood.json" "$OUT/BASELINE_OOD.md"
-          if [ "${{ inputs.private }}" = "true" ]; then
+          if [ "${{ inputs.private }}" = "true" ] && echo "${{ inputs.private_sets }}" | grep -q mi5k_ref; then
             python -m services.model.evaluate ood_sweep $REF data_manifests/private/mi5k_ood_cal data_manifests/private/ood_cal.csv "$OUT/config.json" "$OUT/ood_sweep_mi5k.json" "$OUT/OOD_SWEEP_MI5K.md"
             python -m services.model.evaluate score $REF data_manifests/private/mi5k_ood_test data_manifests/private/ood_test.csv "$OUT/config.json" "$OUT/baseline_ood_mi5k.json" "$OUT/BASELINE_OOD_MI5K.md"
           fi
