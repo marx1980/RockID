@@ -80,6 +80,8 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - 734 candidates reviewed, 149 approved and promoted; reference set 1,834 photos
 - Score with same model (results/compare/dinov2-small-v6): challenge top-1 0.495, top-3 0.800; Commons 0.39 / 0.71; not shipped, v4 live
 - Rock articles yield little (outcrops, structures); weak rock classes still need specimen photos from other sources
+- Round 7: ~150 subtype articles; 141 approved; 1,975 reference photos; challenge top-1 0.489, top-3 0.795, Commons 0.37 / 0.71 (results/compare/dinov2-small-v7); not shipped
+- Least natural coverage now: marble 11 photos, slate 22, granite 54 (28 specimens), chert 60 (28), magnetite 58 (22)
 
 ## Model comparison and shortcut check (results/compare/COMPARISON.md)
 - compare-model workflow: any HF ONNX DINOv2 or SigLIP model, or a centre-masked probe; writes results/compare/<tag>/ and never touches the app
