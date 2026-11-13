@@ -6,7 +6,7 @@ of the same taxon. Rows already decided are left alone.
 
   python -m services.curation.merge_round data_manifests/candidates/candidates.csv \
       data_manifests/candidates/agent_review.csv data_manifests/candidates/decisions.json \
-      /path/to/vault/challenge.csv
+      /path/to/vault/challenge.csv[,/path/to/vault/challenge_b.csv]
 """
 import csv
 import sys
@@ -28,9 +28,9 @@ def merge_round(candidates_csv, review_csv, decisions_path, challenge_csv=None) 
     with Path(review_csv).open(newline="", encoding="utf-8") as fh:
         review = [r for r in csv.DictReader(fh) if r["candidate_id"] not in decisions]
     challenge = []
-    if challenge_csv:
-        with Path(challenge_csv).open(newline="", encoding="utf-8") as fh:
-            challenge = list(csv.DictReader(fh))
+    for path in filter(None, str(challenge_csv or "").split(",")):  # several challenge sets: comma-separated paths
+        with Path(path).open(newline="", encoding="utf-8") as fh:
+            challenge.extend(csv.DictReader(fh))
     blocked: dict[str, set[str]] = {}
     for row in challenge:
         blocked.setdefault(row["ground_truth_id"], set()).update(
