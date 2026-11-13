@@ -93,14 +93,40 @@ def reviewed_ids(review_csv: str | Path) -> set[str]:
         return {r["candidate_id"] for r in csv.DictReader(fh)}
 
 
+def diversify(cands, per_author=0, per_taxon=0, skip_authors=()):
+    """Cap each author per taxon, then round-robin across authors up to per_taxon, so one photographer cannot fill a taxon."""
+    out: list[Candidate] = []
+    by_taxon: dict[str, dict[str, list[Candidate]]] = {}
+    for c in cands:
+        a = (c.author or "").strip()
+        if any(k.lower() in a.lower() for k in skip_authors):
+            continue
+        by_taxon.setdefault(c.taxon_id, {}).setdefault(a, []).append(c)
+    for taxon, authors in by_taxon.items():
+        pools = [v[:per_author] if per_author else v for v in authors.values()]
+        picked: list[Candidate] = []
+        i = 0
+        while any(i < len(p) for p in pools) and not (per_taxon and len(picked) >= per_taxon):
+            for p in pools:
+                if i < len(p) and not (per_taxon and len(picked) >= per_taxon):
+                    picked.append(p[i])
+            i += 1
+        out.extend(picked)
+    out.sort(key=lambda c: (c.taxon_id, c.specimen_hint, c.candidate_id))
+    return out
+
+
 def build(candidates_csv: str | Path, out_dir: str | Path, client: httpx.Client, workers: int = 6,
-          commons_delay: float = 0.25, skip: set[str] | None = None, prefix: str = "", only_source: str = "") -> dict:
+          commons_delay: float = 0.25, skip: set[str] | None = None, prefix: str = "", only_source: str = "",
+          per_author: int = 0, per_taxon: int = 0, skip_authors: tuple = ()) -> dict:
     """`skip` = candidate ids already reviewed (a later review round only sees new candidates);
     `prefix` keeps sheet names of different rounds apart."""
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     cands = [c for c in read_candidates(candidates_csv) if c.proposed_usage != "rejected" and c.candidate_id not in (skip or set()) and only_source in c.source_name]
     cands.sort(key=lambda c: (c.taxon_id, c.specimen_hint, c.candidate_id))
+    if per_author or per_taxon:
+        cands = diversify(cands, per_author, per_taxon, skip_authors)
     by_taxon: dict[str, list[Candidate]] = {}
     for c in cands:
         by_taxon.setdefault(c.taxon_id, []).append(c)
@@ -145,7 +171,11 @@ if __name__ == "__main__":
     ap.add_argument("--skip-reviewed", help="agent_review.csv; its candidates are left out")
     ap.add_argument("--prefix", default="")
     ap.add_argument("--only-source", default="", help="keep candidates whose source name contains this text")
+    ap.add_argument("--per-author", type=int, default=0, help="max candidates per author per taxon")
+    ap.add_argument("--per-taxon", type=int, default=0, help="max candidates per taxon (round-robin across authors)")
+    ap.add_argument("--skip-authors", default="", help="comma list of author substrings to leave out")
     a = ap.parse_args()
     with httpx.Client(follow_redirects=True) as client:
         print(build(a.candidates, a.out, client, skip=reviewed_ids(a.skip_reviewed) if a.skip_reviewed else None, prefix=a.prefix,
-                    only_source=a.only_source))
+                    only_source=a.only_source,
+                    per_author=a.per_author, per_taxon=a.per_taxon, skip_authors=tuple(x for x in a.skip_authors.split(",") if x)))
