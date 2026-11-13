@@ -1,0 +1,33 @@
+{
+ "cases": 56,
+ "ood_cases": 56,
+ "top1": 0.0,
+ "top3": 0.0,
+ "ranked_top1": 0.0,
+ "ranked_top3": 0.0,
+ "category_accuracy": 0.0,
+ "macro_f1": 0.0,
+ "per_class_recall": {},
+ "coverage": 0.0,
+ "selective_accuracy": 0.0,
+ "confident_error_rate": 1.0,
+ "unknown_false_accept_rate": 0.05357142857142857,
+ "ece": 0.6435,
+ "not_embedded": 0,
+ "status_counts": {
+  "identified": 3,
+  "uncertain": 33,
+  "unknown": 20
+ },
+ "form_counts": {
+  "natural": 48,
+  "tumbled": 0,
+  "polished": 8
+ },
+ "decision": {
+  "ood_similarity": 0.6599537432193756,
+  "accept_probability": 0.4,
+  "min_margin": 0.0,
+  "min_specimens": 1
+ }
+}
