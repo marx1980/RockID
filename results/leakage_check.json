@@ -1,0 +1,76 @@
+{
+ "challenge_checked": 331,
+ "not_fetched": [],
+ "by_reason": {
+  "near_duplicate": 10,
+  "same_specimen": 1
+ },
+ "findings": [
+  [
+   "near_duplicate",
+   "c0021",
+   "commons:11420948"
+  ],
+  [
+   "near_duplicate",
+   "c0045",
+   "si:nmnhmineralsciences_1349877:ark:/65665/m30f3fae14c39e4b7f95523b1ab615cacf"
+  ],
+  [
+   "near_duplicate",
+   "c0057",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG27X984"
+  ],
+  [
+   "near_duplicate",
+   "b0031",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG42X109"
+  ],
+  [
+   "near_duplicate",
+   "b0035",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG57X73"
+  ],
+  [
+   "near_duplicate",
+   "b0036",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG42X107"
+  ],
+  [
+   "near_duplicate",
+   "b0037",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG42X40"
+  ],
+  [
+   "near_duplicate",
+   "b0038",
+   "eu:/11624/TESTXGITXTAMGXGITXESTONIAXG57X72"
+  ],
+  [
+   "near_duplicate",
+   "b0042",
+   "commons:4851869"
+  ],
+  [
+   "near_duplicate",
+   "b0043",
+   "commons:4851869"
+  ],
+  [
+   "same_specimen",
+   "b0109",
+   "commons:123318130"
+  ]
+ ],
+ "nearest_phash_distance_histogram": {
+  "0": 6,
+  "6": 1,
+  "8": 3,
+  "10": 11,
+  "12": 41,
+  "14": 75,
+  "16": 107,
+  "18": 79,
+  "20": 8
+ }
+}
