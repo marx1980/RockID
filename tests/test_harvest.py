@@ -152,3 +152,23 @@ def test_promote_skips_exact_duplicates(tmp_path):
 def test_every_taxon_has_harvest_queries():
     from services.ingestion.harvest import load_queries
     assert len(load_queries()) == 21
+
+
+def test_other_taxa_flag():
+    client, _ = _mock({commons.API: json.loads((FIX / "commons_azurite.json").read_text())})
+    rows = {r.title: r for r in commons.search(client, "min.azurite", "azurite", ["azurite"], limit=10)}
+    assert rows["File:Azurite-Malachite-Bisbee-12.jpg"].other_taxa_in_title == "min.malachite"
+
+
+def test_rate_limit_stops_source_but_not_others(tmp_path):
+    calls = {"si": 0}
+
+    def handler(req):
+        if str(req.url).startswith(smithsonian.API):
+            calls["si"] += 1
+            return httpx.Response(429)
+        return httpx.Response(200, json=json.loads((FIX / "commons_azurite.json").read_text()))
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    n = harvest(client, ["smithsonian", "commons"], ["min.azurite", "min.calcite"], 10, tmp_path / "c.csv")
+    assert calls["si"] == 1 and n == 3

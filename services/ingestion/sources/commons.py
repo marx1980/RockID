@@ -5,7 +5,7 @@ import httpx
 
 from services.ingestion.candidates import Candidate
 from services.ingestion.licence import propose_usage
-from services.ingestion.sources import PHOTO_MIMES, USER_AGENT, mentions, now_iso, strip_html
+from services.ingestion.sources import other_taxa_named, PHOTO_MIMES, USER_AGENT, mentions, now_iso, strip_html
 
 API = "https://commons.wikimedia.org/w/api.php"
 SOURCE = "Wikimedia Commons"
@@ -61,6 +61,7 @@ def search(client: httpx.Client, taxon_id: str, query: str, title_terms: list[st
                 specimen_hint=specimen_hint(title),
                 specimen_hint_confidence="low",
                 taxon_in_title=in_title,
+                other_taxa_in_title=other_taxa_named(title, taxon_id),
                 proposed_usage=usage,
                 policy_reason=reason,
                 retrieved_at=now_iso(),

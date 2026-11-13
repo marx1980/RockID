@@ -21,6 +21,7 @@ class Candidate:
     specimen_hint: str
     specimen_hint_confidence: str  # high = source gives a specimen/catalogue id; low = guessed
     taxon_in_title: bool
+    other_taxa_in_title: str  # other MVP taxa named in the title, '|'-separated; label may be ambiguous
     proposed_usage: str
     policy_reason: str
     retrieved_at: str
