@@ -1,400 +1,420 @@
 {
  "chosen": {
-  "ood_similarity": 0.6257590770721435,
+  "ood_similarity": 0.6532157957553864,
   "accept_probability": 0.4,
-  "min_margin": 0.3,
+  "min_margin": 0.0,
   "min_specimens": 1,
-  "coverage": 0.2169811320754717,
-  "selective_accuracy": 0.8115942028985508,
-  "top1": 0.1761006289308176
+  "coverage": 0.38173747622067217,
+  "selective_accuracy": 0.8073089700996677,
+  "top1": 0.30818008877615727
  },
  "loso_top1_top3": {
-  "top1": 0.4591194968553459,
-  "top3": 0.6933962264150944
+  "top1": 0.553582752060875,
+  "top3": 0.7831325301204819
+ },
+ "by_form": {
+  "natural": {
+   "photos": 1149,
+   "form_accuracy": 0.9747606614447345,
+   "top1": 0.5126196692776327,
+   "top3": 0.7676240208877284
+  },
+  "polished": {
+   "photos": 368,
+   "form_accuracy": 0.8885869565217391,
+   "top1": 0.6440217391304348,
+   "top3": 0.8260869565217391
+  },
+  "tumbled": {
+   "photos": 60,
+   "form_accuracy": 0.85,
+   "top1": 0.7833333333333333,
+   "top3": 0.8166666666666667
+  }
  },
  "per_class_recall": {
-  "min.azurite": 0.5531914893617021,
-  "min.biotite": 0.0,
-  "min.calcite": 0.23809523809523808,
-  "min.fluorite": 0.6363636363636364,
-  "min.gypsum": 0.2631578947368421,
-  "min.hematite": 0.27586206896551724,
-  "min.k-feldspar": 0.8873239436619719,
-  "min.magnetite": 0.24324324324324326,
-  "min.malachite": 0.27586206896551724,
-  "min.muscovite": 0.5454545454545454,
-  "min.pyrite": 0.32142857142857145,
-  "min.quartz": 0.6071428571428571,
-  "rock.basalt": 0.2564102564102564,
-  "rock.chert": 0.6857142857142857,
-  "rock.gneiss": 0.75,
-  "rock.granite": 0.0,
-  "rock.limestone": 0.35714285714285715,
-  "rock.marble": 0.0,
-  "rock.quartzite": 0.7647058823529411,
-  "rock.sandstone": 0.2962962962962963,
-  "rock.slate": 0.0
+  "min.azurite": 0.6590909090909091,
+  "min.biotite": 0.5555555555555556,
+  "min.calcite": 0.43956043956043955,
+  "min.fluorite": 0.5571428571428572,
+  "min.gypsum": 0.3978494623655914,
+  "min.hematite": 0.32727272727272727,
+  "min.k-feldspar": 0.69,
+  "min.magnetite": 0.19047619047619047,
+  "min.malachite": 0.6105263157894737,
+  "min.muscovite": 0.4883720930232558,
+  "min.pyrite": 0.3870967741935484,
+  "min.quartz": 0.5384615384615384,
+  "rock.basalt": 0.36923076923076925,
+  "rock.chert": 0.6986301369863014,
+  "rock.gneiss": 0.631578947368421,
+  "rock.granite": 0.703125,
+  "rock.limestone": 0.5369127516778524,
+  "rock.marble": 0.6585365853658537,
+  "rock.quartzite": 0.746031746031746,
+  "rock.sandstone": 0.5131578947368421,
+  "rock.slate": 0.25
  },
  "sweep": [
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.0,
    "min_specimens": 1,
-   "coverage": 0.32075471698113206,
-   "selective_accuracy": 0.7401960784313726,
-   "top1": 0.23742138364779874
+   "coverage": 0.38173747622067217,
+   "selective_accuracy": 0.8073089700996677,
+   "top1": 0.30818008877615727
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.0,
    "min_specimens": 2,
-   "coverage": 0.3113207547169811,
-   "selective_accuracy": 0.7626262626262627,
-   "top1": 0.23742138364779874
+   "coverage": 0.38110336081166774,
+   "selective_accuracy": 0.8086522462562395,
+   "top1": 0.30818008877615727
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.1,
    "min_specimens": 1,
-   "coverage": 0.3128930817610063,
-   "selective_accuracy": 0.7437185929648241,
-   "top1": 0.23270440251572327
+   "coverage": 0.3589093214965124,
+   "selective_accuracy": 0.8180212014134276,
+   "top1": 0.29359543436905516
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.1,
    "min_specimens": 2,
-   "coverage": 0.30345911949685533,
-   "selective_accuracy": 0.7668393782383419,
-   "top1": 0.23270440251572327
+   "coverage": 0.3582752060875079,
+   "selective_accuracy": 0.8194690265486726,
+   "top1": 0.29359543436905516
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.2,
    "min_specimens": 1,
-   "coverage": 0.2908805031446541,
-   "selective_accuracy": 0.7621621621621621,
-   "top1": 0.22169811320754718
+   "coverage": 0.32213062777425494,
+   "selective_accuracy": 0.84251968503937,
+   "top1": 0.2714013950538998
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.2,
    "min_specimens": 2,
-   "coverage": 0.2830188679245283,
-   "selective_accuracy": 0.7833333333333333,
-   "top1": 0.22169811320754718
+   "coverage": 0.32149651236525045,
+   "selective_accuracy": 0.8441814595660749,
+   "top1": 0.2714013950538998
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.3,
    "min_specimens": 1,
-   "coverage": 0.2169811320754717,
-   "selective_accuracy": 0.8115942028985508,
-   "top1": 0.1761006289308176
+   "coverage": 0.264426125554851,
+   "selective_accuracy": 0.86810551558753,
+   "top1": 0.22954977805960686
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.4,
    "min_margin": 0.3,
    "min_specimens": 2,
-   "coverage": 0.2138364779874214,
-   "selective_accuracy": 0.8235294117647058,
-   "top1": 0.1761006289308176
+   "coverage": 0.2637920101458465,
+   "selective_accuracy": 0.8701923076923077,
+   "top1": 0.22954977805960686
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.0,
    "min_specimens": 1,
-   "coverage": 0.19968553459119498,
-   "selective_accuracy": 0.8267716535433071,
-   "top1": 0.1650943396226415
+   "coverage": 0.28154724159797084,
+   "selective_accuracy": 0.8400900900900901,
+   "top1": 0.23652504755865567
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.0,
    "min_specimens": 2,
-   "coverage": 0.19654088050314467,
-   "selective_accuracy": 0.84,
-   "top1": 0.1650943396226415
+   "coverage": 0.2809131261889664,
+   "selective_accuracy": 0.8419864559819413,
+   "top1": 0.23652504755865567
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.1,
    "min_specimens": 1,
-   "coverage": 0.19968553459119498,
-   "selective_accuracy": 0.8267716535433071,
-   "top1": 0.1650943396226415
+   "coverage": 0.27710843373493976,
+   "selective_accuracy": 0.8443935926773455,
+   "top1": 0.2339885859226379
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.1,
    "min_specimens": 2,
-   "coverage": 0.19654088050314467,
-   "selective_accuracy": 0.84,
-   "top1": 0.1650943396226415
+   "coverage": 0.27647431832593533,
+   "selective_accuracy": 0.8463302752293578,
+   "top1": 0.2339885859226379
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.2,
    "min_specimens": 1,
-   "coverage": 0.19811320754716982,
-   "selective_accuracy": 0.8253968253968254,
-   "top1": 0.16352201257861634
+   "coverage": 0.2656943563728599,
+   "selective_accuracy": 0.8544152744630071,
+   "top1": 0.2270133164235891
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.2,
    "min_specimens": 2,
-   "coverage": 0.1949685534591195,
-   "selective_accuracy": 0.8387096774193549,
-   "top1": 0.16352201257861634
+   "coverage": 0.26506024096385544,
+   "selective_accuracy": 0.8564593301435407,
+   "top1": 0.2270133164235891
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.3,
    "min_specimens": 1,
-   "coverage": 0.1918238993710692,
-   "selective_accuracy": 0.8360655737704918,
-   "top1": 0.16037735849056603
+   "coverage": 0.24920735573874445,
+   "selective_accuracy": 0.8651399491094147,
+   "top1": 0.21559923906150918
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.5,
    "min_margin": 0.3,
    "min_specimens": 2,
-   "coverage": 0.19025157232704404,
-   "selective_accuracy": 0.8429752066115702,
-   "top1": 0.16037735849056603
+   "coverage": 0.24857324032974001,
+   "selective_accuracy": 0.8673469387755102,
+   "top1": 0.21559923906150918
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.0,
    "min_specimens": 1,
-   "coverage": 0.13522012578616352,
-   "selective_accuracy": 0.7790697674418605,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.0,
    "min_specimens": 2,
-   "coverage": 0.13364779874213836,
-   "selective_accuracy": 0.788235294117647,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.1,
    "min_specimens": 1,
-   "coverage": 0.13522012578616352,
-   "selective_accuracy": 0.7790697674418605,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.1,
    "min_specimens": 2,
-   "coverage": 0.13364779874213836,
-   "selective_accuracy": 0.788235294117647,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.2,
    "min_specimens": 1,
-   "coverage": 0.13522012578616352,
-   "selective_accuracy": 0.7790697674418605,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.2,
    "min_specimens": 2,
-   "coverage": 0.13364779874213836,
-   "selective_accuracy": 0.788235294117647,
-   "top1": 0.10534591194968554
+   "coverage": 0.20735573874445148,
+   "selective_accuracy": 0.8654434250764526,
+   "top1": 0.1794546607482562
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.3,
    "min_specimens": 1,
-   "coverage": 0.13522012578616352,
-   "selective_accuracy": 0.7790697674418605,
-   "top1": 0.10534591194968554
+   "coverage": 0.20545339251743816,
+   "selective_accuracy": 0.8703703703703703,
+   "top1": 0.17882054533925174
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.6,
    "min_margin": 0.3,
    "min_specimens": 2,
-   "coverage": 0.13364779874213836,
-   "selective_accuracy": 0.788235294117647,
-   "top1": 0.10534591194968554
+   "coverage": 0.20545339251743816,
+   "selective_accuracy": 0.8703703703703703,
+   "top1": 0.17882054533925174
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.0,
    "min_specimens": 1,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.0,
    "min_specimens": 2,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.1,
    "min_specimens": 1,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.1,
    "min_specimens": 2,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.2,
    "min_specimens": 1,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.2,
    "min_specimens": 2,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.3,
    "min_specimens": 1,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.7,
    "min_margin": 0.3,
    "min_specimens": 2,
-   "coverage": 0.07389937106918239,
-   "selective_accuracy": 0.8297872340425532,
-   "top1": 0.06132075471698113
+   "coverage": 0.13506658211794548,
+   "selective_accuracy": 0.9014084507042254,
+   "top1": 0.12175015852885225
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.0,
    "min_specimens": 1,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.0,
    "min_specimens": 2,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.1,
    "min_specimens": 1,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.1,
    "min_specimens": 2,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.2,
    "min_specimens": 1,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.2,
    "min_specimens": 2,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.3,
    "min_specimens": 1,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   },
   {
-   "ood_similarity": 0.6257590770721435,
+   "ood_similarity": 0.6532157957553864,
    "accept_probability": 0.8,
    "min_margin": 0.3,
    "min_specimens": 2,
-   "coverage": 0.03930817610062893,
-   "selective_accuracy": 0.92,
-   "top1": 0.036163522012578615
+   "coverage": 0.08433734939759036,
+   "selective_accuracy": 0.9022556390977443,
+   "top1": 0.07609384908053266
   }
  ]
 }
