@@ -18,6 +18,10 @@ Real encoders (DINOv2, SigLIP2) need `requirements-ml.txt`.
 ## Critical invariant
 The identifier has no Challenge Vault credentials, network route or code path. Challenge labels are visible only to the evaluator, and only after the prediction for that case is frozen. Challenge images reach the identifier as bytes; label/source metadata never does. `tests/test_security_contract.py` enforces this.
 
+## Apps
+- Identify: https://marx1980.github.io/RockID/app/
+- Review (optional check of agent decisions): https://marx1980.github.io/RockID/review/
+
 ## Layout
 | Path | Role |
 |---|---|
@@ -25,6 +29,8 @@ The identifier has no Challenge Vault credentials, network route or code path. C
 | `services/identifier` | quality gate, encoder adapters, k-NN search, specimen-balanced aggregation, abstention |
 | `services/ingestion` | candidate harvesting, review decisions, promote to reference manifest, DB ingest, duplicate and split-leakage detection |
 | `services/review`, `apps/review` | phone review page (GitHub Pages) and its site builder |
+| `services/curation` | contact sheets for agent review, reference/challenge split |
+| `app/`, `services/app` | camera-first identify app and its data builder |
 | `services/evaluator` | blind run harness (freeze then reveal), metrics |
 | `packages/taxonomy` | MVP21 taxonomy with stable IDs and confusion groups |
 | `infra/db/reference` | pgvector schema (reference domain) |

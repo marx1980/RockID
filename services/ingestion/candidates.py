@@ -3,7 +3,7 @@ import csv
 from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
 
-REVIEW_DECISIONS = {"", "approve_train", "approve_reference", "reject"}
+REVIEW_DECISIONS = {"", "approve_train", "approve_reference", "reject", "reserve"}  # reserve = held out for the challenge set
 
 
 @dataclass(frozen=True)

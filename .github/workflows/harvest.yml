@@ -35,7 +35,7 @@ jobs:
             ${{ inputs.taxa && format('--taxa {0}', inputs.taxa) || '' }} \
             --out data_manifests/candidates/candidates.csv \
             --summary data_manifests/candidates/SUMMARY.md
-          python -m services.review.build_site data_manifests/candidates/candidates.csv review
+          python -m services.review.build_site data_manifests/candidates/candidates.csv review data_manifests/candidates/decisions.json
           cat data_manifests/candidates/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a review branch
         run: |

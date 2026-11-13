@@ -36,6 +36,7 @@ class PromoteResult:
     promoted: int = 0
     skipped_unreviewed: int = 0
     rejected_by_reviewer: int = 0
+    reserved: int = 0
     refused_licence: int = 0
     duplicates: int = 0
     quarantined: int = 0
@@ -75,6 +76,9 @@ def promote(
             continue
         if c.review_decision == "reject":
             res.rejected_by_reviewer += 1
+            continue
+        if c.review_decision == "reserve":
+            res.reserved += 1
             continue
         usage = DECISION_TO_USAGE[c.review_decision]
         if not permits(c.license, usage):

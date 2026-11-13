@@ -44,3 +44,18 @@ Reason: the review threshold of 8 would drop genuinely different photos of simil
 
 ## 2026-11-13 P2: manifest schema change (media_url added)
 Manifest columns and the reference `assets` table gained `media_url`; `assets` gained `quarantine_reason`. No deployed database exists yet, so 001_init.sql was edited in place.
+
+## 2026-11-13 Agent curation replaces manual review
+Marko asked for agents, not him, to review candidates. A visual-review agent (Claude reading numbered contact sheets built in Actions) decided every one of 1,436 candidates: 839 approved, 597 rejected with a reason code (`data_manifests/candidates/agent_review.csv`). Rejections: other mineral dominant, cut gems and polished slabs, outcrops and scenes, artworks and objects, displays, microscope images, ambiguous identity. The phone review page stays as an optional check of the agent's calls. Rejected: per-image API review (needs a key, costs per image; can be added later).
+
+## 2026-11-13 Polished, cut and tumbled stones excluded for now
+Natural specimens only in this pass. Real users often photograph polished malachite, tumbled stones and granite countertops, so a later suite may need them. Open product question for Marko.
+
+## 2026-11-13 Reference/challenge split by independent groups
+Within each taxon, photos are joined into groups that share a photographer, specimen or source page; whole groups go to one side (`services/curation/split.py`), ~25% to challenge, never leaving fewer than 3 reference specimens. Museum credits are not treated as photographers. Result: 645 reference, 190 challenge; no challenge cases for chert (one photographer group) and marble (2 usable specimens).
+
+## 2026-11-13 Challenge manifest on an orphan `vault` branch
+Main carries `reserve` for challenge photos (excluded from reference and from the review page); the label-bearing manifest lives on the `vault` branch, which the app, API image and CI never check out. The repo is public, so this protects the pipeline from consuming test labels, not against a person reading them. Upgrade path: a private repo or the Challenge Vault database.
+
+## 2026-11-13 Camera-first identify app
+`app/` opens on the rear camera (framing guide, shutter, Photos, Collection), falls back to Take photo / Upload. Result: best match, might also be, a follow-up check per confusion group, properties, features; collection on the device. With no model installed it says Not identified; a Demo switch in settings shows the layout with clearly marked fake results. Property and follow-up data live in `packages/taxonomy/properties.csv` and `followups.csv` (standard reference values, to be checked by the Domain Curator).

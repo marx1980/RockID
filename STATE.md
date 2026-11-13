@@ -1,12 +1,15 @@
 # State
 
-Current phase: **P2 Review tool + reference DB ingest** (see docs/IMPLEMENTATION_PLAN.md)
+Current phase: **P2 done, agent curation done; next P3 embeddings + in-app model** (see docs/IMPLEMENTATION_PLAN.md)
 
 ## Built
 - Phase 0 scaffold: isolated Challenge Vault, manifest validator, leakage checks, metrics, blind harness, quality gate, k-NN aggregation, DB schemas, CI
 - P1: Smithsonian + Commons connectors, licence policy, idempotent harvest CLI, promote CLI (download, fingerprint, validate), `harvest-candidates` Actions workflow
 
 - P2: review page (apps/review), decisions file + validation, promote with quarantine and media_url, Postgres ingest, review-site / promote-reference workflows, CI with a pgvector Postgres
+
+- Agent curation: contact sheets, visual review of all candidates, reference/challenge split, vault branch
+- Identify app (app/): camera-first, quality gate, result/alternatives/check/properties, collection, demo switch
 
 ## Stubbed / not run
 - DINOv2 / SigLIP2 adapters (no weights downloaded)
@@ -30,5 +33,15 @@ Current phase: **P2 Review tool + reference DB ingest** (see docs/IMPLEMENTATION
 ## Gates
 G-01 PASS, G-02 PASS (provisional), H-01 PASS (licence policy approved). Log: results/gate_log.jsonl
 
-## Next
+## Data after curation
+- 839 approved, 597 rejected; 645 reference, 190 challenge (vault branch)
+- Thin classes: marble 2, biotite 4, slate 10 approved; chert has no challenge cases; magnetite 1 challenge case
+- pHash leakage between reference and challenge not yet checked (needs challenge fingerprints; P4)
+
+## Next (old)
 H-02: enable Pages, create the token, review at least one taxon on the phone. Then run promote-reference, ingest to the DB and start P3 (embeddings).
+
+## Next
+1. Run promote-reference; merge reference.csv.
+2. P3: embed the reference set with DINOv2-small in Actions, ship vectors + an in-browser encoder so the app identifies for real.
+3. Re-harvest marble, biotite and slate with better queries.
