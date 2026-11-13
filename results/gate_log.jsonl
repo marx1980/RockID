@@ -7,3 +7,4 @@
 {"date":"2026-11-13","phase":"P3","gate":"G-04","evidence":"build-model run 43377884819: 636/636 reference and 190/190 challenge images embedded","verdict":"PASS"}
 {"date":"2026-11-13","phase":"P3","gate":"G-05","evidence":"results/BASELINE.md: shortlist top1 0.479, top3 0.800, mineral-vs-rock 0.926; committed coverage 0.153 at selective accuracy 0.759 (target 0.80 met on reference LOSO 0.812, not on challenge)","verdict":"PASS (report produced); quality below target"}
 {"date":"2026-11-13","phase":"P3","gate":"H-03","evidence":"Marko tries the app on real rocks","verdict":"PENDING (Marko)"}
+{"date":"2026-11-13","phase":"P3b","gate":"G-06","evidence":"build-model run 43387698267 (tag v2): 692 reference photos, challenge scored a second time on the same set after the reference data changed; shortlist top1 0.474 / top3 0.784 vs v1 0.479 / 0.800","verdict":"PASS (neutral, no model change shipped)"}

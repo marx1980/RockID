@@ -1,6 +1,6 @@
 # State
 
-Current phase: **P3 in-app model live; next: improve data and accuracy (P3b) before P4 calibration/OOD** (see docs/IMPLEMENTATION_PLAN.md)
+Current phase: **P3b data improvement under way (NHM London added, neutral on the baseline); P4 calibration/OOD after** (see docs/IMPLEMENTATION_PLAN.md)
 
 ## Built
 - Phase 0 scaffold: isolated Challenge Vault, manifest validator, leakage checks, metrics, blind harness, quality gate, k-NN aggregation, DB schemas, CI
@@ -54,3 +54,10 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 1. H-03: Marko tries the app on real rocks.
 2. P3b: more and better reference data for weak classes (marble 2, biotite 3, granite 3 specimens; slate, magnetite thin); re-harvest with better queries; consider dinov2-base or SigLIP2 and compare on the same challenge set.
 3. P4: OOD set (non-rocks, other minerals), threshold calibration on a held-out calibration split, follow-up answers fed back into ranking.
+
+## P3b so far
+- NHM London harvester (services/ingestion/sources/nhm.py), review rounds (contact sheets with prefix, merge_round), tagged re-score
+- 634 NHM candidates reviewed visually: 49 approved and promoted, 582 rejected (443 polished slab scans, 120 surplus sandstone)
+- Reference set 692 photos; v2 re-score neutral (results/BASELINE_v2.md); live app still on model v1
+- Still thin: marble 2, biotite 3, granite 8 photos (NHM granite and marble are almost all polished slab scans), slate 8, magnetite
+- Not started: Europeana (needs EUROPEANA_API_KEY), GeoCASe, more Commons/Smithsonian queries for the weak classes
