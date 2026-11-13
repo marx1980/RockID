@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
     paths:
+      - app/**
+      - index.html
       - apps/review/**
       - services/review/**
       - packages/taxonomy/**
@@ -31,8 +33,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: |
-          python -m services.review.build_site data_manifests/candidates/candidates.csv site data_manifests/candidates/decisions.json
-          mkdir -p site/review && cp site/index.html site/candidates.json site/taxa.json site/review/
+          # one site: the identify app at /app/, the review page at /review/, a redirect at the root
+          python -m services.review.build_site data_manifests/candidates/candidates.csv site/review data_manifests/candidates/decisions.json
+          cp -r app site/app
+          cp index.html site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
