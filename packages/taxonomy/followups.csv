@@ -1,0 +1,8 @@
+confusion_group,test,answers
+silica,Broken surface,Glassy single crystal=min.quartz|Waxy and smooth=rock.chert|Sugary grains=rock.quartzite
+carbonate,Texture,Visible crystal faces=min.calcite|Grains or fossils=rock.limestone|Sugary crystals=rock.marble
+iron_oxide,Streak on unglazed tile,Red-brown=min.hematite|Black=min.magnetite
+copper_carbonate,Colour,Blue=min.azurite|Green banded=min.malachite
+mica,Sheet colour,Silvery or clear=min.muscovite|Dark brown or black=min.biotite
+coarse_crystalline,Pattern,Even speckles=rock.granite|Bands=rock.gneiss
+dark_fine_grained,Breaks into,Flat thin sheets=rock.slate|Blocky pieces=rock.basalt
