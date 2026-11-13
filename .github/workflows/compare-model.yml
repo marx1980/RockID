@@ -51,7 +51,7 @@ jobs:
         run: |
           python - <<'PY'
           import csv
-          for src, dst in (("vault/challenge.csv", "/tmp/challenge_inputs.csv"), ("vault/form_holdout.csv", "/tmp/holdout_inputs.csv")):
+          for src, dst in (("vault/challenge.csv", "/tmp/challenge_inputs.csv"), ("vault/challenge_b.csv", "/tmp/challenge_b_inputs.csv"), ("vault/form_holdout.csv", "/tmp/holdout_inputs.csv")):
               with open(src, newline="") as f, open(dst, "w", newline="") as o:
                   w = csv.writer(o); w.writerow(["case_id", "media_url"])
                   for r in csv.DictReader(f): w.writerow([r["case_id"], r["media_url"]])
@@ -62,15 +62,18 @@ jobs:
           mkdir -p emb "$OUT"
           node tools/embed/embed.mjs data_manifests/reference/reference.csv asset_id emb/reference
           node tools/embed/embed.mjs /tmp/challenge_inputs.csv case_id emb/challenge
+          node tools/embed/embed.mjs /tmp/challenge_b_inputs.csv case_id emb/challenge_b
           node tools/embed/embed.mjs /tmp/holdout_inputs.csv case_id emb/holdout
       - name: Calibrate and score
         run: |
           python -m services.model.evaluate calibrate emb/reference "$OUT/config.json" "$OUT/loso.json"
           python -m services.model.evaluate score emb/reference emb/challenge vault/challenge.csv "$OUT/config.json" "$OUT/baseline.json" "$OUT/BASELINE.md"
+          python -m services.model.evaluate score emb/reference emb/challenge_b vault/challenge_b.csv "$OUT/config.json" "$OUT/baseline_b.json" "$OUT/BASELINE_B.md"
           python -m services.model.evaluate score_forms emb/reference emb/holdout vault/form_holdout.csv "$OUT/config.json" "$OUT/forms.json" "$OUT/FORMS.md"
           python -m services.model.shortcut emb/reference data_manifests/reference/reference.csv "$OUT/shortcut.json" "$OUT/SHORTCUT.md"
           python -m services.model.shortcut challenge "$OUT/challenge_predictions.json" vault/challenge.csv data_manifests/reference/reference.csv > "$OUT/challenge_by_collection.json"
-          cat "$OUT/BASELINE.md" "$OUT/FORMS.md" "$OUT/SHORTCUT.md" >> "$GITHUB_STEP_SUMMARY"
+          python -m services.model.shortcut challenge "$OUT/challenge_predictions_b.json" vault/challenge_b.csv data_manifests/reference/reference.csv > "$OUT/challenge_b_by_collection.json"
+          cat "$OUT/BASELINE.md" "$OUT/BASELINE_B.md" "$OUT/FORMS.md" "$OUT/SHORTCUT.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Push to a branch
         run: |
           rm -f node_modules
