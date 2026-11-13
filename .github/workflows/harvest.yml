@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        description: "space-separated: smithsonian commons nhm europeana commons-tumbled commons-polished"
+        description: "space-separated: smithsonian commons nhm europeana commons-tumbled commons-polished commons-places"
         default: "smithsonian commons"
       per_taxon:
         description: "max candidates per taxon per source"
