@@ -8,6 +8,15 @@ on:
       only_source:
         description: "only candidates whose source name contains this text (e.g. Wikimedia)"
         default: ""
+      per_author:
+        description: "max candidates per author per taxon (0 = no cap)"
+        default: "0"
+      per_taxon:
+        description: "max candidates per taxon, round-robin across authors (0 = no cap)"
+        default: "0"
+      skip_authors:
+        description: "comma list of author substrings to leave out"
+        default: ""
 
 permissions:
   contents: write
@@ -25,7 +34,8 @@ jobs:
       - run: |
           if [ -n "${{ inputs.round_prefix }}" ]; then
             python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets \
-              --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}" --only-source "${{ inputs.only_source }}"
+              --skip-reviewed data_manifests/candidates/agent_review.csv --prefix "${{ inputs.round_prefix }}" --only-source "${{ inputs.only_source }}" \
+              --per-author "${{ inputs.per_author }}" --per-taxon "${{ inputs.per_taxon }}" --skip-authors "${{ inputs.skip_authors }}"
           else
             python -m services.curation.contact_sheet data_manifests/candidates/candidates.csv sheets
           fi
