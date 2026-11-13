@@ -18,7 +18,7 @@ on:
         description: "true: add the private MineralImage5k vectors (app model only)"
         default: "false"
       mask:
-        description: "centre fraction painted grey (0 = off; 0.6 = backdrop-only probe)"
+        description: "centre fraction painted grey (0 = off; 0.6 = backdrop-only probe; -0.6 = keep centre 60%, grey the edges)"
         default: "0"
 
 permissions:

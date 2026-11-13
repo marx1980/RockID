@@ -114,6 +114,7 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 - DINOv2-small stays live; dinov2-base and SigLIP2-base are worse on photos from new photographers
 - Collection shortcut confirmed: own-collection removal 0.53 → 0.35 top-1 (random control 0.53); realistic phone-photo expectation about 0.35-0.40 top-1, 0.78 top-3
 - Known gap: calibration on leave-one-specimen-out overstates confidence; challenge set is 74% Smithsonian
+- Specimen-only probe (round 10d): `EMBED_MASK=-0.6` / `-0.8` keeps the centre 60% / 80% and greys the edges, applied to reference, challenge and app-style queries alike (results/compare/dinov2-small-v9-crop6, -crop8). Own-collection gap unchanged: top-1 other specimens → other collections 0.479 → 0.346 (60%) and 0.496 → 0.351 (80%) against 0.510 → 0.355 for v9. Challenge A top-1 0.413 / 0.487 and B 0.415 / 0.452 against v9 0.474 / 0.454. Reading: removing the surround does not remove the gap, so it comes mostly from specimen, light and photographer similarity within a collection, not the backdrop; segmentation is not worth building now
 
 ## Round 5 (locality harvest)
 - commons-places harvest source and packages/taxonomy/localities.csv; 110 approved of 941 reviewed; reference set 1,687 photos (1,149 + 110 natural/polished mix, 60 tumbled)
