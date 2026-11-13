@@ -1,22 +1,22 @@
 taxon_id,articles
 min.azurite,Azurite
 min.biotite,Biotite
-min.calcite,Calcite
-min.fluorite,Fluorite
-min.gypsum,Gypsum
-min.hematite,Hematite
-min.k-feldspar,Orthoclase|Microcline|Potassium feldspar
-min.magnetite,Magnetite
-min.malachite,Malachite
-min.muscovite,Muscovite
-min.pyrite,Pyrite
-min.quartz,Quartz|Rose quartz|Smoky quartz
-rock.basalt,Basalt
-rock.chert,Chert|Flint
-rock.gneiss,Gneiss
-rock.granite,Granite
-rock.limestone,Limestone
-rock.marble,Marble
-rock.quartzite,Quartzite
-rock.sandstone,Sandstone
-rock.slate,Slate
+min.calcite,Calcite|Iceland spar|Dogtooth spar
+min.fluorite,Fluorite|Blue John (mineral)
+min.gypsum,Gypsum|Selenite (mineral)|Alabaster|Satin spar|Desert rose (crystal)
+min.hematite,Hematite|Specularite|Martite|Iron rose|Kidney ore
+min.k-feldspar,Orthoclase|Microcline|Potassium feldspar|Sanidine|Adularia|Amazonite|Moonstone (gemstone)
+min.magnetite,Magnetite|Lodestone
+min.malachite,Malachite|Azurmalachite
+min.muscovite,Muscovite|Sericite|Fuchsite
+min.pyrite,Pyrite|Pyrite sun
+min.quartz,Quartz|Rose quartz|Smoky quartz|Amethyst|Citrine|Ametrine|Prasiolite|Milky quartz|Rock crystal|Herkimer diamond|Rutilated quartz|Blue quartz|Agate|Chalcedony|Carnelian|Onyx|Aventurine|Tiger's eye|Chrysoprase|Bloodstone|Sard (mineral)|Moss agate|Fire agate
+rock.basalt,Basalt|Mid-ocean ridge basalt|Flood basalt|Ocean island basalt|Pillow lava|Vesicular texture
+rock.chert,Chert|Flint|Jasper|Novaculite|Radiolarite|Lydite|Hornstone|Mill Creek chert
+rock.gneiss,Gneiss|Orthogneiss|Paragneiss|Augen|Acasta Gneiss|Banded gneiss
+rock.granite,Granite|Rapakivi granite|Graphic granite|Orbicular granite|Pegmatite|Aplite|Granitoid|Alkali feldspar granite|Charnockite|Westerly Granite
+rock.limestone,Limestone|Chalk|Travertine|Tufa|Oolite|Coquina|Lithographic limestone|Micrite|Encrinite|Portland stone|Solnhofen Limestone|Purbeck Marble|Fossiliferous limestone
+rock.marble,Marble|Carrara marble|Parian marble|Pentelic marble|Cipollino marble|Verde antique|Ophicalcite|Yule Marble|Makrana marble|Calacatta
+rock.quartzite,Quartzite|Sioux Quartzite|Orthoquartzite|Itacolumite|Metaquartzite
+rock.sandstone,Sandstone|Arkose|Greywacke|Quartz arenite|Brownstone|Berea Sandstone|Fontainebleau sandstone|Bentheimer sandstone|Yorkstone|Flagstone|Old Red Sandstone
+rock.slate,Slate|Phyllite|Welsh slate|Roof slate

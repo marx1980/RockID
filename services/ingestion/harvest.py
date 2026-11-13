@@ -70,7 +70,7 @@ def harvest(
                     for place in load_localities().get(taxon_id, []):
                         found += commons.search(client, taxon_id, f"{place} {terms[0]}", terms, min(per_taxon, PER_LOCALITY))
                 elif source == "wikipedia":  # images used in the taxon's Wikipedia article(s)
-                    found = wikipedia.search(client, taxon_id, load_articles().get(taxon_id, []), terms)
+                    found = wikipedia.search(client, taxon_id, load_articles().get(taxon_id, []), terms, limit=600)
                 elif source in FORM_SOURCES:  # Commons again, with "tumbled"/"polished" in the query
                     found = commons.search(client, taxon_id, f"{FORM_SOURCES[source]} {terms[0]}", terms, per_taxon)
                 elif source == "smithsonian":
