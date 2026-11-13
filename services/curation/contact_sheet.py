@@ -16,7 +16,7 @@ import httpx
 from PIL import Image, ImageDraw, ImageFont
 
 from services.ingestion.candidates import Candidate, read_candidates
-from services.ingestion.sources import USER_AGENT
+from services.ingestion.http import get_with_backoff
 
 COLS, ROWS, TILE, HEADER = 6, 5, 200, 44
 PER_SHEET = COLS * ROWS
@@ -52,24 +52,18 @@ STATUS: dict[str, int] = {}
 
 def fetch(client: httpx.Client, c: Candidate, sleep=time.sleep) -> Image.Image | None:
     for url in (thumb_url(c.media_url), c.media_url):
-        for attempt in range(5):
-            try:
-                r = client.get(url, headers={"User-Agent": USER_AGENT}, timeout=40)
-            except httpx.HTTPError:
-                sleep(2 ** attempt)
-                continue
-            STATUS[str(r.status_code)] = STATUS.get(str(r.status_code), 0) + 1
-            if r.status_code in (429, 503):
-                sleep(float(r.headers.get("retry-after") or 2 ** attempt))
-                continue
-            if r.status_code != 200:
-                break
-            try:
-                im = Image.open(BytesIO(r.content))
-                im.load()
-                return im.convert("RGB")
-            except Exception:
-                break
+        r = get_with_backoff(client, url, attempts=5, min_interval=0, sleep=sleep, timeout=40)
+        if r is None:
+            continue
+        STATUS[str(r.status_code)] = STATUS.get(str(r.status_code), 0) + 1
+        if r.status_code != 200:
+            continue
+        try:
+            im = Image.open(BytesIO(r.content))
+            im.load()
+            return im.convert("RGB")
+        except Exception:
+            continue
     return None
 
 
