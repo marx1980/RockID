@@ -53,8 +53,10 @@ jobs:
       - name: Inputs without labels
         run: |
           python - <<'PY'
-          import csv
-          for src, dst in (("vault/challenge.csv", "/tmp/challenge_inputs.csv"), ("vault/challenge_b.csv", "/tmp/challenge_b_inputs.csv"), ("vault/form_holdout.csv", "/tmp/holdout_inputs.csv"), ("vault/ood_calibration.csv", "/tmp/ood_cal_inputs.csv"), ("vault/ood_test.csv", "/tmp/ood_test_inputs.csv")):
+          import csv, os
+          for src, dst in (("vault/challenge.csv", "/tmp/challenge_inputs.csv"), ("vault/challenge_b.csv", "/tmp/challenge_b_inputs.csv"), ("vault/form_holdout.csv", "/tmp/holdout_inputs.csv"), ("vault/ood_calibration.csv", "/tmp/ood_cal_inputs.csv"), ("vault/ood_test.csv", "/tmp/ood_test_inputs.csv"), ("vault/challenge_c.csv", "/tmp/challenge_c_inputs.csv")):
+              if src.endswith("challenge_c.csv") and not os.path.exists(src):
+                  continue  # set C is embedded once frozen; it is scored only by services/model/multi_photo.py
               with open(src, newline="") as f, open(dst, "w", newline="") as o:
                   w = csv.writer(o); w.writerow(["case_id", "media_url"])
                   for r in csv.DictReader(f): w.writerow([r["case_id"], r["media_url"]])
@@ -69,6 +71,7 @@ jobs:
           node tools/embed/embed.mjs /tmp/holdout_inputs.csv case_id emb/holdout
           node tools/embed/embed.mjs /tmp/ood_cal_inputs.csv case_id emb/ood_cal
           node tools/embed/embed.mjs /tmp/ood_test_inputs.csv case_id emb/ood_test
+          if [ -f /tmp/challenge_c_inputs.csv ]; then node tools/embed/embed.mjs /tmp/challenge_c_inputs.csv case_id emb/challenge_c; fi
       - name: Add private vectors
         if: inputs.private == 'true'
         run: |
