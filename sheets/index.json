@@ -1,0 +1,1334 @@
+{
+ "c-min.apatite-1": {
+  "1": {
+   "stone_id": "cs:82967cb465f0",
+   "views": {
+    "1": "si:nmnhmineralsciences_11722393:ark:/65665/m32fb3886adb9342ba9e7afc00e145867f",
+    "2": "si:nmnhmineralsciences_11722393:ark:/65665/m35697ee640e344ad6965fa2e205b04645"
+   }
+  }
+ },
+ "c-min.aragonite-1": {
+  "1": {
+   "stone_id": "cs:1973cd1988a5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1100847:ark:/65665/m3a29fd004323249cc9da3a1f65ed17217",
+    "2": "si:nmnhmineralsciences_1100847:ark:/65665/m3b72a9e649a0f471f9c2d6f6c46575795",
+    "3": "si:nmnhmineralsciences_1100847:ark:/65665/m3dcbb0e07d64a4bf489cecd295edea100"
+   }
+  },
+  "2": {
+   "stone_id": "cs:151a18c57bb5",
+   "views": {
+    "1": "commons:3893824",
+    "2": "commons:3893830",
+    "3": "commons:3893833"
+   }
+  },
+  "3": {
+   "stone_id": "cs:9a75163e7f4e",
+   "views": {
+    "1": "si:nmnhmineralsciences_1112407:ark:/65665/m3b5ed29a7f5f248849be295f5371b0815",
+    "2": "si:nmnhmineralsciences_1112407:ark:/65665/m38ee8a13b3620409f81263ddbe5228226"
+   }
+  },
+  "4": {
+   "stone_id": "cs:996c579962aa",
+   "views": {
+    "1": "si:nmnhmineralsciences_1126527:ark:/65665/m3c63d3fdb59ff4a31ad29798f5e1321f4",
+    "2": "si:nmnhmineralsciences_1126527:ark:/65665/m3ed9d3a2a2a6146458f883dddfd6eefb9",
+    "3": "si:nmnhmineralsciences_1126527:ark:/65665/m392ff5b0bf1234cce8d6db35b72d862cf"
+   }
+  }
+ },
+ "c-min.beryl-1": {
+  "1": {
+   "stone_id": "cs:2dbb4befa622",
+   "views": {
+    "1": "si:nmnhmineralsciences_1008356:ark:/65665/m3a9b6031e306545f1ad4f6017c185ec88",
+    "2": "si:nmnhmineralsciences_1008356:ark:/65665/m3b6e1a9f6b238424ca44b34077fdd71d7",
+    "3": "si:nmnhmineralsciences_1008356:ark:/65665/m3b9b38027488d4555be69298343381dfd",
+    "4": "si:nmnhmineralsciences_1008356:ark:/65665/m3ba5bfa179cfe43499a2850886b061e19",
+    "5": "si:nmnhmineralsciences_1008356:ark:/65665/m3689060d456e340b5a3f79c820c3f7336"
+   }
+  },
+  "2": {
+   "stone_id": "cs:9cd019af7e4f",
+   "views": {
+    "1": "si:nmnhmineralsciences_1085356:ark:/65665/m3aa1dee32d7104bc6bd7b2854d94acd8b",
+    "2": "si:nmnhmineralsciences_1085356:ark:/65665/m32e07b4e1dac24f0384005ec960060cac",
+    "3": "si:nmnhmineralsciences_1085356:ark:/65665/m319a4d2bbe92f438b848cdad439f502cf"
+   }
+  },
+  "3": {
+   "stone_id": "cs:8dd9decebfb3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1047143:ark:/65665/m3aa00523f12b645e1984bf2ec49df5d46",
+    "2": "si:nmnhmineralsciences_1047143:ark:/65665/m3c530a838f0aa44e192b0d5ab0c9d6add",
+    "3": "si:nmnhmineralsciences_1047143:ark:/65665/m3e889d970c1464cd88f7d437735c41ea9",
+    "4": "si:nmnhmineralsciences_1047143:ark:/65665/m3f2fe7a7de14240b69c76259350a65488",
+    "5": "si:nmnhmineralsciences_1047143:ark:/65665/m37ddfbe09e24346769ec8f4ac76d3b7f2",
+    "6": "si:nmnhmineralsciences_1047143:ark:/65665/m3050af590e9714c2aba6a1e23917dd02e",
+    "7": "si:nmnhmineralsciences_1047143:ark:/65665/m3870bbf134c1a494bb6707f24d58b7f1d",
+    "8": "si:nmnhmineralsciences_1047143:ark:/65665/m31164d470ec08455586aed3865e411b9a"
+   }
+  },
+  "4": {
+   "stone_id": "cs:fa620147f0f6",
+   "views": {
+    "1": "si:nmnhmineralsciences_1058244:ark:/65665/m3a3efc515dfa8408ea1ea1d2acc026f58",
+    "2": "si:nmnhmineralsciences_1058244:ark:/65665/m3e7653388e285463bbb6a5c26204813cb",
+    "3": "si:nmnhmineralsciences_1058244:ark:/65665/m380cba43f23f3430a931832a04d56a891",
+    "4": "si:nmnhmineralsciences_1058244:ark:/65665/m35150e0879bc04397b97f23a1d724c313"
+   }
+  },
+  "5": {
+   "stone_id": "cs:0413ec225871",
+   "views": {
+    "1": "si:nmnhmineralsciences_1061134:ark:/65665/m3a0024e14af894b8fa0e5ae45d4611097",
+    "2": "si:nmnhmineralsciences_1061134:ark:/65665/m37769cd5c946f46d88abb24e9c6c1e41d"
+   }
+  }
+ },
+ "c-min.beryl-2": {
+  "6": {
+   "stone_id": "cs:1e072595b919",
+   "views": {
+    "1": "si:nmnhmineralsciences_1061108:ark:/65665/m38fdc71ada074462d8bb8b949176e5288",
+    "2": "si:nmnhmineralsciences_1061108:ark:/65665/m397b88095d65c4255ac8259542b2366b3"
+   }
+  },
+  "7": {
+   "stone_id": "cs:02940df41057",
+   "views": {
+    "1": "si:nmnhmineralsciences_1082279:ark:/65665/m3b949c5d43a8e414fa69eceaae90e3f05",
+    "2": "si:nmnhmineralsciences_1082279:ark:/65665/m3215a42b08115493faa463320d9bac756"
+   }
+  },
+  "8": {
+   "stone_id": "cs:1dfe06e22729",
+   "views": {
+    "1": "si:nmnhmineralsciences_1007537:ark:/65665/m36d56e23012d54c69a2e66ed4d23fa34b",
+    "2": "si:nmnhmineralsciences_1007537:ark:/65665/m341739b1145ea490b8e72ddee8a052f5e"
+   }
+  },
+  "9": {
+   "stone_id": "cs:79e6f996bf1a",
+   "views": {
+    "1": "si:nmnhmineralsciences_1077015:ark:/65665/m32eae2e5179184947919783f3441eace7",
+    "2": "si:nmnhmineralsciences_1077015:ark:/65665/m38b32a0354b954c8f887ea93b5aadfc43"
+   }
+  },
+  "10": {
+   "stone_id": "cs:a83ccbccc4f2",
+   "views": {
+    "1": "si:nmnhmineralsciences_1004981:ark:/65665/m33d1658aa1ecd4b5d944ed63be8dafc2c",
+    "2": "si:nmnhmineralsciences_1004981:ark:/65665/m35cfbf3441d434850b5c1e398d514bce5",
+    "3": "si:nmnhmineralsciences_1004981:ark:/65665/m36cfa9302bc8f4bd38647d24662df3c34"
+   }
+  }
+ },
+ "c-min.beryl-3": {
+  "11": {
+   "stone_id": "cs:c95cdd374e57",
+   "views": {
+    "1": "si:nmnhmineralsciences_1079782:ark:/65665/m36dcef6f21e8945dc9b93b75c36450e5a",
+    "2": "si:nmnhmineralsciences_1079782:ark:/65665/m3854888f563754b458298e04b8e1007a9"
+   }
+  },
+  "12": {
+   "stone_id": "cs:b215cda7cacc",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000187:ark:/65665/m3a9700bb74b3544da9981ffd318d2fad3",
+    "2": "si:nmnhmineralsciences_1000187:ark:/65665/m3eb9cce9757e340cf8812ee5d33d4f14b",
+    "3": "si:nmnhmineralsciences_1000187:ark:/65665/m30e1e41e446a84c21b4987181646113ca",
+    "4": "si:nmnhmineralsciences_1000187:ark:/65665/m35a629d30b239489e870f82ee4b86a6c1",
+    "5": "si:nmnhmineralsciences_1000187:ark:/65665/m332ec263a5a7a4473ac8680bc36fceb2b",
+    "6": "si:nmnhmineralsciences_1000187:ark:/65665/m3101d1855a9a64ad6862dc6fef7689bd6"
+   }
+  }
+ },
+ "c-min.bornite-1": {
+  "1": {
+   "stone_id": "cs:212fb44051ff",
+   "views": {
+    "1": "si:nmnhmineralsciences_1177722:ark:/65665/m3b87120a4c0374f8a9f1f1faf273d4675",
+    "2": "si:nmnhmineralsciences_1177722:ark:/65665/m3cf35e1ec79914f768739861d62a1e8b6"
+   }
+  },
+  "2": {
+   "stone_id": "cs:c4976d902610",
+   "views": {
+    "1": "si:nmnhmineralsciences_1108111:ark:/65665/m3dc44246c3fb04959be42babc3ab37422",
+    "2": "si:nmnhmineralsciences_1108111:ark:/65665/m30e54495aaecc46afa7fdc866cdf3685c",
+    "3": "si:nmnhmineralsciences_1108111:ark:/65665/m3670a328a6e3a427884377f58ac6dc33a",
+    "4": "si:nmnhmineralsciences_1108111:ark:/65665/m3909930e1c92c41e2923797c4f4eed525"
+   }
+  },
+  "3": {
+   "stone_id": "cs:b720c291efa9",
+   "views": {
+    "1": "si:nmnhmineralsciences_1138779:ark:/65665/m3eb42275b09f64c689e94d12ed3c7902b",
+    "2": "si:nmnhmineralsciences_1138779:ark:/65665/m3f4eba8211aa046b09c7d544c41149627",
+    "3": "si:nmnhmineralsciences_1138779:ark:/65665/m30c77a5019d9e4a81900db81235184f44",
+    "4": "si:nmnhmineralsciences_1138779:ark:/65665/m398bd15e1db0d45f9bedf47fe982bec6a"
+   }
+  },
+  "4": {
+   "stone_id": "cs:653e5be5077b",
+   "views": {
+    "1": "si:nmnhmineralsciences_1156359:ark:/65665/m3ca625c71e2fe455fab929819e49ba916",
+    "2": "si:nmnhmineralsciences_1156359:ark:/65665/m38dd925aa3ac14b53bb60da7e2ed5db0a",
+    "3": "si:nmnhmineralsciences_1156359:ark:/65665/m39eba06dd10684114b733cdcc2916c3dd",
+    "4": "si:nmnhmineralsciences_1156359:ark:/65665/m352e8c801b6234c6eac43d590b72512fb"
+   }
+  },
+  "5": {
+   "stone_id": "cs:1886f82c39e1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1163842:ark:/65665/m3aaf5adfc60cd424abb5776ece8dcafe0",
+    "2": "si:nmnhmineralsciences_1163842:ark:/65665/m3dca5cf6a140441c899bb622a4fd9e107",
+    "3": "si:nmnhmineralsciences_1163842:ark:/65665/m323e84a9ddc914a21abe9b4957e8117aa",
+    "4": "si:nmnhmineralsciences_1163842:ark:/65665/m3610eae52a1154ffa81e6684dfd9d0c55"
+   }
+  }
+ },
+ "c-min.bornite-2": {
+  "6": {
+   "stone_id": "cs:dec43a093462",
+   "views": {
+    "1": "si:nmnhmineralsciences_1158394:ark:/65665/m3a96fe26c457a410a810f89ca313cda8c",
+    "2": "si:nmnhmineralsciences_1158394:ark:/65665/m3d37cea14f0584198ba696f06bbdd0af6"
+   }
+  },
+  "7": {
+   "stone_id": "cs:ee1c96316747",
+   "views": {
+    "1": "si:nmnhmineralsciences_1176947:ark:/65665/m3b48f0edfeee64348bd65c8778a5e0bce",
+    "2": "si:nmnhmineralsciences_1176947:ark:/65665/m3db6b2c2b3c9c4f15bf1ed9615d894db5",
+    "3": "si:nmnhmineralsciences_1176947:ark:/65665/m3e23851f7ecd1446d9379265cadd46754",
+    "4": "si:nmnhmineralsciences_1176947:ark:/65665/m30af42371fb3a488f874b227b64a8dde6"
+   }
+  },
+  "8": {
+   "stone_id": "cs:5a1b1c626ea1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1138782:ark:/65665/m3bff03295228c419fb71672eb1f1ee94e",
+    "2": "si:nmnhmineralsciences_1138782:ark:/65665/m381a3b71d2ff34633a6b77509353e857f"
+   }
+  },
+  "9": {
+   "stone_id": "cs:ed1bd8abaa63",
+   "views": {
+    "1": "si:nmnhmineralsciences_1142371:ark:/65665/m330e39b64884944bbb9c8a25a104c1faf",
+    "2": "si:nmnhmineralsciences_1142371:ark:/65665/m3250aba6746984290af0c52328bd956af"
+   }
+  },
+  "10": {
+   "stone_id": "cs:74f0be24a1b1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1108110:ark:/65665/m3cda19a2c45a54cb98efcd6ae66e7df65",
+    "2": "si:nmnhmineralsciences_1108110:ark:/65665/m30faee04f38394bdeb5dd051a2bf04ad7"
+   }
+  }
+ },
+ "c-min.bornite-3": {
+  "11": {
+   "stone_id": "cs:d5ce0a19e1be",
+   "views": {
+    "1": "si:nmnhmineralsciences_1153478:ark:/65665/m3cb300327966d49669d86893d6fb3b0fe",
+    "2": "si:nmnhmineralsciences_1153478:ark:/65665/m3dddadfba19ae4f7899e5e129c8785129",
+    "3": "si:nmnhmineralsciences_1153478:ark:/65665/m31a6af170050e4ecf8d4ffdd97f0b3881",
+    "4": "si:nmnhmineralsciences_1153478:ark:/65665/m383151416fea64037a291f0de7cf1ddf7"
+   }
+  }
+ },
+ "c-min.calcite-1": {
+  "1": {
+   "stone_id": "cs:fc4ed1c2b1b2",
+   "views": {
+    "1": "si:nmnhmineralsciences_1107297:ark:/65665/m36af209ff379747f39c4882288e46c97b",
+    "2": "si:nmnhmineralsciences_1107297:ark:/65665/m319e902ddf6ed43c89e36c9b3eea3e48c",
+    "3": "si:nmnhmineralsciences_1107297:ark:/65665/m3561122abd8c9491a9df8a1414032b7fc"
+   }
+  },
+  "2": {
+   "stone_id": "cs:63c1fde48986",
+   "views": {
+    "1": "si:nmnhmineralsciences_1084720:ark:/65665/m32d2827e68a0e47c2af18d2b6680f77b1",
+    "2": "si:nmnhmineralsciences_1084720:ark:/65665/m33321a876cd6d43dcbfd39205a6db0d73"
+   }
+  },
+  "3": {
+   "stone_id": "cs:ec4d012f94fb",
+   "views": {
+    "1": "si:nmnhmineralsciences_1148633:ark:/65665/m3dc75853e473241c691ae54c6ad0588ba",
+    "2": "si:nmnhmineralsciences_1148633:ark:/65665/m31f361c605f814748886e4d7e97ac305f",
+    "3": "si:nmnhmineralsciences_1148633:ark:/65665/m369a9c9e576a64ff0b2aea1136d99b066"
+   }
+  },
+  "4": {
+   "stone_id": "cs:da7088ee88e2",
+   "views": {
+    "1": "si:nmnhmineralsciences_1164713:ark:/65665/m3d9c4def0f3b743b1977cda7ad56e4127",
+    "2": "si:nmnhmineralsciences_1164713:ark:/65665/m3dae2842f6bc5411580048fda7d760603",
+    "3": "si:nmnhmineralsciences_1164713:ark:/65665/m34b706d22188640f6a206be07932873ff",
+    "4": "si:nmnhmineralsciences_1164713:ark:/65665/m33144448dd26348579cec82ba0106ee03"
+   }
+  },
+  "5": {
+   "stone_id": "cs:1989a7fd8db6",
+   "views": {
+    "1": "si:nmnhmineralsciences_1087651:ark:/65665/m3af3a687187374b12965d4fd6c74b0062",
+    "2": "si:nmnhmineralsciences_1087651:ark:/65665/m3f7d9b156b45c40fe84ea43bdfffeb3e4",
+    "3": "si:nmnhmineralsciences_1087651:ark:/65665/m329e3ac3c35344858bb4958c05e84c738",
+    "4": "si:nmnhmineralsciences_1087651:ark:/65665/m3658250501a8a41e2a5814a37d68d94e1"
+   }
+  }
+ },
+ "c-min.calcite-2": {
+  "6": {
+   "stone_id": "cs:7bae5367b1e2",
+   "views": {
+    "1": "si:nmnhmineralsciences_1079844:ark:/65665/m3e1f786e11f59441da03c6699cb11ae8d",
+    "2": "si:nmnhmineralsciences_1079844:ark:/65665/m37d6f07280b804903820816ace8c45e19",
+    "3": "si:nmnhmineralsciences_1079844:ark:/65665/m39f8dd16c848b4bd1a84a78ad23f4aaf4"
+   }
+  },
+  "7": {
+   "stone_id": "cs:f02460c67b30",
+   "views": {
+    "1": "si:nmnhmineralsciences_1081666:ark:/65665/m3a26f5ace8a564336a38de1d488e0c41d",
+    "2": "si:nmnhmineralsciences_1081666:ark:/65665/m3b6c626e215444f15b1eba784edc48287"
+   }
+  },
+  "8": {
+   "stone_id": "cs:a365c218ca35",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000044:ark:/65665/m3d6eb2a47e6984db3b2e047d2e9d19a4f",
+    "2": "si:nmnhmineralsciences_1000044:ark:/65665/m365116bf1947d483e8c42d4a6213b227a"
+   }
+  },
+  "9": {
+   "stone_id": "cs:62f8c054f21d",
+   "views": {
+    "1": "si:nmnhmineralsciences_1175864:ark:/65665/m37f1aeff110264981ad1fb41295006753",
+    "2": "si:nmnhmineralsciences_1175864:ark:/65665/m3839adb2c7fe940b8be0c03f2766501d9",
+    "3": "si:nmnhmineralsciences_1175864:ark:/65665/m356476bf199034aa8a6c5bf81487303d9"
+   }
+  }
+ },
+ "c-min.chalcopyrite-1": {
+  "1": {
+   "stone_id": "cs:2ac3ebc93aa7",
+   "views": {
+    "1": "si:nmnhmineralsciences_1068700:ark:/65665/m3a77ceddb1e9a48be803ac550944ef6b9",
+    "2": "si:nmnhmineralsciences_1068700:ark:/65665/m37c078e1575474c1397417e50bd081aa9"
+   }
+  },
+  "2": {
+   "stone_id": "cs:b4a123a097b3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1141275:ark:/65665/m32c0e2a006f2c423d88e47556d6506934",
+    "2": "si:nmnhmineralsciences_1141275:ark:/65665/m30681be24e2774569ae3d8bad08997d2e"
+   }
+  },
+  "3": {
+   "stone_id": "cs:6acbeecd90a1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1074381:ark:/65665/m3c60d979f2ecd47729c5bd3fd2de0f608",
+    "2": "si:nmnhmineralsciences_1074381:ark:/65665/m3c89e56b383464a0b91f1ceb26c031ade"
+   }
+  },
+  "4": {
+   "stone_id": "cs:ab38ec6e60e8",
+   "views": {
+    "1": "si:nmnhmineralsciences_1146105:ark:/65665/m3b27e4a1a37f34e8789b46bb2b6f804a6",
+    "2": "si:nmnhmineralsciences_1146105:ark:/65665/m3d2d8bf0145b5441bb1e4b5f2804719d6"
+   }
+  },
+  "5": {
+   "stone_id": "cs:131f62a780d0",
+   "views": {
+    "1": "si:nmnhmineralsciences_1053928:ark:/65665/m3da929dd5040b4c8994dfb7f6e9074057",
+    "2": "si:nmnhmineralsciences_1053928:ark:/65665/m3702d032b8f3646e5a9aea2445df3573b"
+   }
+  }
+ },
+ "c-min.chalcopyrite-2": {
+  "6": {
+   "stone_id": "cs:edf3ff514563",
+   "views": {
+    "1": "si:nmnhmineralsciences_1153556:ark:/65665/m31ea5de17b3fb4cb09e238838d5c58098",
+    "2": "si:nmnhmineralsciences_1153556:ark:/65665/m325b24ffbef7146c796c939021484feb0"
+   }
+  },
+  "7": {
+   "stone_id": "cs:26d89ad43aa1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1154165:ark:/65665/m31b3e858ffe9c4df5aca74973fc42e20f",
+    "2": "si:nmnhmineralsciences_1154165:ark:/65665/m370943565ac054fb4a0491b5b35bdae29"
+   }
+  },
+  "8": {
+   "stone_id": "cs:fddba661bdd5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1139532:ark:/65665/m3c4129e7fbbf044e69c5d2140d7c054b0",
+    "2": "si:nmnhmineralsciences_1139532:ark:/65665/m3e2c9c56b6dc145638c32ae8adb5fd398",
+    "3": "si:nmnhmineralsciences_1139532:ark:/65665/m37f7ef38fa4304abb89d989ce66d934c9",
+    "4": "si:nmnhmineralsciences_1139532:ark:/65665/m3241ddc26fac648f294785460345c7625"
+   }
+  },
+  "9": {
+   "stone_id": "cs:3b5653f459ec",
+   "views": {
+    "1": "si:nmnhmineralsciences_1165146:ark:/65665/m3e1f72693bd254121a9b45461ce5a3971",
+    "2": "si:nmnhmineralsciences_1165146:ark:/65665/m33d1bfb4cde82494fa5542bfff77f4eec"
+   }
+  },
+  "10": {
+   "stone_id": "cs:e0bfd35ae2ec",
+   "views": {
+    "1": "si:nmnhmineralsciences_1185447:ark:/65665/m31b36d0655d084b6b8d16e34e184cd4ad",
+    "2": "si:nmnhmineralsciences_1185447:ark:/65665/m36c91fc9dbf9c4941a7e50a269c7ec295"
+   }
+  }
+ },
+ "c-min.chalcopyrite-3": {
+  "11": {
+   "stone_id": "cs:d9ac79ff5951",
+   "views": {
+    "1": "si:nmnhmineralsciences_1155748:ark:/65665/m3c594a9ae36fa4f03bfc7e118af88b48a",
+    "2": "si:nmnhmineralsciences_1155748:ark:/65665/m3cbc0d8c373834a9bb1f7f6cc85be736d"
+   }
+  },
+  "12": {
+   "stone_id": "cs:c9590dd7bcfb",
+   "views": {
+    "1": "si:nmnhmineralsciences_1175164:ark:/65665/m3bedef8dc0920497c9069d08c68a95765",
+    "2": "si:nmnhmineralsciences_1175164:ark:/65665/m3f2e854429d4140109142d50710985a33"
+   }
+  }
+ },
+ "c-min.chrysocolla-1": {
+  "1": {
+   "stone_id": "cs:74d88308d152",
+   "views": {
+    "1": "si:nmnhmineralsciences_1107328:ark:/65665/m3abf80ccd597f4f519447a03e2919b50f",
+    "2": "si:nmnhmineralsciences_1107328:ark:/65665/m3e964eed0210d4bf38311fbdbb5a7ce43"
+   }
+  }
+ },
+ "c-min.corundum-1": {
+  "1": {
+   "stone_id": "cs:110e9eca2698",
+   "views": {
+    "1": "si:nmnhmineralsciences_17124213:ark:/65665/m3b2809a2c801b475594c95b3663fe9667",
+    "2": "si:nmnhmineralsciences_17124213:ark:/65665/m3e4558f4224274d4794f5a6d9c78dbf24"
+   }
+  },
+  "2": {
+   "stone_id": "cs:8eeea6217c4d",
+   "views": {
+    "1": "si:nmnhmineralsciences_1001500:ark:/65665/m3d3dfc156777940eba25ae1379df4f169",
+    "2": "si:nmnhmineralsciences_1001500:ark:/65665/m3e95013c8e00843a18f56c92ab08c0c7a",
+    "3": "si:nmnhmineralsciences_1001500:ark:/65665/m3185ea0bc69554109a0cb014ac80c4627"
+   }
+  },
+  "3": {
+   "stone_id": "cs:f1b18e4090ee",
+   "views": {
+    "1": "si:nmnhmineralsciences_1107890:ark:/65665/m397b404b478cb49f38a3b1b3991286f94",
+    "2": "si:nmnhmineralsciences_1107890:ark:/65665/m354690204d4aa4ca6b947d96511de1069"
+   }
+  },
+  "4": {
+   "stone_id": "cs:2172f541f20a",
+   "views": {
+    "1": "si:nmnhmineralsciences_14176990:ark:/65665/m3d19f6b1ca0d944f1af8e4c14afe37d85",
+    "2": "si:nmnhmineralsciences_14176990:ark:/65665/m3f51d977c19984cfcbd92ad1a3198537e"
+   }
+  },
+  "5": {
+   "stone_id": "cs:fa4a62925fb5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1001343:ark:/65665/m3b99ec1a9f4434e02998c94363ee763c5",
+    "2": "si:nmnhmineralsciences_1001343:ark:/65665/m3bb71471e7769450c8b0e61c0901440d0",
+    "3": "si:nmnhmineralsciences_1001343:ark:/65665/m37e096b8b5ee847b8b7df293c518c9397",
+    "4": "si:nmnhmineralsciences_1001343:ark:/65665/m39a03bb51fadd44d9bb1a7c018edeb438",
+    "5": "si:nmnhmineralsciences_1001343:ark:/65665/m374b28307345c450a97fcfebcc044d9c8"
+   }
+  }
+ },
+ "c-min.corundum-2": {
+  "6": {
+   "stone_id": "cs:98e96cad6515",
+   "views": {
+    "1": "si:nmnhmineralsciences_10275598:ark:/65665/m3d2c119ab7ce74b21b9607d0e040b2d3c",
+    "2": "si:nmnhmineralsciences_10275598:ark:/65665/m32dbed2e65f5149ce8973b5e9f44ef661"
+   }
+  },
+  "7": {
+   "stone_id": "cs:90a460b3bc57",
+   "views": {
+    "1": "si:nmnhmineralsciences_1165893:ark:/65665/m30f900954cabb42fca7b44144e95a7204",
+    "2": "si:nmnhmineralsciences_1165893:ark:/65665/m33f64dbae7a5b43748110069786f75ff8"
+   }
+  },
+  "8": {
+   "stone_id": "cs:39668f1bf3e4",
+   "views": {
+    "1": "si:nmnhmineralsciences_10275599:ark:/65665/m3d98c930b07e841c4ba8c8ae4771eaf2a",
+    "2": "si:nmnhmineralsciences_10275599:ark:/65665/m3f2d87b6e572d4f14a9c0e8cce72251ff"
+   }
+  },
+  "9": {
+   "stone_id": "cs:40d303363993",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000075:ark:/65665/m32e055097de8545ada9fa12479459ff8c",
+    "2": "si:nmnhmineralsciences_1000075:ark:/65665/m3642d25e565374d8b9279178f0a5aa4b6"
+   }
+  },
+  "10": {
+   "stone_id": "cs:c293c132a878",
+   "views": {
+    "1": "si:nmnhmineralsciences_10795019:https://collections.nmnh.si.edu/media/?irn=13389009",
+    "2": "si:nmnhmineralsciences_10795019:https://collections.nmnh.si.edu/media/?irn=13389016"
+   }
+  }
+ },
+ "c-min.corundum-3": {
+  "11": {
+   "stone_id": "cs:cb5a31843ed6",
+   "views": {
+    "1": "si:nmnhmineralsciences_1007211:ark:/65665/m3bd5274770c0549c89c6cb4ac33c573b9",
+    "2": "si:nmnhmineralsciences_1007211:ark:/65665/m3ed16128a2e784aeca7e8d6ae79c258c7",
+    "3": "si:nmnhmineralsciences_1007211:ark:/65665/m313ee269e12cc409196fab1c1e2a3eee9"
+   }
+  },
+  "12": {
+   "stone_id": "cs:ba711050c92c",
+   "views": {
+    "1": "si:nmnhmineralsciences_1175789:ark:/65665/m36f2d4bf615c5434682d56b3c27b4ec8c",
+    "2": "si:nmnhmineralsciences_1175789:ark:/65665/m3641292ced16f4bc294d4e6b87de8c139"
+   }
+  }
+ },
+ "c-min.fluorite-1": {
+  "1": {
+   "stone_id": "cs:4e6349e4beb1",
+   "views": {
+    "1": "si:nmnhmineralsciences_1114553:ark:/65665/m3b5032323293b4d0f9398e47d3d082621",
+    "2": "si:nmnhmineralsciences_1114553:ark:/65665/m36cf246f5511746119a6f9f552b1e8119",
+    "3": "si:nmnhmineralsciences_1114553:ark:/65665/m37f5b2da0254c43d1b65d93e598ddaa3e",
+    "4": "si:nmnhmineralsciences_1114553:ark:/65665/m353effba1aaf4419f8f15d175da0b05fd",
+    "5": "si:nmnhmineralsciences_1114553:ark:/65665/m387c29040dd374b89ab9444811d724a9d"
+   }
+  },
+  "2": {
+   "stone_id": "cs:cc083fdbe45d",
+   "views": {
+    "1": "si:nmnhmineralsciences_1108019:ark:/65665/m3f56c7aacc7d3468d942d8776ae7680f7",
+    "2": "si:nmnhmineralsciences_1108019:ark:/65665/m3fc8070257c6d4461afcf686201515c58",
+    "3": "si:nmnhmineralsciences_1108019:ark:/65665/m34dc30247f99c4240ae26d7298b337b19",
+    "4": "si:nmnhmineralsciences_1108019:ark:/65665/m342b1c917b7ad4b60bbbe2135100d27ad",
+    "5": "si:nmnhmineralsciences_1108019:ark:/65665/m3421b9fa82f9b4eb6a67b8c3e79f98e2d"
+   }
+  },
+  "3": {
+   "stone_id": "cs:253665b3984a",
+   "views": {
+    "1": "si:nmnhmineralsciences_1064476:ark:/65665/m30e22165245cc46dabc103969074b6cd6",
+    "2": "si:nmnhmineralsciences_1064476:ark:/65665/m309393d33147d4e6eae501324a7d4489b"
+   }
+  },
+  "4": {
+   "stone_id": "cs:559780ada799",
+   "views": {
+    "1": "si:nmnhmineralsciences_1045110:ark:/65665/m31c1e3671c21947118f251eee447060ff",
+    "2": "si:nmnhmineralsciences_1045110:ark:/65665/m35300f14deca642638ecda7fbc966be08"
+   }
+  },
+  "5": {
+   "stone_id": "cs:99ccc87d868e",
+   "views": {
+    "1": "si:nmnhmineralsciences_1163260:ark:/65665/m352c121fd4b79462194524571cd070ad0",
+    "2": "si:nmnhmineralsciences_1163260:ark:/65665/m381c7b15a5a624fca95ff7677871a7422"
+   }
+  }
+ },
+ "c-min.fluorite-2": {
+  "6": {
+   "stone_id": "cs:63cc94d04c51",
+   "views": {
+    "1": "si:nmnhmineralsciences_1045103:ark:/65665/m3ba90a812ef7a467a97c9e0f64080ffac",
+    "2": "si:nmnhmineralsciences_1045103:ark:/65665/m36ed66c83a48c4d039a962ac51f79b9f0"
+   }
+  },
+  "7": {
+   "stone_id": "cs:5faf39c8593f",
+   "views": {
+    "1": "si:nmnhmineralsciences_1053551:ark:/65665/m3f1690ef02653422080cb26fe565dc912",
+    "2": "si:nmnhmineralsciences_1053551:ark:/65665/m351c09b2e5e6243628d5cd788d2af992a"
+   }
+  },
+  "8": {
+   "stone_id": "cs:c5354bfb2ed8",
+   "views": {
+    "1": "si:nmnhmineralsciences_1177363:ark:/65665/m391f05f9279b14974bd26ea6440144e8f",
+    "2": "si:nmnhmineralsciences_1177363:ark:/65665/m39774d11ef6834339a8c057edcbf2f45f"
+   }
+  },
+  "9": {
+   "stone_id": "cs:35b0c7989228",
+   "views": {
+    "1": "si:nmnhmineralsciences_1158820:ark:/65665/m3c3c2f99504084e7496622c2b2bc22e4a",
+    "2": "si:nmnhmineralsciences_1158820:ark:/65665/m3c8ba0c0ad2b64b45a282ee182a43ad29"
+   }
+  },
+  "10": {
+   "stone_id": "cs:7f8c1bc780f6",
+   "views": {
+    "1": "si:nmnhmineralsciences_1061107:ark:/65665/m3af9ee9c591bf4796aa4559111ae857a5",
+    "2": "si:nmnhmineralsciences_1061107:ark:/65665/m3b941e9e42a144c9ea130a2650b7c7c61",
+    "3": "si:nmnhmineralsciences_1061107:ark:/65665/m3da1787cc46ce4e289920f6c39bef1836",
+    "4": "si:nmnhmineralsciences_1061107:ark:/65665/m33bd590691e1e48c0b1ed90baf447b36e"
+   }
+  }
+ },
+ "c-min.fluorite-3": {
+  "11": {
+   "stone_id": "cs:25f5f21c9120",
+   "views": {
+    "1": "si:nmnhmineralsciences_1156864:ark:/65665/m3ab0758dafe634eb793ba6ede4c58820e",
+    "2": "si:nmnhmineralsciences_1156864:ark:/65665/m336cbef573c4d4b26b3e93c36814de39b"
+   }
+  },
+  "12": {
+   "stone_id": "cs:f68aff47d162",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000031:ark:/65665/m3d98ef89d9d4c4d5d92a3ca5d506bc9fc",
+    "2": "si:nmnhmineralsciences_1000031:ark:/65665/m3e7e82e065e6e472080d78d61c88a3499"
+   }
+  },
+  "13": {
+   "stone_id": "cs:5aad18c9bb83",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209869:ark:/65665/m34d369effae054661b70e9843e4ac42ad",
+    "2": "si:nmnhmineralsciences_10209869:ark:/65665/m37ca996c4d8f24822a215484b835cb2e8",
+    "3": "si:nmnhmineralsciences_10209869:ark:/65665/m326ee189502484a3eaaae443d89b594bd"
+   }
+  },
+  "14": {
+   "stone_id": "cs:867dacffc2fa",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209858:ark:/65665/m3a60fb471b80a4f168c14c00636cfb607",
+    "2": "si:nmnhmineralsciences_10209858:ark:/65665/m304f9b32d454b42a0b0a46a27f20a7423",
+    "3": "si:nmnhmineralsciences_10209858:ark:/65665/m3521a009e799e416895f8a2278bde3776",
+    "4": "si:nmnhmineralsciences_10209858:ark:/65665/m315801be4862d43a691ef7b905f3562cd",
+    "5": "si:nmnhmineralsciences_10209858:ark:/65665/m370319236ed9e4ac896df3336c04c4879"
+   }
+  },
+  "15": {
+   "stone_id": "cs:b2b0dd627cec",
+   "views": {
+    "1": "si:nmnhmineralsciences_1154256:ark:/65665/m332d0d598ee7344bab3ca7af99b6b0b1d",
+    "2": "si:nmnhmineralsciences_1154256:ark:/65665/m3847feacbdbf84bcc9a81209a76f51c6e",
+    "3": "si:nmnhmineralsciences_1154256:ark:/65665/m38671b3a3e46f4483a3df0c34cda3a416",
+    "4": "si:nmnhmineralsciences_1154256:ark:/65665/m3040953da5fce4864a5e36ed479b14bbb"
+   }
+  }
+ },
+ "c-min.fluorite-4": {
+  "16": {
+   "stone_id": "cs:65eb9205ca61",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209973:ark:/65665/m3cbc6a76b2b6d49688841e0fbe7266bba",
+    "2": "si:nmnhmineralsciences_10209973:ark:/65665/m365a977a847c647f3bdc2c0c2a7c9cf2e",
+    "3": "si:nmnhmineralsciences_10209973:ark:/65665/m39140f9b7b6644b849f192e2afe803f5b"
+   }
+  },
+  "17": {
+   "stone_id": "cs:2cde145f5131",
+   "views": {
+    "1": "si:nmnhmineralsciences_1156857:ark:/65665/m324af5529c6a54d23863d7081ae749ae2",
+    "2": "si:nmnhmineralsciences_1156857:ark:/65665/m380d5c383cc5c4971a50108b071014f43"
+   }
+  },
+  "18": {
+   "stone_id": "cs:3f66f00469f2",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209823:ark:/65665/m3dc8027b9eeed4833bf3ee27ed14ad724",
+    "2": "si:nmnhmineralsciences_10209823:ark:/65665/m3fa5c347b08e341759cbc1d89a188662d",
+    "3": "si:nmnhmineralsciences_10209823:ark:/65665/m35a0f4ef874784c0d8ecedc1138eacc4d"
+   }
+  }
+ },
+ "c-min.galena-1": {
+  "1": {
+   "stone_id": "cs:a7237d088f6c",
+   "views": {
+    "1": "si:nmnhmineralsciences_1150957:ark:/65665/m3fb3535cba2fd4f6fa7dfeeede195a0cd",
+    "2": "si:nmnhmineralsciences_1150957:ark:/65665/m35d4ccc27afc144f4b30a2c2da3d6a523"
+   }
+  },
+  "2": {
+   "stone_id": "cs:1ee92b36d986",
+   "views": {
+    "1": "si:nmnhmineralsciences_1136329:ark:/65665/m3d9352042436f4905a6a8013838796cf4",
+    "2": "si:nmnhmineralsciences_1136329:ark:/65665/m3f79a0713192f4060aa8a24a3614c49e2",
+    "3": "si:nmnhmineralsciences_1136329:ark:/65665/m34db758e748b24bf98740765b57a147ec"
+   }
+  },
+  "3": {
+   "stone_id": "cs:8005c93e07dd",
+   "views": {
+    "1": "si:nmnhmineralsciences_1157912:ark:/65665/m302d2f66ce3eb4659863149f2e52bf297",
+    "2": "si:nmnhmineralsciences_1157912:ark:/65665/m3766eacd2e07d4ac096a6cecaa14c6057"
+   }
+  },
+  "4": {
+   "stone_id": "cs:8edb47ae0cf9",
+   "views": {
+    "1": "si:nmnhmineralsciences_1136756:ark:/65665/m3c370ef718c2d4e5e9176d8e1afec3be2",
+    "2": "si:nmnhmineralsciences_1136756:ark:/65665/m32311eb19835949c19200ea0e172e2b8c"
+   }
+  },
+  "5": {
+   "stone_id": "cs:8cd871194e42",
+   "views": {
+    "1": "si:nmnhmineralsciences_1135157:ark:/65665/m37ff652b8fc2f45b8b97295889b025777",
+    "2": "si:nmnhmineralsciences_1135157:ark:/65665/m353c4b173c91f4f23bc41f12616fd0d8c"
+   }
+  }
+ },
+ "c-min.galena-2": {
+  "6": {
+   "stone_id": "cs:50d35ad5f421",
+   "views": {
+    "1": "si:nmnhmineralsciences_1098703:ark:/65665/m3c65360a604dd4037a647294f6ccdee02",
+    "2": "si:nmnhmineralsciences_1098703:ark:/65665/m3e53e26a2ebca4bec82409991f6cb0f71",
+    "3": "si:nmnhmineralsciences_1098703:ark:/65665/m3fe647dfe66454a078a6b5f0cc8ecd218",
+    "4": "si:nmnhmineralsciences_1098703:ark:/65665/m341a2bb18c7bf42d6b0150c7d322a4d35"
+   }
+  },
+  "7": {
+   "stone_id": "cs:324cdbc0f712",
+   "views": {
+    "1": "si:nmnhmineralsciences_1156402:ark:/65665/m38c61bc15171c4519b6cc5835b5642c40",
+    "2": "si:nmnhmineralsciences_1156402:ark:/65665/m322ab8b2d7f5a4f05b7e9135623876008"
+   }
+  },
+  "8": {
+   "stone_id": "cs:e51b21bce1ac",
+   "views": {
+    "1": "si:nmnhmineralsciences_1063016:ark:/65665/m3be63fbea8db747b08fd972644da72b73",
+    "2": "si:nmnhmineralsciences_1063016:ark:/65665/m3c64a106e69e34e8e8d867ca01a949084",
+    "3": "si:nmnhmineralsciences_1063016:ark:/65665/m3ced949e2caf1402ebe0cad5283e552e5",
+    "4": "si:nmnhmineralsciences_1063016:ark:/65665/m3f0215cfbe97c4c40878bbd6ee4194a98",
+    "5": "si:nmnhmineralsciences_1063016:ark:/65665/m3f332fadc24bd428bbecc7e01a7f2db83",
+    "6": "si:nmnhmineralsciences_1063016:ark:/65665/m3165682a0f7c44251a886b4d26078c278"
+   }
+  },
+  "9": {
+   "stone_id": "cs:8a65840da7f8",
+   "views": {
+    "1": "si:nmnhmineralsciences_1185445:ark:/65665/m3bc7ed71256754a5694ebf0cf429de560",
+    "2": "si:nmnhmineralsciences_1185445:ark:/65665/m32a4f77a2e52148af9cbe1f9e3283a512"
+   }
+  },
+  "10": {
+   "stone_id": "cs:0091bb520969",
+   "views": {
+    "1": "si:nmnhmineralsciences_1151124:ark:/65665/m39c4828726c394311a3c57a5b6f7e5918",
+    "2": "si:nmnhmineralsciences_1151124:ark:/65665/m3106f386c2cb74664bd04e5133b5894da",
+    "3": "si:nmnhmineralsciences_1151124:ark:/65665/m36541d81c1fe04783825d02b20a05eeea",
+    "4": "si:nmnhmineralsciences_1151124:ark:/65665/m374704689e7af46b58d6145d0c694cc37"
+   }
+  }
+ },
+ "c-min.galena-3": {
+  "11": {
+   "stone_id": "cs:b111f7432732",
+   "views": {
+    "1": "si:nmnhmineralsciences_1134925:ark:/65665/m38aa4369a885f42f4b0979dc3898813b8",
+    "2": "si:nmnhmineralsciences_1134925:ark:/65665/m396adde25c92e4310a33a43476453a6eb"
+   }
+  },
+  "12": {
+   "stone_id": "cs:aa87c72db526",
+   "views": {
+    "1": "si:nmnhmineralsciences_1157935:ark:/65665/m3dd5df226b2d2429595b92ab524416147",
+    "2": "si:nmnhmineralsciences_1157935:ark:/65665/m31e0e611f257146d2878ae06a8269913e"
+   }
+  }
+ },
+ "c-min.kyanite-1": {
+  "1": {
+   "stone_id": "cs:92a51539ab12",
+   "views": {
+    "1": "si:nmnhmineralsciences_1170172:ark:/65665/m30871b1be59c948a1bd65796460e05ff0",
+    "2": "si:nmnhmineralsciences_1170172:ark:/65665/m3863648aa17b94bdab43ec8132f70a72a"
+   }
+  },
+  "2": {
+   "stone_id": "cs:3ff47bbce54a",
+   "views": {
+    "1": "si:nmnhmineralsciences_1170179:ark:/65665/m32c133230421b4f978fe05389d2f89b86",
+    "2": "si:nmnhmineralsciences_1170179:ark:/65665/m35e572b1b61454ee292242f8fd8bb4906",
+    "3": "si:nmnhmineralsciences_1170179:ark:/65665/m39c2e2f8298a94ff1bd45576b52c409ae",
+    "4": "si:nmnhmineralsciences_1170179:ark:/65665/m389f3663df2b74805b71a0a9e08227a73"
+   }
+  },
+  "3": {
+   "stone_id": "cs:5385ebf841cd",
+   "views": {
+    "1": "si:nmnhmineralsciences_1336699:ark:/65665/m3f643311844d84892a986a89e52690e3f",
+    "2": "si:nmnhmineralsciences_1336699:ark:/65665/m38937f6ba7c3d425ca8d0897a8881ed89"
+   }
+  },
+  "4": {
+   "stone_id": "cs:36d047b77927",
+   "views": {
+    "1": "si:nmnhmineralsciences_1211445:ark:/65665/m38ee4ca1ef38243b9bf81299a59590ea1",
+    "2": "si:nmnhmineralsciences_1211445:ark:/65665/m302f31e5023a54ed4849f61b65ca73071",
+    "3": "si:nmnhmineralsciences_1211445:ark:/65665/m349e1bea21e784e188765822fc9acbe2c",
+    "4": "si:nmnhmineralsciences_1211445:ark:/65665/m350c6ae5629874360b17de31490dc70b4"
+   }
+  },
+  "5": {
+   "stone_id": "cs:1193706c64ca",
+   "views": {
+    "1": "si:nmnhmineralsciences_1342429:ark:/65665/m3e24eb86f3c134dd6ad08a884749680cc",
+    "2": "si:nmnhmineralsciences_1342429:ark:/65665/m3ff7181c2a49f4f9dae3fec4184172b82"
+   }
+  }
+ },
+ "c-min.kyanite-2": {
+  "6": {
+   "stone_id": "cs:41f2a9abed66",
+   "views": {
+    "1": "si:nmnhmineralsciences_1131273:ark:/65665/m3ace9ddd53a304ae586c04cdf5e978847",
+    "2": "si:nmnhmineralsciences_1131273:ark:/65665/m33eb0028b2902453baa4845a9cbefda6d",
+    "3": "si:nmnhmineralsciences_1131273:ark:/65665/m370ea9b1c6814443aa0ddc3f6ba0fa68f",
+    "4": "si:nmnhmineralsciences_1131273:ark:/65665/m345452df096954c6e8ccd01c281c10fac"
+   }
+  },
+  "7": {
+   "stone_id": "cs:0b0c264164d2",
+   "views": {
+    "1": "si:nmnhmineralsciences_1100836:ark:/65665/m3e657a25b24ec4d6da668915a6758cee6",
+    "2": "si:nmnhmineralsciences_1100836:ark:/65665/m304a9b2c61f454563800897e40aef0283"
+   }
+  },
+  "8": {
+   "stone_id": "cs:97c63648c369",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209903:ark:/65665/m36f97fa9605db4888aefa0deb89ff8c85",
+    "2": "si:nmnhmineralsciences_10209903:ark:/65665/m3489493d8111b434f9326c32f7a31b121"
+   }
+  }
+ },
+ "c-min.labradorite-1": {
+  "1": {
+   "stone_id": "cs:80f12f0abcd8",
+   "views": {
+    "1": "si:nmnhmineralsciences_1102584:ark:/65665/m3058b23810e394e5e9e0ef046ead049eb",
+    "2": "si:nmnhmineralsciences_1102584:ark:/65665/m37724c43064fd4aeaa0f95bb949945abb"
+   }
+  },
+  "2": {
+   "stone_id": "cs:f74bf21924c6",
+   "views": {
+    "1": "si:nmnhmineralsciences_11149735:ark:/65665/m30b091e5b5d724190b9227188dc59d8e7",
+    "2": "si:nmnhmineralsciences_11149735:ark:/65665/m34f1a872a9561452883a6bba78ecbec9c"
+   }
+  },
+  "3": {
+   "stone_id": "cs:77d80e13eff3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1375395:ark:/65665/m3bb5cc3730b9b43e88b9fd4016dbe4513",
+    "2": "si:nmnhmineralsciences_1375395:ark:/65665/m3500814923823471d9d7bb444b6361a73"
+   }
+  },
+  "4": {
+   "stone_id": "cs:44162de53ad3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1375377:ark:/65665/m3effe9fbb3b61483fb26786fa4b48516a",
+    "2": "si:nmnhmineralsciences_1375377:ark:/65665/m368fb5f37656f47d6934714d95a9cccfd"
+   }
+  },
+  "5": {
+   "stone_id": "cs:720fd1903f37",
+   "views": {
+    "1": "si:nmnhmineralsciences_1375394:ark:/65665/m3cc8fb56781d54f368fd6af48422e43a7",
+    "2": "si:nmnhmineralsciences_1375394:ark:/65665/m30fa6248faafc41478be8adf75b30ade8"
+   }
+  }
+ },
+ "c-min.quartz-1": {
+  "1": {
+   "stone_id": "cs:bb295342ad42",
+   "views": {
+    "1": "si:nmnhmineralsciences_1141970:ark:/65665/m38efa08af586f49089bb600f3e2af820c",
+    "2": "si:nmnhmineralsciences_1141970:ark:/65665/m378d7e945697243eba630d4d964cad6c8",
+    "3": "si:nmnhmineralsciences_1141970:ark:/65665/m383f7dd819f784a13b564bd3839db147e"
+   }
+  },
+  "2": {
+   "stone_id": "cs:dbc2d401886c",
+   "views": {
+    "1": "si:nmnhmineralsciences_1163775:ark:/65665/m31f43ad235c7a462ba80baf670f3e0b7e",
+    "2": "si:nmnhmineralsciences_1163775:ark:/65665/m3157f1365563e4022813c29950ac8d0a5"
+   }
+  },
+  "3": {
+   "stone_id": "cs:ed929b866d0d",
+   "views": {
+    "1": "si:nmnhmineralsciences_1118953:ark:/65665/m3c108e83b4524484f95be6411c5acd5da",
+    "2": "si:nmnhmineralsciences_1118953:ark:/65665/m36e44defd10b24b12add26163e7afd7df",
+    "3": "si:nmnhmineralsciences_1118953:ark:/65665/m3566bc242cc624ca8ad962b639c5dc257",
+    "4": "si:nmnhmineralsciences_1118953:ark:/65665/m3298664d3aaf04c9fb43b41ca71feb7f7"
+   }
+  },
+  "4": {
+   "stone_id": "cs:00025a8d1ccb",
+   "views": {
+    "1": "si:nmnhmineralsciences_1155772:ark:/65665/m3dbb36691a9764fd1aeb4d132604085a5",
+    "2": "si:nmnhmineralsciences_1155772:ark:/65665/m3f9041c4e939047d3a9c42578c368b408"
+   }
+  },
+  "5": {
+   "stone_id": "cs:912473a3debe",
+   "views": {
+    "1": "si:nmnhmineralsciences_1001023:ark:/65665/m3c1fc76400d634338aa340351003fa8e9",
+    "2": "si:nmnhmineralsciences_1001023:ark:/65665/m3f155d9eea6c54b13aff8e82a4daf9dd1",
+    "3": "si:nmnhmineralsciences_1001023:ark:/65665/m313e7391f1c0a4a2fbd1ac9cc91a1f2c7"
+   }
+  }
+ },
+ "c-min.quartz-2": {
+  "6": {
+   "stone_id": "cs:188266119080",
+   "views": {
+    "1": "si:nmnhmineralsciences_1006972:ark:/65665/m3323c77e0a1ef4af481cc7fbce07e08f8",
+    "2": "si:nmnhmineralsciences_1006972:ark:/65665/m3496ff495891f4157b0b4dabb9bc40291",
+    "3": "si:nmnhmineralsciences_1006972:ark:/65665/m36374565bb54648fdb0a2e36c43faa15c"
+   }
+  },
+  "7": {
+   "stone_id": "cs:7eff3cd79b48",
+   "views": {
+    "1": "si:nmnhmineralsciences_1057232:ark:/65665/m3a25997041dbb4154873791236a468135",
+    "2": "si:nmnhmineralsciences_1057232:ark:/65665/m336e0c35e6c85488a8ab27055b3bd5037"
+   }
+  },
+  "8": {
+   "stone_id": "cs:cda4b2cc7d19",
+   "views": {
+    "1": "si:nmnhmineralsciences_1058136:ark:/65665/m3f5a93c5e1c6e40e9a076922f560c28bb",
+    "2": "si:nmnhmineralsciences_1058136:ark:/65665/m327995e55be724cedb1c36d7c5ae7a5e4"
+   }
+  },
+  "9": {
+   "stone_id": "cs:be1524010ed3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1073720:ark:/65665/m3c6c187b8d0884783aff5b26bec209c8f",
+    "2": "si:nmnhmineralsciences_1073720:ark:/65665/m3cc74832bc4a44f9da879fa456501284f",
+    "3": "si:nmnhmineralsciences_1073720:ark:/65665/m34f523e4a19944f1697f73d9e2ce4bab4",
+    "4": "si:nmnhmineralsciences_1073720:ark:/65665/m3150a977be60e4cef8e3d3f56f11a5909",
+    "5": "si:nmnhmineralsciences_1073720:ark:/65665/m381606e6f8f9c48ef9ed61235a4b04d79"
+   }
+  },
+  "10": {
+   "stone_id": "cs:8338bf4527b5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1145800:ark:/65665/m3c8ba7a348bfa4813a7e5d268998e9797",
+    "2": "si:nmnhmineralsciences_1145800:ark:/65665/m33854038d09bb4636883cf2f65b2e12c8"
+   }
+  }
+ },
+ "c-min.quartz-3": {
+  "11": {
+   "stone_id": "cs:e237db2d345e",
+   "views": {
+    "1": "si:nmnhmineralsciences_1165363:ark:/65665/m31a77e457d65b4327b6598a590207b4b0",
+    "2": "si:nmnhmineralsciences_1165363:ark:/65665/m37b48b4a5149a4295b5ee8bc17de0caf6"
+   }
+  },
+  "12": {
+   "stone_id": "cs:efd9872ecba4",
+   "views": {
+    "1": "si:nmnhmineralsciences_1052551:ark:/65665/m31fe4e5f2c0c44108a7a43e4bb87f9c78",
+    "2": "si:nmnhmineralsciences_1052551:ark:/65665/m36f6f9cd58de047c4b7e516e39ce58888",
+    "3": "si:nmnhmineralsciences_1052551:ark:/65665/m312ef210058764b1f8229670ca6e89cf5",
+    "4": "si:nmnhmineralsciences_1052551:ark:/65665/m397583f963e0d43c1975000f438fb4747"
+   }
+  },
+  "13": {
+   "stone_id": "cs:e16210c1cfb9",
+   "views": {
+    "1": "si:nmnhmineralsciences_1007712:ark:/65665/m3ac0980a65743453581eb86839e5f8c94",
+    "2": "si:nmnhmineralsciences_1007712:ark:/65665/m35c383140c4264f0197d7b235c35e40cb"
+   }
+  },
+  "14": {
+   "stone_id": "cs:c9518e708983",
+   "views": {
+    "1": "si:nmnhmineralsciences_1007360:ark:/65665/m3fac2c5f54a1b4a6c86e072a9e1f0f338",
+    "2": "si:nmnhmineralsciences_1007360:ark:/65665/m30d1a5e791bc840c99080ac7ebd644bda",
+    "3": "si:nmnhmineralsciences_1007360:ark:/65665/m32d9879bbd6ef465b89dc6d2ce723337a",
+    "4": "si:nmnhmineralsciences_1007360:ark:/65665/m32169a5fa2bdf4a258d76617cd53f54a0"
+   }
+  },
+  "15": {
+   "stone_id": "cs:0a784c844e69",
+   "views": {
+    "1": "si:nmnhmineralsciences_1002495:ark:/65665/m3a2c4d22b2b524fbc8803837855e9695c",
+    "2": "si:nmnhmineralsciences_1002495:ark:/65665/m37aa65ccd7a324d479eb7534e52f2303a"
+   }
+  }
+ },
+ "c-min.quartz-4": {
+  "16": {
+   "stone_id": "cs:6e0867f792bf",
+   "views": {
+    "1": "si:nmnhmineralsciences_1154797:ark:/65665/m36e6794393f584e2db8d3455cce49ebbe",
+    "2": "si:nmnhmineralsciences_1154797:ark:/65665/m3042270a698fe424c8b404e55b3cef12b"
+   }
+  },
+  "17": {
+   "stone_id": "cs:893c8b29bf3d",
+   "views": {
+    "1": "si:nmnhmineralsciences_1155264:ark:/65665/m39c9f49b13e5241a8b115c19c7d4283ca",
+    "2": "si:nmnhmineralsciences_1155264:ark:/65665/m391faca6e808d4b56b9aab3350addb851"
+   }
+  },
+  "18": {
+   "stone_id": "cs:f8371175bc8f",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000003:ark:/65665/m348f6fe3b97d74fee83441fbdb4a649fb",
+    "2": "si:nmnhmineralsciences_1000003:ark:/65665/m30971acfdee3d4033a616a81fa7f096e2",
+    "3": "si:nmnhmineralsciences_1000003:ark:/65665/m35292df7c49e146a8b90831a1b790a734"
+   }
+  },
+  "19": {
+   "stone_id": "cs:c6e2f1581253",
+   "views": {
+    "1": "si:nmnhmineralsciences_1148733:ark:/65665/m3bc1dcfeb21a3430b89824538a0a7abb2",
+    "2": "si:nmnhmineralsciences_1148733:ark:/65665/m37263ca961ab84734b96f0470c523d3ae"
+   }
+  },
+  "20": {
+   "stone_id": "cs:61243266d856",
+   "views": {
+    "1": "si:nmnhmineralsciences_1055415:ark:/65665/m3b0bbbdbc34c34e9381aa39b073c78cca",
+    "2": "si:nmnhmineralsciences_1055415:ark:/65665/m3c308c787ce9749fe829935764e6c1bf1",
+    "3": "si:nmnhmineralsciences_1055415:ark:/65665/m31e22ce2d8a364d85bfdb6aef8bd0fcf8",
+    "4": "si:nmnhmineralsciences_1055415:ark:/65665/m36ad6fc964d454ef7beec19d53af004c2",
+    "5": "si:nmnhmineralsciences_1055415:ark:/65665/m327f1edfe7beb4e2cb0c386c19843bd58",
+    "6": "si:nmnhmineralsciences_1055415:ark:/65665/m367be5c3c4c014b66a1db7faddcf09660",
+    "7": "si:nmnhmineralsciences_1055415:ark:/65665/m393a74191660f4fc99ae4bc4374a86604"
+   }
+  }
+ },
+ "c-min.quartz-5": {
+  "21": {
+   "stone_id": "cs:f683d8f99566",
+   "views": {
+    "1": "si:nmnhmineralsciences_1007724:ark:/65665/m3d4d98696521e46ee904c684dece3d2bc",
+    "2": "si:nmnhmineralsciences_1007724:ark:/65665/m37aac4507ed8f4232a0452b6075670df4",
+    "3": "si:nmnhmineralsciences_1007724:ark:/65665/m304ae02e711264617a05da265b01f1279",
+    "4": "si:nmnhmineralsciences_1007724:ark:/65665/m3442bdb41ffe14c0d82eacdb1e03bbece",
+    "5": "si:nmnhmineralsciences_1007724:ark:/65665/m351777c11ead2494d93b5b171ef2d9901"
+   }
+  },
+  "22": {
+   "stone_id": "cs:b9ca084ee639",
+   "views": {
+    "1": "si:nmnhmineralsciences_1002783:ark:/65665/m307e83d79a17a4c65b63dff9263e43e08",
+    "2": "si:nmnhmineralsciences_1002783:ark:/65665/m321d615ecaa7f4a79ab3ef84e5a928b78"
+   }
+  },
+  "23": {
+   "stone_id": "cs:177b9e19eca5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1002457:ark:/65665/m3c4d81be438f84db6b01f4b3774f2c67e",
+    "2": "si:nmnhmineralsciences_1002457:ark:/65665/m3081d92c1233841cdaf6e006bb2391b13"
+   }
+  },
+  "24": {
+   "stone_id": "cs:a8a96641b5b5",
+   "views": {
+    "1": "si:nmnhmineralsciences_1177807:ark:/65665/m3f117df20c0364e238982e0ff2fe69514",
+    "2": "si:nmnhmineralsciences_1177807:ark:/65665/m36d9dde5407b7442b816e17db6fbfd068"
+   }
+  },
+  "25": {
+   "stone_id": "cs:49520fda2546",
+   "views": {
+    "1": "si:nmnhmineralsciences_1065725:ark:/65665/m3d0aa844f0f6c4eb3b3c1250b60acfba1",
+    "2": "si:nmnhmineralsciences_1065725:ark:/65665/m39bca83f10ead49678f073a8cee1d8cf0",
+    "3": "si:nmnhmineralsciences_1065725:ark:/65665/m39e76484c855e4da584ab1d33bc95a5bb",
+    "4": "si:nmnhmineralsciences_1065725:ark:/65665/m331022c2f6f1142c9a9373c9190fb8bd7"
+   }
+  }
+ },
+ "c-min.sphalerite-1": {
+  "1": {
+   "stone_id": "cs:b58aa3a60e6e",
+   "views": {
+    "1": "si:nmnhmineralsciences_1058834:ark:/65665/m34cac9d04347046828f462489cc709a71",
+    "2": "si:nmnhmineralsciences_1058834:ark:/65665/m327ae717e289f4a619a3da429f85a54ad"
+   }
+  },
+  "2": {
+   "stone_id": "cs:399bbaeb34b3",
+   "views": {
+    "1": "si:nmnhmineralsciences_1173260:ark:/65665/m3c383c4d03c334f14a85ef1444889c77e",
+    "2": "si:nmnhmineralsciences_1173260:ark:/65665/m35ddf2f82b41c4e1ca428d9a624025e00",
+    "3": "si:nmnhmineralsciences_1173260:ark:/65665/m320ff574025f0433cbf21a03e6ed736dc",
+    "4": "si:nmnhmineralsciences_1173260:ark:/65665/m3664c8ffa288a4b5fbf5bc98d48f99f56"
+   }
+  },
+  "3": {
+   "stone_id": "cs:66449f0dc9cc",
+   "views": {
+    "1": "si:nmnhmineralsciences_1162534:ark:/65665/m30560d699234c4095bc68144090bf83a6",
+    "2": "si:nmnhmineralsciences_1162534:ark:/65665/m358754e4d95bb48d38d11da50736c6df2"
+   }
+  },
+  "4": {
+   "stone_id": "cs:753429fbace0",
+   "views": {
+    "1": "si:nmnhmineralsciences_1045618:ark:/65665/m3a78f819e3cd543b795ce183b242f376f",
+    "2": "si:nmnhmineralsciences_1045618:ark:/65665/m30ed01aa704914f9486cbe39346821df4"
+   }
+  },
+  "5": {
+   "stone_id": "cs:3c88b41b3415",
+   "views": {
+    "1": "si:nmnhmineralsciences_1172858:ark:/65665/m3b6f5ff0538534ae2befe02dfb2bb58ac",
+    "2": "si:nmnhmineralsciences_1172858:ark:/65665/m3cd58ed1a42f648079390905af0a4c162",
+    "3": "si:nmnhmineralsciences_1172858:ark:/65665/m301e7f9865e614f5b8530d94e44ce3cf2",
+    "4": "si:nmnhmineralsciences_1172858:ark:/65665/m3596be9d0957640859da1a7f48456c9e4"
+   }
+  }
+ },
+ "c-min.sphalerite-2": {
+  "6": {
+   "stone_id": "cs:33e1fda9c9c8",
+   "views": {
+    "1": "si:nmnhmineralsciences_1129445:ark:/65665/m37a6a22e87cb74fd2a6643f4fbe9ec3cb",
+    "2": "si:nmnhmineralsciences_1129445:ark:/65665/m386f0ca53d28346199ca6498f7b2fc331"
+   }
+  },
+  "7": {
+   "stone_id": "cs:98d30b97df48",
+   "views": {
+    "1": "si:nmnhmineralsciences_1173187:ark:/65665/m37c78bbe11b254985a83c7441c679d69c",
+    "2": "si:nmnhmineralsciences_1173187:ark:/65665/m3960cd37e83ed488cab5630d7d0741455"
+   }
+  },
+  "8": {
+   "stone_id": "cs:53c83a92fddc",
+   "views": {
+    "1": "si:nmnhmineralsciences_1056350:ark:/65665/m3b3404bfe3ff64dfeb0c48b40d63c7b99",
+    "2": "si:nmnhmineralsciences_1056350:ark:/65665/m30f8a61eecac1418d9e5d02dfed269a4a",
+    "3": "si:nmnhmineralsciences_1056350:ark:/65665/m36559338505034f0cb5f976a840030f21"
+   }
+  },
+  "9": {
+   "stone_id": "cs:3c23303c8eed",
+   "views": {
+    "1": "si:nmnhmineralsciences_1178189:ark:/65665/m3b4fc4167cdbf42f89a3673fa9e7bbdb4",
+    "2": "si:nmnhmineralsciences_1178189:ark:/65665/m3f93759a891144a83a72dda79d8c066a9"
+   }
+  },
+  "10": {
+   "stone_id": "cs:30eaed564997",
+   "views": {
+    "1": "si:nmnhmineralsciences_1129628:ark:/65665/m3ef7f51c73ac14f6caacd3254291fb9c2",
+    "2": "si:nmnhmineralsciences_1129628:ark:/65665/m35a2e4ada511e4f68bec210fa2aacc4e3",
+    "3": "si:nmnhmineralsciences_1129628:ark:/65665/m36dcf30a9deca4a9c9b07a66df76f54bb",
+    "4": "si:nmnhmineralsciences_1129628:ark:/65665/m39dd845e9d1044739b0679f99e4057383",
+    "5": "si:nmnhmineralsciences_1129628:ark:/65665/m331316bf17f0e4e5d8b5c3a48754c8435"
+   }
+  }
+ },
+ "c-min.sphalerite-3": {
+  "11": {
+   "stone_id": "cs:5b087d328450",
+   "views": {
+    "1": "si:nmnhmineralsciences_1065200:ark:/65665/m3ad2140339b614f1e94152f962dc049d7",
+    "2": "si:nmnhmineralsciences_1065200:ark:/65665/m3e0d35ef0b40c4ed29f95448dae8faa4a",
+    "3": "si:nmnhmineralsciences_1065200:ark:/65665/m3e6b717f8e1864bbc915e2b12d96392f3"
+   }
+  },
+  "12": {
+   "stone_id": "cs:18014e3d52ae",
+   "views": {
+    "1": "si:nmnhmineralsciences_1113095:ark:/65665/m3c8591a386a4f4799a18128e981f82b6e",
+    "2": "si:nmnhmineralsciences_1113095:ark:/65665/m3fe2c744d1a5e46d4b93631590f98ddae",
+    "3": "si:nmnhmineralsciences_1113095:ark:/65665/m323ec9c5c9e934c6685ff01609b6735d1",
+    "4": "si:nmnhmineralsciences_1113095:ark:/65665/m3200c727970c043e893aff365babb6e49"
+   }
+  }
+ },
+ "c-min.topaz-1": {
+  "1": {
+   "stone_id": "cs:bd582e3815c7",
+   "views": {
+    "1": "si:nmnhmineralsciences_1185395:ark:/65665/m30c3ad8a451e94f9ba37e16ec9f6db386",
+    "2": "si:nmnhmineralsciences_1185395:ark:/65665/m320e73dbb9f00452db9dd10c5fbab150e"
+   }
+  },
+  "2": {
+   "stone_id": "cs:02f83f0db055",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000943:ark:/65665/m3bd4c9f3b52fa48809858dc4a71b25d58",
+    "2": "si:nmnhmineralsciences_1000943:ark:/65665/m3d71fdfb2dfa14ff682197dcd7aa7fa3c",
+    "3": "si:nmnhmineralsciences_1000943:ark:/65665/m37fb1ebaafb9c412e8b61cd0f3ba9871e",
+    "4": "si:nmnhmineralsciences_1000943:ark:/65665/m3114d6cfb841244019c4e476f8324d614",
+    "5": "si:nmnhmineralsciences_1000943:ark:/65665/m3685750d9a5a3441e95ba65dac8c2756a",
+    "6": "si:nmnhmineralsciences_1000943:ark:/65665/m33378058e98b4403d8d8ee3f0a3e65987"
+   }
+  },
+  "3": {
+   "stone_id": "cs:8a26eb1c6438",
+   "views": {
+    "1": "si:nmnhmineralsciences_1000942:ark:/65665/m3a0f630ec961240a0b642688037ce7fb1",
+    "2": "si:nmnhmineralsciences_1000942:ark:/65665/m3dbd019b1f2cb4780853ee2deca86b8d2",
+    "3": "si:nmnhmineralsciences_1000942:ark:/65665/m33dd28ce1f2d841d3af6d9f908339ffe0",
+    "4": "si:nmnhmineralsciences_1000942:ark:/65665/m37bb275fe44ae4e99971893c8e17066e3"
+   }
+  },
+  "4": {
+   "stone_id": "cs:a2af313b7659",
+   "views": {
+    "1": "si:nmnhmineralsciences_1054771:ark:/65665/m3bc2e9ceaf956461fbd2702e3993a63e8",
+    "2": "si:nmnhmineralsciences_1054771:ark:/65665/m3bdeb6d25b6d44eff92667f8a7212562c",
+    "3": "si:nmnhmineralsciences_1054771:ark:/65665/m3d0e6803e54c84b87b6d755348ae974b5",
+    "4": "si:nmnhmineralsciences_1054771:ark:/65665/m34f9726eed94b471281b927c960dd27bf"
+   }
+  },
+  "5": {
+   "stone_id": "cs:36f6fb57e745",
+   "views": {
+    "1": "si:nmnhmineralsciences_1150262:ark:/65665/m3dbe613e5cbf74b308bfcb3c8c4a6cb28",
+    "2": "si:nmnhmineralsciences_1150262:ark:/65665/m3e2c9e307377e44048807e6ebb54a0411"
+   }
+  }
+ },
+ "c-min.topaz-2": {
+  "6": {
+   "stone_id": "cs:bf32beb4687a",
+   "views": {
+    "1": "si:nmnhmineralsciences_1153699:ark:/65665/m3b8142cbd9dbb41159031ba968b17f959",
+    "2": "si:nmnhmineralsciences_1153699:ark:/65665/m390f8c9196a6a480fa76f1b887385863f"
+   }
+  },
+  "7": {
+   "stone_id": "cs:a2eac1ed88c5",
+   "views": {
+    "1": "si:nmnhmineralsciences_10209891:ark:/65665/m33c72fc2878d94e88ad06ff962eeb34ad",
+    "2": "si:nmnhmineralsciences_10209891:ark:/65665/m37230280285bc485199434afb34c7563d"
+   }
+  },
+  "8": {
+   "stone_id": "cs:4fc887fcef96",
+   "views": {
+    "1": "si:nmnhmineralsciences_1118736:ark:/65665/m3a23ab85cdcec462bafd0888374f112ef",
+    "2": "si:nmnhmineralsciences_1118736:ark:/65665/m3aff779ba9717463e9e9019a08ebd4801",
+    "3": "si:nmnhmineralsciences_1118736:ark:/65665/m3b0e34e062ce94b9aa0a1d02fb8ce247c",
+    "4": "si:nmnhmineralsciences_1118736:ark:/65665/m3e0da5a773e4f4096b8326d4dade770b0",
+    "5": "si:nmnhmineralsciences_1118736:ark:/65665/m3ed208a0072f04b0ab412d1da16cd8bf6",
+    "6": "si:nmnhmineralsciences_1118736:ark:/65665/m30c1df2eb20b943868e4048d966097317",
+    "7": "si:nmnhmineralsciences_1118736:ark:/65665/m33d61860e97a34fd5864f57abe0883ac5",
+    "8": "si:nmnhmineralsciences_1118736:ark:/65665/m34cbea45d98fa4a85baef219a7c293bdd"
+   }
+  }
+ },
+ "c-min.tourmaline-1": {
+  "1": {
+   "stone_id": "cs:a29ce3b64207",
+   "views": {
+    "1": "commons:71027626",
+    "2": "commons:71027627"
+   }
+  }
+ },
+ "c-rock.basalt-1": {
+  "1": {
+   "stone_id": "cs:57206d06329c",
+   "views": {
+    "1": "commons:59408696",
+    "2": "commons:59408698"
+   }
+  },
+  "2": {
+   "stone_id": "cs:6eecdb5cf435",
+   "views": {
+    "1": "commons:48653216",
+    "2": "commons:48653633",
+    "3": "commons:48655874",
+    "4": "commons:49130317",
+    "5": "commons:49130323",
+    "6": "commons:49130350",
+    "7": "commons:70369522",
+    "8": "commons:70369527"
+   }
+  }
+ },
+ "c-rock.limestone-1": {
+  "1": {
+   "stone_id": "cs:076e5f663311",
+   "views": {
+    "1": "commons:201621244",
+    "2": "commons:201621655"
+   }
+  }
+ },
+ "c-rock.marble-1": {
+  "1": {
+   "stone_id": "cs:e5e031aea2ba",
+   "views": {
+    "1": "commons:147135371",
+    "2": "commons:147135376",
+    "3": "commons:147135394"
+   }
+  },
+  "2": {
+   "stone_id": "cs:db3b163573ce",
+   "views": {
+    "1": "commons:98182292",
+    "2": "commons:98182293"
+   }
+  },
+  "3": {
+   "stone_id": "cs:dd6d2af4987d",
+   "views": {
+    "1": "commons:150091235",
+    "2": "commons:150091236",
+    "3": "commons:150091237",
+    "4": "commons:150091239",
+    "5": "commons:150091240",
+    "6": "commons:150091242",
+    "7": "commons:150091243",
+    "8": "commons:150091244"
+   }
+  }
+ },
+ "c-rock.slate-1": {
+  "1": {
+   "stone_id": "cs:f6340928693c",
+   "views": {
+    "1": "commons:200959414",
+    "2": "commons:200959419",
+    "3": "commons:200959420",
+    "4": "commons:200959421",
+    "5": "commons:200959426"
+   }
+  }
+ }
+}
