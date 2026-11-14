@@ -42,3 +42,14 @@ def confusion_pairs(taxonomy: dict[str, Taxon]) -> list[tuple[str, str]]:
         for b in ids[i + 1 :]
         if taxonomy[a].confusion_group == taxonomy[b].confusion_group
     ]
+
+
+def extra_taxon_ids() -> set[str]:
+    """Taxa added after mvp21 (extra_minerals.csv, extra_rocks_ores.csv). The reference manifest accepts them."""
+    ids: set[str] = set()
+    for name in ("extra_minerals", "extra_rocks_ores"):
+        path = TAXONOMY_DIR / f"{name}.csv"
+        if path.exists():
+            with path.open(newline="", encoding="utf-8") as fh:
+                ids |= {r["taxon_id"] for r in csv.DictReader(fh)}
+    return ids
