@@ -1,0 +1,2162 @@
+{
+"b0001": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1297,
+0.1053,
+0.1017
+],
+"ranked": [
+"min.muscovite",
+"min.hematite",
+"min.pyrite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0002": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1096,
+0.071,
+0.07
+],
+"ranked": [
+"min.sphalerite",
+"ore.covellite",
+"min.biotite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0003": {
+"form": "natural",
+"form_p": 0.606,
+"p": [
+0.1146,
+0.0781,
+0.0755
+],
+"ranked": [
+"min.muscovite",
+"rock.gneiss",
+"min.azurite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0004": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1119,
+0.0761,
+0.0602
+],
+"ranked": [
+"min.muscovite",
+"min.galena",
+"min.chalcopyrite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0005": {
+"form": "natural",
+"form_p": 0.5318,
+"p": [
+0.2675,
+0.2627,
+0.1356
+],
+"ranked": [
+"rock.marble",
+"min.muscovite",
+"min.biotite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0006": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1149,
+0.0947,
+0.0764
+],
+"ranked": [
+"min.pyrite",
+"min.hematite",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0007": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1019,
+0.0891,
+0.0795
+],
+"ranked": [
+"min.kyanite",
+"min.corundum",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0008": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.116,
+0.0978,
+0.0833
+],
+"ranked": [
+"min.kyanite",
+"min.quartz",
+"min.almandine"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0009": {
+"form": "natural",
+"form_p": 0.5673,
+"p": [
+0.1521,
+0.1263,
+0.1263
+],
+"ranked": [
+"rock.limestone",
+"rock.gneiss",
+"min.azurite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0010": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.073,
+0.0721,
+0.066
+],
+"ranked": [
+"rock.basalt",
+"rock.granite",
+"ore.zincite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0011": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1038,
+0.1004,
+0.0996
+],
+"ranked": [
+"rock.basalt",
+"min.apatite",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0012": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1403,
+0.1135,
+0.1071
+],
+"ranked": [
+"min.magnetite",
+"min.hematite",
+"min.galena"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0013": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.17,
+0.1476,
+0.1293
+],
+"ranked": [
+"min.pyrite",
+"min.almandine",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0014": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1077,
+0.0893,
+0.0787
+],
+"ranked": [
+"min.bornite",
+"min.labradorite",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0015": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1103,
+0.1096,
+0.0824
+],
+"ranked": [
+"min.hematite",
+"ore.pentlandite",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0016": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0788,
+0.073,
+0.053
+],
+"ranked": [
+"min.hematite",
+"min.magnetite",
+"min.galena"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0017": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1137,
+0.0761,
+0.0683
+],
+"ranked": [
+"min.k-feldspar",
+"rock.sandstone",
+"min.gypsum"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0018": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1017,
+0.1001,
+0.079
+],
+"ranked": [
+"min.pyrite",
+"min.hematite",
+"min.malachite"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0019": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.2111,
+0.2026,
+0.0697
+],
+"ranked": [
+"min.muscovite",
+"min.gypsum",
+"min.azurite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0020": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0906,
+0.0829,
+0.0819
+],
+"ranked": [
+"min.gypsum",
+"rock.limestone",
+"min.malachite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0021": {
+"form": "natural",
+"form_p": 0.997,
+"p": [
+0.8031,
+0.0219,
+0.0184
+],
+"ranked": [
+"min.muscovite",
+"rock.granite",
+"min.bornite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0022": {
+"form": "natural",
+"form_p": 0.9021,
+"p": [
+0.1306,
+0.0948,
+0.0929
+],
+"ranked": [
+"min.calcite",
+"min.fluorite",
+"rock.chert"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0023": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1167,
+0.0712,
+0.0702
+],
+"ranked": [
+"min.muscovite",
+"rock.chert",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0024": {
+"form": "natural",
+"form_p": 0.451,
+"p": [
+0.197,
+0.1553,
+0.0878
+],
+"ranked": [
+"min.muscovite",
+"rock.chert",
+"min.calcite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0025": {
+"form": "natural",
+"form_p": 0.5959,
+"p": [
+0.1929,
+0.15,
+0.1129
+],
+"ranked": [
+"rock.gneiss",
+"rock.limestone",
+"rock.quartzite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0026": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1249,
+0.0963,
+0.0847
+],
+"ranked": [
+"min.muscovite",
+"min.pyrite",
+"min.quartz"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0027": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1032,
+0.0946,
+0.0773
+],
+"ranked": [
+"min.muscovite",
+"min.hematite",
+"rock.chert"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0028": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.2919,
+0.1472,
+0.0982
+],
+"ranked": [
+"min.muscovite",
+"min.biotite",
+"min.fluorite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0029": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1305,
+0.1218,
+0.1192
+],
+"ranked": [
+"min.gypsum",
+"min.muscovite",
+"min.calcite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0030": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.2834,
+0.0734,
+0.0649
+],
+"ranked": [
+"min.muscovite",
+"min.pyrite",
+"min.kyanite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0032": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1134,
+0.0972,
+0.0779
+],
+"ranked": [
+"min.muscovite",
+"min.malachite",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0033": {
+"form": "natural",
+"form_p": 0.9218,
+"p": [
+0.1458,
+0.0824,
+0.0781
+],
+"ranked": [
+"rock.gneiss",
+"min.hematite",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0034": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1222,
+0.1128,
+0.0872
+],
+"ranked": [
+"min.muscovite",
+"min.k-feldspar",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0039": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1261,
+0.0932,
+0.0864
+],
+"ranked": [
+"min.muscovite",
+"min.malachite",
+"min.corundum"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0040": {
+"form": "natural",
+"form_p": 0.7499,
+"p": [
+0.1762,
+0.1086,
+0.0709
+],
+"ranked": [
+"rock.phosphorite",
+"min.muscovite",
+"rock.basalt"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0041": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0831,
+0.0749,
+0.0711
+],
+"ranked": [
+"min.muscovite",
+"min.pyrite",
+"min.bornite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0042": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0855,
+0.0732,
+0.0715
+],
+"ranked": [
+"min.magnetite",
+"min.hematite",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0043": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.098,
+0.0977,
+0.0964
+],
+"ranked": [
+"min.hematite",
+"min.k-feldspar",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0044": {
+"form": "natural",
+"form_p": 0.7439,
+"p": [
+0.2044,
+0.12,
+0.111
+],
+"ranked": [
+"rock.gneiss",
+"rock.dacite",
+"rock.granite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0045": {
+"form": "natural",
+"form_p": 0.9122,
+"p": [
+0.1279,
+0.0988,
+0.075
+],
+"ranked": [
+"min.fluorite",
+"min.epidote",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0046": {
+"form": "natural",
+"form_p": 0.9122,
+"p": [
+0.1279,
+0.0988,
+0.075
+],
+"ranked": [
+"min.fluorite",
+"min.epidote",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0047": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0971,
+0.0822,
+0.0743
+],
+"ranked": [
+"rock.bauxite",
+"rock.basalt",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0048": {
+"form": "natural",
+"form_p": 0.7759,
+"p": [
+0.1064,
+0.0988,
+0.0853
+],
+"ranked": [
+"min.bornite",
+"rock.sandstone",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0049": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.074,
+0.0662,
+0.0654
+],
+"ranked": [
+"min.muscovite",
+"min.hematite",
+"min.malachite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0050": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1301,
+0.0848,
+0.073
+],
+"ranked": [
+"min.chrysocolla",
+"rock.chert",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0051": {
+"form": "natural",
+"form_p": 0.8908,
+"p": [
+0.1367,
+0.0869,
+0.0815
+],
+"ranked": [
+"min.k-feldspar",
+"rock.chert",
+"rock.limestone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0052": {
+"form": "polished",
+"form_p": 0.9566,
+"p": [
+0.7581,
+0.078,
+0.0495
+],
+"ranked": [
+"rock.chert",
+"min.quartz",
+"min.malachite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0053": {
+"form": "natural",
+"form_p": 0.7766,
+"p": [
+0.1723,
+0.1575,
+0.1239
+],
+"ranked": [
+"rock.chert",
+"min.k-feldspar",
+"rock.limestone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0054": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1005,
+0.0979,
+0.0962
+],
+"ranked": [
+"min.k-feldspar",
+"rock.slate",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0055": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1228,
+0.1174,
+0.088
+],
+"ranked": [
+"min.hematite",
+"rock.chert",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0056": {
+"form": "natural",
+"form_p": 0.5346,
+"p": [
+0.3237,
+0.1076,
+0.0975
+],
+"ranked": [
+"min.biotite",
+"ore.rhodochrosite",
+"min.fluorite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0057": {
+"form": "tumbled",
+"form_p": 0.4012,
+"p": [
+0.1937,
+0.1439,
+0.1432
+],
+"ranked": [
+"min.malachite",
+"rock.chert",
+"min.labradorite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0058": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1113,
+0.0947,
+0.0762
+],
+"ranked": [
+"rock.quartzite",
+"rock.eclogite",
+"min.azurite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0059": {
+"form": "polished",
+"form_p": 0.5272,
+"p": [
+0.2367,
+0.123,
+0.1125
+],
+"ranked": [
+"rock.chert",
+"min.quartz",
+"min.malachite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0060": {
+"form": "natural",
+"form_p": 0.6665,
+"p": [
+0.2492,
+0.2451,
+0.1635
+],
+"ranked": [
+"rock.quartz-monzonite",
+"rock.granite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0061": {
+"form": "natural",
+"form_p": 0.6769,
+"p": [
+0.1172,
+0.1167,
+0.087
+],
+"ranked": [
+"rock.sandstone",
+"rock.granite",
+"rock.granodiorite"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0062": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0856,
+0.0841,
+0.0706
+],
+"ranked": [
+"min.k-feldspar",
+"rock.gneiss",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0063": {
+"form": "natural",
+"form_p": 0.796,
+"p": [
+0.1212,
+0.1172,
+0.0855
+],
+"ranked": [
+"min.pyrite",
+"rock.gneiss",
+"rock.basalt"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0064": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0888,
+0.0845,
+0.0774
+],
+"ranked": [
+"rock.diorite",
+"min.pyrite",
+"ore.pentlandite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0065": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1792,
+0.1307,
+0.11
+],
+"ranked": [
+"rock.gneiss",
+"min.hematite",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0066": {
+"form": "natural",
+"form_p": 0.5861,
+"p": [
+0.2884,
+0.192,
+0.1623
+],
+"ranked": [
+"rock.gneiss",
+"rock.marble",
+"rock.slate"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0067": {
+"form": "natural",
+"form_p": 0.9285,
+"p": [
+0.1817,
+0.1152,
+0.1115
+],
+"ranked": [
+"rock.granite",
+"min.muscovite",
+"rock.carbonatite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0068": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1197,
+0.1024,
+0.1009
+],
+"ranked": [
+"min.pyrite",
+"min.hematite",
+"min.muscovite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0069": {
+"form": "natural",
+"form_p": 0.9071,
+"p": [
+0.1326,
+0.1211,
+0.0783
+],
+"ranked": [
+"rock.granite",
+"rock.gneiss",
+"min.pyrite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0070": {
+"form": "natural",
+"form_p": 0.8175,
+"p": [
+0.1292,
+0.1257,
+0.0771
+],
+"ranked": [
+"rock.marble",
+"rock.granite",
+"min.apatite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0071": {
+"form": "natural",
+"form_p": 0.7284,
+"p": [
+0.2511,
+0.1006,
+0.0786
+],
+"ranked": [
+"rock.gneiss",
+"rock.chert",
+"rock.marble"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0072": {
+"form": "natural",
+"form_p": 0.8285,
+"p": [
+0.1145,
+0.0878,
+0.0839
+],
+"ranked": [
+"min.magnetite",
+"rock.granite",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0073": {
+"form": "polished",
+"form_p": 0.8554,
+"p": [
+0.6579,
+0.1503,
+0.1416
+],
+"ranked": [
+"rock.granite",
+"rock.gneiss",
+"min.biotite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0074": {
+"form": "polished",
+"form_p": 0.6832,
+"p": [
+0.8598,
+0.0617,
+0.0547
+],
+"ranked": [
+"rock.granite",
+"min.biotite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0075": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1708,
+0.0847,
+0.0825
+],
+"ranked": [
+"min.almandine",
+"ore.realgar",
+"ore.zincite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0076": {
+"form": "polished",
+"form_p": 0.8887,
+"p": [
+0.651,
+0.2507,
+0.0983
+],
+"ranked": [
+"rock.granite",
+"rock.gneiss",
+"min.biotite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0077": {
+"form": "natural",
+"form_p": 0.6976,
+"p": [
+0.1233,
+0.1055,
+0.0974
+],
+"ranked": [
+"rock.granite",
+"rock.sandstone",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0078": {
+"form": "polished",
+"form_p": 0.9107,
+"p": [
+0.6607,
+0.1297,
+0.1127
+],
+"ranked": [
+"rock.granite",
+"rock.limestone",
+"rock.metaconglomerate"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0079": {
+"form": "polished",
+"form_p": 0.8337,
+"p": [
+0.6401,
+0.195,
+0.1057
+],
+"ranked": [
+"rock.granite",
+"rock.marble",
+"min.biotite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0080": {
+"form": "polished",
+"form_p": 1.0,
+"p": [
+0.602,
+0.183,
+0.1201
+],
+"ranked": [
+"rock.granite",
+"rock.marble",
+"min.biotite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0081": {
+"form": "natural",
+"form_p": 0.5016,
+"p": [
+0.3708,
+0.192,
+0.1677
+],
+"ranked": [
+"rock.granite",
+"rock.monzonite",
+"rock.gneiss"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0082": {
+"form": "polished",
+"form_p": 1.0,
+"p": [
+0.7797,
+0.0975,
+0.0476
+],
+"ranked": [
+"rock.granite",
+"min.biotite",
+"rock.marble"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0083": {
+"form": "polished",
+"form_p": 0.9181,
+"p": [
+0.6664,
+0.1571,
+0.103
+],
+"ranked": [
+"rock.granite",
+"min.biotite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0084": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1813,
+0.0726,
+0.0687
+],
+"ranked": [
+"rock.sandstone",
+"min.calcite",
+"min.magnetite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0085": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1521,
+0.0941,
+0.0838
+],
+"ranked": [
+"rock.granite",
+"min.k-feldspar",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0086": {
+"form": "natural",
+"form_p": 0.7522,
+"p": [
+0.0896,
+0.0821,
+0.0813
+],
+"ranked": [
+"min.muscovite",
+"min.hematite",
+"min.azurite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0087": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1735,
+0.1324,
+0.0875
+],
+"ranked": [
+"rock.granodiorite",
+"min.magnetite",
+"min.epidote"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0088": {
+"form": "polished",
+"form_p": 1.0,
+"p": [
+0.6706,
+0.1843,
+0.1452
+],
+"ranked": [
+"rock.granite",
+"min.biotite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0089": {
+"form": "natural",
+"form_p": 0.5496,
+"p": [
+0.2779,
+0.1928,
+0.1065
+],
+"ranked": [
+"rock.granite",
+"rock.ignimbrite",
+"rock.marble"
+],
+"restricted": false,
+"status": "unknown"
+},
+"b0090": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1496,
+0.137,
+0.1077
+],
+"ranked": [
+"min.pyrite",
+"min.muscovite",
+"min.fluorite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0091": {
+"form": "natural",
+"form_p": 0.8243,
+"p": [
+0.1519,
+0.1293,
+0.0857
+],
+"ranked": [
+"rock.granite",
+"min.k-feldspar",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0092": {
+"form": "natural",
+"form_p": 0.953,
+"p": [
+0.1451,
+0.1438,
+0.0853
+],
+"ranked": [
+"rock.quartzite",
+"rock.sandstone",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0093": {
+"form": "natural",
+"form_p": 0.6345,
+"p": [
+0.1857,
+0.1602,
+0.0795
+],
+"ranked": [
+"rock.sandstone",
+"rock.basalt",
+"rock.granodiorite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0094": {
+"form": "natural",
+"form_p": 0.5567,
+"p": [
+0.2167,
+0.1001,
+0.0945
+],
+"ranked": [
+"rock.sandstone",
+"rock.quartzite",
+"rock.limestone"
+],
+"restricted": false,
+"status": "unknown"
+},
+"b0095": {
+"form": "natural",
+"form_p": 0.6952,
+"p": [
+0.1121,
+0.0917,
+0.0814
+],
+"ranked": [
+"rock.limestone",
+"rock.quartzite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0096": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1549,
+0.0699,
+0.0598
+],
+"ranked": [
+"rock.limestone",
+"rock.sandstone",
+"min.gypsum"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0097": {
+"form": "polished",
+"form_p": 0.7753,
+"p": [
+0.5106,
+0.1782,
+0.1312
+],
+"ranked": [
+"rock.marble",
+"rock.granite",
+"rock.limestone"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0098": {
+"form": "natural",
+"form_p": 0.5951,
+"p": [
+0.3016,
+0.1638,
+0.0931
+],
+"ranked": [
+"rock.marble",
+"rock.mylonite",
+"rock.migmatite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0099": {
+"form": "natural",
+"form_p": 0.7431,
+"p": [
+0.1939,
+0.1846,
+0.1725
+],
+"ranked": [
+"rock.granite",
+"min.k-feldspar",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0100": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0969,
+0.0887,
+0.0859
+],
+"ranked": [
+"min.k-feldspar",
+"rock.granite",
+"min.pyrite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0101": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0955,
+0.0903,
+0.077
+],
+"ranked": [
+"rock.limestone",
+"rock.chert",
+"rock.porphyry"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0102": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1021,
+0.1003,
+0.0914
+],
+"ranked": [
+"rock.limestone",
+"rock.phosphorite",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0103": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1032,
+0.0998,
+0.0807
+],
+"ranked": [
+"rock.limestone",
+"min.hematite",
+"min.malachite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0104": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1579,
+0.143,
+0.1422
+],
+"ranked": [
+"min.gypsum",
+"ore.chalcocite",
+"rock.basalt"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0105": {
+"form": "polished",
+"form_p": 0.9544,
+"p": [
+0.7026,
+0.1717,
+0.0767
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.serpentinite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0106": {
+"form": "polished",
+"form_p": 0.9075,
+"p": [
+0.5845,
+0.1727,
+0.1229
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.basalt"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0107": {
+"form": "polished",
+"form_p": 0.9599,
+"p": [
+0.7476,
+0.2015,
+0.0291
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.serpentinite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0108": {
+"form": "polished",
+"form_p": 0.7736,
+"p": [
+0.4551,
+0.3911,
+0.0404
+],
+"ranked": [
+"rock.limestone",
+"rock.marble",
+"rock.basalt"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0110": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1152,
+0.08,
+0.0797
+],
+"ranked": [
+"rock.marble",
+"ore.lepidolite",
+"min.quartz"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0111": {
+"form": "natural",
+"form_p": 0.8492,
+"p": [
+0.1201,
+0.1105,
+0.0843
+],
+"ranked": [
+"rock.quartz-diorite",
+"min.magnetite",
+"rock.gneiss"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0112": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1274,
+0.0824,
+0.0811
+],
+"ranked": [
+"rock.granite",
+"rock.gneiss",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0113": {
+"form": "natural",
+"form_p": 0.6437,
+"p": [
+0.1262,
+0.119,
+0.1099
+],
+"ranked": [
+"rock.granite",
+"min.k-feldspar",
+"rock.carbonatite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0114": {
+"form": "natural",
+"form_p": 0.7428,
+"p": [
+0.121,
+0.1207,
+0.0914
+],
+"ranked": [
+"rock.granite",
+"rock.quartzite",
+"min.k-feldspar"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0115": {
+"form": "polished",
+"form_p": 0.915,
+"p": [
+0.7285,
+0.0969,
+0.0809
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0116": {
+"form": "polished",
+"form_p": 0.6431,
+"p": [
+0.6692,
+0.1154,
+0.0562
+],
+"ranked": [
+"rock.marble",
+"rock.gneiss",
+"rock.limestone"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0117": {
+"form": "natural",
+"form_p": 0.654,
+"p": [
+0.1985,
+0.1814,
+0.1501
+],
+"ranked": [
+"rock.sandstone",
+"rock.gneiss",
+"rock.basalt"
+],
+"restricted": true,
+"status": "unknown"
+},
+"b0118": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1659,
+0.1209,
+0.1127
+],
+"ranked": [
+"rock.quartzite",
+"min.k-feldspar",
+"rock.limestone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0119": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0995,
+0.0793,
+0.0755
+],
+"ranked": [
+"rock.quartzite",
+"min.magnetite",
+"rock.basalt"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0120": {
+"form": "polished",
+"form_p": 0.8716,
+"p": [
+0.919,
+0.0289,
+0.0218
+],
+"ranked": [
+"rock.marble",
+"rock.granite",
+"rock.limestone"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0121": {
+"form": "polished",
+"form_p": 0.9037,
+"p": [
+0.4355,
+0.2997,
+0.1924
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0122": {
+"form": "polished",
+"form_p": 0.9323,
+"p": [
+0.5452,
+0.2563,
+0.1461
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0123": {
+"form": "polished",
+"form_p": 0.9421,
+"p": [
+0.5883,
+0.3586,
+0.0531
+],
+"ranked": [
+"rock.limestone",
+"rock.marble",
+"rock.serpentinite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0124": {
+"form": "natural",
+"form_p": 0.6852,
+"p": [
+0.2963,
+0.217,
+0.0782
+],
+"ranked": [
+"rock.basalt",
+"rock.pumice",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0125": {
+"form": "polished",
+"form_p": 0.6481,
+"p": [
+0.6197,
+0.2359,
+0.063
+],
+"ranked": [
+"rock.marble",
+"rock.slate",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0126": {
+"form": "natural",
+"form_p": 0.5864,
+"p": [
+0.2253,
+0.2004,
+0.0682
+],
+"ranked": [
+"rock.shale",
+"rock.marble",
+"rock.banded-iron-formation"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0127": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0896,
+0.0858,
+0.0844
+],
+"ranked": [
+"min.gypsum",
+"min.quartz",
+"rock.chert"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0128": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.2234,
+0.0846,
+0.0838
+],
+"ranked": [
+"rock.limestone",
+"rock.quartzite",
+"rock.sandstone"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0129": {
+"form": "polished",
+"form_p": 0.7839,
+"p": [
+0.4587,
+0.1874,
+0.1808
+],
+"ranked": [
+"rock.granite",
+"rock.limestone",
+"rock.marble"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0130": {
+"form": "polished",
+"form_p": 0.6575,
+"p": [
+0.4928,
+0.2141,
+0.1922
+],
+"ranked": [
+"rock.marble",
+"rock.quartzite",
+"rock.limestone"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0131": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1519,
+0.1114,
+0.0819
+],
+"ranked": [
+"rock.mudstone",
+"rock.granite",
+"min.gypsum"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0132": {
+"form": "polished",
+"form_p": 0.8718,
+"p": [
+0.4523,
+0.4079,
+0.1243
+],
+"ranked": [
+"rock.marble",
+"rock.limestone",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0133": {
+"form": "polished",
+"form_p": 0.8706,
+"p": [
+0.4341,
+0.2591,
+0.1255
+],
+"ranked": [
+"rock.limestone",
+"rock.granite",
+"rock.marble"
+],
+"restricted": true,
+"status": "identified"
+},
+"b0134": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0826,
+0.074,
+0.0715
+],
+"ranked": [
+"rock.sandstone",
+"ore.carnotite",
+"rock.quartzite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0135": {
+"form": "natural",
+"form_p": 0.9722,
+"p": [
+0.1874,
+0.1559,
+0.0875
+],
+"ranked": [
+"rock.dunite",
+"rock.sandstone",
+"min.sulfur"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0136": {
+"form": "natural",
+"form_p": 0.9811,
+"p": [
+0.3978,
+0.076,
+0.0725
+],
+"ranked": [
+"rock.sandstone",
+"min.sulfur",
+"rock.marble"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0137": {
+"form": "natural",
+"form_p": 0.7781,
+"p": [
+0.2559,
+0.125,
+0.1019
+],
+"ranked": [
+"rock.sandstone",
+"rock.limestone",
+"rock.tufa"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0138": {
+"form": "natural",
+"form_p": 0.5728,
+"p": [
+0.2965,
+0.1327,
+0.1164
+],
+"ranked": [
+"rock.granite",
+"rock.marble",
+"rock.granodiorite"
+],
+"restricted": false,
+"status": "uncertain"
+},
+"b0139": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.0751,
+0.0741,
+0.0667
+],
+"ranked": [
+"min.magnetite",
+"rock.basalt",
+"min.hematite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0140": {
+"form": "natural",
+"form_p": 1.0,
+"p": [
+0.1244,
+0.0983,
+0.0704
+],
+"ranked": [
+"rock.granite",
+"rock.sandstone",
+"rock.bauxite"
+],
+"restricted": true,
+"status": "uncertain"
+},
+"b0141": {
+"form": "polished",
+"form_p": 0.7369,
+"p": [
+0.4971,
+0.2303,
+0.1667
+],
+"ranked": [
+"rock.quartzite",
+"rock.limestone",
+"rock.marble"
+],
+"restricted": true,
+"status": "unknown"
+}
+}
