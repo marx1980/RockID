@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from packages.taxonomy.loader import load_taxonomy
+from packages.taxonomy.loader import extra_taxon_ids, load_taxonomy
 
 REFERENCE_COLUMNS = [
     "asset_id", "taxon_id", "specimen_id", "source_name", "source_url", "author",
@@ -39,7 +39,7 @@ def check_header(header: list[str]) -> list[str]:
 
 
 def validate_rows(rows: list[dict[str, str]], taxonomy_name: str = "mvp21") -> list[RowError]:
-    taxa = load_taxonomy(taxonomy_name)
+    taxa = set(load_taxonomy(taxonomy_name)) | extra_taxon_ids()
     errors: list[RowError] = []
     seen_assets: set[str] = set()
     seen_sha: set[str] = set()
