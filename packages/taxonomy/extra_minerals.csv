@@ -1,0 +1,79 @@
+taxon_id,canonical_name,category,rank,confusion_group,formula_or_makeup,hardness,streak,luster,class,features
+min.topaz,Topaz,MINERAL,species,nesosilicate,"Al2SiO4(F,OH)2",8,White,Vitreous,Silicate,"Prismatic crystals|Perfect basal cleavage|Colourless, yellow, blue or pink"
+min.cassiterite,Cassiterite,MINERAL,species,tin_oxide,SnO2,6–7,White to brown,Adamantine,Oxide,Very heavy|Brown to black crystals|Twinned prisms
+min.beryl,Beryl,MINERAL,species,ring_silicate,Be3Al2Si6O18,7.5–8,White,Vitreous,Silicate,Hexagonal prisms|Green blue or yellow|Striated crystal faces
+min.silver,Silver,MINERAL,species,native_metal,Ag,2.5–3,Silver-white,Metallic,Native element,Wires and dendrites|Tarnishes black|Malleable
+min.gold,Gold,MINERAL,species,native_metal,Au,2.5–3,Golden yellow,Metallic,Native element,Yellow metallic nuggets|Very heavy|Malleable and sectile
+min.corundum,Corundum,MINERAL,species,corundum_group,Al2O3,9,White,Adamantine to vitreous,Oxide,Barrel-shaped crystals|Red (ruby) or blue (sapphire)|Very hard
+min.diopside,Diopside,MINERAL,species,pyroxene,CaMgSi2O6,5.5–6.5,White to grey,Vitreous,Silicate,Green prismatic crystals|Two cleavages near 90°|Often bottle green
+min.albite,Albite,MINERAL,species,feldspar,NaAlSi3O8,6–6.5,White,Vitreous to pearly,Silicate,White blocky or bladed crystals|Twinning striations|Two cleavages near 90°
+min.arsenopyrite,Arsenopyrite,MINERAL,species,metallic_sulfide,FeAsS,5.5–6,Dark grey-black,Metallic,Sulfide,Silver-white prisms|Garlic smell when struck|Heavy
+min.hornblende,Hornblende,MINERAL,species,amphibole,"Ca2(Mg,Fe,Al)5(Al,Si)8O22(OH)2",5–6,White to grey-green,Vitreous,Silicate,Black to dark green prisms|Cleavage at 56° and 124°|Common in granite
+min.chromite,Chromite,MINERAL,species,spinel_group,FeCr2O4,5.5,Dark brown,Submetallic,Oxide,Black granular masses|Weakly magnetic|Occurs in ultramafic rock
+min.copper,Copper,MINERAL,species,native_metal,Cu,2.5–3,Copper-red,Metallic,Native element,Red-brown metallic|Wires and branching forms|Often green-coated
+min.ilmenite,Ilmenite,MINERAL,species,iron_oxide,FeTiO3,5–6,Black to brown-red,Metallic to submetallic,Oxide,Black tabular crystals|Weakly magnetic|Heavy
+min.spinel,Spinel,MINERAL,species,spinel_group,MgAl2O4,7.5–8,White,Vitreous,Oxide,Octahedral crystals|Red blue or black|Hard
+min.amber,Amber,MINERAL,species,organic_resin,Fossil tree resin,2–2.5,White,Resinous,Organic,Warm yellow to brown|Very light|Often holds insects
+min.tetrahedrite,Tetrahedrite,MINERAL,species,metallic_sulfide,"(Cu,Fe)12Sb4S13",3.5–4.5,Black to brown,Metallic,Sulfide,Steel-grey tetrahedral crystals|Brittle|Heavy
+min.spodumene,Spodumene,MINERAL,species,pyroxene,LiAlSi2O6,6.5–7,White,Vitreous to pearly,Silicate,Long flat prisms|Pink (kunzite) or green|Lithium ore
+min.actinolite,Actinolite,MINERAL,species,amphibole,"Ca2(Mg,Fe)5Si8O22(OH)2",5–6,White,Vitreous,Silicate,Green fibrous or bladed crystals|Radiating sprays|Cleavage at 56° and 124°
+min.aegirine,Aegirine,MINERAL,species,pyroxene,NaFeSi2O6,6,Pale yellow-grey,Vitreous,Silicate,Black to dark green needles|Striated prisms|Pointed terminations
+min.graphite,Graphite,MINERAL,species,native_nonmetal,C,1–2,Black,Metallic to dull,Native element,Soft and greasy|Marks paper|Grey-black flakes
+min.sphalerite,Sphalerite,MINERAL,species,metallic_sulfide,ZnS,3.5–4,Yellow-brown to white,Resinous to adamantine,Sulfide,Brown to black crystals|Perfect cleavage in six directions|Zinc ore
+min.vivianite,Vivianite,MINERAL,species,phosphate,Fe3(PO4)2·8H2O,1.5–2,Colourless to blue-green,Vitreous to pearly,Phosphate,Blue-green prisms|Flexible thin flakes|Darkens on exposure
+min.sulfur,Sulfur,MINERAL,species,native_nonmetal,S,1.5–2.5,White,Resinous,Native element,Bright yellow crystals|Brittle|Smells when warmed
+min.tremolite,Tremolite,MINERAL,species,amphibole,Ca2Mg5Si8O22(OH)2,5–6,White,Vitreous to silky,Silicate,White to grey blades|Fibrous forms|Cleavage at 56° and 124°
+min.pyrargyrite,Pyrargyrite,MINERAL,species,silver_sulfosalt,Ag3SbS3,2.5,Purple-red,Adamantine,Sulfide,Dark red crystals|Deep red in strong light|Silver ore
+min.zircon,Zircon,MINERAL,species,nesosilicate,ZrSiO4,7.5,White,Adamantine,Silicate,Square prisms|Brown red or colourless|Heavy
+min.andalusite,Andalusite,MINERAL,species,aluminosilicate,Al2SiO5,6.5–7.5,White,Vitreous,Silicate,Square prisms|Cross pattern in chiastolite|Pink to brown-green
+min.cuprite,Cuprite,MINERAL,species,copper_oxide,Cu2O,3.5–4,Brownish red,Adamantine to submetallic,Oxide,Deep red crystals|Octahedra or hair-like|Often with malachite
+min.wollastonite,Wollastonite,MINERAL,species,inosilicate,CaSiO3,4.5–5,White,Vitreous to pearly,Silicate,White fibrous or bladed masses|Fizzes weakly in acid|Common in skarns
+min.marcasite,Marcasite,MINERAL,species,metallic_sulfide,FeS2,6–6.5,Greyish black,Metallic,Sulfide,Pale brassy|Spear-shaped twins|Tarnishes easily
+min.rhodonite,Rhodonite,MINERAL,species,inosilicate,MnSiO3,5.5–6.5,White,Vitreous,Silicate,Pink with black veins|Tough massive|Often polished
+min.galena,Galena,MINERAL,species,metallic_sulfide,PbS,2.5,Lead-grey,Metallic,Sulfide,Cubic crystals|Very heavy|Perfect cubic cleavage
+min.apatite,Apatite,MINERAL,species,phosphate,"Ca5(PO4)3(F,Cl,OH)",5,White,Vitreous,Phosphate,Hexagonal prisms|Green blue or yellow|Scratched by a knife
+min.augite,Augite,MINERAL,species,pyroxene,"(Ca,Na)(Mg,Fe,Al)(Si,Al)2O6",5.5–6,Greyish white,Vitreous,Silicate,Black stubby prisms|Cleavage near 90°|Common in basalt
+min.oligoclase,Oligoclase,MINERAL,species,feldspar,"(Na,Ca)(Si,Al)4O8",6–6.5,White,Vitreous,Silicate,White to grey blocks|Fine twin lines|Often in granite
+min.limonite,Limonite,MINERAL,species,iron_oxide,FeO(OH)·nH2O,4–5.5,Yellow-brown,Dull to earthy,Oxide,Yellow-brown crusts|Earthy|Rust-like
+min.eudialyte,Eudialyte,MINERAL,species,ring_silicate,Na15Ca6Fe3Zr3Si(Si25O73)(OH)3(H2O),5–5.5,White,Vitreous,Silicate,Pink to red grains|Rare|Found in alkaline rocks
+min.carnelian,Carnelian,MINERAL,species,silica,SiO2,6.5–7,White,Waxy to vitreous,Silicate,Translucent orange-red|Banded chalcedony|Smooth conchoidal fracture
+min.pollucite,Pollucite,MINERAL,species,zeolite,"(Cs,Na)2Al2Si4O12·H2O",6.5–7,White,Vitreous,Silicate,Colourless to white masses|Cubic crystals|Caesium ore
+min.nephrite,Nephrite,MINERAL,species,amphibole,"Ca2(Mg,Fe)5Si8O22(OH)2",6–6.5,White,Greasy to vitreous,Silicate,Green tough jade|Fibrous interlocking|Very tough
+min.bismuth,Bismuth,MINERAL,species,native_metal,Bi,2–2.5,Silver-grey,Metallic,Native element,Stair-step crystals|Iridescent tarnish|Brittle
+min.bournonite,Bournonite,MINERAL,species,metallic_sulfide,PbCuSbS3,2.5–3,Grey to black,Metallic,Sulfide,Cogwheel-shaped twins|Steel-grey|Heavy
+min.barite,Barite,MINERAL,species,sulfate,BaSO4,3–3.5,White,Vitreous to pearly,Sulfate,Tabular blades|Very heavy for a pale mineral|Perfect cleavage
+min.chrysoberyl,Chrysoberyl,MINERAL,species,oxide_gem,BeAl2O4,8.5,White,Vitreous,Oxide,Yellow-green crystals|Heart-shaped twins|Very hard
+min.kyanite,Kyanite,MINERAL,species,aluminosilicate,Al2SiO5,4.5–7,White,Vitreous to pearly,Silicate,Blue bladed crystals|Hardness differs by direction|Long flat blades
+min.celestine,Celestine,MINERAL,species,sulfate,SrSO4,3–3.5,White,Vitreous,Sulfate,Pale blue tabular crystals|Heavy|Often in geodes
+min.labradorite,Labradorite,MINERAL,species,feldspar,"(Ca,Na)(Al,Si)4O8",6–6.5,White,Vitreous,Silicate,Blue-green iridescent flash|Grey base|Twinning striations
+min.pectolite,Pectolite,MINERAL,species,inosilicate,NaCa2Si3O8(OH),4.5–5,White,Silky,Silicate,Radiating white fibres|Blue form is larimar|Needle sprays
+min.hedenbergite,Hedenbergite,MINERAL,species,pyroxene,CaFeSi2O6,5.5–6.5,Pale green-grey,Vitreous,Silicate,Dark green to black prisms|Radiating blades|Found in skarns
+min.arsenic,Arsenic,MINERAL,species,native_nonmetal,As,3.5,Tin-white,Metallic,Native element,Grey kidney-shaped masses|Tarnishes dark|Garlic smell when heated
+min.cancrinite,Cancrinite,MINERAL,species,feldspathoid,Na6Ca2Al6Si6O24(CO3)2,5–6,White,Vitreous to greasy,Silicate,Yellow to orange masses|Fizzes in acid|Found in alkaline rocks
+min.proustite,Proustite,MINERAL,species,silver_sulfosalt,Ag3AsS3,2–2.5,Scarlet,Adamantine,Sulfide,Bright red crystals|Darkens in light|Silver ore
+min.stibnite,Stibnite,MINERAL,species,metallic_sulfide,Sb2S3,2,Lead-grey,Metallic,Sulfide,Long steel-grey blades|Sword-like crystals|Melts in a candle flame
+min.lapis-lazuli,Lapis lazuli,ROCK,species,lapis,"(Na,Ca)8(Al,Si)12O24(S,SO4)",5–5.5,Blue,Dull to waxy,Metamorphic rock,Deep blue|Gold flecks of pyrite|White calcite patches
+min.andradite,Andradite,MINERAL,species,garnet,Ca3Fe2(SiO4)3,6.5–7,White,Vitreous to resinous,Silicate,Yellow-green to black|Rounded dodecahedra|Garnet family
+min.chalcopyrite,Chalcopyrite,MINERAL,species,metallic_sulfide,CuFeS2,3.5–4,Greenish black,Metallic,Sulfide,Brassy yellow|Tarnishes iridescent|Softer than pyrite
+min.cobaltite,Cobaltite,MINERAL,species,metallic_sulfide,CoAsS,5.5,Grey-black,Metallic,Sulfide,Silver-white cubes|Pinkish tint|Cobalt ore
+min.aragonite,Aragonite,MINERAL,species,carbonate,CaCO3,3.5–4,White,Vitreous,Carbonate,Needle-like or columnar crystals|Pseudo-hexagonal twins|Fizzes in acid
+min.natrolite,Natrolite,MINERAL,species,zeolite,Na2Al2Si3O10·2H2O,5–5.5,White,Vitreous to silky,Silicate,Fine white needles|Radiating sprays|Found in basalt cavities
+min.pyrrhotite,Pyrrhotite,MINERAL,species,metallic_sulfide,Fe(1-x)S,3.5–4.5,Dark grey-black,Metallic,Sulfide,Bronze to brown|Weakly magnetic|Tarnishes
+min.grossular,Grossular,MINERAL,species,garnet,Ca3Al2(SiO4)3,6.5–7,White,Vitreous,Silicate,Green orange or colourless|Rounded crystals|Garnet family
+min.rutile,Rutile,MINERAL,species,titanium_oxide,TiO2,6–6.5,Pale brown,Adamantine to metallic,Oxide,Red-brown striated prisms|Needles inside quartz|Heavy
+min.tourmaline,Tourmaline,MINERAL,species,ring_silicate,"Na(Mg,Fe,Li,Al)3Al6(BO3)3Si6O18(OH)4",7–7.5,White,Vitreous,Silicate,Triangular rounded prisms|Striations along length|Black or many colours
+min.molybdenite,Molybdenite,MINERAL,species,metallic_sulfide,MoS2,1–1.5,Greenish grey,Metallic,Sulfide,Soft grey flakes|Looks like graphite|Heavier than graphite
+min.almandine,Almandine,MINERAL,species,garnet,Fe3Al2(SiO4)3,7–7.5,White,Vitreous,Silicate,Deep red dodecahedra|Common garnet|Found in schist
+min.cinnabar,Cinnabar,MINERAL,species,mercury_sulfide,HgS,2–2.5,Scarlet,Adamantine to dull,Sulfide,Bright red crusts|Very heavy|Mercury ore
+min.epidote,Epidote,MINERAL,species,sorosilicate,"Ca2(Al,Fe)3(SiO4)3(OH)",6–7,White to grey,Vitreous,Silicate,Pistachio green|Striated prisms|Often in veins
+min.vesuvianite,Vesuvianite,MINERAL,species,sorosilicate,"Ca10(Mg,Fe)2Al4(SiO4)5(Si2O7)2(OH)4",6–7,White,Vitreous to resinous,Silicate,Green-brown square prisms|Striated|Found in skarns
+min.dolomite,Dolomite,MINERAL,species,carbonate,CaMg(CO3)2,3.5–4,White,Vitreous to pearly,Carbonate,Curved saddle-shaped crystals|Fizzes only in powder or hot acid|Often pink or white
+min.scheelite,Scheelite,MINERAL,species,tungstate,CaWO4,4.5–5,White,Vitreous to adamantine,Tungstate,Pale yellow-white crystals|Glows blue-white in UV|Heavy
+min.goethite,Goethite,MINERAL,species,iron_oxide,FeO(OH),5–5.5,Yellow-brown,Adamantine to dull,Oxide,Brown-black botryoidal masses|Yellow-brown streak|Iron ore
+min.elbaite,Elbaite,MINERAL,species,ring_silicate,"Na(Li,Al)3Al6(BO3)3Si6O18(OH)4",7–7.5,White,Vitreous,Silicate,Pink green or bicoloured prisms|Triangular cross section|Tourmaline species
+min.titanite,Titanite,MINERAL,species,nesosilicate,CaTiSiO5,5–5.5,White,Adamantine to resinous,Silicate,Wedge-shaped crystals|Yellow-green or brown|High lustre
+min.siderite,Siderite,MINERAL,species,carbonate,FeCO3,3.5–4,White,Vitreous to pearly,Carbonate,Brown rhombic crystals|Fizzes in hot acid|Heavier than calcite
+min.analcime,Analcime,MINERAL,species,zeolite,NaAlSi2O6·H2O,5–5.5,White,Vitreous,Silicate,Round trapezohedral crystals|Colourless to white|Found in basalt cavities
+min.prehnite,Prehnite,MINERAL,species,phyllosilicate,Ca2Al2Si3O10(OH)2,6–6.5,White,Vitreous to pearly,Silicate,Pale green rounded masses|Botryoidal|Often in basalt
+min.bornite,Bornite,MINERAL,species,metallic_sulfide,Cu5FeS4,3,Greyish black,Metallic,Sulfide,Peacock iridescent tarnish|Bronze when fresh|Copper ore
+min.chrysocolla,Chrysocolla,MINERAL,species,copper_silicate,"(Cu,Al)2H2Si2O5(OH)4·nH2O",2–4,Pale blue-green,Vitreous to earthy,Silicate,"Blue-green crusts|Often with malachite|Fragile, scratched by a knife"

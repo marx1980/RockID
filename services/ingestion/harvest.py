@@ -26,12 +26,28 @@ PER_LOCALITY = 12
 FORM_SOURCES = {"commons-tumbled": "tumbled", "commons-polished": "polished"}
 
 
+EXTRA = TAXONOMY_DIR / "extra_minerals.csv"
+
+
+def extra_names() -> dict[str, str]:
+    """Minerals added after mvp21 (packages/taxonomy/extra_minerals.csv): taxon_id -> name. Their queries,
+    Commons category and Wikipedia article are derived from the name."""
+    if not EXTRA.exists():
+        return {}
+    with EXTRA.open(newline="", encoding="utf-8") as fh:
+        return {r["taxon_id"]: r["canonical_name"] for r in csv.DictReader(fh)}
+
+
 def load_queries() -> dict[str, dict[str, str]]:
     with QUERIES.open(newline="", encoding="utf-8") as fh:
         rows = {r["taxon_id"]: r for r in csv.DictReader(fh)}
     missing = set(load_taxonomy()) - set(rows)
     if missing:
         raise ValueError(f"harvest_queries.csv lacks {sorted(missing)}")
+    for tid, name in extra_names().items():
+        low = name.lower()
+        rows.setdefault(tid, {"taxon_id": tid, "commons_query": f"{low} mineral specimen -jewelry -ring -necklace",
+                              "smithsonian_query": low, "title_terms": low})
     return rows
 
 
@@ -42,12 +58,18 @@ def load_localities() -> dict[str, list[str]]:
 
 def load_articles() -> dict[str, list[str]]:
     with WIKI_ARTICLES.open(newline="", encoding="utf-8") as fh:
-        return {r["taxon_id"]: [x for x in r["articles"].split("|") if x] for r in csv.DictReader(fh)}
+        out = {r["taxon_id"]: [x for x in r["articles"].split("|") if x] for r in csv.DictReader(fh)}
+    for tid, name in extra_names().items():
+        out.setdefault(tid, [name])
+    return out
 
 
 def load_categories() -> dict[str, list[str]]:
     with COMMONS_CATEGORIES.open(newline="", encoding="utf-8") as fh:
-        return {r["taxon_id"]: [x for x in r["categories"].split("|") if x] for r in csv.DictReader(fh)}
+        out = {r["taxon_id"]: [x for x in r["categories"].split("|") if x] for r in csv.DictReader(fh)}
+    for tid, name in extra_names().items():
+        out.setdefault(tid, [f"Category:{name}"])
+    return out
 
 
 def harvest(

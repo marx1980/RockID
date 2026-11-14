@@ -32,6 +32,8 @@ def build_site(candidates_csv: str | Path, out_dir: str | Path, decisions_path: 
     ]
     (out / "candidates.json").write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     taxa = {tid: {"n": t.canonical_name, "c": t.category} for tid, t in load_taxonomy().items()}
+    from services.ingestion.harvest import extra_names
+    taxa.update({tid: {"n": n, "c": "MINERAL"} for tid, n in extra_names().items()})
     (out / "taxa.json").write_text(json.dumps(taxa, separators=(",", ":")), encoding="utf-8")
     if PAGE.exists():
         shutil.copy(PAGE, out / "index.html")
