@@ -70,7 +70,7 @@ def test_build_site_outputs(tmp_path):
     assert set(data[0]) >= {"id", "t", "ti", "u", "m", "a", "l", "sp", "sc", "pu", "ot"}
     specs = [d["sp"] for d in data]
     assert specs == sorted(specs)  # same-specimen photos adjacent
-    assert len(json.loads((out / "taxa.json").read_text())) == 21
+    assert len(json.loads((out / "taxa.json").read_text())) == 99
     assert (out / "index.html").exists()
 
 
