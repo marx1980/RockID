@@ -1,0 +1,70 @@
+name: challenge-c
+# Runner steps for challenge set C (docs/CHALLENGE_C.md). The agent shell cannot fetch images.
+#   step=sheets: stone review sheets from data_manifests/candidates/challenge_c_pool.csv -> branch curation/c-sheets-<run>
+#   step=check:  draft from pool + challenge_c_review.csv, fingerprint and embed every kept photo, drop near-duplicate
+#                views and copies of reference / vault photos -> branch check/challenge-c-<run> (ids only, no labels)
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "sheets or check"
+        required: true
+        default: "sheets"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        if: inputs.step == 'check'
+        with:
+          ref: vault
+          path: vault
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/setup-node@v4
+        if: inputs.step == 'check'
+        with:
+          node-version: "22"
+      - name: Sheets
+        if: inputs.step == 'sheets'
+        run: |
+          python -m services.curation.challenge_c sheets data_manifests/candidates/challenge_c_pool.csv sheets --skip-reviewed data_manifests/candidates/challenge_c_review.csv | tee -a "$GITHUB_STEP_SUMMARY"
+          git config user.name "rockid-curation"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan "curation/c-sheets-${{ github.run_id }}"
+          git rm -rq --cached .
+          git add sheets
+          git commit -qm "Challenge C stone sheets (run ${{ github.run_id }})"
+          git push origin "curation/c-sheets-${{ github.run_id }}"
+      - name: Check
+        if: inputs.step == 'check'
+        run: |
+          npm install --prefix tools/embed --no-audit --no-fund
+          ln -s "$PWD/tools/embed/node_modules" node_modules
+          mkdir -p emb results
+          python -m services.curation.challenge_c draft data_manifests/candidates/challenge_c_pool.csv data_manifests/candidates/challenge_c_review.csv /tmp/c_draft.csv
+          python - <<'PY'
+          import csv
+          with open("/tmp/c_draft.csv", newline="") as f, open("/tmp/c_inputs.csv", "w", newline="") as o:
+              w = csv.writer(o); w.writerow(["candidate_id", "media_url"])
+              for r in csv.DictReader(f): w.writerow([r["candidate_id"], r["media_url"]])
+          PY
+          node tools/embed/embed.mjs /tmp/c_inputs.csv candidate_id emb/c_draft
+          python -m services.curation.challenge_c check /tmp/c_draft.csv data_manifests/reference/reference.csv results/challenge_c_check.json \
+            vault/challenge.csv vault/challenge_b.csv vault/ood_calibration.csv vault/ood_test.csv --vectors emb/c_draft | tee -a "$GITHUB_STEP_SUMMARY"
+          rm -f node_modules
+          git config user.name "rockid-check"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "check/challenge-c-${{ github.run_id }}"
+          git add -f results/challenge_c_check.json
+          git commit -m "Challenge C check (run ${{ github.run_id }})"
+          git push origin "check/challenge-c-${{ github.run_id }}"

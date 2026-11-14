@@ -14,9 +14,10 @@ import httpx
 
 from packages.taxonomy.loader import TAXONOMY_DIR, load_taxonomy
 from services.ingestion.candidates import read_candidates, write_candidates
+from services.ingestion.decisions import load_decisions
 from dataclasses import replace
 
-from services.ingestion.sources import commons, commons_categories, europeana, nhm, other_taxa_named, smithsonian, usgs, wikipedia
+from services.ingestion.sources import commons, commons_categories, commons_series, europeana, nhm, other_taxa_named, smithsonian, usgs, wikipedia
 
 QUERIES = TAXONOMY_DIR / "harvest_queries.csv"
 LOCALITIES = TAXONOMY_DIR / "localities.csv"
@@ -82,6 +83,7 @@ def harvest(
         for c in read_candidates(out)
     ]
     seen = {c.candidate_id for c in existing} | {c.media_url for c in existing}
+    decided = set(load_decisions(Path(out).with_name("decisions.json")))
     added = []
     exhausted: set[str] = set()
     for taxon_id in taxa or sorted(queries):
@@ -101,6 +103,10 @@ def harvest(
                     found = wikipedia.search(client, taxon_id, load_articles().get(taxon_id, []), terms, limit=600)
                 elif source == "commons-categories":  # curated Commons categories such as "Granite samples"
                     found = commons_categories.search(client, taxon_id, load_categories().get(taxon_id, []), terms)
+                elif source == "commons-series":  # other views of undecided Commons specimens (challenge set C)
+                    seeds = [c for c in existing + added if c.source_name == commons.SOURCE and c.taxon_id == taxon_id
+                             and c.proposed_usage != "rejected" and c.candidate_id not in decided]
+                    found = commons_series.search(client, taxon_id, seeds, terms)
                 elif source in FORM_SOURCES:  # Commons again, with "tumbled"/"polished" in the query
                     found = commons.search(client, taxon_id, f"{FORM_SOURCES[source]} {terms[0]}", terms, per_taxon)
                 elif source == "smithsonian":
@@ -161,7 +167,7 @@ def summarise(path: str | Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", "commons-categories", "usgs", *FORM_SOURCES])
+    ap.add_argument("--sources", nargs="+", default=["smithsonian", "commons"], choices=["smithsonian", "commons", "nhm", "europeana", "commons-places", "wikipedia", "commons-categories", "commons-series", "usgs", *FORM_SOURCES])
     ap.add_argument("--taxa", nargs="*")
     ap.add_argument("--per-taxon", type=int, default=40)
     ap.add_argument("--out", default="data_manifests/candidates/candidates.csv")

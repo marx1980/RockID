@@ -125,3 +125,8 @@ H-02: enable Pages, create the token, review at least one taxon on the phone. Th
 ## Round 5 (locality harvest)
 - commons-places harvest source and packages/taxonomy/localities.csv; 110 approved of 941 reviewed; reference set 1,687 photos (1,149 + 110 natural/polished mix, 60 tumbled)
 - v5 re-score neutral (results/BASELINE_v5.md); live app still on model v4
+
+## Challenge set C (spec only, 2026-11-14)
+- Rules, pre-registration and runbook: docs/CHALLENGE_C.md. Tooling: services/curation/challenge_c.py (pool, sheets, decide, draft, check, freeze), services/model/multi_photo.py (pre-registered combination and scoring), workflow challenge-c (sheets / check), harvest source commons-series
+- Not harvested, reviewed or frozen yet. Pool from existing candidates: 88 stones in 13 extra minerals, 1 live stone; live classes need the Smithsonian (per_taxon 600) and Commons harvests of the runbook
+- Known gap: round-11 new-mineral approvals (681) are not in reference.csv; promote drops non-mvp21 taxa as invalid

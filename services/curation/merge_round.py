@@ -2,7 +2,8 @@
 
 The challenge set is frozen after its first scoring, so new approvals go to the reference side
 only, and only if none of them shares a photographer, specimen or source page with a challenge case
-of the same taxon. Rows already decided are left alone.
+of the same taxon (for challenge set C, whose rows carry a stone_id: a shared photographer, specimen or page of any taxon).
+Rows already decided are left alone.
 
   python -m services.curation.merge_round data_manifests/candidates/candidates.csv \
       data_manifests/candidates/agent_review.csv data_manifests/candidates/decisions.json \
@@ -32,7 +33,12 @@ def merge_round(candidates_csv, review_csv, decisions_path, challenge_csv=None) 
         with Path(path).open(newline="", encoding="utf-8") as fh:
             challenge.extend(csv.DictReader(fh))
     blocked: dict[str, set[str]] = {}
+    everywhere: set[str] = set()  # challenge C (rows with stone_id) is blocked for every taxon
     for row in challenge:
+        if row.get("stone_id"):
+            everywhere |= {f"s:{row['specimen_id']}", f"p:{_page(row['source_url'])}"}
+            if _author(row["author"], row["source_name"]):
+                everywhere.add(f"a:{_author(row['author'], row['source_name'])}")
         blocked.setdefault(row["ground_truth_id"], set()).update(
             {f"s:{row['specimen_id']}", f"p:{_page(row['source_url'])}"}
             | ({f"a:{_author(row['author'], row['source_name'])}"} if _author(row["author"], row["source_name"]) else set()))
@@ -47,7 +53,7 @@ def merge_round(candidates_csv, review_csv, decisions_path, challenge_csv=None) 
             keys = {f"s:{c.specimen_hint}", f"p:{_page(c.source_url)}"}
             if _author(c.author, c.source_name):
                 keys.add(f"a:{_author(c.author, c.source_name)}")
-            hit = keys & blocked.get(c.taxon_id, set())
+            hit = keys & (blocked.get(c.taxon_id, set()) | everywhere)
             if hit:
                 conflicts.append((cid, sorted(hit)))
                 decision = "reject"
