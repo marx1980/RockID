@@ -1,0 +1,123 @@
+taxon_id,canonical_name,category,rank,confusion_group,family,formula_or_makeup,hardness,streak,luster,class,features
+rock.granodiorite,Granodiorite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.felsic,,,,,,Like granite but more plagioclase|Salt-and-pepper look|Little pink feldspar
+rock.diorite,Diorite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.intermediate,,,,,,Black and white speckled|Plagioclase and hornblende|Little or no quartz
+rock.syenite,Syenite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.felsic,,,,,,Feldspar-rich|Almost no quartz|Pink grey or green
+rock.monzonite,Monzonite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.intermediate,,,,,,Equal alkali feldspar and plagioclase|Little quartz
+rock.tonalite,Tonalite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.felsic,,,,,,Quartz and plagioclase|Little alkali feldspar|Light grey
+rock.quartz-diorite,Quartz diorite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.intermediate,,,,,,Diorite with visible quartz|Grey speckled
+rock.quartz-monzonite,Quartz monzonite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.felsic,,,,,,Between granite and granodiorite|Pale pink grey
+rock.gabbro,Gabbro,ROCK,rock_type,dark_coarse,igneous.plutonic.mafic,,,,,,Dark coarse grains|Pyroxene and plagioclase|Heavy
+rock.anorthosite,Anorthosite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.mafic,,,,,,Over 90% plagioclase|White to grey|Sometimes iridescent labradorite
+rock.norite,Norite,ROCK,rock_type,dark_coarse,igneous.plutonic.mafic,,,,,,Gabbro with orthopyroxene|Dark speckled
+rock.diabase,Diabase (dolerite),ROCK,rock_type,dark_fine_grained,igneous.hypabyssal.mafic,,,,,,Dark fine-medium grained|Interlocking laths|Dykes and sills
+rock.peridotite,Peridotite,ROCK,rock_type,ultramafic,igneous.plutonic.ultramafic,,,,,,Olive green|Olivine-rich|Heavy
+rock.dunite,Dunite,ROCK,rock_type,ultramafic,igneous.plutonic.ultramafic,,,,,,Over 90% olivine|Green granular|Weathers brown
+rock.pyroxenite,Pyroxenite,ROCK,rock_type,ultramafic,igneous.plutonic.ultramafic,,,,,,Dark green to black|Pyroxene-rich|Coarse
+rock.komatiite,Komatiite,ROCK,rock_type,ultramafic,igneous.volcanic.ultramafic,,,,,,Ancient ultramafic lava|Spinifex texture|Olive green
+rock.carbonatite,Carbonatite,ROCK,rock_type,carbonate,igneous.plutonic.carbonatite,,,,,,Igneous carbonate|Looks like marble|Rare
+rock.pegmatite,Pegmatite,ROCK,rock_type,coarse_crystalline,igneous.plutonic.felsic,,,,,,Giant crystals|Feldspar quartz mica|Often with rare minerals
+rock.aplite,Aplite,ROCK,rock_type,fine_light,igneous.hypabyssal.felsic,,,,,,Fine sugary granite|Pink to white|Veins in granite
+rock.porphyry,Porphyry,ROCK,rock_type,porphyritic,igneous.hypabyssal.intermediate,,,,,,Large crystals in fine matrix|Often red or purple
+rock.rhyolite,Rhyolite,ROCK,rock_type,fine_light,igneous.volcanic.felsic,,,,,,Pale pink or grey|Fine grained|Flow banding
+rock.dacite,Dacite,ROCK,rock_type,fine_light,igneous.volcanic.felsic,,,,,,Grey fine grained|Small crystals visible
+rock.andesite,Andesite,ROCK,rock_type,dark_fine_grained,igneous.volcanic.intermediate,,,,,,Grey fine grained|Small plagioclase crystals
+rock.trachyte,Trachyte,ROCK,rock_type,fine_light,igneous.volcanic.intermediate,,,,,,Rough surface|Pale grey|Feldspar laths
+rock.phonolite,Phonolite,ROCK,rock_type,fine_light,igneous.volcanic.intermediate,,,,,,Rings when struck|Grey green|Fine grained
+rock.tephrite,Tephrite,ROCK,rock_type,dark_fine_grained,igneous.volcanic.mafic,,,,,,Dark fine grained|Alkaline lava
+rock.obsidian,Obsidian,ROCK,rock_type,volcanic_glass,igneous.volcanic.glass,,,,,,Black glass|Conchoidal fracture|Sharp edges
+rock.pumice,Pumice,ROCK,rock_type,volcanic_froth,igneous.volcanic.pyroclastic,,,,,,Light foam-like|Floats on water|Pale grey
+rock.scoria,Scoria,ROCK,rock_type,volcanic_froth,igneous.volcanic.pyroclastic,,,,,,Dark red or black|Bubbly|Heavier than pumice
+rock.tuff,Tuff,ROCK,rock_type,pyroclastic,igneous.volcanic.pyroclastic,,,,,,Compacted ash|Soft|Light coloured with fragments
+rock.ignimbrite,Ignimbrite,ROCK,rock_type,pyroclastic,igneous.volcanic.pyroclastic,,,,,,Welded ash flow|Flattened pumice|Often pink or grey
+rock.volcanic-breccia,Volcanic breccia,ROCK,rock_type,pyroclastic,igneous.volcanic.pyroclastic,,,,,,Angular volcanic fragments|Mixed colours
+rock.pitchstone,Pitchstone,ROCK,rock_type,volcanic_glass,igneous.volcanic.glass,,,,,,Dull glassy|Green to black|Resin-like lustre
+rock.conglomerate,Conglomerate,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Rounded pebbles in a matrix|Mixed colours
+rock.breccia,Breccia,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Angular fragments in a matrix|Rough
+rock.arkose,Arkose,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Pink feldspar-rich sandstone|Gritty
+rock.greywacke,Greywacke,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Dark hard sandstone|Mixed grains in clay matrix
+rock.siltstone,Siltstone,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Very fine grains|Gritty on teeth|Thin layers
+rock.mudstone,Mudstone,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Massive soft clay rock|Breaks into blocks
+rock.shale,Shale,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Thin splitting layers|Grey black or red|Soft
+rock.claystone,Claystone,ROCK,rock_type,clastic,sedimentary.clastic,,,,,,Smooth clay|Sticks to tongue|Breaks blocky
+rock.oil-shale,Oil shale,ROCK,rock_type,clastic,sedimentary.organic,,,,,,Brown-black shale|Burns|Smells of oil
+rock.coal,Coal,ROCK,rock_type,organic,sedimentary.organic,,,,,,Black and light|Dull to shiny|Burns
+rock.lignite,Lignite,ROCK,rock_type,organic,sedimentary.organic,,,,,,Brown coal|Plant remains visible|Crumbly
+rock.anthracite,Anthracite,ROCK,rock_type,organic,metamorphic.coal,,,,,,Hard glossy black coal|Conchoidal fracture
+rock.chalk,Chalk,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Soft white|Marks surfaces|Often with flint
+rock.dolostone,Dolostone,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Looks like limestone|Fizzes weakly in acid|Grey to buff
+rock.travertine,Travertine,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Banded with pits|Cream to brown|Spring deposit
+rock.tufa,Tufa,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Porous spring limestone|Light and rough
+rock.oolite,Oolite,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Tiny round grains|Like fish roe
+rock.coquina,Coquina,ROCK,rock_type,carbonate,sedimentary.carbonate,,,,,,Shell fragments cemented|Porous
+rock.flint,Flint,ROCK,rock_type,silica,sedimentary.siliceous,,,,,,Dark grey nodules|White rind|Conchoidal fracture
+rock.jasper,Jasper,ROCK,rock_type,silica,sedimentary.siliceous,,,,,,Opaque red green or yellow|Waxy|Fine grained quartz
+rock.diatomite,Diatomite,ROCK,rock_type,silica,sedimentary.siliceous,,,,,,Very light chalky white|Powdery|Made of diatoms
+rock.banded-iron-formation,Banded iron formation,ROCK,rock_type,iron_oxide,sedimentary.chemical,,,,,,Alternating red and grey bands|Heavy
+rock.ironstone,Ironstone,ROCK,rock_type,iron_oxide,sedimentary.chemical,,,,,,Rusty brown and heavy|Iron-rich nodules or layers
+rock.laterite,Laterite,ROCK,rock_type,iron_oxide,sedimentary.weathering,,,,,,Red-brown crumbly crust|Tropical soil rock
+rock.bauxite,Bauxite,ROCK,rock_type,aluminium_ore,sedimentary.weathering,,,,,,Pisolitic red or cream|Aluminium ore|Earthy
+rock.gypsum-rock,Gypsum rock (alabaster),ROCK,rock_type,evaporite,sedimentary.evaporite,,,,,,Soft white|Scratched by fingernail
+rock.rock-salt,Rock salt,ROCK,rock_type,evaporite,sedimentary.evaporite,,,,,,Cubic crystals|Tastes salty|Dissolves
+rock.anhydrite-rock,Anhydrite rock,ROCK,rock_type,evaporite,sedimentary.evaporite,,,,,,Harder than gypsum|White to grey
+rock.phosphorite,Phosphorite,ROCK,rock_type,phosphate,sedimentary.chemical,,,,,,Dark brown nodules|Phosphate rock
+rock.caliche,Caliche,ROCK,rock_type,carbonate,sedimentary.chemical,,,,,,Hard white crust|Desert soil carbonate
+rock.phyllite,Phyllite,ROCK,rock_type,foliated_fine,metamorphic.foliated,,,,,,Silky sheen|Wavy foliation|Between slate and schist
+rock.schist,Schist,ROCK,rock_type,foliated_coarse,metamorphic.foliated,,,,,,Visible shiny mica flakes|Sparkling layers
+rock.migmatite,Migmatite,ROCK,rock_type,coarse_crystalline,metamorphic.foliated,,,,,,Swirled melted bands|Mixed rock
+rock.amphibolite,Amphibolite,ROCK,rock_type,dark_coarse,metamorphic.foliated,,,,,,Black and white speckled|Hornblende-rich
+rock.greenschist,Greenschist,ROCK,rock_type,foliated_fine,metamorphic.foliated,,,,,,Green schistose rock|Chlorite and epidote
+rock.blueschist,Blueschist,ROCK,rock_type,foliated_fine,metamorphic.foliated,,,,,,Blue-grey schist|Glaucophane
+rock.eclogite,Eclogite,ROCK,rock_type,dark_coarse,metamorphic.nonfoliated,,,,,,Red garnet in green pyroxene|Heavy
+rock.granulite,Granulite,ROCK,rock_type,coarse_crystalline,metamorphic.nonfoliated,,,,,,Even-grained high grade rock|Pale
+rock.hornfels,Hornfels,ROCK,rock_type,dark_fine_grained,metamorphic.nonfoliated,,,,,,Hard fine grained|Contact metamorphic|Splintery
+rock.skarn,Skarn,ROCK,rock_type,carbonate,metamorphic.nonfoliated,,,,,,Garnet and pyroxene|Contact with limestone|Often with ore
+rock.serpentinite,Serpentinite,ROCK,rock_type,ultramafic,metamorphic.nonfoliated,,,,,,Green waxy|Slippery look|Often veined
+rock.soapstone,Soapstone (steatite),ROCK,rock_type,soft_stone,metamorphic.nonfoliated,,,,,,Soft soapy feel|Grey green|Carvable
+rock.talc-carbonate,Talc carbonate rock,ROCK,rock_type,soft_stone,metamorphic.nonfoliated,,,,,,Soft pale rock|Talc and carbonate
+rock.jade-rock,Jadeitite,ROCK,rock_type,green_rock,metamorphic.nonfoliated,,,,,,Tough green|Waxy|High pressure rock
+rock.mylonite,Mylonite,ROCK,rock_type,foliated_fine,metamorphic.dynamic,,,,,,Smeared fault rock|Fine streaked
+rock.cataclasite,Cataclasite,ROCK,rock_type,clastic,metamorphic.dynamic,,,,,,Crushed fault rock|Fragments in fine matrix
+rock.pseudotachylite,Pseudotachylite,ROCK,rock_type,volcanic_glass,metamorphic.dynamic,,,,,,Black glassy veins|Frictional melt
+rock.metaconglomerate,Metaconglomerate,ROCK,rock_type,clastic,metamorphic.nonfoliated,,,,,,Stretched pebbles|Hard
+rock.novaculite,Novaculite,ROCK,rock_type,silica,metamorphic.nonfoliated,,,,,,Very fine hard white silica|Whetstone
+rock.tektite,Tektite,ROCK,rock_type,volcanic_glass,impact,,,,,,Black or green glass|Splash shapes|Impact
+rock.impactite,Impactite,ROCK,rock_type,volcanic_glass,impact,,,,,,Shocked melted rock|Impact crater
+rock.fulgurite,Fulgurite,ROCK,rock_type,volcanic_glass,other,,,,,,Hollow glassy tube|Lightning in sand
+rock.meteorite-iron,Iron meteorite,ROCK,rock_type,meteorite,other,,,,,,Heavy dense metal|Magnetic|Widmanstatten pattern
+rock.meteorite-stone,Stony meteorite,ROCK,rock_type,meteorite,other,,,,,,Dark fusion crust|Metal flecks|Heavy
+rock.petrified-wood,Petrified wood,ROCK,rock_type,silica,other,,,,,,Wood grain in stone|Colourful quartz
+ore.pentlandite,Pentlandite,MINERAL,ore_mineral,metallic_sulfide,ore.nickel,"(Fe,Ni)9S8",3.5–4,Light bronze-brown,Metallic,Sulfide,Nickel ore|Bronze with pyrrhotite
+ore.garnierite,Garnierite,MINERAL,ore_mineral,green_nickel,ore.nickel,"(Ni,Mg)3Si2O5(OH)4",2–3,Pale green,Earthy,Silicate,Apple-green crust|Nickel ore
+ore.chalcocite,Chalcocite,MINERAL,ore_mineral,metallic_sulfide,ore.copper,Cu2S,2.5–3,Dark grey,Metallic,Sulfide,Dark grey lead-like|Tarnishes black
+ore.covellite,Covellite,MINERAL,ore_mineral,metallic_sulfide,ore.copper,CuS,1.5–2,Lead-grey,Metallic,Sulfide,Indigo-blue|Iridescent
+ore.enargite,Enargite,MINERAL,ore_mineral,metallic_sulfide,ore.copper,Cu3AsS4,3,Greyish black,Metallic,Sulfide,Steel-grey|Striated prisms
+ore.tenorite,Tenorite,MINERAL,ore_mineral,copper_oxide,ore.copper,CuO,3.5,Grey-black,Metallic,Oxide,Black earthy copper oxide
+ore.cerussite,Cerussite,MINERAL,ore_mineral,carbonate,ore.lead,PbCO3,3–3.5,White,Adamantine,Carbonate,Heavy white|Twinned crystals
+ore.anglesite,Anglesite,MINERAL,ore_mineral,sulfate,ore.lead,PbSO4,2.5–3,White,Adamantine,Sulfate,Heavy|Often on galena
+ore.pyromorphite,Pyromorphite,MINERAL,ore_mineral,phosphate,ore.lead,Pb5(PO4)3Cl,3.5–4,White,Resinous,Phosphate,Green or yellow barrels
+ore.smithsonite,Smithsonite,MINERAL,ore_mineral,carbonate,ore.zinc,ZnCO3,4–4.5,White,Vitreous,Carbonate,Botryoidal|Blue green pink
+ore.hemimorphite,Hemimorphite,MINERAL,ore_mineral,silicate_zinc,ore.zinc,Zn4Si2O7(OH)2·H2O,4.5–5,White,Vitreous,Silicate,Fans of blue-white crystals
+ore.zincite,Zincite,MINERAL,ore_mineral,oxide_zinc,ore.zinc,ZnO,4,Orange-yellow,Subadamantine,Oxide,Orange-red masses|Rare
+ore.wolframite,Wolframite,MINERAL,ore_mineral,tungsten,ore.tungsten,"(Fe,Mn)WO4",4–4.5,Brown-black,Submetallic,Tungstate,Heavy black blades
+ore.realgar,Realgar,MINERAL,ore_mineral,arsenic_sulfide,ore.arsenic,As4S4,1.5–2,Orange-red,Resinous,Sulfide,Orange-red crystals|Fades in light
+ore.orpiment,Orpiment,MINERAL,ore_mineral,arsenic_sulfide,ore.arsenic,As2S3,1.5–2,Yellow,Resinous,Sulfide,Lemon yellow|Flexible flakes
+ore.electrum,Electrum,MINERAL,ore_mineral,native_metal,ore.gold,"Au,Ag",2.5,Yellow,Metallic,Native element,Pale yellow gold-silver
+ore.argentite,Argentite (acanthite),MINERAL,ore_mineral,metallic_sulfide,ore.silver,Ag2S,2–2.5,Black,Metallic,Sulfide,Dark soft sectile
+ore.pitchblende,Uraninite (pitchblende),MINERAL,ore_mineral,uranium,ore.uranium,UO2,5–6,Brownish black,Pitchy,Oxide,Black heavy botryoidal|Radioactive
+ore.autunite,Autunite,MINERAL,ore_mineral,uranium,ore.uranium,Ca(UO2)2(PO4)2·10-12H2O,2–2.5,Pale yellow,Vitreous,Phosphate,Yellow-green plates|Radioactive
+ore.carnotite,Carnotite,MINERAL,ore_mineral,uranium,ore.uranium,K2(UO2)2(VO4)2·3H2O,~2,Yellow,Earthy,Vanadate,Canary-yellow crust|Radioactive
+ore.vanadinite,Vanadinite,MINERAL,ore_mineral,lead_vanadate,ore.vanadium,Pb5(VO4)3Cl,2.5–3,White-yellow,Resinous,Vanadate,Red hexagonal crystals
+ore.pyrolusite,Pyrolusite,MINERAL,ore_mineral,manganese,ore.manganese,MnO2,6–6.5,Black,Metallic,Oxide,Sooty black|Dendrites
+ore.psilomelane,Psilomelane (romanechite),MINERAL,ore_mineral,manganese,ore.manganese,BaMn2+Mn4+8O16(OH)4,5–6,Brownish black,Submetallic,Oxide,Black botryoidal|Smooth
+ore.rhodochrosite,Rhodochrosite,MINERAL,ore_mineral,carbonate,ore.manganese,MnCO3,3.5–4,White,Vitreous,Carbonate,Pink banded|Rhombs
+ore.columbite-tantalite,Columbite-tantalite,MINERAL,ore_mineral,tantalum,ore.niobium_tantalum,"(Fe,Mn)(Nb,Ta)2O6",6,Dark red to black,Submetallic,Oxide,Heavy black plates|Coltan
+ore.monazite,Monazite,MINERAL,ore_mineral,phosphate_ree,ore.rare_earth,"(Ce,La,Nd,Th)PO4",5–5.5,White,Resinous,Phosphate,Brown grains|Mildly radioactive
+ore.bastnasite,Bastnäsite,MINERAL,ore_mineral,carbonate_ree,ore.rare_earth,"(Ce,La)CO3F",4–4.5,White,Vitreous,Carbonate,Yellow-brown|Rare earth ore
+ore.lepidolite,Lepidolite,MINERAL,ore_mineral,mica,ore.lithium,"K(Li,Al)3(Al,Si)4O10(F,OH)2",2.5–3,White,Pearly,Silicate,Lilac mica flakes|Lithium ore
+ore.petalite,Petalite,MINERAL,ore_mineral,lithium,ore.lithium,LiAlSi4O10,6–6.5,White,Vitreous,Silicate,Colourless to pink|Lithium ore
+ore.gibbsite,Gibbsite,MINERAL,ore_mineral,aluminium_ore,ore.aluminium,Al(OH)3,2.5–3.5,White,Vitreous,Hydroxide,Part of bauxite|Earthy white
+ore.sylvite,Sylvite,MINERAL,ore_mineral,evaporite,ore.potash,KCl,2,White,Vitreous,Halide,Salty bitter|Potash
+ore.carnallite,Carnallite,MINERAL,ore_mineral,evaporite,ore.potash,KMgCl3·6H2O,2.5,White,Greasy,Halide,Wet-looking|Potash
+ore.borax,Borax,MINERAL,ore_mineral,evaporite,ore.boron,Na2B4O7·10H2O,2–2.5,White,Vitreous,Borate,Soft white crusts
+ore.trona,Trona,MINERAL,ore_mineral,evaporite,ore.soda,Na3(CO3)(HCO3)·2H2O,2.5–3,White,Vitreous,Carbonate,Soda ash ore
+ore.diamond,Diamond,MINERAL,ore_mineral,carbon,ore.gem,C,10,Colourless,Adamantine,Native element,Hardest|Octahedra
