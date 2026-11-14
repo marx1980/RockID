@@ -17,3 +17,18 @@ Readings:
 - A trained linear head on the same frozen vectors beats the neighbour vote on unseen-source photos and keeps most of it with 97 classes.
 - A class known from one museum only is recognised poorly from other photos (C2, C3) and pulls same-style photos away from the right class (B2). Removing collection directions helps little.
 - Limits: A covers 5 classes; head untuned (C=10); frozen challenge sets not scored with the head.
+
+## Trained classifier on the frozen challenge sets (2026-11-14)
+
+`services/model/head_frozen.py`, on vectors stored by compare runs 43519706634 (23 classes) and 43516330744 (99 classes). Logistic regression on the frozen DINOv2 vectors, C=10 fixed before these sets were read (same setting as lab.py); other C values shown for information only.
+
+| reference | method | A top-1 / top-3 | B top-1 / top-3 |
+|---|---|---|---|
+| 21 + Kaggle (23 classes, 3,220 photos) | k-NN now | 0.455 / 0.762 | 0.437 / 0.637 |
+| same | head C=10 | 0.582 / 0.788 | 0.593 / 0.756 |
+| same | head C=1 / C=100 | 0.519 / 0.767, 0.534 / 0.762 | 0.570 / 0.756, 0.504 / 0.733 |
+| 21 + Kaggle + 76 museum (99 classes, 9,451 photos) | k-NN now | 0.312 / 0.534 | 0.311 / 0.481 |
+| same | head C=10 | 0.471 / 0.741 | 0.504 / 0.667 |
+
+Live v9 (k-NN, 21 classes): A 0.474 / 0.774, B 0.454.
+Not done: form (polished/tumbled) handling with a head, confidence calibration and the don't-know verdict, per-class tests for new classes.
