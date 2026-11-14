@@ -7,6 +7,7 @@ and never touches review decisions already made.
 import argparse
 import csv
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -28,15 +29,23 @@ FORM_SOURCES = {"commons-tumbled": "tumbled", "commons-polished": "polished"}
 
 
 EXTRA = TAXONOMY_DIR / "extra_minerals.csv"
+EXTRA_FILES = (EXTRA, TAXONOMY_DIR / "extra_rocks_ores.csv")
+
+
+def extra_info() -> dict[str, tuple[str, str]]:
+    """Taxa added after mvp21 (extra_minerals.csv, extra_rocks_ores.csv): taxon_id -> (name, category)."""
+    out: dict[str, tuple[str, str]] = {}
+    for path in EXTRA_FILES:
+        if path.exists():
+            with path.open(newline="", encoding="utf-8") as fh:
+                out.update({r["taxon_id"]: (r["canonical_name"], r.get("category") or "MINERAL") for r in csv.DictReader(fh)})
+    return out
 
 
 def extra_names() -> dict[str, str]:
-    """Minerals added after mvp21 (packages/taxonomy/extra_minerals.csv): taxon_id -> name. Their queries,
-    Commons category and Wikipedia article are derived from the name."""
-    if not EXTRA.exists():
-        return {}
-    with EXTRA.open(newline="", encoding="utf-8") as fh:
-        return {r["taxon_id"]: r["canonical_name"] for r in csv.DictReader(fh)}
+    """taxon_id -> name for the added taxa. Their queries, Commons category and Wikipedia article are derived
+    from the name."""
+    return {tid: re.sub(r"\s*\(.*?\)", "", n).strip() or n for tid, (n, _) in extra_info().items()}
 
 
 def load_queries() -> dict[str, dict[str, str]]:
@@ -47,8 +56,8 @@ def load_queries() -> dict[str, dict[str, str]]:
         raise ValueError(f"harvest_queries.csv lacks {sorted(missing)}")
     for tid, name in extra_names().items():
         low = name.lower()
-        rows.setdefault(tid, {"taxon_id": tid, "commons_query": f"{low} mineral specimen -jewelry -ring -necklace",
-                              "smithsonian_query": low, "title_terms": low})
+        what = "rock sample -building -wall -countertop -kitchen -tile" if tid.startswith("rock.") else "mineral specimen -jewelry -ring -necklace"
+        rows.setdefault(tid, {"taxon_id": tid, "commons_query": f"{low} {what}", "smithsonian_query": low, "title_terms": low})
     return rows
 
 
