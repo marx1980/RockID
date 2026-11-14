@@ -151,7 +151,8 @@ def test_promote_skips_exact_duplicates(tmp_path):
 
 def test_every_taxon_has_harvest_queries():
     from services.ingestion.harvest import load_queries
-    assert len(load_queries()) == 21
+    from services.ingestion.harvest import extra_names
+    assert len(load_queries()) == 21 + len(extra_names())
 
 
 def test_other_taxa_flag():
@@ -311,4 +312,5 @@ def test_commons_category_files(tmp_path):
 def test_every_category_row_names_a_taxon():
     from services.ingestion.harvest import load_categories
     from packages.taxonomy.loader import load_taxonomy
-    assert set(load_categories()) <= set(load_taxonomy())
+    from services.ingestion.harvest import extra_names
+    assert set(load_categories()) <= set(load_taxonomy()) | set(extra_names())
